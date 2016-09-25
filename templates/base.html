@@ -68,12 +68,25 @@
       </header>
         {% block content %}
         {% endblock %}
-      <footer>
-	  <a href="{{SITEURL}}/pages/about.html" >About</a>
-	  <div class="right-footer">
-	  <a href="{{SITEURL}}/categories.html" >Categories</a>
-	  <a href="{{SITEURL}}/tags.html" >Tags</a>
-	  </div>
-      </footer>
-</body>
+
+        <footer>
+            <a href="{{ SITEURL }}/pages/about.html">About</a>
+            <div class="right-footer">
+                {% if 'authors' in DIRECT_TEMPLATES %}
+                    <a href="{{ SITEURL }}/{{ AUTHORS_URL or AUTHORS_SAVE_AS or 'authors.html' }}">Authors</a>
+                {% endif %}
+                {% if 'archives' in DIRECT_TEMPLATES %}
+                    <a href="{{ SITEURL }}/{{ ARCHIVES_URL or ARCHIVES_SAVE_AS or 'archives.html' }}">Archives</a>
+                {% endif %}
+                {% if 'categories' in DIRECT_TEMPLATES %}
+                    <a href="{{ SITEURL }}/{{ CATEGORIES_URL or CATEGORIES_SAVE_AS or 'categories.html' }}">Categories</a>
+                {% endif %}
+                {% if 'tags' in DIRECT_TEMPLATES %}
+                    <a href="{{ SITEURL }}/{{ TAGS_URL or TAGS_SAVE_AS or 'tags.html' }}">Tags</a>
+                {% endif %}
+
+            </div>
+        </footer>
+    </div>
+  </body>
 </html>
