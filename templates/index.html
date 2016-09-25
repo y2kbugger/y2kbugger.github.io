@@ -2,7 +2,7 @@
 {% block header %}
         <hgroup>
           <h1>{{SITENAME}}</h1>
-          <h2 class="tagline">{{TAGLINE}}</h2>
+          {% if TAGLINE %}<h2 class="tagline">{{TAGLINE}}</h2>{% endif %}
         </hgroup>
 {% endblock %}
 
