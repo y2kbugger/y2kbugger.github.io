@@ -4,8 +4,9 @@
     {% block htmlhead %}
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
-        <title>{{ SITENAME }}</title>
+        <title>{% block html_title %}{{ SITENAME }}{% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/theme/normalize.css">
         <link rel="stylesheet" href="/theme/styles.css">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="icon" href="/theme/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
@@ -64,6 +65,14 @@
 <script>
     $(function () {
         $('#menu').slicknav({'label': ''});
+    });
+</script>
+
+<script>
+    $(function () {
+        $.getScript("https://code.jquery.com/color/jquery.color.js", function () {
+            $('header.page-header').animate({backgroundColor: '#f8fdff'}, 1000);
+        });
     });
 </script>
 

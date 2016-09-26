@@ -12,7 +12,7 @@
 {% for article in articles_page.object_list %}
         <li><article class="hentry">
             <header class="article-list"> <h2 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="link to {{ article.title|striptags }}">{{ article.title }}</a></h2>
-                <div class="publication">
+                <div class="article-meta">
                     <address class="vcard author">By
                     {% for author in article.authors %}
                         <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
