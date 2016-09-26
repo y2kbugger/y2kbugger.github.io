@@ -1,69 +1,61 @@
 <!DOCTYPE html>
 <html lang="{{ DEFAULT_LANG }}">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>{{ SITENAME }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/theme/styles.css">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="icon" href="/theme/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
-    <link rel="apple-touch-icon" sizes="114x114" href="/theme/apple-touch-icon-precomposed.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/theme/favicon152.png">
-    <link rel="apple-touch-icon" sizes="196x196" href="/theme/favicon196.png">
+    {% block htmlhead %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <title>{{ SITENAME }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/theme/styles.css">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="icon" href="/theme/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
+        <link rel="apple-touch-icon" sizes="114x114" href="/theme/apple-touch-icon-precomposed.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/theme/favicon152.png">
+        <link rel="apple-touch-icon" sizes="196x196" href="/theme/favicon196.png">
+    {% endblock %}
 </head>
 
-  <body>
-    <div id="wrapper">
+<body>
+<div id="wrapper">
 
-      <header>
-	<nav class="byline"><ul id="menu">
-        {% for title, link in MENUITEMS %}
-            <li><a href="{{ link }}">{{ title }}</a></li>
-        {% endfor %}
-        {% if DISPLAY_PAGES_ON_MENU %}
-          {% for p in PAGES %}
-            <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
-          {% endfor %}
-        {% else %}
-          {% if DISPLAY_CATEGORIES_ON_MENU %}
-            {% for cat, null in categories %}
-              <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+
+    <nav class="byline">
+        <ul id="menu">
+            {% for title, link in MENUITEMS %}
+                <li><a href="{{ link }}">{{ title }}</a></li>
             {% endfor %}
-          {% endif %}
-        {% endif %}
-        </ul></nav><!-- /#menu -->
-        <div class="downloads">
-	    {% for site, url in SOCIAL%}
-          <a href="{{url}}" class="fa fa-{{site}}"></a>
-	  {% endfor %}
-        </div>
+            {% if DISPLAY_PAGES_ON_MENU %}
+                {% for p in PAGES %}
+                    <li{% if p == page %} class="active"{% endif %}><a
+                            href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+                {% endfor %}
+            {% elif DISPLAY_CATEGORIES_ON_MENU %}
+                {% for cat, null in categories %}
+                    <li{% if cat == category %} class="active"{% endif %}><a
+                            href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </nav>
+
+    <header class="page-header">
         {% block header %}
         {% endblock %}
-      </header>
+    </header>
+
+    <main class="content">
         {% block content %}
         {% endblock %}
+    </main>
 
-        <footer>
-            <a href="{{ SITEURL }}/pages/about.html">About</a>
-            <div class="right-footer">
-                {% if 'authors' in DIRECT_TEMPLATES %}
-                    <a href="{{ SITEURL }}/{{ AUTHORS_URL or AUTHORS_SAVE_AS or 'authors.html' }}">Authors</a>
-                {% endif %}
-                {% if 'archives' in DIRECT_TEMPLATES %}
-                    <a href="{{ SITEURL }}/{{ ARCHIVES_URL or ARCHIVES_SAVE_AS or 'archives.html' }}">Archives</a>
-                {% endif %}
-                {% if 'categories' in DIRECT_TEMPLATES %}
-                    <a href="{{ SITEURL }}/{{ CATEGORIES_URL or CATEGORIES_SAVE_AS or 'categories.html' }}">Categories</a>
-                {% endif %}
-                {% if 'tags' in DIRECT_TEMPLATES %}
-                    <a href="{{ SITEURL }}/{{ TAGS_URL or TAGS_SAVE_AS or 'tags.html' }}">Tags</a>
-                {% endif %}
+    <footer class="page-footer">
+        {% block footer %}
+            This is the blog "{{ SITENAME }}" &mdash; {{ COPYRIGHT }}
+        {% endblock %}
+    </footer>
 
-            </div>
-        </footer>
-    </div>
-  </body>
+</div>
+</body>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <link rel="stylesheet" href="/theme/slicknav.css">

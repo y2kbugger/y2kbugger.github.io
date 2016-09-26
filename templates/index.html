@@ -12,14 +12,14 @@
 {% for article in articles_page.object_list %}
         <li><article class="hentry">
             <header class="article-list"> <h2 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="link to {{ article.title|striptags }}">{{ article.title }}</a></h2>
-                <footer class="post-info">
+                <div class="publication">
                     <address class="vcard author">By
                     {% for author in article.authors %}
                         <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
                     {% endfor %}
                     </address>
                     <abbr class="published" title="{{ article.date.isoformat() }}"> {{ article.date.strftime(" on %d.%m.%Y") }} </abbr>
-                </footer><!-- /.post-info -->
+                </div>
 	    </header>
                 <div class="entry-content"> {{ article.summary }} </div><!-- /.entry-content -->
         </article></li>
