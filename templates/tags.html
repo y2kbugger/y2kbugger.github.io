@@ -5,16 +5,13 @@
 {% block header %}
     <hgroup>
         <h1>Tags</h1>
-        <h2>for &ldquo;{{ SITENAME }}&rdquor;</h2>
     </hgroup>
 {% endblock %}
 
 {% block content %}
-    <section>
-        <ul class="tag-overview">
-            {%- for tag, articles in tags|sort %}
-                <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> ({{ articles|count }})</li>
-            {% endfor %}
-        </ul>
-    </section>
+    <ul class="overview overview-tags">
+        {%- for tag, articles in tags|sort %}
+            <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> ({{ articles|count }})</li>
+        {% endfor %}
+    </ul>
 {% endblock %}

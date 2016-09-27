@@ -17,13 +17,23 @@
 </head>
 
 <body>
+{% macro author_and_date(article) %}
+    {% if article.author %}
+        <span class="author">By {{ article.author }}</span>
+    {% endif %}
+    {% if article.locale_date %}
+        <span class="publication-date" title="{{ article.date.isoformat() }}"> on {{ article.locale_date }}</span>
+    {% endif %}
+{% endmacro %}
+
 <div id="wrapper">
 
 
-    <nav class="byline">
+    <nav>
         <ul id="menu">
             {% for title, link in MENUITEMS %}
-                <li><a href="{{ link }}">{{ title }}</a></li>
+                <li{% if link == '/' + output_file %} class="active"{% endif %}><a href="{{ link }}">{{ title }}</a>
+                </li>
             {% endfor %}
             {% if DISPLAY_PAGES_ON_MENU %}
                 {% for p in PAGES %}
@@ -70,8 +80,19 @@
 
 <script>
     $(function () {
+        var duration = 2000;
+        var delay = 10000;
+        var el = $('header.page-header');
+
+        function randomFade() {
+            setTimeout(function () {
+                var color = $.Color({hue: Math.random() * 360, saturation: 1, lightness: 1 - 0.03 * Math.random()});
+                el.animate({backgroundColor: color}, {duration: duration, complete: randomFade});
+            }, delay);
+        }
+
         $.getScript("https://code.jquery.com/color/jquery.color.js", function () {
-            $('header.page-header').animate({backgroundColor: '#f8fdff'}, 1000);
+            randomFade();
         });
     });
 </script>

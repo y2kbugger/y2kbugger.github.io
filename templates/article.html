@@ -16,16 +16,12 @@
 {% endblock %}
 
 {% block header %}
-
-    <h1>{{ article.title }}</h1>
+    <hgroup>
+        <h1>{{ article.title }}</h1>
+    </hgroup>
 
     <div class="article-meta">
-        {% if article.author %}
-            <address class="author">By {{ article.author }}</address>
-        {% endif %}
-        {% if article.locale_date %}
-            <span class="publication-date" title="{{ article.date.isoformat() }}"> on {{ article.locale_date }}</span>
-        {% endif %}
+        {{ author_and_date(article) }}
 
         {% if article.tags|length > 0 %}
             <div class="tags">
@@ -35,27 +31,13 @@
                 {% endfor %}
             </div>
         {% endif %}
-
-
     </div>
 
 {% endblock %}
 
 {% block content %}
-    <section id="content" class="body article">
-        <div class="entry-content">
-            {{ article.content }}
-        </div>
-    </section>
-    <div class="neighbors">
-        {% if article.prev_article %}
-            <a href="{{ SITEURL }}/{{ article.prev_article.url }}"><i
-                    class="fa fa-arrow-circle-left"></i>{{ article.prev_article.title }}</a>
-        {% endif %}
-        {% if article.next_article %}
-            <a href="{{ SITEURL }}/{{ article.next_article.url }}" class="right-footer">{{ article.next_article.title }}<i
-                    class="fa fa-arrow-circle-right"></i></a>
-        {% endif %}
+    <div class="article-content">
+        {{ article.content }}
     </div>
 
     {% include 'integrations/disqus.html' %}

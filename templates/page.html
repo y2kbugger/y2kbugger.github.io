@@ -1,19 +1,20 @@
 {% extends "base.html" %}
 
-{% block html_title %}{{ page.title }}{%endblock%}
+{% block html_title %}{{ page.title }}{% endblock %}
 
 {% block header %}
-    <h1>{{ page.title }}</h1>
+    <hgroup>
+        <h1>{{ page.title }}</h1>
+    </hgroup>
 {% endblock %}
+
 {% block content %}
-<section>
 
     {{ page.content }}
 
-	{% if page.modified %}
-		<p>
-		Last updated: {{ page.locale_modified }}
-		</p>
-		{% endif %}
-</section>
+    {% if page.modified %}
+        <p>
+            Last updated: {{ page.locale_modified }}
+        </p>
+    {% endif %}
 {% endblock %}
