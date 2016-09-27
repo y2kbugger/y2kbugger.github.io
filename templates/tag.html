@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 
+{% block html_title %}{{ tag }} - {{ SITENAME }}{% endblock %}
+
 {% block header %}
-    <hgroup>
-        <h1>Articles tagged &ldquo;{{ tag }}&rdquo;</h1>
-    </hgroup>
+    <h1>Articles tagged<br />&ldquo;{{ tag }}&rdquo;</h1>
 {% endblock %}

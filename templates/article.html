@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% block html_title %}{{ article.title }} - {{ SITENAME }}{% endblock %}
+
 {% block htmlhead %}
     {{ super() }}
     {% for keyword in article.keywords %}
@@ -16,9 +18,7 @@
 {% endblock %}
 
 {% block header %}
-    <hgroup>
-        <h1>{{ article.title }}</h1>
-    </hgroup>
+    <h1>{{ article.title }}</h1>
 
     <div class="article-meta">
         {{ author_and_date(article) }}

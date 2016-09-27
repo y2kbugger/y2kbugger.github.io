@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 
-{% block title %}{{ SITENAME }} - Authors{% endblock %}
+{% block title %}Authors - {{ SITENAME }}{% endblock %}
 
 {% block content %}
-    <h1>Authors on {{ SITENAME }}</h1>
+
+    <h1>Authors</h1>
 
     <ul>
     {%- for author, articles in authors|sort %}

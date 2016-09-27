@@ -3,16 +3,20 @@
 {% block html_title %}Archives - {{ SITENAME }}{% endblock %}
 
 {% block header %}
-    <hgroup>
-        <h1>Archive</h1>
-    </hgroup>
+    <h1>Archive</h1>
 {% endblock %}
 
 {% block content %}
-    <dl>
+
+    <table class="archive">
+        <tbody>
         {% for article in dates %}
-            <dt>{{ article.locale_date }}</dt>
-            <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+            <tr>
+                <td class="date">{{ article.locale_date }}</td>
+                <td class="title"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></td>
+            </tr>
         {% endfor %}
-    </dl>
+        </tbody>
+    </table>
+
 {% endblock %}

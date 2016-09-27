@@ -3,15 +3,16 @@
 {% block html_title %}Tags - {{ SITENAME }}{% endblock %}
 
 {% block header %}
-    <hgroup>
-        <h1>Tags</h1>
-    </hgroup>
+    <h1>Tags</h1>
 {% endblock %}
 
 {% block content %}
     <ul class="overview overview-tags">
         {%- for tag, articles in tags|sort %}
-            <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> ({{ articles|count }})</li>
+            <li style="font-size: {{ articles|count|tag_count_to_font_size }}">
+                <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+                <span class="count">({{ articles|count }})</span>
+            </li>
         {% endfor %}
     </ul>
 {% endblock %}

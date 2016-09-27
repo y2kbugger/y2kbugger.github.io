@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
+{% block html_title %}Archives - {{ SITENAME }}{% endblock %}
+
 {% block header %}
-    <hgroup>
-        <h1>Archives for {{ period | reverse | join(' ') }}</h1>
-    </hgroup>
+    <h1>Archives for {{ period | reverse | join(' ') }}</h1>
 {% endblock %}
 
 {% block content %}

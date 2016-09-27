@@ -1,9 +1,7 @@
 {% extends "base.html" %}
 {% block header %}
-    <hgroup>
-        <h1>{{ SITENAME }}</h1>
-        {% if TAGLINE %}<h2 class="tagline">{{ TAGLINE }}</h2>{% endif %}
-    </hgroup>
+    <h1>{{ SITENAME }}</h1>
+    {% if TAGLINE %}<h2 class="tagline">{{ TAGLINE }}</h2>{% endif %}
 {% endblock %}
 
 {% block content %}
@@ -25,5 +23,7 @@
             </li>
         {% endfor %}
     </ul>
+
     {% include 'pagination.html' %}
+
 {% endblock content %}

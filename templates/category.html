@@ -1,6 +1,7 @@
 {% extends "index.html" %}
+
+{% block html_title %}{{ category }} - {{ SITENAME }}{% endblock %}
+
 {% block header %}
-    <hgroup>
-        <h1>Category &ldquo;{{ category }}&rdquo;</h1>
-    </hgroup>
+    <h1>Category<br />&ldquo;{{ category }}&rdquo;</h1>
 {% endblock %}
