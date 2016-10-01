@@ -76,7 +76,14 @@ p, ul, pre, table {
 code, pre {
     font-size: 0.8em;
     color: #222;
-    background-color: #eee;
+    background-color: #f5fafc;
+}
+
+pre {
+    line-height: 1.4;
+    padding: 0.5em;
+    overflow: scroll;
+    border: 1px solid #e4f2f7;
 }
 
 blockquote {
