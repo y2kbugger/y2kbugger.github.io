@@ -253,6 +253,10 @@ figure img {
     width: 100%;
 }
 
+main.content img {
+    max-width: 100%;
+}
+
 figcaption {
     text-align: center;
 }
