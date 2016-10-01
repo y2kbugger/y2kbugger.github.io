@@ -326,10 +326,6 @@ footer.page-footer {
         text-align: center;
     }
 
-    .downloads, .byline, footer {
-        display: none;
-    }
-
     header.page-header h1 {
         margin: 0;
         padding: 0;
@@ -340,10 +336,6 @@ footer.page-footer {
     header.page-header h2 {
         border: 0;
         margin: 0;
-    }
-
-    .downloads, footer {
-        display: none;
     }
 
     section {
@@ -360,16 +352,6 @@ footer.page-footer {
     #wrapper {
         margin: 15px;
         padding: 0;
-        padding-top: 40px;
-    }
-
-    .downloads, .byline {
-        text-align: center;
-        float: none;
-    }
-
-    .downloads a:first-child {
-        margin-left: 0;
     }
 
     header.page-header {
@@ -383,29 +365,10 @@ footer.page-footer {
         padding-top: 0.5em;
     }
 
-    .tagline {
-        border: 0;
-        margin-top: 0.5em;
-    }
-
     header.page-header div {
         border: 0;
     }
 
-    footer p {
-        width: 100%;
-        float: none;
-    }
-
-    footer p:last-child {
-        text-align: left;
-    }
-
-    .article-footer {
-        text-align: center;
-    }
-
-    /* #menu is the original menu */
     #menu {
         display: none;
     }
