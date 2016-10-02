@@ -19,6 +19,7 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unpor
 - [Slicknav](http://slicknav.com/) for compact menu on mobile. Enable by setting configuration variable `ENABLE_SLICKNAV`
 - Google Analytics: use the configuration variable `GOOGLE_ANALYTICS` to set your Google Analytics ID.
 - [Disqus](http://www.disqus.com) integration: use the configuration variable setting the variable `DISQUS_SITENAME`
+- Use `HEAD_EXTRA` to inject customisation elements into HTML head, for example favicon/apple-touch-icon  
 
 
 Example configuration settings (to put in `pelicanconf.py`):
@@ -37,5 +38,21 @@ ENABLE_SLICKNAV = True
 GOOGLE_ANALYTICS = 'UA-XXXX-YYYY' 
 
 DISQUS_SITENAME = "your_site_name"
+
+
+STATIC_PATHS = [
+    'extra/favicon.ico',
+    'extra/apple-touch-icon.png',
+]
+
+EXTRA_PATH_METADATA = {
+    'extra/favicon.ico': {'path': 'favicon.ico'},
+    'extra/apple-touch-icon.png': {'path': 'apple-touch-icon.png'},
+}
+
+HEAD_EXTRA = u"""
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+"""
 ```
 
