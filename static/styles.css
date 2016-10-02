@@ -376,7 +376,7 @@ footer.page-footer {
         border: 0;
     }
 
-    #menu {
+    #menu.with-slicknav {
         display: none;
     }
 

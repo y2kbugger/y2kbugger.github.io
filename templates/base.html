@@ -69,14 +69,16 @@
 </body>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<link rel="stylesheet" href="/theme/slicknav.css">
-<script src="/theme/jquery.slicknav.min.js"></script>
 
-<script>
-    $(function () {
-        $('#menu').slicknav({'label': ''});
-    });
-</script>
+{% if ENABLE_SLICKNAV != False %}
+    <link rel="stylesheet" href="/theme/lib/slicknav/slicknav.min.css">
+    <script src="/theme/lib/slicknav/jquery.slicknav.min.js"></script>
+    <script>
+        $(function () {
+            $('#menu').addClass("with-slicknav").slicknav({'label': ''});
+        });
+    </script>
+{% endif %}
 
 <script>
     $(function () {
