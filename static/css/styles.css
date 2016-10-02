@@ -126,8 +126,13 @@ body {
     background: #fff
 }
 
-.paginator {
+.pager {
     text-align: center;
+}
+
+.pager a {
+    display: inline-block;
+    margin: 0 1em;
 }
 
 header.page-header {
