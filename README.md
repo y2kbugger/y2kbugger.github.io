@@ -1,29 +1,41 @@
-#Martin theme for Pelican static site generator
+# William theme for Pelican static site generator
 
-This is a port of the Martin theme by Allison House to work with the [Pelican static site generator](http://blog.getpelican.com/)
 
-It supports the the following plugins or variables
+"William" is a theme for [Pelican static site generator](http://getpelican.com/). It is mobile/responsive oriented using a single column layout. It combines a bold typography with pristine graphical elements and restrained content placement. 
 
-- [Neighbor Article Plugin](https://github.com/getpelican/pelican-plugins/tree/master/neighbors)
-- global variable GOOGLE_ANALYTICS for your Google Analytics ID.
-- [font awesome](http://fortawesome.github.io/Font-Awesome/) for social and share links specified by global variables and the name of the font awesome icon after "fa-".
-e.g.:
+William is heavily based on [Martin-Pelican](https://github.com/cpaulik/martin-pelican), which is a port for Pelican of [Allison House](http://allison.house/)'s HTML theme ["Martin"](https://github.com/house/martin). The original description clarifies the naming of the themes:
+
+> Showcase your project in style with Martin, a bold, timeless theme for GitHub pages! Named for the punchcutter William Martin, apprentice to John Baskerville.
+
+## Licence
+
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0) License](http://creativecommons.org/licenses/by-sa/3.0/).
+
+
+## Features and usage
+
+
+- Define the menu with `MENUITEMS`. In addition, enable  `DISPLAY_PAGES_ON_MENU` to add all pages or `DISPLAY_CATEGORIES_ON_MENU` to add all categories to the menu.
+- [Slicknav](http://slicknav.com/) for compact menu on mobile. Enable by setting configuration variable `ENABLE_SLICKNAV`
+- Google Analytics: use the configuration variable `GOOGLE_ANALYTICS` to set your Google Analytics ID.
+- [Disqus](http://www.disqus.com) integration: use the configuration variable setting the variable `DISQUS_SITENAME`
+
+
+Example configuration settings (to put in `pelicanconf.py`):
+
 ```
-# Social widget
-SOCIAL = (('github', 'http://github.com/username),
-          ('twitter', 'http://twitter.com/username),
-          ('instagram', 'http://instagram.com/username))
+MENUITEMS = [
+    ("My blog", '/index.html'),
+    ('Tags', '/tags.html'),
+    ('About', '/pages/about.html'),
+]
+DISPLAY_PAGES_ON_MENU = False
+DISPLAY_CATEGORIES_ON_MENU = False
 
-SHARE = (('twitter', 'http://twitter.com/share', '?text=', '&amp;url='),
-         ('facebook', 'http://facebook.com/sharer.php', '?t=', '&amp;u='),
-         ('google-plus', 'http://plus.google.com/share', '?text=', '&amp;url='))
-```
+ENABLE_SLICKNAV = True
 
-- [Disqus](http://www.disqus.com) integration setting the variable
-```
+GOOGLE_ANALYTICS = 'UA-XXXX-YYYY' 
+
 DISQUS_SITENAME = "your_site_name"
 ```
 
-Showcase your project in style with Martin, a bold, timeless theme for GitHub pages! Named for the punchcutter William Martin, apprentice to John Baskerville. This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/). Check out the [live demo](http://cpaulik.github.io/martin-pelican/).
-
-![Martin theme preview](https://raw.githubusercontent.com/cpaulik/martin-pelican/master/Pelican_martin_theme_preview.png)

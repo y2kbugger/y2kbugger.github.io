@@ -28,7 +28,6 @@
 
 <div id="wrapper">
 
-
     <nav>
         <ul id="menu">
             {% for title, link in MENUITEMS %}
@@ -36,11 +35,12 @@
                 </li>
             {% endfor %}
             {% if DISPLAY_PAGES_ON_MENU %}
-                {% for p in PAGES %}
+                {% for p in pages %}
                     <li{% if p == page %} class="active"{% endif %}><a
                             href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
                 {% endfor %}
-            {% elif DISPLAY_CATEGORIES_ON_MENU %}
+            {% endif %}
+            {% if DISPLAY_CATEGORIES_ON_MENU %}
                 {% for cat, null in categories %}
                     <li{% if cat == category %} class="active"{% endif %}><a
                             href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
@@ -70,7 +70,7 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-{% if ENABLE_SLICKNAV != False %}
+{% if ENABLE_SLICKNAV %}
     <link rel="stylesheet" href="/theme/lib/slicknav/slicknav.min.css">
     <script src="/theme/lib/slicknav/jquery.slicknav.min.js"></script>
     <script>
