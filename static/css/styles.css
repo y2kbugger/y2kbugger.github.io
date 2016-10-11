@@ -8,6 +8,7 @@
 body {
     font: 200 18px/1.61em 'Open Sans', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
     color: #444;
+    overflow-x: hidden;
 }
 
 a {
