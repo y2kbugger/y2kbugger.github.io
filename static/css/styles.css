@@ -279,6 +279,18 @@ figcaption {
     color: #444;
 }
 
+.read-more {
+    font-size: 75%;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 2;
+    color: #444;
+}
+
+.read-more a {
+    text-decoration: none;
+}
+
 header.page-header .article-meta {
     margin-top: 1em;
     font-size: 12pt;

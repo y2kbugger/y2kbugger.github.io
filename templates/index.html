@@ -18,7 +18,13 @@
                             {{ author_and_date(article) }}
                         </div>
                     </header>
-                    <div class="article-content article-summary"> {{ article.summary }} </div>
+                    <div class="article-content article-summary">
+                        {{ article.summary }}
+                        <div class="read-more">
+                            <a href="{{ SITEURL }}/{{ article.url }}"
+                               title="link to {{ article.title|striptags }}">Read more</a>
+                        </div>
+                    </div>
                 </article>
             </li>
         {% endfor %}
