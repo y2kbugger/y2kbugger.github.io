@@ -1,0 +1,418 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans:300italic,600italic,300,600);
+@import url(//fonts.googleapis.com/css?family=Anonymous+Pro:900bold,900);
+
+/*--------------------------------
+  Typography
+--------------------------------*/
+
+body {
+    font: 200 18px/1.61em 'Open Sans', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color: #444;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: underline;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #2196F3;
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: 600;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+    font-family: 'Anonymous Pro',  "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+    font-style: Bold;
+    font-weight: 900;
+    color: #222;
+    margin: 1em 0;
+}
+
+h1 {
+    font-size: 2em;
+    line-height: 1.33em;
+}
+
+h2 {
+    font-size: 1.8em;
+    line-height: 1.25em;
+}
+
+h3 {
+    font-size: 1.15em;
+}
+
+h4 {
+    font-size: 1em;
+}
+
+h5 {
+    font-size: 0.78em;
+}
+
+h6 {
+    font-size: 0.67em;
+}
+
+h4, h5, h6 {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+p, ul, pre, table {
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+code, pre {
+    font-size: 0.8em;
+    color: #222;
+    background-color: #f6f6f6;
+}
+
+pre {
+    line-height: 1.4;
+    padding: 0.5em;
+    overflow: auto;
+}
+
+blockquote {
+    border-left: 4px solid #888;
+    color: #222;
+    padding-left: 2em;
+    margin: 0;
+}
+
+table {
+    width: 100%;
+}
+
+th, td {
+    padding: 1em;
+}
+
+th {
+    border-bottom: 1px solid #222;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.7em;
+    text-align: center;
+    color: #222;
+}
+
+/*--------------------------------
+  Layout
+--------------------------------*/
+
+body {
+    margin: 0;
+}
+
+#wrapper {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 0 9%;
+    background: #fff
+}
+
+.pager {
+    text-align: center;
+}
+
+.pager a {
+    display: inline-block;
+    margin: 0 1em;
+}
+
+header.page-header {
+    clear: both;
+    border-top: 3px solid #222;
+    border-bottom: 10px solid #222;
+    margin: 0 -4em;
+    padding: 4em 4em 2em;
+}
+
+nav {
+    font-size: 12pt;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+nav ul#menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 0 -.5em;
+}
+
+nav li {
+    display: inline-block;
+    padding: 0 1ex 0 0;
+    margin: 0;
+}
+
+nav li a {
+    color: #888;
+    text-decoration: none;
+    display: inline-block;
+    padding: .5em;
+}
+
+nav li.active a {
+    color: #222;
+}
+
+.article-list {
+    border: 0;
+    padding-bottom: 0.5em;
+}
+
+.article-title {
+    margin: 0;
+    padding: 0;
+
+}
+
+.article-title a {
+    text-decoration: none;
+}
+
+header.page-header h1 {
+    margin: 0;
+    padding: 0;
+    line-height: 0.9em;
+    font-size: 3.5em;
+}
+
+header.page-header h2 {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5em;
+}
+
+main {
+    padding-top: 5em;
+    padding-bottom: 4em;
+    min-height: 15em;
+}
+
+.article {
+    padding-top: 2em;
+    padding-bottom: 0em;
+    border-bottom: 0;
+}
+
+address {
+    font-style: normal;
+}
+
+ul.overview-tags {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    text-align: center;
+}
+
+ul.overview-tags li {
+    display: inline-block;
+    padding: 0 0.5ex;
+}
+
+.overview-tags .count {
+    font-size: 75%;
+    color: #ccc;
+}
+
+.overview-tags li:hover .count {
+    color: #444;
+}
+
+ul.overview-tags a {
+    text-decoration: none;
+}
+
+#article-list {
+    list-style-type: none;
+    marging: 0;
+    padding: 0;
+}
+
+#article-list li.article-list {
+    padding-bottom: 3em;
+    border-bottom: 2px solid #222;
+    margin-bottom: 4em;
+}
+
+figure {
+    margin: 0.4em;
+}
+
+figure img {
+    width: 100%;
+}
+
+main.content img {
+    max-width: 100%;
+}
+
+figcaption {
+    text-align: center;
+}
+
+.article-meta {
+    font-size: 75%;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 2;
+    color: #444;
+}
+
+.read-more {
+    font-size: 75%;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 2;
+    color: #444;
+}
+
+.read-more a {
+    text-decoration: none;
+}
+
+header.page-header .article-meta {
+    margin-top: 1em;
+    font-size: 12pt;
+}
+
+div#content > h1:first-child {
+    display: none;
+}
+
+table.archive td {
+    padding: 0 1em 1ex 0;
+    vertical-align: top;
+}
+
+table.archive td.date {
+    font-size: 75%;
+    color: #888;
+}
+
+table.archive a {
+    text-decoration: none;
+}
+
+table.highlighttable {
+    background-color: #f6f6f6;
+    padding: 0px;
+}
+
+table.highlighttable pre {
+    border: 0px;
+    padding: 0px;
+}
+
+div.linenodiv {
+    border-right: 2px solid #e4f2f7;
+}
+
+.src {
+    background-color: #263238;
+    color: #ffffff;
+    padding-left: 5px;
+    overflow: auto;
+}
+
+.slicknav_menu {
+    display: none;
+    position: fixed;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+footer.page-footer {
+    margin-top: 100px;
+    border-top: 1px solid #222;
+    padding-top: 1em;
+    padding-bottom: 3em;
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #666;
+}
+
+@media print {
+    body {
+        font-size: 12px;
+    }
+
+    header.page-header {
+        border: 0;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    header.page-header h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 3em;
+        border: 0;
+    }
+
+    header.page-header h2 {
+        border: 0;
+        margin: 0;
+    }
+
+    section {
+        border: 0;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    body {
+        font-size: 16px;
+        background: #fff;
+    }
+
+    #wrapper {
+        margin: 0 15px;
+        padding: 20px 0 0;
+    }
+
+    header.page-header {
+        text-align: center;
+    }
+
+    header.page-header h1 {
+        font-size: 3em;
+        border: 0;
+        padding: 0;
+        padding-top: 0.5em;
+    }
+
+    header.page-header div {
+        border: 0;
+    }
+
+    #menu.with-slicknav {
+        display: none;
+    }
+
+    .slicknav_menu {
+        display: block;
+    }
+}

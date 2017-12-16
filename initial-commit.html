@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <title>My Intial Commit - y2kbugger</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link rel="stylesheet" href="/theme/css/styles.css">
+        <link rel="stylesheet" href="/theme/css/pygment.css">
+        
+
+
+
+        <meta name="tags" contents="testing"/>
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <nav>
+        <ul id="menu">
+                    <li class="active"><a
+                            href="http://blog.y2kbugger.com/category/not-real.html">not-real</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+    <h1>My Intial Commit</h1>
+
+    <div class="article-meta">
+                <span class="author">By zak kohler</span>
+        <span class="publication-date" title="2017-12-15T23:12:30-05:00"> on Fri 15 December 2017</span>
+
+
+            <div class="tags">
+                Tagged:
+                    <a href="http://blog.y2kbugger.com/tag/testing.html">testing</a>            </div>
+    </div>
+
+    </header>
+
+    <main class="content">
+    <div class="article-content">
+        <p>This is a draft that will never be published</p>
+<div class="section" id="subtitle">
+<h2>subtitle</h2>
+<p>this is good code:</p>
+<div class="highlight"><pre><span></span>$ pipenv run python
+</pre></div>
+<p>the end cool</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="kn">from</span> <span class="nn">htooze</span> <span class="kn">import</span> <span class="n">world</span>
+
+ <span class="k">def</span> <span class="nf">test_planet_exists</span><span class="p">():</span>
+     <span class="n">p</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">Planet</span><span class="p">()</span>
+     <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">world</span><span class="o">.</span><span class="n">Planet</span><span class="p">)</span>
+
+ <span class="k">def</span> <span class="nf">test_life_can_exist</span><span class="p">():</span>
+     <span class="n">mycell</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">Cell</span><span class="p">()</span>
+     <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mycell</span><span class="p">,</span> <span class="n">world</span><span class="o">.</span><span class="n">Cell</span><span class="p">)</span>
+
+ <span class="k">def</span> <span class="nf">test_planet_starts_without_life</span><span class="p">():</span>
+     <span class="n">p</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">Planet</span><span class="p">()</span>
+     <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">life</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+
+ <span class="k">def</span> <span class="nf">test_life_can_live_on_planet</span><span class="p">():</span>
+     <span class="n">p</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">Planet</span><span class="p">()</span>
+     <span class="n">mycell</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">Cell</span><span class="p">()</span>
+     <span class="n">p</span><span class="o">.</span><span class="n">addcell</span><span class="p">(</span><span class="n">mycell</span><span class="p">)</span>
+
+     <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">life</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+     <span class="k">for</span> <span class="n">coords</span><span class="p">,</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">life</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+         <span class="k">assert</span> <span class="n">cell</span> <span class="ow">is</span> <span class="n">mycell</span>
+         <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span>
+         <span class="k">assert</span> <span class="nb">int</span><span class="p">(</span><span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</td></tr></table><p>more
+real</p>
+</div>
+
+    </div>
+
+    </main>
+
+    <footer class="page-footer">
+            
+    </footer>
+
+</div>
+</body>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+
+</html>
