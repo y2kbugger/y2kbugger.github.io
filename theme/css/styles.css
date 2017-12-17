@@ -39,12 +39,12 @@ h4, h5, h6 {
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 2.2em;
     line-height: 1.33em;
 }
 
 h2 {
-    font-size: 1.8em;
+    font-size: 1.5em;
     line-height: 1.25em;
 }
 
@@ -140,7 +140,7 @@ header.page-header {
     border-top: 3px solid #222;
     border-bottom: 10px solid #222;
     margin: 0 -4em;
-    padding: 4em 4em 2em;
+    padding: 0em 
 }
 
 nav {
@@ -189,15 +189,17 @@ nav li.active a {
 
 header.page-header h1 {
     margin: 0;
-    padding: 0;
-    line-height: 0.9em;
-    font-size: 3.5em;
+    padding: 0.6em;
+    /* line-height: 0.9em; */
+    /* padding-top: .5em; */
+    /* padding-bottom: .5em; */
+    /* font-size: 2.4em; */
 }
 
 header.page-header h2 {
     margin: 0;
     padding: 0;
-    line-height: 1.5em;
+    /* line-height: 1.6em; */
 }
 
 main {
@@ -251,7 +253,7 @@ ul.overview-tags a {
 #article-list li.article-list {
     padding-bottom: 3em;
     border-bottom: 2px solid #222;
-    margin-bottom: 4em;
+    margin-bottom: 3em;
 }
 
 figure {
@@ -292,7 +294,7 @@ figcaption {
 
 header.page-header .article-meta {
     margin-top: 1em;
-    font-size: 12pt;
+    /* font-size: 12pt; */
 }
 
 div#content > h1:first-child {
@@ -360,16 +362,15 @@ footer.page-footer {
     }
 
     header.page-header {
+        text-align: left;
         border: 0;
         padding: 0;
         margin: 0;
-        text-align: center;
     }
 
     header.page-header h1 {
         margin: 0;
         padding: 0;
-        font-size: 3em;
         border: 0;
     }
 
@@ -385,25 +386,30 @@ footer.page-footer {
 
 @media screen and (max-width: 650px) {
     body {
-        font-size: 16px;
+        font-size: 14px;
         background: #fff;
     }
 
     #wrapper {
         margin: 0 15px;
-        padding: 20px 0 0;
+        padding: 10px 0 0;
     }
 
     header.page-header {
-        text-align: center;
+        text-align: left;
+        margin: 0;
     }
 
     header.page-header h1 {
-        font-size: 3em;
-        border: 0;
-        padding: 0;
-        padding-top: 0.5em;
+        font-size: 1.8em;
+        /* border: 0; */
+        /* padding: 0; */
+        /* padding-top: 0.5em; */
+        /* padding-bottom: 0.3em; */
     }
+
+    header.page-header h2 {
+        font-size: 0.8em;
 
     header.page-header div {
         border: 0;
