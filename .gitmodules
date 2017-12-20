@@ -1,0 +1,3 @@
+[submodule "themes/william-pelican"]
+	path = themes/william-pelican
+	url = git@github.com:soxofaan/william-pelican.git
