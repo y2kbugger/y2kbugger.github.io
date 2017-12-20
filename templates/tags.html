@@ -9,7 +9,7 @@
 {% block content %}
     <ul class="overview overview-tags">
         {%- for tag, articles in tags|sort %}
-            <li style="font-size: {{ articles|count|tag_count_to_font_size }}">
+            <li>
                 <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
                 <span class="count">({{ articles|count }})</span>
             </li>

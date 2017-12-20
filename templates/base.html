@@ -77,25 +77,6 @@
     </script>
 {% endif %}
 
-<script>
-    $(function () {
-        var duration = 5000;
-        var delay = 5000;
-        var el = $('header.page-header');
-
-        function randomFade() {
-            setTimeout(function () {
-                var color = $.Color({hue: Math.random() * 360, saturation: 1, lightness: 1 - 0.03 * Math.random()});
-                el.animate({backgroundColor: color}, {duration: duration, complete: randomFade});
-            }, delay);
-        }
-
-        $.getScript("https://code.jquery.com/color/jquery.color.js", function () {
-            randomFade();
-        });
-    });
-</script>
-
 {% include 'integrations/googleanalytics.html' %}
 
 </html>

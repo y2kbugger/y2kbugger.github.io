@@ -1,5 +1,5 @@
 @import url(//fonts.googleapis.com/css?family=Open+Sans:300italic,600italic,300,600);
-@import url(//fonts.googleapis.com/css?family=Playfair+Display:900italic,900);
+@import url(//fonts.googleapis.com/css?family=Anonymous+Pro:900bold,900);
 
 /*--------------------------------
   Typography
@@ -31,20 +31,20 @@ strong {
 
 h1, h2, h3,
 h4, h5, h6 {
-    font-family: 'Playfair Display', "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
-    font-style: italic;
+    font-family: 'Anonymous Pro',  "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+    font-style: Bold;
     font-weight: 900;
     color: #222;
     margin: 1em 0;
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 2.2em;
     line-height: 1.33em;
 }
 
 h2 {
-    font-size: 1.8em;
+    font-size: 1.5em;
     line-height: 1.25em;
 }
 
@@ -77,14 +77,13 @@ p, ul, pre, table {
 code, pre {
     font-size: 0.8em;
     color: #222;
-    background-color: #f5fafc;
+    background-color: #f6f6f6;
 }
 
 pre {
     line-height: 1.4;
-    padding: 0.5em;
-    overflow: scroll;
-    border: 1px solid #e4f2f7;
+    padding: 0.3em;
+    overflow: auto;
 }
 
 blockquote {
@@ -99,7 +98,7 @@ table {
 }
 
 th, td {
-    padding: 1em;
+    padding: 0.3em;
 }
 
 th {
@@ -141,7 +140,7 @@ header.page-header {
     border-top: 3px solid #222;
     border-bottom: 10px solid #222;
     margin: 0 -4em;
-    padding: 4em 4em 2em;
+    padding: 0em;
 }
 
 nav {
@@ -181,7 +180,6 @@ nav li.active a {
 .article-title {
     margin: 0;
     padding: 0;
-
 }
 
 .article-title a {
@@ -190,15 +188,17 @@ nav li.active a {
 
 header.page-header h1 {
     margin: 0;
-    padding: 0;
-    line-height: 0.9em;
-    font-size: 3.5em;
+    padding: 0.6em;
+    /* line-height: 0.9em; */
+    /* padding-top: .5em; */
+    /* padding-bottom: .5em; */
+    /* font-size: 2.4em; */
 }
 
 header.page-header h2 {
     margin: 0;
     padding: 0;
-    line-height: 1.5em;
+    /* line-height: 1.6em; */
 }
 
 main {
@@ -232,7 +232,7 @@ ul.overview-tags li {
 
 .overview-tags .count {
     font-size: 75%;
-    color: #ccc;
+    color: #ccc;g
 }
 
 .overview-tags li:hover .count {
@@ -245,14 +245,14 @@ ul.overview-tags a {
 
 #article-list {
     list-style-type: none;
-    marging: 0;
+    margin: 0;
     padding: 0;
 }
 
 #article-list li.article-list {
     padding-bottom: 3em;
     border-bottom: 2px solid #222;
-    margin-bottom: 4em;
+    margin-bottom: 3em;
 }
 
 figure {
@@ -293,7 +293,7 @@ figcaption {
 
 header.page-header .article-meta {
     margin-top: 1em;
-    font-size: 12pt;
+    /* font-size: 12pt; */
 }
 
 div#content > h1:first-child {
@@ -314,11 +314,26 @@ table.archive a {
     text-decoration: none;
 }
 
+table.highlighttable {
+    background-color: #f6f6f6;
+    padding: 0px;
+}
+
+table.highlighttable pre {
+    border: 0px;
+    padding: 0px;
+}
+
+div.linenodiv {
+    border-right: 2px solid #c5d5da;
+    padding-right: 0.4em;
+}
+
 .src {
     background-color: #263238;
     color: #ffffff;
     padding-left: 5px;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .slicknav_menu {
@@ -330,12 +345,13 @@ table.archive a {
 }
 
 footer.page-footer {
-    margin-top: 100px;
+    margin-top: 0px;
     border-top: 1px solid #222;
     padding-top: 1em;
-    padding-bottom: 3em;
+    padding-bottom: 1em;
     font-size: 9pt;
-    text-transform: uppercase;
+    text-align: center;
+    /* text-transform: uppercase; */
     letter-spacing: 0.1em;
     color: #666;
 }
@@ -346,16 +362,15 @@ footer.page-footer {
     }
 
     header.page-header {
+        text-align: left;
         border: 0;
         padding: 0;
         margin: 0;
-        text-align: center;
     }
 
     header.page-header h1 {
         margin: 0;
         padding: 0;
-        font-size: 3em;
         border: 0;
     }
 
@@ -371,24 +386,30 @@ footer.page-footer {
 
 @media screen and (max-width: 650px) {
     body {
-        font-size: 16px;
-        background: #fff;
+        font-size: 14px;
+        /* background: #fff; */
     }
 
     #wrapper {
         margin: 0 15px;
-        padding: 20px 0 0;
+        padding: 10px 0 0;
     }
 
     header.page-header {
-        text-align: center;
+        text-align: left;
+        margin: 0;
     }
 
     header.page-header h1 {
-        font-size: 3em;
-        border: 0;
-        padding: 0;
-        padding-top: 0.5em;
+        font-size: 1.8em;
+        /* border: 0; */
+        /* padding: 0; */
+        /* padding-top: 0.5em; */
+        /* padding-bottom: 0.3em; */
+    }
+
+    header.page-header h2 {
+        font-size: 0.8em;
     }
 
     header.page-header div {
