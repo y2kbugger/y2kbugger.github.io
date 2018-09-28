@@ -3,19 +3,21 @@
 <head>
             <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
-        <title>A Simple Compact LED Module for viewing Data on a Bus - y2kbugger</title>
+        <title>A Compact LED Module 8-bit Bus Indicator - y2kbugger</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/theme/css/normalize.css">
         <link rel="stylesheet" href="/theme/css/styles.css">
         <link rel="stylesheet" href="/theme/css/pygment.css">
         
-    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
 
 
 
 
         <meta name="tags" contents="retrocomputing"/>
-        <meta name="tags" contents="displays"/>
+        <meta name="tags" contents="display"/>
+        <meta name="tags" contents="resistor-network"/>
+        <meta name="tags" contents="z80"/>
 </head>
 
 <body>
@@ -32,7 +34,7 @@
     </nav>
 
     <header class="page-header">
-    <h1>A Simple Compact LED Module for viewing Data on a Bus</h1>
+    <h1>A Compact LED Module 8-bit Bus Indicator</h1>
 
     <div class="article-meta">
                 <span class="author">By zak kohler</span>
@@ -41,16 +43,31 @@
 
             <div class="tags">
                 Tagged:
-                    <a href="http://blog.y2kbugger.com/tag/retrocomputing.html">retrocomputing</a>,                    <a href="http://blog.y2kbugger.com/tag/displays.html">displays</a>            </div>
+                    <a href="http://blog.y2kbugger.com/tag/retrocomputing.html">retrocomputing</a>,                    <a href="http://blog.y2kbugger.com/tag/display.html">display</a>,                    <a href="http://blog.y2kbugger.com/tag/resistor-network.html">resistor-network</a>,                    <a href="http://blog.y2kbugger.com/tag/z80.html">z80</a>            </div>
     </div>
 
     </header>
 
     <main class="content">
     <div class="article-content">
-        <div class="section" id="xxxxxxxxxxxxxxxxxxxxxx">
-<h2>XXXXXXXXXXXXXXXXXXXXXX</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="section" id="simple-glanceable-blinkenlights">
+<h2>Simple Glanceable Blinkenlights</h2>
+<p>I have been working on Z80 based breadboard computer. First step was to get the
+chip up and running and verify that the program counter was working. From there
+I wanted a simple way to see that things were happening on the data and address
+bus.</p>
+<img alt="altair" class="align-center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Altair_8800_at_the_Computer_History_Museum%2C_cropped.jpg/640px-Altair_8800_at_the_Computer_History_Museum%2C_cropped.jpg" style="width: 99%;" />
+<p>Needed to decided on the resistance to use.
+Don't want to interfere with the operation of the Z80. Is it possible to have a
+low enough current that I don't need to buffer when I am on the data bus for
+instance?</p>
+<p>My CMOS Z80 can output one TTL load. ** elaborate.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum.</p>
 <p>I am only doing <a class="reference external" href="http://blog.y2kbugger.com/tag/testing.html">testing</a> right now, real to come soon.</p>
 <p>this is good code:</p>
 <div class="highlight"><pre><span></span>$ pipenv run python
@@ -111,6 +128,23 @@
 
     </div>
 
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'blog-y2kbugger'; // required: replace example with your forum shortname
+        var disqus_identifier = 'drafts/compact-bus-display.html';
+        var disqus_url = 'http://blog.y2kbugger.com/drafts/compact-bus-display.html';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </main>
 
     <footer class="page-footer">
