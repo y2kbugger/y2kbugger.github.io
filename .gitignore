@@ -1,3 +1,7 @@
+# blog dev server lock files
+pelican.pid
+srv.pid
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
