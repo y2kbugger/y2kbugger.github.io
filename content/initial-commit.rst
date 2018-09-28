@@ -9,8 +9,6 @@ My Intial Commit
 :author: zak kohler
 :summary: Verifying everything is set up correctly.
 
-This is a draft that will never be published
-
 
 subtitle
 --------
