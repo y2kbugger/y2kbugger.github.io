@@ -11,8 +11,13 @@ THEME = 'themes/william-pelican/'
 
 TIMEZONE = 'America/New_York'
 DEFAULT_DATE_FORMAT = '%Y.%m.%d @ %H:%M:%S'
+DEFAULT_DATE = 'fs'
 
 DEFAULT_LANG = 'en'
+USE_FOLDER_AS_CATEGORY = True
+DEFAULT_METADATA = {
+    'status': 'draft',
+}
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -26,7 +31,7 @@ MENUITEMS = [
     ('Tags', '/tags.html'),
     # ('About', '/pages/about.html'),
 ]
-DISPLAY_PAGES_ON_MENU = True
+DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = True
 
 # Blogroll
@@ -54,10 +59,17 @@ EXTRA_PATH_METADATA = {
     'extra/CNAME': {'path': 'CNAME'},
 }
 
-HEAD_EXTRA = u"""
-    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
+HEAD_EXTRA_PROD = """
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
 """
+
+HEAD_EXTRA_DEBUG = """
+<script type="text/javascript" src="http://livejs.com/live.js"></script>
+"""
+
+HEAD_EXTRA = HEAD_EXTRA_PROD + HEAD_EXTRA_DEBUG
+
 
 COPYRIGHT = """zak kohler 2017 &mdash; Happy Hacking"""
 
-# ENABLE_SLICKNAV = True
+ENABLE_SLICKNAV = False

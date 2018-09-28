@@ -10,6 +10,7 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
+DEBUG = False
 SITEURL = 'http://blog.y2kbugger.com'
 RELATIVE_URLS = False
 
@@ -19,5 +20,7 @@ CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 DELETE_OUTPUT_DIRECTORY = True
 
 # Following items are often useful when publishing
-# DISQUS_SITENAME = "blog-y2kbugger"
+DISQUS_SITENAME = "blog-y2kbugger"
 GOOGLE_ANALYTICS = "UA-111274102-1"
+
+HEAD_EXTRA = HEAD_EXTRA_PROD
