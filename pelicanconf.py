@@ -10,11 +10,12 @@ PATH = 'content'
 THEME = 'themes/william-pelican/'
 
 TIMEZONE = 'America/New_York'
-DEFAULT_DATE_FORMAT = '%Y.%m.%d @ %H:%M:%S'
+DEFAULT_DATE_FORMAT = '%Y.%m.%d @ %H:%M'
 DEFAULT_DATE = 'fs'
 
 DEFAULT_LANG = 'en'
 USE_FOLDER_AS_CATEGORY = True
+SLUGIFY_SOURCE = 'basename'
 DEFAULT_METADATA = {
     'status': 'draft',
 }
