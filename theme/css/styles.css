@@ -275,6 +275,10 @@ figcaption {
     color: #444;
 }
 
+.modification-date {
+    font-size: 75%;
+}
+
 .read-more {
     font-size: 75%;
     text-transform: uppercase;
