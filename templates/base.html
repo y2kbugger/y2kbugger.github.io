@@ -23,6 +23,9 @@
     {% if article.locale_date %}
         <span class="publication-date" title="{{ article.date.isoformat() }}"> on {{ article.locale_date }}</span>
     {% endif %}
+    {% if article.modified %}
+        <span class="modification-date" title="{{ article.modified.isoformat() }}"> last modified on {{ article.modified|strftime(DEFAULT_DATE_FORMAT) }}</span>
+    {% endif %}
 {% endmacro %}
 
 <div id="wrapper">
