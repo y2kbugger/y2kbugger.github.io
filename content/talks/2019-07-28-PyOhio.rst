@@ -1,0 +1,22 @@
+Learn How Computers Work Between Silicon and Assembly: Build a CPU with Python
+###############################################################################
+
+:date: 2019-07-28
+:tags: PyOhio, Python, Retrocomputing
+:author: zak kohler
+:summary: PyOhio 2019, Columbus, Ohio
+:status: published
+
+@ **PyOhio**, *Columbus, Ohio*
+
+`Slides <https://drive.google.com/open?id=1u8qlAK4SeqFX3ybT7zVuKWItMvCadhsgF9WmCCOM3dQ>`_ `Live Jupyter Notebook <https://gke.mybinder.org/v2/git/https%3A%2F%2Fy2kbugger%40bitbucket.org%2Fy2kbugger%2Fsapy.git/de5086ea943c94fec40e14478257ab2716e28c96?filepath=Simple%20As%20Possible.ipynb>`_
+
+.. code-block:: giturl
+
+   git clone https://y2kbugger@bitbucket.org/y2kbugger/sapy.git
+
+.. git clone --branch 2019-07-28-PyOhio https://y2kbugger@bitbucket.org/y2kbugger/sapy.git
+
+Programming languages are designed for a specific level of abstraction or distance from the hardware. The main trade off is "developer productivity" vs. "control over hardware". C and assembly are low level and therefore map closely to CPU instructions. Python on the other hand goes through many layers, libraries, and a virtual machine before the CPU is reached. This allows powerful programs to be written concisely and cross-platform—but it also conceals the true nature at the heart of our modern world. Unveiling the magic within can lead to interesting insights about how computing got to where it is today.
+
+We will build up CPU focused on transparency, interactivity, and modularity. Our CPU has a configurable architecture and machine language. Yes, you can invent your own assembly instructors to add functionality. We will cover registers, data/address busses, memory (ROM/RAM), IO, and assemblers.
