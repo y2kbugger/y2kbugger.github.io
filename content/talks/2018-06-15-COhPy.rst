@@ -1,0 +1,14 @@
+Using Termux: Creating a first class Python environment on Android CLI or how I pushed mobile development too far.
+######################################################################################################################
+
+:date: 2018-06-15
+:tags: COhPy, Python, Android, Termux
+:author: zak kohler
+:summary: COhPy June Meeting, Columbus, Ohio
+:status: published
+
+@ **COhPy June Meeting**, *Columbus, Ohio*
+
+`Slides <https://drive.google.com/open?id=1I6jmlPeBjosl1zJ_XNTXPfcvKGAKvzoYqedefctW6m0>`_
+
+So you've tried QPython but it just doesn't feel complete? Not sure how to "go mobile" as laptops become uselessly obsolete? Whether you love VIM or not you'll enjoy having the full power of a linux CLI to manage your Android Python development environment. Combining the Termux package repo and pip allows installing most packages directly and building many more from source using clang. Pipenv and git can also be used to synchronize development between your phone and other environments, and if you're a vimmer autocomplete is just a few extensions away. Data scientists will also enjoy the unexpected interactive support.
