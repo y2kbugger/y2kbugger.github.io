@@ -3,7 +3,7 @@
 <head>
             <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
-        <title>A Compact LED Module 8-bit Bus Indicator - y2kbugger</title>
+        <title>A Compact LED 8-bit Bus Indicator - y2kbugger</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/theme/css/normalize.css">
         <link rel="stylesheet" href="/theme/css/styles.css">
@@ -32,11 +32,13 @@
                 </li>
                     <li><a
                             href="http://blog.y2kbugger.com/category/food.html">food</a></li>
+                    <li><a
+                            href="http://blog.y2kbugger.com/category/talks.html">talks</a></li>
         </ul>
     </nav>
 
     <header class="page-header">
-    <h1>A Compact LED Module 8-bit Bus Indicator</h1>
+    <h1>A Compact LED 8-bit Bus Indicator</h1>
 
     <div class="article-meta">
                 <span class="author">By zak kohler</span>
@@ -52,82 +54,38 @@
 
     <main class="content">
     <div class="article-content">
-        <div class="section" id="simple-glanceable-blinkenlights">
-<h2>Simple Glanceable Blinkenlights</h2>
-<p>I have been working on Z80 based breadboard computer. First step was to get the
-chip up and running and verify that the program counter was working. From there
-I wanted a simple way to see that things were happening on the data and address
-bus.</p>
+        <div class="section" id="blinkenlights-in-binary-and-hex">
+<h2>Blinkenlights in Binary and Hex</h2>
+<p>I will walk through my experimentation that lead to my final design for my front panel bus visualizer.</p>
+</div>
+<div class="section" id="motivation">
+<h2>Motivation</h2>
+<p>This is made as a component of my single board Z80 trainer. Defining my Single
+Board Computer (SBC) as a trainer basically means that its purpose it expose as
+much implementation as possible to the user. This means entering machine code
+by hand into memory, stopping the clock and directly examining memory. This can
+be done either mostly in software, or mostly in hardware. If you really want to
+bootstrap yourself from bare metal then it helps to build some of this monitor
+functionality into the hardware.</p>
 <img alt="altair" class="align-center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Altair_8800_at_the_Computer_History_Museum%2C_cropped.jpg/640px-Altair_8800_at_the_Computer_History_Museum%2C_cropped.jpg" style="width: 99%;" />
+<p>When you have to type your bootstrap and paper tape driver by hand, <a class="reference external" href="https://www.youtube.com/watch?v=5zbtNImG2NE">it can be a magical experience</a>.</p>
+</div>
+<div class="section" id="simple-beginnings">
+<h2>Simple Beginnings</h2>
+<p>My SBC trainer will be based on the z80, having an 8-bit databus and a 16-bit memory address space. First step was to get the
+up and running and verify that the program counter was working. This can basically be done with resistors and power and a single LED. I got a lot of inspiration from <a class="reference external" href="https://www.youtube.com/watch?v=AZb4NLXx1aMchip">this video</a>.</p>
+<p>I wanted a simple way to see that things were happening on the data and address
+bus.</p>
 <p>Needed to decided on the resistance to use.
 Don't want to interfere with the operation of the Z80. Is it possible to have a
 low enough current that I don't need to buffer when I am on the data bus for
-instance?</p>
-<p>My CMOS Z80 can output one TTL load. ** elaborate.</p>
+instance? My CMOS Z80 can output one TTL load. ** elaborate. Because it is active high but open collector you cannot source enough current in the &quot;On&quot; state.
+Because of the resistor network multiple leds could get lit.</p>
 <p>First attempt was just hooking up straight LEDs.</p>
-<p>Then tried to make a simple tiny bus</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.</p>
-<p>I am only doing <a class="reference external" href="http://blog.y2kbugger.com/tag/testing.html">testing</a> right now, real to come soon.</p>
-<p>this is good code:</p>
-<div class="highlight"><pre><span></span>$ pipenv run python
-</pre></div>
-<p>the end cool</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="kn">from</span> <span class="nn">htooze</span> <span class="kn">import</span> <span class="n">world</span>
-
- <span class="k">def</span> <span class="nf">test_planet_exists</span><span class="p">():</span>
-     <span class="n">p</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">Planet</span><span class="p">()</span>
-     <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">world</span><span class="o">.</span><span class="n">Planet</span><span class="p">)</span>
-
- <span class="k">def</span> <span class="nf">test_life_can_exist</span><span class="p">():</span>
-     <span class="n">mycell</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">Cell</span><span class="p">()</span>
-     <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mycell</span><span class="p">,</span> <span class="n">world</span><span class="o">.</span><span class="n">Cell</span><span class="p">)</span>
-
- <span class="k">def</span> <span class="nf">test_planet_starts_without_life</span><span class="p">():</span>
-     <span class="n">p</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">Planet</span><span class="p">()</span>
-     <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">life</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
-
- <span class="k">def</span> <span class="nf">test_life_can_live_on_planet</span><span class="p">():</span>
-     <span class="n">p</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">Planet</span><span class="p">()</span>
-     <span class="n">mycell</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">Cell</span><span class="p">()</span>
-     <span class="n">p</span><span class="o">.</span><span class="n">addcell</span><span class="p">(</span><span class="n">mycell</span><span class="p">)</span>
-
-     <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">life</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
-     <span class="k">for</span> <span class="n">coords</span><span class="p">,</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">life</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-         <span class="k">assert</span> <span class="n">cell</span> <span class="ow">is</span> <span class="n">mycell</span>
-         <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span>
-         <span class="k">assert</span> <span class="nb">int</span><span class="p">(</span><span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</td></tr></table><p>Here is one of my good friends:</p>
+<p>Then tried to make a simple tiny bus.</p>
+<p>Here is the first prototype after realizing I really would need the buffer.</p>
 <img alt="8 bit display" class="align-center" src="https://lh3.googleusercontent.com/ZTkNGM90GbQT8HR81Rduccpxjj79qDLCY-85zkK3d7mkg_VRtMOqrp16hxp4TQbGaku3aU63lVxi4A0cvnjfDfOIo65njsBgHUzoM53d2TlL5aKNgpNWbP8hNK2NK3HrGteIINT4AZYWX7icQdwNDAy7vMvNwKddkttm30-fwabXxzjacTN9rJ8zyG9ppb2XhPEkxyD_K4zs7H8MXh05IJgKW1QZo40tZtwoZFfuRPJv1JKYs1iHFEZuV476mOVL3GjvPr_iCFiV7nwQVKxnaYDugkJbgfoRQKBHmKlyozC1lU_vbIPMJ8TDyyFe7fpQk5ZE6CSben5H9Br98RtM_9bSuSlCS8guK1oJbbVvx_Q6n_BHFBznelrsgHVUdH0zT08Y23mG8Oqo_TEzpa2g50kRNR5b0_eeZAsiwFGc5o2z4PAw5ETGI8ZUdabBP2G6kjECVhMfEkjgQVK13Sh0kLk4qfcbu9zcJttApBr8AdavU7bs1vF008qQbsR5BQIk_P1QLpl1cCtA8IcBOlDBiQ53Beq19Cdd-zZXFJsXwlTKH0KMRip4CtiBkyir29qylmWZ61WSR3NQdkGPCRbllEPBKwIGGnuEnJdGcyZMbx-B5Hukcko6urYcFKn_olunzLcKveFFHo5SlkDkAW9fWHRXWVwBUs31mP-DQWjoiw7mZDpp5FVMU9G3Yw=w521-h385-no" style="width: 100%;" />
-<p>I hope to see you soon Booj</p>
+<p>Then I incorporated this along with a hexadecimal display.</p>
 </div>
 
     </div>
