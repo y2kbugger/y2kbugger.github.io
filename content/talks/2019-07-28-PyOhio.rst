@@ -5,6 +5,7 @@ Learn How Computers Work Between Silicon and Assembly: Build a CPU with Python
 :tags: PyOhio, Python, Retrocomputing
 :author: zak kohler
 :summary: PyOhio 2019, Columbus, Ohio
+:cover: https://lh3.googleusercontent.com/H_gdPrgM-80n6ByoJRg6osi6cN0mob4NP4cK61QjnkC8tZl_pITpKy0YTNAeNGB5n9ys5cfovtretkSpEeMj76rY8jW7nmCvVgVI03Wz_rP-kZnOwStlVm6-7tY-sgiom9-3dIo4rk8b5wJUJU8wlqudxFMWF7wxbNN5_G0a5ojz9hrWSS2dqJ5R5rOHmWqh_fMIqeagEgc9z0EYQkKwGqQgii6M4QNukzpbEbAiZTzmSlUtQ5VarGOTWxKOu7OlEHSXlHpOsMVPRVp3ckytTLWYOxS9EptfXzwM6gi7801OmaTdJPQCrQZrP_s9Znm44y_TD8jM6PW604apW7YHfdPVJJOjNMocPvKf8z7K-a7D0M6Kvt3Xs79bxW2N6i4v6S-oEbI_srPRIWSJ4wjWs-m-psCXLz2gfEudsTy877dAyTgO67XJIFHcIfFDKSYXVc9Fm6ITx1UIPiuSHXy7w0zvPTntjWYXGuYmMEGqHCqK8qe3daYLuUDKcGApHcE9vFIFxmzocVkAaMEbEN8qIB9xpnk_63BuU8RAf6mnuTL_a-mEY0QAmt0CojcPALOnO9ZoNWK1EH9iXXsunznM0sOFdTyCAGCxGArtjjZsFRe1ZmdsSgcI8MpdvMn7jNn8ymqC3Xc9GiC_s2nqfWgQ79axf5eD5AsPEUAsBgbD0pSS-WnKBtoO1U0=w821-h492-no
 :status: published
 
 @ **PyOhio**, *Columbus, Ohio*
@@ -16,6 +17,10 @@ Learn How Computers Work Between Silicon and Assembly: Build a CPU with Python
    git clone https://y2kbugger@bitbucket.org/y2kbugger/sapy.git
 
 .. git clone --branch 2019-07-28-PyOhio https://y2kbugger@bitbucket.org/y2kbugger/sapy.git
+
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/iJqCMoAMlMA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Programming languages are designed for a specific level of abstraction or distance from the hardware. The main trade off is "developer productivity" vs. "control over hardware". C and assembly are low level and therefore map closely to CPU instructions. Python on the other hand goes through many layers, libraries, and a virtual machine before the CPU is reached. This allows powerful programs to be written concisely and cross-platform—but it also conceals the true nature at the heart of our modern world. Unveiling the magic within can lead to interesting insights about how computing got to where it is today.
 
