@@ -19,6 +19,7 @@
                         </div>
                     </header>
                     <div class="article-content article-summary">
+                        {% if article.cover %}<img src="{{ article.cover }}" alt="">{% endif %}
                         {{ article.summary }}
                         <div class="read-more">
                             <a href="{{ SITEURL }}/{{ article.url }}"
