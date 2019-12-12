@@ -6,6 +6,6 @@ name = "pypi"
 [packages]
 ghp-import = "*"
 pelican = "*"
-neovim = "*"
+pynvim = "*"
 
 [dev-packages]
