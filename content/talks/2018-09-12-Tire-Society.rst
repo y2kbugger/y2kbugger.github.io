@@ -5,9 +5,14 @@ The Art of (Virtual) Rubber Compounding
 :tags: Tire-Society
 :author: zak kohler
 :summary: Tire Society, Akron, OH
+:cover: `https://lh3.googleusercontent.com/HhwameSt1pacNa7-d7R9lDqC2BMFO9hiVXvXkZknbbZNAfm86u3SA6CUE_4gTn--RYNIvng_j064BZHajJB-9WYR-_coIrvTwNR1-ZjvY1MgX8UechUa5-bRVFPQpr46Llu50PtjzXryyNi_-dtXwJcAg1DETSdrkhtwsFjOA4QqABol8OIoJ4gdqEvU0pWEjCEwVLn69sdx6FqbfVpdjMmnKybMSaTwvFyoTHGRukSSeDpy3s7Pf03ymtqgrfK2yTt21vdvCvpMBwyWA8Co0XLvkq205w-TdHvYC7RzD7NDgB6uTAVp-CE-p3Z97TZ0KuqXguv9PqQ8aGgJpkpKkkokpxwnknFW3dqaDrIynxIraCFxcZ0Ucp0pUizXNM3paDmnLrALNK-U5nSMSek6aCfzdTeKYDbE5JyzxktooHMh8PYCiqrEe_t7CbsoIur9IU9oHQR6nBrZxmpOyDoQ1aW1v9K0aH4nOI5BOyNMG__-rL6QXbXI99QqjZH-zr-B72um65ogZ9wYay0Jylyxlng-WxHJHUILKSK8pb5Aq8UpNK1QAVX5ksyEIYI7FI3M7IHZGurpQ447lDgPBMeIqWSr-JlqB5R4ayzQH5CeSRRQCukOuwFxlVSpzeKmFQ41xNLrkbhNTtOelRAX4km1Pgt32TfBHE3eviuGaiP71gExwHTdeQpxs8Q=w530-h678-no`
 :status: published
 
 @ **Tire Society**, *Akron, OH*
+
+.. image:: https://lh3.googleusercontent.com/HhwameSt1pacNa7-d7R9lDqC2BMFO9hiVXvXkZknbbZNAfm86u3SA6CUE_4gTn--RYNIvng_j064BZHajJB-9WYR-_coIrvTwNR1-ZjvY1MgX8UechUa5-bRVFPQpr46Llu50PtjzXryyNi_-dtXwJcAg1DETSdrkhtwsFjOA4QqABol8OIoJ4gdqEvU0pWEjCEwVLn69sdx6FqbfVpdjMmnKybMSaTwvFyoTHGRukSSeDpy3s7Pf03ymtqgrfK2yTt21vdvCvpMBwyWA8Co0XLvkq205w-TdHvYC7RzD7NDgB6uTAVp-CE-p3Z97TZ0KuqXguv9PqQ8aGgJpkpKkkokpxwnknFW3dqaDrIynxIraCFxcZ0Ucp0pUizXNM3paDmnLrALNK-U5nSMSek6aCfzdTeKYDbE5JyzxktooHMh8PYCiqrEe_t7CbsoIur9IU9oHQR6nBrZxmpOyDoQ1aW1v9K0aH4nOI5BOyNMG__-rL6QXbXI99QqjZH-zr-B72um65ogZ9wYay0Jylyxlng-WxHJHUILKSK8pb5Aq8UpNK1QAVX5ksyEIYI7FI3M7IHZGurpQ447lDgPBMeIqWSr-JlqB5R4ayzQH5CeSRRQCukOuwFxlVSpzeKmFQ41xNLrkbhNTtOelRAX4km1Pgt32TfBHE3eviuGaiP71gExwHTdeQpxs8Q=w530-h678-no
+   :width: 40%
+   :alt: First time in front of such a large audience.
 
 The art of rubber compounding has historically been mastered by a small group of experts with extreme breadth and depth of experience. The rising trend of fluidity between companies is making loyal lifetime "sage compounders" a dying breed and organizations must find new ways to capture and archive experience despite having turnover. Minimizing the time before a new hire becomes productive also becomes critical.
 
