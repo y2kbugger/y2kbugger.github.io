@@ -55,7 +55,7 @@ the end cool
 
 Here is one of my good friends:
 
-.. image:: {filename}/images/758_bwneg11-024.jpg
+.. image:: {static}/images/758_bwneg11-024.jpg
    :width: 100%
    :alt: Boojie
    :align: center
