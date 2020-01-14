@@ -21,10 +21,10 @@
         <span class="author">By {{ article.author }}</span>
     {% endif %}
     {% if article.locale_date %}
-        <span class="publication-date" title="{{ article.date.isoformat() }}"> on {{ article.locale_date }}</span>
+        <span class="publication-date" title="{{ article.date.isoformat() }}"> on {{ article.locale_date | replace(" @ 00:00","") }}</span>
     {% endif %}
     {% if article.modified %}
-        <span class="modification-date" title="{{ article.modified.isoformat() }}"> last modified on {{ article.modified|strftime(DEFAULT_DATE_FORMAT) }}</span>
+        <span class="modification-date" title="{{ article.modified.isoformat() }}"> last modified on {{ article.modified|strftime(DEFAULT_DATE_FORMAT) | replace(" @ 00:00","") }}</span>
     {% endif %}
 {% endmacro %}
 
