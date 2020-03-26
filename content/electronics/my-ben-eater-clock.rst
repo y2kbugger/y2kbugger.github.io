@@ -6,6 +6,7 @@ A Second Article, wondering what this would look like if the title was longer
 :slug: my-ben-eater-clock
 :author: zak kohler
 :summary: Just testing some more formatting
+:status: draft
 
 First Heading in Article
 -------------------------

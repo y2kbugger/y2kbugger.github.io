@@ -8,6 +8,7 @@ My Intial Commit
 :slug: initial-commit
 :author: zak kohler
 :summary: Verifying everything is set up correctly.
+:status: draft
 
 
 subtitle
