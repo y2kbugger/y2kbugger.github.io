@@ -8,7 +8,7 @@ Bread I - No Knead Recipe
 :status: published
 
 My First Shot at Baking Bread
------------------------------
+=============================
 
 Proofing the yeast in a warm water with sugar. The foam means it's still alive.
 

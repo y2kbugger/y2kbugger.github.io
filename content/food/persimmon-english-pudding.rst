@@ -9,7 +9,7 @@ Persimmon English Pudding
 :status: draft
 
 What to do with 6 ripe persimmons?
-----------------------------------
+==================================
 
 Whenever I visit `Jungle Jim's <https://junglejims.com/>`_, a Cincinnati international market I make sure to hunt for some a new fruit. After grabbing a few interesting fruits to try, I found a section that I had never noticed before: clearance fruit. I found a good deal on persimmons that were perfectly ripe. I didn't have a plan for them yet.
 

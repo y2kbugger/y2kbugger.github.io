@@ -8,12 +8,12 @@ A Compact LED 8-bit Bus Indicator
 :status: draft
 
 Blinkenlights in Binary and Hex
--------------------------------
+===============================
 
 I will walk through my experimentation that lead to my final design for my front panel bus visualizer.
 
 Motivation
-----------
+==========
 
 This is made as a component of my single board Z80 trainer. Defining my Single
 Board Computer (SBC) as a trainer basically means that its purpose it expose as
@@ -32,7 +32,7 @@ When you have to type your bootstrap and paper tape driver by hand, `it can be a
 
 
 Simple Beginnings
------------------
+=================
 My SBC trainer will be based on the z80, having an 8-bit databus and a 16-bit memory address space. First step was to get the
 up and running and verify that the program counter was working. This can basically be done with resistors and power and a single LED. I got a lot of inspiration from `this video <https://www.youtube.com/watch?v=AZb4NLXx1aMchip>`_.
 
