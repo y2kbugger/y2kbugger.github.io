@@ -3,7 +3,6 @@ A Compact LED 8-bit Bus Indicator
 
 :date: 2017-12-19 20:58:08
 :tags: retrocomputing, display, resistor-network, z80
-:slug: compact-bus-display
 :author: zak kohler
 :summary: XXXXXXXXXXXXXXXXXXXXXXXXXX
 :status: draft

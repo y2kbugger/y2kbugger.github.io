@@ -5,7 +5,6 @@ blog.y2kbugger.com How To
 :modified: 2017-12-15 23:12:30
 :tags: testing
 :category: not-real
-:slug: initial-commit
 :author: zak kohler
 :summary: Verifying everything is set up correctly.
 
