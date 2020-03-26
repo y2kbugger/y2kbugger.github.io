@@ -356,6 +356,18 @@ footer.page-footer {
     color: #666;
 }
 
+.admonition {
+    border: 2px solid #dadada;
+    background-color: #f6f6f6;
+}
+.admonition p {
+    padding: 5px;
+}
+.admonition-title {
+    background-color: #cfcfcf;
+    font-weight: bold;
+}
+
 @media print {
     body {
         font-size: 12px;
