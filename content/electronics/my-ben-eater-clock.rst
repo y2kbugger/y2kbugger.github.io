@@ -3,7 +3,6 @@ A Second Article, wondering what this would look like if the title was longer
 
 :date: 2017-12-16 19:54:15
 :tags: retrocomputing, 555, breadboard
-:slug: my-ben-eater-clock
 :author: zak kohler
 :summary: Just testing some more formatting
 :status: draft

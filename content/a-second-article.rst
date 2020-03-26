@@ -4,7 +4,6 @@ A Second Article, wondering what this would look like if the title was longer
 :date: 2017-12-16 19:54:15
 :modified: 2017-12-16 19:54:15 
 :tags: testing, more testing, nothing-important, fake
-:slug: second-has-longer-title
 :category: fake
 :author: zak kohler
 :summary: Just testing some more formatting
