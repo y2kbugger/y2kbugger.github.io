@@ -8,7 +8,10 @@ blog.y2kbugger.com How To
 :author: zak kohler
 :summary: Just an explanation to myself about how to write these blog articles and use the features a standardized way for me.
 :status: draft
+:cover: `https://lh3.googleusercontent.com/fFckzfWfYfJxByZOaCE0Ltebvu6MBaaKLyrmEpeoIzAfbbPDGi2eq7_r85fu_LkDZ8JxyGm-puuyOX5EXamAm4Hq2NYSpVxa8mar7La6EMJAlOzFI9uQCaHBGNUUt7Jddhb4O1tzIhI=w683-h447-no`
 
+..
+  Google Photos Album: https://photos.app.goo.gl/dfXck6rcLDcZHtv17
 
 Quick start section
 ===================

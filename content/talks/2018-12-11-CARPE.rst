@@ -5,6 +5,7 @@ Learn how computers work between silicon and assembly — Build a CPU with Pytho
 :tags: CARPE, Python, Retrocomputing
 :author: zak kohler
 :summary: CARPE December Meeting, Columbus, Ohio
+:cover: `https://lh3.googleusercontent.com/ZXuaqX-m6ynsOKnvGmfCwM3ov2loiSR3v2blG5vykRSaExcyKPn1WL-BS2tEj5kS_Dp0PojmRHXiyDcioR6WHKNAOWr_P_hSRZ0Vj98yR8fn-mBovfziqiXAZj5poI7Wl_O98YkYQIQ=w596-h447-no`
 :status: published
 
 @ **CARPE December Meeting**, *Columbus, Ohio*
@@ -14,6 +15,12 @@ Learn how computers work between silicon and assembly — Build a CPU with Pytho
 .. code-block:: giturl
 
    git clone --branch 2018-12-11-CARPE https://y2kbugger@bitbucket.org/y2kbugger/sapy.git
+
+.. image:: https://lh3.googleusercontent.com/ZXuaqX-m6ynsOKnvGmfCwM3ov2loiSR3v2blG5vykRSaExcyKPn1WL-BS2tEj5kS_Dp0PojmRHXiyDcioR6WHKNAOWr_P_hSRZ0Vj98yR8fn-mBovfziqiXAZj5poI7Wl_O98YkYQIQ=w596-h447-no
+   :width: 100%
+   :alt: Slide about my CPU presentation.
+   :align: center
+
 
 Programming languages are designed for a specific level of abstraction or distance from the hardware. The main trade off is "developer productivity" vs "control over hardware". C and assembly are low level and therefore map closely to CPU instructions. Python on the other hand goes through many layers, libraries, and a virtual machine before the CPU is reached. This allows powerful programs to be written concisely and cross-platform—but it also conceals the true nature at the heart of our modern world. Unveiling the magic within can lead to interesting insights about how computing got to where it is today.
 
