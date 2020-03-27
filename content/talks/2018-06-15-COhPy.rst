@@ -5,6 +5,7 @@ Using Termux: Creating a first class Python environment on Android CLI or how I 
 :tags: COhPy, Python, Android, Termux
 :author: zak kohler
 :summary: COhPy June Meeting, Columbus, Ohio
+:cover: https://lh3.googleusercontent.com/m54wqPgN2AdjvHasSoZ0HdtyUYdFukLyD7zb1xzfCEGRxq7nGXcm8iDK2oZ_JPiGr-3MmK4KE__cA4OfmkfmBnKLygeVkeUYcikIU9B9DRo4bf7uvZb2WnKkd2TqApKI6Mw45GS9i-k=w596-h447-no
 :status: published
 
 @ **COhPy June Meeting**, *Columbus, Ohio*

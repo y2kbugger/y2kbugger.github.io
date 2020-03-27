@@ -6,10 +6,13 @@ Bread I - No Knead Recipe
 :author: zak kohler
 :summary: On a whim I decided to bake bread.
 :status: published
+:cover: `https://lh3.googleusercontent.com/fFckzfWfYfJxByZOaCE0Ltebvu6MBaaKLyrmEpeoIzAfbbPDGi2eq7_r85fu_LkDZ8JxyGm-puuyOX5EXamAm4Hq2NYSpVxa8mar7La6EMJAlOzFI9uQCaHBGNUUt7Jddhb4O1tzIhI=w683-h447-no`
+
+..
+  Google Photos Album: https://photos.app.goo.gl/nYJc12HSGYu5zAw82
 
 My First Shot at Baking Bread
 =============================
-
 Proofing the yeast in a warm water with sugar. The foam means it's still alive.
 
 .. image:: https://lh3.googleusercontent.com/u0o1ygguOveQt9lYaeh1QjKIWasGPc0oKkZQLQkMUWOZzFbES8x2XOtn8kuD4tXcqiNiWthSvEjAGtxgZmqAgleWQj11rLGTHANindMiOlZMEO73yCk3R4K1lVXb-6Xnv087It9d_D3uxvgmqA3P1M5WfBd6lg7JJWIqr_fsbTNolVgvREDi4xK7drzxmB4cGvZvdQ-NirobLN5JSdYzWqCUyU7U86jZ0K9Jh1KSVp4eMz7OrQ5NE5ROkPdwmBGvMUfdM8FV4Ay0l4QLyNahHiZ3XEbCKFFmY-2KB2wFmpAAIgtfMgeLibYHztkWsGzv8JPAXxl5WDkcPPl9SeX5vtomEF_V8fvZbu-t_8ooAn6E2vv6JhujH1amm9Q-rwmiDzIw47G5DF5iVmUWqMbAUtnkvlYjtjLT1dNta4XMKCxLlZqKAJBxapl-EAtyZcvYIejCmxA9uIwpVETr1-CSSKI6MZWZGA4YwxbNAzYjUp9khn7kzm7BqM_KdnPc7TqKlfJ0SLoAtCbIhSPU9HfiaLss_PdfdU6rU3xuTxbCV49dDo88ECwMmMu94Q4XAOXc-R72XpqgSaEPkn9oQlKlBpAYKipcElGIgg4_ZJ-NtEZkiQ4WNdS7lDRZ5nG_EpOWz6VMupCNUGmqgVE-ZN8hXHm-m59p3gtCTHXMg3tFczdB89BVYWamPz7FDg=w683-h432-no
