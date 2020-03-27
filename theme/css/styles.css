@@ -368,6 +368,20 @@ footer.page-footer {
     font-weight: bold;
 }
 
+/* hack to workaround https://github.com/sphinx-doc/sphinx/issues/1567 */
+table.footnote {
+    margin: 0px;
+    font-size: 0.77em;
+    line-height: 1.0em;
+}
+.footnote td.label {
+    width: 33px;
+}
+.footnote td  {
+    padding: 4px;
+}
+/* end hack */
+
 @media print {
     body {
         font-size: 12px;
