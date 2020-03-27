@@ -190,6 +190,26 @@ Block quotes are just
 
         and they may nest.
 
+Recipe Ingredients
+==================
+For ingredients combine highlights directive with bulletless(pipe) lists
+
+Wet
+---
+.. Highlights::
+    | 1/2 c. unsalted butter
+    | 2.25 c. sugar [#sugar]_
+    | 6 very soft persimmons
+    | 1.5 c. whole milk
+    | 5 large eggs
+    | 2 teaspoons pure vanilla extract
+    | 1 lemon
+
+-------
+
+.. [#sugar] Is sugar wet today?
+
+
 Code blocks
 ===========
 A block followed by two colons will be monospaced::
