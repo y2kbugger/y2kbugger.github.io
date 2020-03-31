@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>y2kbugger - not-real</title><link href="http://blog.y2kbugger.com/" rel="alternate"></link><link href="http://blog.y2kbugger.com/feeds/not-real.atom.xml" rel="self"></link><id>http://blog.y2kbugger.com/</id><updated>2020-03-28T22:16:59-04:00</updated><entry><title>blog.y2kbugger.com - Timeline of my Projects</title><link href="http://blog.y2kbugger.com/origin.html" rel="alternate"></link><published>1991-09-29T00:00:00-04:00</published><updated>2020-03-28T22:16:59-04:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,1991-09-29:/origin.html</id><summary type="html">&lt;p class="first last"&gt;I dddddddddddddddddddddddd&lt;/p&gt;
+</summary><content type="html">&lt;div class="section" id="purpose-of-this-blog"&gt;
+&lt;h2&gt;Purpose of this blog&lt;/h2&gt;
+&lt;p&gt;The purpose of this blog is to track and showcase my projects over time. I value having an accurate timeline of when the projects were worked on more than when they were written about. Because of this, I have chosen to always leave the date of an article as the data when a project or stage of a project was complete rather than the publish date. For the publication data I will use the modified field. This not only ensures an accurate timeline, but it gives the opportunity to go back and curate past projects.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="Young zak at the computer." src="https://lh3.googleusercontent.com/D9Q1Ag8tAEmQIo8cJ1ChfEAlZyodx60aHR4XBwUe7_GGb8tKOI49lfPno9FuFTM7c2khVeDTgpiMmhsKOLeDmUlhb8gw-AHKMUyPGVhKpjBuCrogEpsvu624IUwYNs3OBCGb0Xhk1kw=w683-h483-no" style="width: 100%;" /&gt;
+&lt;p class="caption"&gt;Young zak at the computer.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Here is the official quick start guide::
+&lt;a class="reference external" href="https://docs.getpelican.com/en/stable/quickstart.html"&gt;https://docs.getpelican.com/en/stable/quickstart.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This guide is how to start from scratch. The guide below is about starting up the developer environment for writing the blog.&lt;/p&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;div class="section" id="my-quick-start-subsection"&gt;
+&lt;h3&gt;My quick start subsection&lt;/h3&gt;
+&lt;div class="section" id="write-subsubsection-use-sparingly"&gt;
+&lt;h4&gt;Write subsubsection (use sparingly)&lt;/h4&gt;
+&lt;p&gt;Start up dev environment:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ wo-blog
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Add/modify the files in blog/content/CATEGORY/SLUG-OF-THE-PAGE.rst&lt;/li&gt;
+&lt;li&gt;Saving the file will cause it to auto-update in the dev env browser window. This is done with javascript and only activated when local.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you are satisfied with the post, set &lt;tt class="docutils literal"&gt;:status: published&lt;/tt&gt;, otherwise you can publish it to the web as a draft.&lt;/p&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;Tips:&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;Manually start the dev server in another xterm to see debug info
+&lt;tt class="docutils literal"&gt;$ pipenv run make stopserver &amp;amp;&amp;amp; pipenv run make devserve&lt;/tt&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class="section" id="publish"&gt;
+&lt;h4&gt;Publish&lt;/h4&gt;
+&lt;p&gt;Publishing makes the blog entry available to the world.&lt;/p&gt;
+&lt;p&gt;To publish, commit articles additions/changes:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git add content/
+$ git commit
+$ git push origin write
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Finally publish your changes:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ pipenv run make github
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="style-guide"&gt;
+&lt;h2&gt;Style guide&lt;/h2&gt;
+&lt;p&gt;Article titles should be &lt;tt class="docutils literal"&gt;Title Case&lt;/tt&gt;, all other sections should be &lt;tt class="docutils literal"&gt;Sentence case like this&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;There should be no gap between a section header and the first paragraph.&lt;/p&gt;
+&lt;p&gt;Favor figures over images.&lt;/p&gt;
+&lt;p&gt;When in doubt, reference this article. For example, which style of links to use.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="metadata"&gt;
+&lt;h2&gt;Metadata&lt;/h2&gt;
+&lt;p&gt;Url comes from the file basename if you don't override it with slug:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+:slug this-is-alternate-url
+&lt;/pre&gt;
+&lt;p&gt;The folder will be used as the category&lt;/p&gt;
+&lt;p&gt;Other Default info types:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+:date: 2018-01-25 19:54:15
+:modified: 2017-12-16 19:54:15
+:tags: bread
+:category: food
+:author: zak kohler
+:summary: Just testing some more formatting
+:status: draft
+&lt;/pre&gt;
+&lt;p&gt;The default status is set to draft, to publish set it to published:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+:status: published
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="content"&gt;
+&lt;h2&gt;Content&lt;/h2&gt;
+&lt;p&gt;Content types that I commonly use within articles I'll put here. Otherwise here are the thorough guides.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;More about writing here &lt;a class="reference external" href="https://docs.getpelican.com/en/stable/content.html"&gt;https://docs.getpelican.com/en/stable/content.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html"&gt;https://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://docutils.sourceforge.io/docs/user/rst/quickref.html#definition-lists"&gt;https://docutils.sourceforge.io/docs/user/rst/quickref.html#definition-lists&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section" id="linking"&gt;
+&lt;h3&gt;Linking&lt;/h3&gt;
+&lt;div class="section" id="internal"&gt;
+&lt;h4&gt;Internal&lt;/h4&gt;
+&lt;p&gt;You don't have to make tags to link internally, you can do it just like this: &lt;a class="reference external" href="http://blog.y2kbugger.com/no-knead-bread-one.html"&gt;a link to an internal file&lt;/a&gt;
+I haven't figured out yet if there is a way to link to sub-sections&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="external"&gt;
+&lt;h4&gt;External&lt;/h4&gt;
+&lt;p&gt;Here is an inline link to an external site &lt;a class="reference external" href="https://junglejims.com/"&gt;Jungle Jim's&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you actually just want to show the external link, just put in it strait up like in the following sentence. Hey try &lt;a class="reference external" href="http://google.com"&gt;http://google.com&lt;/a&gt; its good.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="inserting-photos"&gt;
+&lt;h3&gt;Inserting photos&lt;/h3&gt;
+&lt;p&gt;All photos are hosted using google photos.&lt;/p&gt;
+&lt;p&gt;Here is an exact step-by-step for getting a correct hyperlink.&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Make sure the album is shared via make link
+Here is the link for the Blog Misc. &lt;a class="reference external" href="https://photos.app.goo.gl/dfXck6rcLDcZHtv17"&gt;https://photos.app.goo.gl/dfXck6rcLDcZHtv17&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Open the share link in incognito mode&lt;/li&gt;
+&lt;li&gt;Go to a specific photo in the album&lt;/li&gt;
+&lt;li&gt;Click on it to get a closer view of the image&lt;/li&gt;
+&lt;li&gt;Right Click on the Image&lt;/li&gt;
+&lt;li&gt;Click on “Copy Image Address”&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;When you add a bunch of pictures from a new album, be sure to add that album url in a comment.&lt;/p&gt;
+&lt;!-- Comments are like this. https://photos.app.goo.gl/qfXck6rcLDcZHtv1d --&gt;
+&lt;p&gt;Here is one of my good friends:&lt;/p&gt;
+&lt;img alt="Boojie" class="align-center" src="https://lh3.googleusercontent.com/0pckhDWOKZKJEeB2izt77k40PlTPE0AYu8N4e-_RCaxgxUrUoZPQvGllBkYEbNYLfRg7GUQfxCC-le3jQYmTgUbJ4_ns59Ru-_8aaoiScEBAJdL2U5GutLXkM81mUvmik2u2RE1j6nQ=w460-h678-no" style="width: 100%;" /&gt;
+&lt;p&gt;I hope to see you soon Booj&lt;/p&gt;
+&lt;p&gt;Figures are like images but include caption/subcontent.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="Good look at what stock prices happen." src="https://lh3.googleusercontent.com/TQ_e5Ds-zAANFEZ8jwQDspm634t8TTd9mhgffJDgTClAv-m3-yDU7BEDelYqRZe4gAk-p21Dmsx9S0euK4m3ExzyZmmaTv7rKrEjS4UzwORAiFNy8WOg8vwC4xS19R_CX4dUkcUOs5g=w683-h419-no" style="width: 300px;" /&gt;
+&lt;p class="caption"&gt;Here is where the caption happens. Anthing else can go here also. What else&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="inline-style"&gt;
+&lt;h3&gt;Inline style&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Italics use asterisk&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;bold is double asterisks&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;tt class="docutils literal"&gt;inline literal&lt;/tt&gt;&lt;/p&gt;
+&lt;div class="admonition note"&gt;
+&lt;p class="first admonition-title"&gt;Note&lt;/p&gt;
+&lt;p class="last"&gt;Do not confuse &lt;cite&gt;interpreted text&lt;/cite&gt; with &lt;tt class="docutils literal"&gt;inline literal&lt;/tt&gt;.
+Interpreted text gets rendered as &amp;lt;cite&amp;gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="git-clone-to-a-tag"&gt;
+&lt;h3&gt;Git clone to a tag&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone --branch 2019-07-28-PyOhio https://y2kbugger@bitbucket.org/y2kbugger/sapy.git
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Linking slides and jupyter notebook&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://drive.google.com/open?id=1u8qlAK4SeqFX3ybT7zVuKWItMvCadhsgF9WmCCOM3dQ"&gt;Slides&lt;/a&gt; &lt;a class="reference external" href="https://gke.mybinder.org/v2/git/https%3A%2F%2Fy2kbugger%40bitbucket.org%2Fy2kbugger%2Fsapy.git/de5086ea943c94fec40e14478257ab2716e28c96?filepath=Simple%20As%20Possible.ipynb"&gt;Live Jupyter Notebook&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="definition-lists"&gt;
+&lt;h2&gt;Definition lists&lt;/h2&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;What&lt;/dt&gt;
+&lt;dd&gt;Definition lists associate a term with
+a definition.&lt;/dd&gt;
+&lt;dt&gt;How&lt;/dt&gt;
+&lt;dd&gt;The term is a one-line phrase, and the
+definition is one or more paragraphs or
+body elements, indented relative to the
+term. Blank lines are not allowed
+between term and definition.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class="section" id="block-quotes-are-just"&gt;
+&lt;h2&gt;Block quotes are just&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Indented paragraphs,&lt;/p&gt;
+&lt;blockquote&gt;
+and they may nest.&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="recipe-ingredients"&gt;
+&lt;h2&gt;Recipe Ingredients&lt;/h2&gt;
+&lt;p&gt;For ingredients combine highlights directive with bulletless(pipe) lists&lt;/p&gt;
+&lt;div class="section" id="wet"&gt;
+&lt;h3&gt;Wet&lt;/h3&gt;
+&lt;blockquote class="highlights"&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;1/2 c. unsalted butter&lt;/div&gt;
+&lt;div class="line"&gt;2.25 c. sugar &lt;a class="footnote-reference" href="#sugar" id="id1"&gt;[1]&lt;/a&gt;&lt;/div&gt;
+&lt;div class="line"&gt;6 very soft persimmons&lt;/div&gt;
+&lt;div class="line"&gt;1.5 c. whole milk&lt;/div&gt;
+&lt;div class="line"&gt;5 large eggs&lt;/div&gt;
+&lt;div class="line"&gt;2 teaspoons pure vanilla extract&lt;/div&gt;
+&lt;div class="line"&gt;1 lemon&lt;/div&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;hr class="docutils" /&gt;
+&lt;table class="docutils footnote" frame="void" id="sugar" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Is sugar wet today?&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="code-blocks"&gt;
+&lt;h2&gt;Code blocks&lt;/h2&gt;
+&lt;p&gt;A block followed by two colons will be monospaced:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+:date: 2018-01-25 19:54:15
+:modified: 2017-12-16 19:54:15
+:tags: bread
+:category: food
+:author: zak kohler
+:summary: Just testing some more formatting
+:status: draft
+&lt;/pre&gt;
+&lt;p&gt;You can specify a particular language:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; ~/devel/blog
+$ pipenv run python
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Here is a more detailed code block including line numbers:&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;htooze&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;world&lt;/span&gt;
+
+ &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_planet_exists&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+     &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;world&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Planet&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+     &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="nb"&gt;isinstance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;world&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Planet&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+ &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_life_can_exist&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+     &lt;span class="n"&gt;mycell&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;world&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Cell&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+     &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="nb"&gt;isinstance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mycell&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;world&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Cell&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+ &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_planet_starts_without_life&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+     &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;world&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Planet&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+     &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;life&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+
+ &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_life_can_live_on_planet&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+     &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;world&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Planet&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+     &lt;span class="n"&gt;mycell&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;world&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Cell&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+     &lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;addcell&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mycell&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+     &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;life&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+     &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;coords&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cell&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;life&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+         &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;cell&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="n"&gt;mycell&lt;/span&gt;
+         &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="nb"&gt;isinstance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;coords&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;tuple&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+         &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;coords&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;coords&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+&lt;div class="section" id="my-architecture-details"&gt;
+&lt;h2&gt;My architecture details&lt;/h2&gt;
+&lt;div class="section" id="git-branches"&gt;
+&lt;h3&gt;Git branches&lt;/h3&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;master&lt;/dt&gt;
+&lt;dd&gt;This is the one with the compiled content, this syncs to the remote. No manual commit.&lt;/dd&gt;
+&lt;dt&gt;write&lt;/dt&gt;
+&lt;dd&gt;This is the one that we develop in, make your commits here.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class="section" id="wo-blog"&gt;
+&lt;h3&gt;wo-blog&lt;/h3&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Open the project directory&lt;/li&gt;
+&lt;li&gt;Checkout the write branch&lt;/li&gt;
+&lt;li&gt;Kill existing servers and start a new one with all output piped to /dev/null&lt;/li&gt;
+&lt;li&gt;Open up a chrome window to view new posts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="hosting"&gt;
+&lt;h3&gt;Hosting&lt;/h3&gt;
+&lt;p&gt;Hosted as a gitlab page. Domain is setup with 1and1.&lt;/p&gt;
+&lt;p&gt;Had to edit dns setting inside of 1and1 per github guidelines.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content><category term="not-real"></category><category term="origin"></category></entry></feed>
