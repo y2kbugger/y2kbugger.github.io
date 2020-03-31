@@ -19,7 +19,7 @@ Whenever I visit `Jungle Jim's <https://junglejims.com/>`_, a Cincinnati interna
 .. image:: https://lh3.googleusercontent.com/KPn2fFh0X5Zq5ESGRaKgGDazFb6E7Rr4x5MsFJyO2akgwTP3qC_h2QCRDb6jA2uWX-2gMh7Qwqw9zrSmDSoNIPOBjisS7WHm05LkEqkDxe45oMZTsZsA1YxXmTtCIQOEuza8BTvRdpQ=w790-h508-no
    :alt: Clearance persimmons from Jungle Jims.
 
-After a bit of googling, I settled on making an English style holiday pudding. Not being British, this was a dish I was only vaguely aware of. After reading about the dessert a bit on the internet, I had a case of what googling calls the `Baader-Meinhof Phenomenon <https://english.stackexchange.com/questions/153166/what-is-the-term-for-when-you-become-more-aware-of-something>`_. It was everywhere. The strongest example was when I went to see the Scrooge *again*, I can't believe that the "pudding scene" had always been there, never stirring my brain to ask "wtf is this pudding?" before, I think I thought it was meat.
+After a bit of googling, I settled on making an English style holiday pudding. Not being British, this was a dish I was only vaguely aware of. After reading about the dessert a bit on the internet, I had a case of what googling calls the `Baader-Meinhof Phenomenon <https://english.stackexchange.com/questions/153166/what-is-the-term-for-when-you-become-more-aware-of-something>`_. It was everywhere. The strongest example was when I went to see a Christman Carol *again*, I can't believe that the "pudding scene" had always been there, never stirring my brain to ask "wtf is this pudding?" before, I think I thought it was meat.
 
 My recipe is based on:
 
@@ -80,7 +80,7 @@ Directions
 ==========
 Step 1 - Prepare the mold
 -------------------------
-Traditionally one would use an English pudding molding, I didn't have that so I buttered a large stainless steel mixing bowl. I used a stock pot as the boiler seeing the mixing bowl on top. Add enough water to come halfway up mold; to gauge depth, test this with an empty mold.
+Traditionally one would use an English pudding mold, I didn't have that so I buttered a large stainless steel mixing bowl. I used a stock pot as the boiler setting the mixing bowl on top. Add enough water to the stockpot to come halfway up the mold; to gauge depth, test this with an empty mold by pressing in into the water.
 
 Step 2 - Prepare the dry ingredients
 ------------------------------------
@@ -88,17 +88,17 @@ Sift flour, and add all "dry" ingredients to a bowl. Stir until evenly distribut
 
 Step 3 - Simmer the tasty bits
 ------------------------------
-Toast pecans in a frying pan and add all "Simmered" ingredients. Simmer for about 10 minutes.  Remove from heat; let stand for 15 minutes, allowing time for fruit to leech excess moisture and become tender.
+Toast pecans in a frying pan and add all "Simmered" ingredients. Simmer for about 10 minutes.  Remove from heat; let stand for 15 minutes, allowing time for fruit to soak up excess moisture and become tender.
 
 Step 4 - Combine the wet stuff
 ------------------------------
-Meanwhile, slice tops off persimmons. Note: Original recipe says to press while fruit through sieve to remove skin. This is hopeless with a strainer and it it's not hard to just separate skins by hand. Scoop out flesh, discard skins. (you should have 2 3/4 cups persimmon puree). Whisk in milk
+Meanwhile, slice tops off persimmons. Note: Original recipe says to press the fruit through sieve to remove skin. This is hopeless with a normal strainer and it's not hard to just separate skins by hand. Scoop out flesh, discard skins. (you should have 2 3/4 cups persimmon puree). Whisk in milk
 
-Blend butter and sugar; Add the rest of the "Wet" ingredients, persimmon mixture last. If you are using an electric mixer be sure to keep the bowl scraped.
+Cream butter and sugar; then add the rest of the "Wet" ingredients to the butter mixture. If you are using an electric mixer be sure to keep the bowl scraped.
 
 Step 5 - Bring it all together
 ------------------------------
-Start to fold the dry into the wet, using minimal mixing. When about halfway incorporated, dump in "simmered" mixture. Stir in pecans, sultanas, and ginger. Pour into prepared mold and cover with lid.
+Using minimal mixing, fold in all of the dry ingredients over a few quick additions. While still partially unmixed dump in "simmered" mixture of pecans, raisins, ginger, etc. Fold all until just barely mixed. Pour into prepared mold and cover with lid.
 
 .. figure:: https://lh3.googleusercontent.com/YxMdXml6K3M_39SOmbroPwndOx1unjEjvf0YwnUKmUIqFrZyqqetq5aZj2hyL6albcbDK0vNgambY9b0Wd64m5sTeKOGbXTMK3KOBW0qQ_padQUKUilE0EJ6XghTyPAIq_dXYb9vDgY=w509-h678-no
    :width: 70%
@@ -108,7 +108,7 @@ Start to fold the dry into the wet, using minimal mixing. When about halfway inc
 
 Step 4 - Let it steam
 ---------------------
-Bring water in stockpot to a boil. I let this go ~8 hours because of the size. It really depends on shape of mold+pot and the size of the pudding.
+Bring water in stockpot to a boil. I let this go ~8 hours because of the size, 6 probably would have been ok. Since it's being steamed it can really get overcooked unless it starts to dry out. Time really depends on shape of mold+pot and the size of the pudding. Use a toothpick or skewer and test that the center is no longer a batter before calling it done.
 
 .. figure:: https://lh3.googleusercontent.com/koj8683CBoRaePybbFGA3YjxkX5-vAdsE8LhhTgkfOSyUPFZXe4sXQFc68ncTz6Cnmys3Mw-Qz-WHkc-pXfd4YzIlNo18s2Ku0rW1pWK_I7EKZIDGrrEsAflj96vFD5pmgosOpi0GTo=w509-h678-no
    :width: 50%
