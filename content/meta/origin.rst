@@ -7,7 +7,7 @@ blog.y2kbugger.com - Timeline of my Projects
 :category: not-real
 :author: zak kohler
 :summary: I explain how I use dates on this blog. The purpose of this blog is to showcase my projects past and future and so publication dates shouldn't be taken as the actual data the article was written.
-:status: draft
+:status: published
 
 ..
     https://photos.app.goo.gl/nBk15GV92Uvt7ZzF8
