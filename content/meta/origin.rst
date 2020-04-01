@@ -4,7 +4,6 @@ blog.y2kbugger.com - Timeline of my Projects
 :date: 1991-09-29
 :modified: 2020-03-28 22:16:59
 :tags: origin
-:category: not-real
 :author: zak kohler
 :summary: I explain how I use dates on this blog. The purpose of this blog is to showcase my projects past and future and so publication dates shouldn't be taken as the actual data the article was written.
 :status: published
