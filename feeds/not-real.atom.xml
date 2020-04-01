@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>y2kbugger - not-real</title><link href="http://blog.y2kbugger.com/" rel="alternate"></link><link href="http://blog.y2kbugger.com/feeds/not-real.atom.xml" rel="self"></link><id>http://blog.y2kbugger.com/</id><updated>2020-03-28T22:16:59-04:00</updated><entry><title>blog.y2kbugger.com - Timeline of my Projects</title><link href="http://blog.y2kbugger.com/origin.html" rel="alternate"></link><published>1991-09-29T00:00:00-04:00</published><updated>2020-03-28T22:16:59-04:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,1991-09-29:/origin.html</id><summary type="html">&lt;p class="first last"&gt;I explain how I use dates on this blog. The purpose of this blog is to showcase my projects past and future and so publication dates shouldn't be taken as the actual data the article was written.&lt;/p&gt;
+</summary><content type="html">&lt;!-- https://photos.app.goo.gl/nBk15GV92Uvt7ZzF8 --&gt;
+&lt;div class="section" id="purpose-of-this-blog"&gt;
+&lt;h2&gt;Purpose of this blog&lt;/h2&gt;
+&lt;p&gt;The reason this site exists is to track and showcase my various projects. I
+value having an accurate timeline of when the projects were worked on more than
+when they were written about.&lt;/p&gt;
+&lt;div class="section" id="use-of-dates"&gt;
+&lt;h3&gt;Use of dates&lt;/h3&gt;
+&lt;p&gt;To have an accurate project timeline, I will make the date of an article be the
+date when a project or stage of a project was completed. So you can still know
+when an article was publish, I will use the last modified on field even for new
+articles. This not only ensures an accurate timeline, but it gives the
+opportunity to go back and curate past projects.&lt;/p&gt;
+&lt;img alt="Young zak at the computer." src="https://lh3.googleusercontent.com/D9Q1Ag8tAEmQIo8cJ1ChfEAlZyodx60aHR4XBwUe7_GGb8tKOI49lfPno9FuFTM7c2khVeDTgpiMmhsKOLeDmUlhb8gw-AHKMUyPGVhKpjBuCrogEpsvu624IUwYNs3OBCGb0Xhk1kw=w683-h483-no" style="width: 100%;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="historical-stubs"&gt;
+&lt;h3&gt;Historical stubs&lt;/h3&gt;
+&lt;p&gt;For some historical projects I plan to just make a stub article and include a few photos. If there is interest in any one of them in particular I will update with more details. This can also just serve as an index for when I need to showcase my talents; I can elaborate on them in person.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="Ohio LinuxFest 2019" src="https://lh3.googleusercontent.com/E5Je4pWOapBTC3A7eaTcEpl_esrlSkCLIOaj8OueJ7mQg6WDiBAqPInbkf619wPP1gWmUy6exkZLEA_479kfIZCMMSbIqm2_Zn4_6qM9qcpQEYnqxc8Rzm8AjJbj_K8YqIhOKlrNg2A=w683-h455-no" style="width: 100%;" /&gt;
+&lt;p class="caption"&gt;Ohio LinuxFest 2019&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Thanks for reading, and I hope I you have found something I have posted useful or entertaining.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="Central Ohio Python" src="https://lh3.googleusercontent.com/SZuGLUx0uXaHjoDduwtfltstTODj3IQZoPAZ-bElZBDGAboCR8IvGBfhDTR8DSF_UDx285XJDNt0H9ZewtDJZ0hZgnU7AJBOCDX6HgU84aanZUNtithhRoqhpirQUBpVYRST6bIe6Yg=w683-h511-no" style="width: 100%;" /&gt;
+&lt;p class="caption"&gt;Central Ohio Python, 2018&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content><category term="not-real"></category><category term="origin"></category></entry></feed>
