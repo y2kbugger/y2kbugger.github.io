@@ -39,7 +39,7 @@ For some historical projects I plan to just make a stub article and include a fe
 
    Ohio LinuxFest 2019
 
-Thanks for reading, and I hope I you have found something I have posted useful or entertaining.
+Thanks for reading, and I hope I you have found something useful or entertaining here.
 
 .. figure:: https://lh3.googleusercontent.com/SZuGLUx0uXaHjoDduwtfltstTODj3IQZoPAZ-bElZBDGAboCR8IvGBfhDTR8DSF_UDx285XJDNt0H9ZewtDJZ0hZgnU7AJBOCDX6HgU84aanZUNtithhRoqhpirQUBpVYRST6bIe6Yg=w683-h511-no
    :width: 100%
