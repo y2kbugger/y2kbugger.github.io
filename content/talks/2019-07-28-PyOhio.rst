@@ -20,7 +20,8 @@ Learn How Computers Work Between Silicon and Assembly: Build a CPU with Python
 
 .. raw:: html
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/iJqCMoAMlMA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="videoembed-container">
+    <iframe class="videoembed-iframe" src="https://www.youtube.com/embed/iJqCMoAMlMA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 Programming languages are designed for a specific level of abstraction or distance from the hardware. The main trade off is "developer productivity" vs. "control over hardware". C and assembly are low level and therefore map closely to CPU instructions. Python on the other hand goes through many layers, libraries, and a virtual machine before the CPU is reached. This allows powerful programs to be written concisely and cross-platform—but it also conceals the true nature at the heart of our modern world. Unveiling the magic within can lead to interesting insights about how computing got to where it is today.
 
