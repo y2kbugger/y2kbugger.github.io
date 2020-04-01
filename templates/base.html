@@ -44,8 +44,10 @@
             {% endif %}
             {% if DISPLAY_CATEGORIES_ON_MENU %}
                 {% for cat, null in categories %}
-                    <li{% if cat == category %} class="active"{% endif %}><a
-                            href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                    {% if cat != 'meta'  %}
+                        <li{% if cat == category %} class="active"{% endif %}><a
+                                href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                    {% endif %}
                 {% endfor %}
             {% endif %}
         </ul>
