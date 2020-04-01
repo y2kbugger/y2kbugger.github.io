@@ -4,7 +4,6 @@ blog.y2kbugger.com How To
 :date: 2017-12-15 23:12:30
 :modified: 2020-03-26 01:45:46
 :tags: testing, meta
-:category: not-real
 :author: zak kohler
 :summary: Just an explanation to myself about how to write these blog articles and use the features a standardized way for me.
 :status: draft
