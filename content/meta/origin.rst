@@ -7,6 +7,7 @@ blog.y2kbugger.com - Timeline of my Projects
 :author: zak kohler
 :summary: I explain how I use dates on this blog. The purpose of this blog is to showcase my projects past and future and so publication dates shouldn't be taken as the actual data the article was written.
 :status: published
+:cover: `https://lh3.googleusercontent.com/D9Q1Ag8tAEmQIo8cJ1ChfEAlZyodx60aHR4XBwUe7_GGb8tKOI49lfPno9FuFTM7c2khVeDTgpiMmhsKOLeDmUlhb8gw-AHKMUyPGVhKpjBuCrogEpsvu624IUwYNs3OBCGb0Xhk1kw=w683-h483-no`
 
 ..
     https://photos.app.goo.gl/nBk15GV92Uvt7ZzF8
@@ -25,9 +26,11 @@ when an article was publish, I will use the last modified on field even for new
 articles. This not only ensures an accurate timeline, but it gives the
 opportunity to go back and curate past projects.
 
-.. image:: https://lh3.googleusercontent.com/D9Q1Ag8tAEmQIo8cJ1ChfEAlZyodx60aHR4XBwUe7_GGb8tKOI49lfPno9FuFTM7c2khVeDTgpiMmhsKOLeDmUlhb8gw-AHKMUyPGVhKpjBuCrogEpsvu624IUwYNs3OBCGb0Xhk1kw=w683-h483-no
+.. figure:: https://lh3.googleusercontent.com/D9Q1Ag8tAEmQIo8cJ1ChfEAlZyodx60aHR4XBwUe7_GGb8tKOI49lfPno9FuFTM7c2khVeDTgpiMmhsKOLeDmUlhb8gw-AHKMUyPGVhKpjBuCrogEpsvu624IUwYNs3OBCGb0Xhk1kw=w683-h483-no
    :width: 100%
    :alt: Young zak at the computer.
+
+   Zak circa 1995. Some things never change.
 
 Historical stubs
 ----------------
