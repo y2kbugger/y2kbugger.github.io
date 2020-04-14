@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+from datetime import datetime
 
 AUTHOR = 'zak kohler'
 SITENAME = 'y2kbugger'
@@ -70,7 +71,7 @@ HEAD_EXTRA_DEBUG = """
 
 HEAD_EXTRA = HEAD_EXTRA_PROD + HEAD_EXTRA_DEBUG
 
-
-COPYRIGHT = """zak kohler 2017 &mdash; Happy Hacking"""
+thisyear = datetime.today().strftime("%Y")
+COPYRIGHT = f"zak kohler {thisyear} &mdash; Happy Hacking"
 
 ENABLE_SLICKNAV = False
