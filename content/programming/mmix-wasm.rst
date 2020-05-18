@@ -1,11 +1,11 @@
-MMIX - Why I am working on TAOCP in RISC
-########################################
+MMIX WASM, What?
+################
 
-:date: 2018-12-27 00:00:00
+:date: 2018-03-04
 :modified: 2020-05-18 13:14:09
 :tags: assembly, algorithms, MMIX, TAOCP
 :author: zak kohler
-:summary: After getting The Art of Computer Programming for Christmas, I had to decide: "MIX or MMIX?"
+:summary: , Compiled the MMIX Assembler and Simulator to Web Assembly
 :status: draft
 :cover: `https://lh3.googleusercontent.com/pw/ACtC-3cmwaXo3THz54nq3bz9bWJ9N3hK5zfHL9o4JAsdri5mZ7AgP4LPpilaSkxatNxccRDbxKgZ65jDB08Akq1UMV1nGGqktUrq8uXJFhs9ODgtUQ1wT6SAapWlK5zTWLP-tliFKDBuARvEVYmHnRilf89CsQ=w572-h85-no`
 
