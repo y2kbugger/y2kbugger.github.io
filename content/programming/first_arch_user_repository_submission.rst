@@ -15,8 +15,6 @@ Long time user, first time maintainer
 =====================================
 I've been a Linux user for a decade now, Ubuntu at first, but I switched to `ArchLinux <https://archlinux.org>`_ after a year or two. I quickly found the `Arch User Repository <https://aur.archlinux.org/>`_ or AUR to be a treasure trove of free (libre) software; I am still in awe today. On ms windows, finding software meant downloading binaries from sketchy freeware sites. The prospects were better on Ubuntu since many software projects engaged with the community and produces regular releases. One drawback however were the stale repos, some packages on ubuntu were still pointing at releases that were years old.The Ubuntu `Personal Package Archives <https://launchpad.net/ubuntu/+ppas>`_ PPAs was supposed to solve this, but I never had  good luck with them. The packages always seemed random whether or not they were compatible and maintained.
 
-
-
 .. image:: https://lh3.googleusercontent.com/mapAQeHjDZmDn4Jq-FXyEhuFDEB6IHuEBzk8egTflCpiwLU9g0-W_YevSXbZEE-tQopVtEIJLO_rkjgf2TjA_olTqV7gGPiiDPKliO23xXNlOENJnDhobYLeLh7w942lCrhiASjMVHA=w683-h228-no
    :alt: ArchLinux Logo
 
