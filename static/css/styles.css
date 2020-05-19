@@ -35,7 +35,7 @@ h4, h5, h6 {
     font-style: Bold;
     font-weight: 900;
     color: #222;
-    margin: 1em 0;
+    margin: 1.4em 0 0.6em 0;
 }
 
 h1 {
@@ -446,10 +446,6 @@ table.footnote {
 
     header.page-header h1 {
         font-size: 1.8em;
-        /* border: 0; */
-        /* padding: 0; */
-        /* padding-top: 0.5em; */
-        /* padding-bottom: 0.3em; */
     }
 
     header.page-header h2 {
