@@ -12,8 +12,115 @@ MMIX - Why I am working on TAOCP in RISC
 ..
   Google Photos Album: https://photos.app.goo.gl/dfXck6rcLDcZHtv17
 
-Quick start section
-===================
+
+The Art Of Computer Programming
+===============================
+Backgroup/What is Art of Computer Programming.
+Why I want to:
+A great way to learn algorithms at the level of computers. This is aligned with my goal to explore the parts of computing that might typically be ignored. The more I can understand the software-hardware interface, the happier I will be. This is the software side of that joy. On the other side are my exploration into TTL series logic and CPU design. One of the most cost effective ways to do this right now is FPGA. I hope that what I learn about algorithms in can help me when I'm trying write low level code for custom CPUs / hardware.
+
+
+MIX
+===
+In order to facilitate the teaching of alorithms and how they interact with hardware he has developed a CPU architecture and assembly languages.
+
+Wikipedia [#mixwiki]_:
+
+    MIX is a hypothetical computer used in Donald Knuth's monograph, The Art of
+    Computer Programming (TAOCP). MIX's model number is 1009, which was derived
+    by combining the model numbers and names of several contemporaneous,
+    commercial machines deemed significant by the author. Also, "MIX" read as a
+    Roman numeral is 1009.
+
+Knuth states that "MIX is very much like nearly every computer of the 1960s and 1970s except that it is, perhaps, nicer."
+
+MMIX
+====
+
+Knuth states in the third edition of his book:
+
+    However, it must be admitted that MIX is now quite obselete. Therefore MIX will be replaced in subsequent editions of this book by a new machine called MMIX, the 2009. MMIX will be a so-called reduced instruction set computer (RISC). [...] It will be even nicer than MIX and will be similar to machines that have become dominant during the 1990s.
+
+
+Knuth [#knuthmmix]_:
+
+    Thirty years have passed since the MIX computer was designed, and computer architecture has been converging during those years towards a rather different style of machine.
+
+
+Subsequent editions, fascicles
+==============================
+The dilemma we face here is that the next edition has not been released yet. The currently available version of the book with questions and answers is all written with MIX.
+
+<inser picture of 3rd edition
+
+So what choice do we have then? Well Donald has kindly release what is known as V1F1 or *The Art of Computer Programming, Volume 1, Fasicle 1 -- A RISC Computer for the New Millennium* [#v1f1].
+
+Explain fasicle
+
+Explain mmixmasters and the answers booklet.
+
+Link to amazon for both
+
+romanticize the journey ahead. Relate to riscv.
+
+
+
+
+
+
+
+
+
+
+
+
+.. [#mixwiki] https://en.wikipedia.org/wiki/MIX
+.. [#knuthmmix] https://www-cs-faculty.stanford.edu/~knuth/mmix.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Here is the official quick start guide::
 https://docs.getpelican.com/en/stable/quickstart.html
 
@@ -35,6 +142,7 @@ Start up dev environment:
 - Saving the file will cause it to auto-update in the dev env browser window. This is done with javascript and only activated when local.
 
 If you are satisfied with the post, set ``:status: published``, otherwise you can publish it to the web as a draft.
+t
 
 Tips:
     - Manually start the dev server in another xterm to see debug info
