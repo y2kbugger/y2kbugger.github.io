@@ -1,16 +1,34 @@
-MMIX WASM, What?
-################
+MMIX, WASM, What?
+#################
 
 :date: 2018-03-04
 :modified: 2020-05-18 13:14:09
 :tags: assembly, algorithms, MMIX, TAOCP
 :author: zak kohler
-:summary: , Compiled the MMIX Assembler and Simulator to Web Assembly
+:summary: Compiling the MMIX Assembler and Simulator to Web Assembly
 :status: draft
 :cover: `https://lh3.googleusercontent.com/pw/ACtC-3cmwaXo3THz54nq3bz9bWJ9N3hK5zfHL9o4JAsdri5mZ7AgP4LPpilaSkxatNxccRDbxKgZ65jDB08Akq1UMV1nGGqktUrq8uXJFhs9ODgtUQ1wT6SAapWlK5zTWLP-tliFKDBuARvEVYmHnRilf89CsQ=w572-h85-no`
 
 ..
   Google Photos Album: https://photos.app.goo.gl/dfXck6rcLDcZHtv17
+
+
+Link to first blog.
+
+Explain why I wanted some rapid interation on simple assembly programs.
+
+Talk a bit about wasm (use links and quotes)
+
+link to my repo and demo.
+
+Give high level of process.
+
+Explain problems, Literate Programming Tools WEB etc, Issue with make files. and vestigial extension to MMIX.
+
+Show shirt
+
+Explain future plans
+
 
 Quick start section
 ===================
