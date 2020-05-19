@@ -15,14 +15,15 @@ MMIX - Why I am working on TAOCP in RISC
 
 The Art Of Computer Programming
 ===============================
-Backgroup/What is Art of Computer Programming.
-Why I want to:
-A great way to learn algorithms at the level of computers. This is aligned with my goal to explore the parts of computing that might typically be ignored. The more I can understand the software-hardware interface, the happier I will be. This is the software side of that joy. On the other side are my exploration into TTL series logic and CPU design. One of the most cost effective ways to do this right now is FPGA. I hope that what I learn about algorithms in can help me when I'm trying write low level code for custom CPUs / hardware.
+The Art of Computer Programming is about as legendary as computer science books get. The goal was to describe and teach a wide range of algoritms. Originally concieved in 1962 as a single book with 12 chapter, rapid advancements being made in the field caused a content expansion that continues today-volume one was released in 1968, and volume 4 is still in progress. The book is notable for it's precision and accuracy as well as extreme care given to the exercises and solutions. It is also sometimes accused of being a book that people pretend to read but noone can call anyone out on it because noone has acutally read it. This might be due to the fact that all of the book is taught using assembly language rather than structured programming.[#taocpwik]_ 
 
+Why I want to read it
+---------------------
+I believe it when Knuth says that you learn something more about algorithms at the interface of hardware and software. In C for example you may not know what is happening in hardware when you write an if statement, but in assembly this becomes explicit. This is aligned with my goal to explore the parts of computing that might typically be ignored by many programmers. The more I can understand the software-hardware interface, the happier I will be. Learning algorithms via TAOCP is the software side of my strategy, for hardware I'm exploring TTL series logic and CPU design as well as simple cases of systems intgration using vintage microcontrollers. This has also led me to exploring prototyping via FPGA and one day I hope to design a CPU core and bootstrap up to a self hosting multitasking development environment.
 
 MIX
 ===
-In order to facilitate the teaching of alorithms and how they interact with hardware he has developed a CPU architecture and assembly languages.
+In order to facilitate the teaching of algorithms and how they interact with hardware he has developed a CPU architecture and assembly languages.
 
 Wikipedia [#mixwiki]_:
 
@@ -71,9 +72,7 @@ romanticize the journey ahead. Relate to riscv.
 
 
 
-
-
-
+.. [#taocpwiki] https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming
 .. [#mixwiki] https://en.wikipedia.org/wiki/MIX
 .. [#knuthmmix] https://www-cs-faculty.stanford.edu/~knuth/mmix.html
 
