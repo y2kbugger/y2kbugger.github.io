@@ -3,7 +3,7 @@ MMIX, WASM, What?
 
 :date: 2018-03-04
 :modified: 2020-05-18 13:14:09
-:tags: assembly, algorithms, MMIX, TAOCP
+:tags: assembly, algorithms, MMIX, TAOCP, books
 :author: zak kohler
 :summary: Compiling the MMIX Assembler and Simulator to Web Assembly
 :status: draft
