@@ -15,11 +15,24 @@ MMIX - Why I am working on TAOCP in RISC
 
 The Art Of Computer Programming
 ===============================
-The Art of Computer Programming is about as legendary as computer science books get. The goal was to describe and teach a wide range of algoritms. Originally concieved in 1962 as a single book with 12 chapter, rapid advancements being made in the field caused a content expansion that continues today-volume one was released in 1968, and volume 4 is still in progress. The book is notable for it's precision and accuracy as well as extreme care given to the exercises and solutions. It is also sometimes accused of being a book that people pretend to read but noone can call anyone out on it because noone has acutally read it. This might be due to the fact that all of the book is taught using assembly language rather than structured programming.[#taocpwik]_ 
+The Art of Computer Programming is about as legendary as computer science books get. The goal was to describe and teach a wide range of algoritms. Originally concieved in 1962 as a single book with 12 chapter, rapid advancements being made in the field caused a content expansion that continues today-volume one was released in 1968, and volume 4 is still in progress.
+
+.. image:: https://lh3.googleusercontent.com/pw/ACtC-3fz2RxP2aYWm20KIl9hU_BkQcyTNxSmewF-0TM7KLe2BbVwUsml4DmX7kgHf4E8vARaOSQFJ-d1zou3FMoD4hjaX8q3jSFcKZwty559C8BiomechHmEW7gwmIBd8kJvi0u4Zqx0I6UDlA65QuBUX_CEdQ=w500-h431-no
+   :width: 33%
+   :alt: The art of Computer Programming
+   :align: center
+
+The book is notable for it's precision and accuracy as well as extreme care given to the exercises and solutions. It is also sometimes accused of being a book that people recommends but which . This might be due to the fact that all of the book is taught using assembly language rather than structured programming. [#taocpwiki]_
 
 Why I want to read it
 ---------------------
-I believe it when Knuth says that you learn something more about algorithms at the interface of hardware and software. In C for example you may not know what is happening in hardware when you write an if statement, but in assembly this becomes explicit. This is aligned with my goal to explore the parts of computing that might typically be ignored by many programmers. The more I can understand the software-hardware interface, the happier I will be. Learning algorithms via TAOCP is the software side of my strategy, for hardware I'm exploring TTL series logic and CPU design as well as simple cases of systems intgration using vintage microcontrollers. This has also led me to exploring prototyping via FPGA and one day I hope to design a CPU core and bootstrap up to a self hosting multitasking development environment.
+I believe it when Knuth says that you learn something more about algorithms at the interface of hardware and software. In C for example you may not know what is happening in hardware when you write an if statement, but in assembly this becomes explicit.
+
+He puts it like this [#knuthmmix]_:
+
+    One of the principal goals of my books is to show how high-level constructions are actually implemented in machines, not simply to show how they are applied.
+
+This is aligned with my goal to explore the parts of computing that might typically be ignored by many programmers. The more I can understand the software-hardware interface, the happier I will be. Learning algorithms via TAOCP is the software side of my strategy, for hardware I'm exploring TTL series logic and CPU design as well as simple cases of systems integration using vintage microcontrollers. This has also led me to exploring prototyping via FPGA and one day I hope to design a CPU core and bootstrap up to a self hosting multitasking development environment.
 
 MIX
 ===
@@ -37,355 +50,36 @@ Knuth states that "MIX is very much like nearly every computer of the 1960s and 
 
 MMIX
 ====
+.. image:: https://lh3.googleusercontent.com/pw/ACtC-3cmwaXo3THz54nq3bz9bWJ9N3hK5zfHL9o4JAsdri5mZ7AgP4LPpilaSkxatNxccRDbxKgZ65jDB08Akq1UMV1nGGqktUrq8uXJFhs9ODgtUQ1wT6SAapWlK5zTWLP-tliFKDBuARvEVYmHnRilf89CsQ=w572-h85-no
+   :alt: MMIX
 
 Knuth states in the third edition of his book:
 
-    However, it must be admitted that MIX is now quite obselete. Therefore MIX will be replaced in subsequent editions of this book by a new machine called MMIX, the 2009. MMIX will be a so-called reduced instruction set computer (RISC). [...] It will be even nicer than MIX and will be similar to machines that have become dominant during the 1990s.
+    However, it must be admitted that MIX is now quite obsolete. Therefore MIX will be replaced in subsequent editions of this book by a new machine called MMIX, the 2009. MMIX will be a so-called reduced instruction set computer (RISC). [...] It will be even nicer than MIX and will be similar to machines that have become dominant during the 1990s.
 
+.. image:: https://lh3.googleusercontent.com/pw/ACtC-3fRUt39VqJiEOQ9LhFcwVrsuth55pRA44lyfN51vxoNG0v0DshXSPqc5SdCtLdAnCWPOfLaP-KS5iDdApF0YKfAM8SBZmgyI61tLobpe8lVmxjGyNFkdrOpxaOD4cpvrJddWkV7lvJAUvmMONAoJF6dtg=w683-h131-no
 
 Knuth [#knuthmmix]_:
 
     Thirty years have passed since the MIX computer was designed, and computer architecture has been converging during those years towards a rather different style of machine.
 
-
 Subsequent editions, fascicles
 ==============================
-The dilemma we face here is that the next edition has not been released yet. The currently available version of the book with questions and answers is all written with MIX.
+So we've chosen the path towards the future, now what? The dilemma we face is that the next edition has not been released yet. The currently available version of the book has all questions and answers is still all written with MIX.
 
-<inser picture of 3rd edition
+.. image:: https://lh3.googleusercontent.com/pw/ACtC-3cuRVuJCUSUugDBBPjEjvV-g4h9rh4NuHipmWhjvJbgS3zKZGBYrkea6kFi6MYL6-gC-mmhqHvCIB6FMcG6fHf_wzLQ3FSggliRMHXReoaJXcB4XEkEYYUFVJ-tzUwnb0Htv9v26hcMSSMf6vrfC46HXQ=w683-h459-no
+   :alt: The three required books for MMIX
+   :align: center
 
-So what choice do we have then? Well Donald has kindly release what is known as V1F1 or *The Art of Computer Programming, Volume 1, Fasicle 1 -- A RISC Computer for the New Millennium* [#v1f1].
+So what choice do we have then? Well Donald has kindly release what is known as V1F1 or *The Art of Computer Programming, Volume 1, Fasicle 1 -- A RISC Computer for the New Millennium*. A fascicle is a "a separately published installment of a book or other printed work." Basically it acts as a patch for V1 3e. Replacing the chapter explaining MIX with the MMIX equivalent. It is available on `Amazon <https://https://www.amazon.com/Art-Computer-Programming-Fascicle-Millennium/dp/0201853922/>`_.
 
-Explain fasicle
+That covers the basics of the language, but all of the solutions also needed reworked. Knuth put out a request for people to get together and create the solution [#mmixmasters]_. The end result of this is known as the MMIX supplement. It's available on the web, http://mmix.cs.hm.edu/supplement/index.html as well as in printed from on Amazon: `MMIX Supplement <https://www.amazon.com/MMIX-Supplement-Computer-Programming-Volumes/dp/0133992314>`_.
 
-Explain mmixmasters and the answers booklet.
-
-Link to amazon for both
-
-romanticize the journey ahead. Relate to riscv.
-
-
-
-
-
-
-
-
+Hardware and RISC-V
+===================
+I'm excited to start working through exercises these exercises. At the same time I plan to continue working on the hardware side as well and I dream of the day I could some of the algorithms running on a RISC-V cpu or even more exciting, a toy ISA of my own.
 
 .. [#taocpwiki] https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming
 .. [#mixwiki] https://en.wikipedia.org/wiki/MIX
 .. [#knuthmmix] https://www-cs-faculty.stanford.edu/~knuth/mmix.html
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Here is the official quick start guide::
-https://docs.getpelican.com/en/stable/quickstart.html
-
-This guide is how to start from scratch. The guide below is about starting up the developer environment for writing the blog.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-My quick start subsection
--------------------------
-Write subsubsection (use sparingly)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Start up dev environment:
-
-.. code-block:: bash
-
-    $ wo-blog
-
-- Add/modify the files in blog/content/CATEGORY/SLUG-OF-THE-PAGE.rst
-- Saving the file will cause it to auto-update in the dev env browser window. This is done with javascript and only activated when local.
-
-If you are satisfied with the post, set ``:status: published``, otherwise you can publish it to the web as a draft.
-t
-
-Tips:
-    - Manually start the dev server in another xterm to see debug info
-      ``$ pipenv run make stopserver && pipenv run make devserve``
-
-Publish
-^^^^^^^
-Publishing makes the blog entry available to the world.
-
-To publish, commit articles additions/changes:
-
-.. code-block:: bash
-
-    $ git add content/
-    $ git commit
-    $ git push origin write
-
-Finally publish your changes:
-
-.. code-block:: bash
-
-    $ pipenv run make github
-
-Style guide
-===========
-Article titles should be ``Title Case``, all other sections should be ``Sentence case like this``.
-
-There should be no gap between a section header and the first paragraph.
-
-Favor figures over images.
-
-When in doubt, reference this article. For example, which style of links to use.
-
-Metadata
-========
-Url comes from the file basename if you don't override it with slug::
-
-    :slug this-is-alternate-url
-
-The folder will be used as the category
-
-Other Default info types::
-
-    :date: 2018-01-25 19:54:15
-    :modified: 2017-12-16 19:54:15
-    :tags: bread
-    :category: food
-    :author: zak kohler
-    :summary: Just testing some more formatting
-    :status: draft
-
-The default status is set to draft, to publish set it to published::
-
-    :status: published
-
-Content
-=======
-Content types that I commonly use within articles I'll put here. Otherwise here are the thorough guides.
-
-- More about writing here https://docs.getpelican.com/en/stable/content.html
-- https://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html
-- https://docutils.sourceforge.io/docs/user/rst/quickref.html#definition-lists
-
-Linking
--------
-Internal
-^^^^^^^^
-You don't have to make tags to link internally, you can do it just like this: `a link to an internal file <{filename}/food/no-knead-bread-one.rst>`_
-I haven't figured out yet if there is a way to link to sub-sections
-
-External
-^^^^^^^^
-Here is an inline link to an external site `Jungle Jim's <https://junglejims.com/>`_.
-
-If you actually just want to show the external link, just put in it strait up like in the following sentence. Hey try http://google.com its good.
-
-Inserting photos
-----------------
-All photos are hosted using google photos.
-
-Here is an exact step-by-step for getting a correct hyperlink.
-
-1. Make sure the album is shared via make link
-   Here is the link for the Blog Misc. https://photos.app.goo.gl/dfXck6rcLDcZHtv17
-2. Open the share link in incognito mode
-3. Go to a specific photo in the album
-4. Click on it to get a closer view of the image
-5. Right Click on the Image
-6. Click on “Copy Image Address”
-
-When you add a bunch of pictures from a new album, be sure to add that album url in a comment.
-
-..
-    Comments are like this. https://photos.app.goo.gl/qfXck6rcLDcZHtv1d
-
-Here is one of my good friends:
-
-.. image:: https://lh3.googleusercontent.com/0pckhDWOKZKJEeB2izt77k40PlTPE0AYu8N4e-_RCaxgxUrUoZPQvGllBkYEbNYLfRg7GUQfxCC-le3jQYmTgUbJ4_ns59Ru-_8aaoiScEBAJdL2U5GutLXkM81mUvmik2u2RE1j6nQ=w460-h678-no
-   :width: 100%
-   :alt: Boojie
-   :align: center
-
-I hope to see you soon Booj
-
-Figures are like images but include caption/subcontent.
-
-.. figure:: https://lh3.googleusercontent.com/TQ_e5Ds-zAANFEZ8jwQDspm634t8TTd9mhgffJDgTClAv-m3-yDU7BEDelYqRZe4gAk-p21Dmsx9S0euK4m3ExzyZmmaTv7rKrEjS4UzwORAiFNy8WOg8vwC4xS19R_CX4dUkcUOs5g=w683-h419-no
-   :width: 300px
-   :alt: Good look at what stock prices happen.
-
-   Here is where the caption happens. Anthing else can go here also. What else
-
-Inline style
-------------
-*Italics use asterisk*
-
-**bold is double asterisks**
-
-
-``inline literal``
-
-.. note::
-   Do not confuse `interpreted text` with ``inline literal``.
-   Interpreted text gets rendered as <cite>
-
-Git clone to a tag
-------------------
-.. code-block:: giturl
-
-   git clone --branch 2019-07-28-PyOhio https://y2kbugger@bitbucket.org/y2kbugger/sapy.git
-
-Linking slides and jupyter notebook
-
-`Slides <https://drive.google.com/open?id=1u8qlAK4SeqFX3ybT7zVuKWItMvCadhsgF9WmCCOM3dQ>`_ `Live Jupyter Notebook <https://gke.mybinder.org/v2/git/https%3A%2F%2Fy2kbugger%40bitbucket.org%2Fy2kbugger%2Fsapy.git/de5086ea943c94fec40e14478257ab2716e28c96?filepath=Simple%20As%20Possible.ipynb>`_
-
-Definition lists
-================
-What
-  Definition lists associate a term with
-  a definition.
-
-How
-  The term is a one-line phrase, and the
-  definition is one or more paragraphs or
-  body elements, indented relative to the
-  term. Blank lines are not allowed
-  between term and definition.
-
-Block quotes are just
-=====================
-    Indented paragraphs,
-
-        and they may nest.
-
-Recipe Ingredients
-==================
-For ingredients combine highlights directive with bulletless(pipe) lists
-
-Wet
----
-.. Highlights::
-    | 1/2 c. unsalted butter
-    | 2.25 c. sugar [#sugar]_
-    | 6 very soft persimmons
-    | 1.5 c. whole milk
-    | 5 large eggs
-    | 2 teaspoons pure vanilla extract
-    | 1 lemon
-
--------
-
-.. [#sugar] Is sugar wet today?
-
-
-Code blocks
-===========
-A block followed by two colons will be monospaced::
-
-    :date: 2018-01-25 19:54:15
-    :modified: 2017-12-16 19:54:15
-    :tags: bread
-    :category: food
-    :author: zak kohler
-    :summary: Just testing some more formatting
-    :status: draft
-
-
-You can specify a particular language:
-
-.. code-block:: bash
-
-    $ cd ~/devel/blog
-    $ pipenv run python
-
-Here is a more detailed code block including line numbers:
-
-.. code-block:: python
-   :linenos:
-
-    from htooze import world
-
-    def test_planet_exists():
-        p = world.Planet()
-        assert isinstance(p, world.Planet)
-
-    def test_life_can_exist():
-        mycell = world.Cell()
-        assert isinstance(mycell, world.Cell)
-
-    def test_planet_starts_without_life():
-        p = world.Planet()
-        assert len(p.life) == 0
-
-    def test_life_can_live_on_planet():
-        p = world.Planet()
-        mycell = world.Cell()
-        p.addcell(mycell)
-
-        assert len(p.life) == 1
-        for coords, cell in p.life.items():
-            assert cell is mycell
-            assert isinstance(coords, tuple)
-            assert int(coords[0]) == coords[0]
-
-
-My architecture details
-=======================
-
-Git branches
-------------
-master
-    This is the one with the compiled content, this syncs to the remote. No manual commit.
-write
-    This is the one that we develop in, make your commits here.
-
-wo-blog
--------
-- Open the project directory
-- Checkout the write branch
-- Kill existing servers and start a new one with all output piped to /dev/null
-- Open up a chrome window to view new posts
-
-Hosting
--------
-Hosted as a gitlab page. Domain is setup with 1and1.
-
-Had to edit dns setting inside of 1and1 per github guidelines.
+.. [#mmixmasters] http://mmix.cs.hm.edu/mmixmasters/index.html
