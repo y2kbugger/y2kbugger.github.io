@@ -75,10 +75,12 @@ So we've chosen the path towards the future, now what? The dilemma we face is th
 
 So what choice do we have then? Well Donald has kindly release what is known as V1F1 or *The Art of Computer Programming, Volume 1, Fasicle 1 -- A RISC Computer for the New Millennium*. A fascicle is a "a separately published installment of a book or other printed work." Basically it acts as a patch for V1 3e. Replacing the chapter explaining MIX with the MMIX equivalent. It is available on `Amazon <https://https://www.amazon.com/Art-Computer-Programming-Fascicle-Millennium/dp/0201853922/>`_. Fun note, these are printed on demand when you place your order.
 
-.. image:: https://lh3.googleusercontent.com/pw/ACtC-3dsG1EowkXAZFHTN5U6GoiV7aHLiLZj4qS4T-LL4_G7bSkTLQFbru0xIrfOSHiVYxg3UDcSqjI3_DC0HQvAiMNwwaaUBNkcFkEqL0Zx5m11fvY5ctohhCmg8e60Y_SAX8k1jyvou9g_R2JqBcRycjhmbg=w509-h678-no
-   :width: 50%
+.. figure:: https://lh3.googleusercontent.com/pw/ACtC-3dsG1EowkXAZFHTN5U6GoiV7aHLiLZj4qS4T-LL4_G7bSkTLQFbru0xIrfOSHiVYxg3UDcSqjI3_DC0HQvAiMNwwaaUBNkcFkEqL0Zx5m11fvY5ctohhCmg8e60Y_SAX8k1jyvou9g_R2JqBcRycjhmbg=w509-h678-no
+   :width: 66%
    :alt: On demand printing
-   :align: center
+   :align: right
+
+   Printed the day after I ordered on Amazon.
 
 That covers the basics of the language, but all of the solutions also needed reworked. Knuth put out a request for people to get together and create the solution [#mmixmasters]_. The end result of this is known as the MMIX supplement. It's available on the web, http://mmix.cs.hm.edu/supplement/index.html as well as in printed from on Amazon: `MMIX Supplement <https://www.amazon.com/MMIX-Supplement-Computer-Programming-Volumes/dp/0133992314>`_.
 
