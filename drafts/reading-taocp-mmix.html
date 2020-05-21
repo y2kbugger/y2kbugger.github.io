@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <title>MMIX - Why I am working on TAOCP in RISC - y2kbugger</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link rel="stylesheet" href="/theme/css/styles.css">
+        <link rel="stylesheet" href="/theme/css/pygment.css">
+        
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
+
+
+
+
+        <meta name="tags" contents="assembly"/>
+        <meta name="tags" contents="algorithms"/>
+        <meta name="tags" contents="MMIX"/>
+        <meta name="tags" contents="TAOCP"/>
+        <meta name="tags" contents="books"/>
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <nav>
+        <ul id="menu">
+                <li><a href="/index.html">y2kbugger</a>
+                </li>
+                <li><a href="/tags.html">Tags</a>
+                </li>
+                        <li><a
+                                href="http://blog.y2kbugger.com/category/food.html">food</a></li>
+                        <li class="active"><a
+                                href="http://blog.y2kbugger.com/category/programming.html">programming</a></li>
+                        <li><a
+                                href="http://blog.y2kbugger.com/category/talks.html">talks</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+    <h1>MMIX - Why I am working on TAOCP in RISC</h1>
+
+    <div class="article-meta">
+                <span class="author">By zak kohler</span>
+        <span class="publication-date" title="2018-12-27T00:00:00-05:00"> on 2018.12.27</span>
+        <span class="modification-date" title="2020-05-18T13:14:09-04:00"> last modified on 2020.05.18 @ 13:14</span>
+
+
+            <div class="tags">
+                Tagged:
+                    <a href="http://blog.y2kbugger.com/tag/assembly.html">assembly</a>,                    <a href="http://blog.y2kbugger.com/tag/algorithms.html">algorithms</a>,                    <a href="http://blog.y2kbugger.com/tag/mmix.html">MMIX</a>,                    <a href="http://blog.y2kbugger.com/tag/taocp.html">TAOCP</a>,                    <a href="http://blog.y2kbugger.com/tag/books.html">books</a>            </div>
+    </div>
+
+    </header>
+
+    <main class="content">
+    <div class="article-content">
+        <!-- Google Photos Album: https://photos.app.goo.gl/dfXck6rcLDcZHtv17 -->
+<div class="section" id="the-art-of-computer-programming">
+<h2>The Art Of Computer Programming</h2>
+<p>The Art of Computer Programming is about as legendary as computer science books get. The goal was to describe and teach a wide range of algoritms. Originally concieved in 1962 as a single book with 12 chapter, rapid advancements being made in the field caused a content expansion that continues today-volume one was released in 1968, and volume 4 is still in progress.</p>
+<img alt="The art of Computer Programming" class="align-center" src="https://lh3.googleusercontent.com/pw/ACtC-3fz2RxP2aYWm20KIl9hU_BkQcyTNxSmewF-0TM7KLe2BbVwUsml4DmX7kgHf4E8vARaOSQFJ-d1zou3FMoD4hjaX8q3jSFcKZwty559C8BiomechHmEW7gwmIBd8kJvi0u4Zqx0I6UDlA65QuBUX_CEdQ=w500-h431-no" style="width: 33%;" />
+<p>The book is notable for it's precision and accuracy as well as extreme care given to the exercises and solutions. It is also sometimes accused of being a book that people recommends but which . This might be due to the fact that all of the book is taught using assembly language rather than structured programming. <a class="footnote-reference" href="#taocpwiki" id="id1">[1]</a></p>
+<div class="section" id="why-i-want-to-read-it">
+<h3>Why I want to read it</h3>
+<p>I believe it when Knuth says that you learn something more about algorithms at the interface of hardware and software. In C for example you may not know what is happening in hardware when you write an if statement, but in assembly this becomes explicit.</p>
+<p>He puts it like this <a class="footnote-reference" href="#knuthmmix" id="id2">[3]</a>:</p>
+<blockquote>
+One of the principal goals of my books is to show how high-level constructions are actually implemented in machines, not simply to show how they are applied.</blockquote>
+<p>This is aligned with my goal to explore the parts of computing that might typically be ignored by many programmers. The more I can understand the software-hardware interface, the happier I will be. Learning algorithms via TAOCP is the software side of my strategy, for hardware I'm exploring TTL series logic and CPU design as well as simple cases of systems integration using vintage microcontrollers. This has also led me to exploring prototyping via FPGA and one day I hope to design a CPU core and bootstrap up to a self hosting multitasking development environment.</p>
+</div>
+</div>
+<div class="section" id="mix">
+<h2>MIX</h2>
+<p>In order to facilitate the teaching of algorithms and how they interact with hardware he has developed a CPU architecture and assembly languages.</p>
+<p>Wikipedia <a class="footnote-reference" href="#mixwiki" id="id3">[2]</a>:</p>
+<blockquote>
+MIX is a hypothetical computer used in Donald Knuth's monograph, The Art of
+Computer Programming (TAOCP). MIX's model number is 1009, which was derived
+by combining the model numbers and names of several contemporaneous,
+commercial machines deemed significant by the author. Also, &quot;MIX&quot; read as a
+Roman numeral is 1009.</blockquote>
+<p>Knuth states that &quot;MIX is very much like nearly every computer of the 1960s and 1970s except that it is, perhaps, nicer.&quot;</p>
+</div>
+<div class="section" id="mmix">
+<h2>MMIX</h2>
+<img alt="MMIX" src="https://lh3.googleusercontent.com/pw/ACtC-3cmwaXo3THz54nq3bz9bWJ9N3hK5zfHL9o4JAsdri5mZ7AgP4LPpilaSkxatNxccRDbxKgZ65jDB08Akq1UMV1nGGqktUrq8uXJFhs9ODgtUQ1wT6SAapWlK5zTWLP-tliFKDBuARvEVYmHnRilf89CsQ=w572-h85-no" />
+<p>Computer have changed a lot since the 60s, as Knuth explains <a class="footnote-reference" href="#knuthmmix" id="id4">[3]</a>:</p>
+<blockquote>
+Thirty years have passed since the MIX computer was designed, and computer architecture has been converging during those years towards a rather different style of machine.</blockquote>
+<img alt="Under Construction" src="https://lh3.googleusercontent.com/pw/ACtC-3fRUt39VqJiEOQ9LhFcwVrsuth55pRA44lyfN51vxoNG0v0DshXSPqc5SdCtLdAnCWPOfLaP-KS5iDdApF0YKfAM8SBZmgyI61tLobpe8lVmxjGyNFkdrOpxaOD4cpvrJddWkV7lvJAUvmMONAoJF6dtg=w683-h131-no" />
+<p>In his the third edition of his book he explain that MIX will be replaced:</p>
+<blockquote>
+However, it must be admitted that MIX is now quite obsolete. Therefore MIX will be replaced in subsequent editions of this book by a new machine called MMIX, the 2009. MMIX will be a so-called reduced instruction set computer (RISC). [...] It will be even nicer than MIX and will be similar to machines that have become dominant during the 1990s.</blockquote>
+</div>
+<div class="section" id="subsequent-editions-fascicles">
+<h2>Subsequent editions, fascicles</h2>
+<p>So we've chosen the path towards the future, now what? The dilemma we face is that the next edition has not been released yet. The currently available version of the book has all questions and answers is still all written with MIX.</p>
+<img alt="The three required books for MMIX" class="align-center" src="https://lh3.googleusercontent.com/pw/ACtC-3cuRVuJCUSUugDBBPjEjvV-g4h9rh4NuHipmWhjvJbgS3zKZGBYrkea6kFi6MYL6-gC-mmhqHvCIB6FMcG6fHf_wzLQ3FSggliRMHXReoaJXcB4XEkEYYUFVJ-tzUwnb0Htv9v26hcMSSMf6vrfC46HXQ=w683-h459-no" />
+<p>So what choice do we have then? Well Donald has kindly release what is known as V1F1 or <em>The Art of Computer Programming, Volume 1, Fasicle 1 -- A RISC Computer for the New Millennium</em>. A fascicle is a &quot;a separately published installment of a book or other printed work.&quot; Basically it acts as a patch for V1 3e. Replacing the chapter explaining MIX with the MMIX equivalent. It is available on <a class="reference external" href="https://https://www.amazon.com/Art-Computer-Programming-Fascicle-Millennium/dp/0201853922/">Amazon</a>. Fun note, these are printed on demand when you place your order.</p>
+<div class="figure align-right">
+<img alt="On demand printing" src="https://lh3.googleusercontent.com/pw/ACtC-3dsG1EowkXAZFHTN5U6GoiV7aHLiLZj4qS4T-LL4_G7bSkTLQFbru0xIrfOSHiVYxg3UDcSqjI3_DC0HQvAiMNwwaaUBNkcFkEqL0Zx5m11fvY5ctohhCmg8e60Y_SAX8k1jyvou9g_R2JqBcRycjhmbg=w509-h678-no" style="width: 66%;" />
+<p class="caption">Printed the day after I ordered on Amazon.</p>
+</div>
+<p>That covers the basics of the language, but all of the solutions also needed reworked. Knuth put out a request for people to get together and create the solution <a class="footnote-reference" href="#mmixmasters" id="id5">[4]</a>. The end result of this is known as the MMIX supplement. It's available on the web, <a class="reference external" href="http://mmix.cs.hm.edu/supplement/index.html">http://mmix.cs.hm.edu/supplement/index.html</a> as well as in printed from on Amazon: <a class="reference external" href="https://www.amazon.com/MMIX-Supplement-Computer-Programming-Volumes/dp/0133992314">MMIX Supplement</a>.</p>
+</div>
+<div class="section" id="hardware-and-risc-v">
+<h2>Hardware and RISC-V</h2>
+<p>I'm excited to start working through exercises these exercises. At the same time I plan to continue working on the hardware side as well and I dream of the day I could some of the algorithms running on a RISC-V cpu or even more exciting, a toy ISA of my own.</p>
+<table class="docutils footnote" frame="void" id="taocpwiki" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming">https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="mixwiki" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td><a class="reference external" href="https://en.wikipedia.org/wiki/MIX">https://en.wikipedia.org/wiki/MIX</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="knuthmmix" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[3]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id4">2</a>)</em> <a class="reference external" href="https://www-cs-faculty.stanford.edu/~knuth/mmix.html">https://www-cs-faculty.stanford.edu/~knuth/mmix.html</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="mmixmasters" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[4]</a></td><td><a class="reference external" href="http://mmix.cs.hm.edu/mmixmasters/index.html">http://mmix.cs.hm.edu/mmixmasters/index.html</a></td></tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'blog-y2kbugger'; // required: replace example with your forum shortname
+        var disqus_identifier = 'drafts/reading-taocp-mmix.html';
+        var disqus_url = 'http://blog.y2kbugger.com/drafts/reading-taocp-mmix.html';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </main>
+
+    <footer class="page-footer">
+            zak kohler 2020 &mdash; Happy Hacking
+    </footer>
+
+</div>
+</body>
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+ -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-111274102-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</html>
