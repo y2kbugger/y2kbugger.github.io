@@ -58,6 +58,7 @@ Computer have changed a lot since the 60s, as Knuth explains [#knuthmmix]_:
     Thirty years have passed since the MIX computer was designed, and computer architecture has been converging during those years towards a rather different style of machine.
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3fRUt39VqJiEOQ9LhFcwVrsuth55pRA44lyfN51vxoNG0v0DshXSPqc5SdCtLdAnCWPOfLaP-KS5iDdApF0YKfAM8SBZmgyI61tLobpe8lVmxjGyNFkdrOpxaOD4cpvrJddWkV7lvJAUvmMONAoJF6dtg=w683-h131-no
+   :alt: Under Construction
 
 In his the third edition of his book he explain that MIX will be replaced:
 
