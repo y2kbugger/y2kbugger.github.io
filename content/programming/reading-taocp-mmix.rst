@@ -53,15 +53,17 @@ MMIX
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3cmwaXo3THz54nq3bz9bWJ9N3hK5zfHL9o4JAsdri5mZ7AgP4LPpilaSkxatNxccRDbxKgZ65jDB08Akq1UMV1nGGqktUrq8uXJFhs9ODgtUQ1wT6SAapWlK5zTWLP-tliFKDBuARvEVYmHnRilf89CsQ=w572-h85-no
    :alt: MMIX
 
-Knuth states in the third edition of his book:
+Computer have changed a lot since the 60s, as Knuth explains [#knuthmmix]_:
 
-    However, it must be admitted that MIX is now quite obsolete. Therefore MIX will be replaced in subsequent editions of this book by a new machine called MMIX, the 2009. MMIX will be a so-called reduced instruction set computer (RISC). [...] It will be even nicer than MIX and will be similar to machines that have become dominant during the 1990s.
+    Thirty years have passed since the MIX computer was designed, and computer architecture has been converging during those years towards a rather different style of machine.
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3fRUt39VqJiEOQ9LhFcwVrsuth55pRA44lyfN51vxoNG0v0DshXSPqc5SdCtLdAnCWPOfLaP-KS5iDdApF0YKfAM8SBZmgyI61tLobpe8lVmxjGyNFkdrOpxaOD4cpvrJddWkV7lvJAUvmMONAoJF6dtg=w683-h131-no
 
-Knuth [#knuthmmix]_:
+In his the third edition of his book he explain that MIX will be replaced:
 
-    Thirty years have passed since the MIX computer was designed, and computer architecture has been converging during those years towards a rather different style of machine.
+    However, it must be admitted that MIX is now quite obsolete. Therefore MIX will be replaced in subsequent editions of this book by a new machine called MMIX, the 2009. MMIX will be a so-called reduced instruction set computer (RISC). [...] It will be even nicer than MIX and will be similar to machines that have become dominant during the 1990s.
+
+
 
 Subsequent editions, fascicles
 ==============================
@@ -71,7 +73,12 @@ So we've chosen the path towards the future, now what? The dilemma we face is th
    :alt: The three required books for MMIX
    :align: center
 
-So what choice do we have then? Well Donald has kindly release what is known as V1F1 or *The Art of Computer Programming, Volume 1, Fasicle 1 -- A RISC Computer for the New Millennium*. A fascicle is a "a separately published installment of a book or other printed work." Basically it acts as a patch for V1 3e. Replacing the chapter explaining MIX with the MMIX equivalent. It is available on `Amazon <https://https://www.amazon.com/Art-Computer-Programming-Fascicle-Millennium/dp/0201853922/>`_.
+So what choice do we have then? Well Donald has kindly release what is known as V1F1 or *The Art of Computer Programming, Volume 1, Fasicle 1 -- A RISC Computer for the New Millennium*. A fascicle is a "a separately published installment of a book or other printed work." Basically it acts as a patch for V1 3e. Replacing the chapter explaining MIX with the MMIX equivalent. It is available on `Amazon <https://https://www.amazon.com/Art-Computer-Programming-Fascicle-Millennium/dp/0201853922/>`_. Fun note, these are printed on demand when you place your order.
+
+.. image:: https://lh3.googleusercontent.com/pw/ACtC-3dsG1EowkXAZFHTN5U6GoiV7aHLiLZj4qS4T-LL4_G7bSkTLQFbru0xIrfOSHiVYxg3UDcSqjI3_DC0HQvAiMNwwaaUBNkcFkEqL0Zx5m11fvY5ctohhCmg8e60Y_SAX8k1jyvou9g_R2JqBcRycjhmbg=w509-h678-no
+   :width: 50%
+   :alt: On demand printing
+   :align: center
 
 That covers the basics of the language, but all of the solutions also needed reworked. Knuth put out a request for people to get together and create the solution [#mmixmasters]_. The end result of this is known as the MMIX supplement. It's available on the web, http://mmix.cs.hm.edu/supplement/index.html as well as in printed from on Amazon: `MMIX Supplement <https://www.amazon.com/MMIX-Supplement-Computer-Programming-Volumes/dp/0133992314>`_.
 
