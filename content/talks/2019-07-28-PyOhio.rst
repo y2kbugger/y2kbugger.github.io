@@ -2,7 +2,7 @@ Learn How Computers Work Between Silicon and Assembly: Build a CPU with Python
 ###############################################################################
 
 :date: 2019-07-28
-:tags: PyOhio, Python, Retrocomputing
+:tags: PyOhio, Python, Retrocomputing, CPUs
 :author: zak kohler
 :summary: PyOhio 2019, Columbus, Ohio
 :cover: `https://lh3.googleusercontent.com/VGVmiT87_q5CMBf0SCBUyZY2HBRdjhd2UUSirDZi2KJt_uvf-QacVTZVNtREwRC29JNmSEPwvfYLycGnWhtxlJJGdjwYK2d6INxl8-WBvxA91Fx844d7rx1KV6Q84M7RGMzRgJIZvrg=w683-h410-no`
