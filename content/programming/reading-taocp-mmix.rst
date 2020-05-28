@@ -1,5 +1,5 @@
-MMIX - Why I am working on TAOCP in RISC
-########################################
+MMIX - Working on TAOCP in RISC
+###############################
 
 :date: 2018-12-27 00:00:00
 :modified: 2020-05-18 13:14:09
@@ -12,31 +12,34 @@ MMIX - Why I am working on TAOCP in RISC
 ..
   Google Photos Album: https://photos.app.goo.gl/dfXck6rcLDcZHtv17
 
+Reading The Art Of Computer Programming
+=======================================
+I want to cover the why I want to read TAOCP as well as my approach. Because the books are in various states of publication, to enjoy the original books using a RISC like architecture you must use external resources in addition to the actual book.
 
 The Art Of Computer Programming
 ===============================
-The Art of Computer Programming is about as legendary as computer science books get. The goal was to describe and teach a wide range of algoritms. Originally concieved in 1962 as a single book with 12 chapter, rapid advancements being made in the field caused a content expansion that continues today-volume one was released in 1968, and volume 4 is still in progress.
+The Art of Computer Programming is about as legendary as computer science books get. It was originally conceived in 1962 as a 12 chapter book documenting a wide range of algorithms. The rapid pace of change in computer science made these chapters a moving target; while volume one was released in 1968, volume 4 is still in progress as of 2020.
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3fz2RxP2aYWm20KIl9hU_BkQcyTNxSmewF-0TM7KLe2BbVwUsml4DmX7kgHf4E8vARaOSQFJ-d1zou3FMoD4hjaX8q3jSFcKZwty559C8BiomechHmEW7gwmIBd8kJvi0u4Zqx0I6UDlA65QuBUX_CEdQ=w500-h431-no
    :width: 33%
    :alt: The art of Computer Programming
    :align: center
 
-The book is notable for it's precision and accuracy as well as extreme care given to the exercises and solutions. It is also sometimes accused of being a book that people recommends but which . This might be due to the fact that all of the book is taught using assembly language rather than structured programming. [#taocpwiki]_
+The book is notable for being comprehensive and precise as well as for the extreme care given to the exercises and solutions. Because it known for being a huge undertaking, some people quip that the book is often recommended but not often read. This might be due to the fact that the algorithms are explained using assembly language rather than structured programming which some people feel is impenetrably  obscure [#taocpwiki]_ .
 
 Why I want to read it
 ---------------------
-I believe it when Knuth says that you learn something more about algorithms at the interface of hardware and software. In C for example you may not know what is happening in hardware when you write an if statement, but in assembly this becomes explicit.
+I believe it when Knuth says that you learn something extra about algorithms at the interface of hardware and software. In C for example you may not know what is happening in hardware when you write an if statement, but in assembly this is in-your-face.
 
 He puts it like this [#knuthmmix]_:
 
     One of the principal goals of my books is to show how high-level constructions are actually implemented in machines, not simply to show how they are applied.
 
-This is aligned with my goal to explore the parts of computing that might typically be ignored by many programmers. The more I can understand the software-hardware interface, the happier I will be. Learning algorithms via TAOCP is the software side of my strategy, for hardware I'm exploring TTL series logic and CPU design as well as simple cases of systems integration using vintage microcontrollers. This has also led me to exploring prototyping via FPGA and one day I hope to design a CPU core and bootstrap up to a self hosting multitasking development environment.
+This aligns with my goal of exploring computers to the lowest levels including operating systems as well as CPUs. The more I can understand the software-hardware interface, the happier I will be. Learning algorithms via TAOCP is the software side of my strategy. On the hardware side I'm exploring TTL logic, CPU design, and simple cases of systems integration using vintage microcontrollers. This has also led me to exploring prototyping via FPGA and one day I hope to design a CPU core and bootstrap up to a self hosting multitasking development environment.
 
 MIX
 ===
-In order to facilitate the teaching of algorithms and how they interact with hardware he has developed a CPU architecture and assembly languages.
+In order to facilitate the teaching of algorithms and how they interact with hardware Knuth has developed a CPU architecture and assembly languages.
 
 Wikipedia [#mixwiki]_:
 
@@ -63,7 +66,6 @@ Computer have changed a lot since the 60s, as Knuth explains [#knuthmmix]_:
 In his the third edition of his book he explain that MIX will be replaced:
 
     However, it must be admitted that MIX is now quite obsolete. Therefore MIX will be replaced in subsequent editions of this book by a new machine called MMIX, the 2009. MMIX will be a so-called reduced instruction set computer (RISC). [...] It will be even nicer than MIX and will be similar to machines that have become dominant during the 1990s.
-
 
 
 Subsequent editions, fascicles
