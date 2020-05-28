@@ -3,7 +3,7 @@
 <head>
             <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
-        <title>MMIX - Why I am working on TAOCP in RISC - y2kbugger</title>
+        <title>MMIX - Working on TAOCP in RISC - y2kbugger</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/theme/css/normalize.css">
         <link rel="stylesheet" href="/theme/css/styles.css">
@@ -41,7 +41,7 @@
     </nav>
 
     <header class="page-header">
-    <h1>MMIX - Why I am working on TAOCP in RISC</h1>
+    <h1>MMIX - Working on TAOCP in RISC</h1>
 
     <div class="article-meta">
                 <span class="author">By zak kohler</span>
@@ -59,23 +59,27 @@
     <main class="content">
     <div class="article-content">
         <!-- Google Photos Album: https://photos.app.goo.gl/dfXck6rcLDcZHtv17 -->
+<div class="section" id="reading-the-art-of-computer-programming">
+<h2>Reading The Art Of Computer Programming</h2>
+<p>I want to cover the why I want to read TAOCP as well as my approach. Because the books are in various states of publication, to enjoy the original books using a RISC like architecture you must use external resources in addition to the actual book.</p>
+</div>
 <div class="section" id="the-art-of-computer-programming">
 <h2>The Art Of Computer Programming</h2>
-<p>The Art of Computer Programming is about as legendary as computer science books get. The goal was to describe and teach a wide range of algoritms. Originally concieved in 1962 as a single book with 12 chapter, rapid advancements being made in the field caused a content expansion that continues today-volume one was released in 1968, and volume 4 is still in progress.</p>
+<p>The Art of Computer Programming is about as legendary as computer science books get. It was originally conceived in 1962 as a 12 chapter book documenting a wide range of algorithms. The rapid pace of change in computer science made these chapters a moving target; while volume one was released in 1968, volume 4 is still in progress as of 2020.</p>
 <img alt="The art of Computer Programming" class="align-center" src="https://lh3.googleusercontent.com/pw/ACtC-3fz2RxP2aYWm20KIl9hU_BkQcyTNxSmewF-0TM7KLe2BbVwUsml4DmX7kgHf4E8vARaOSQFJ-d1zou3FMoD4hjaX8q3jSFcKZwty559C8BiomechHmEW7gwmIBd8kJvi0u4Zqx0I6UDlA65QuBUX_CEdQ=w500-h431-no" style="width: 33%;" />
-<p>The book is notable for it's precision and accuracy as well as extreme care given to the exercises and solutions. It is also sometimes accused of being a book that people recommends but which . This might be due to the fact that all of the book is taught using assembly language rather than structured programming. <a class="footnote-reference" href="#taocpwiki" id="id1">[1]</a></p>
+<p>The book is notable for being comprehensive and precise as well as for the extreme care given to the exercises and solutions. Because it known for being a huge undertaking, some people quip that the book is often recommended but not often read. This might be due to the fact that the algorithms are explained using assembly language rather than structured programming which some people feel is impenetrably  obscure <a class="footnote-reference" href="#taocpwiki" id="id1">[1]</a> .</p>
 <div class="section" id="why-i-want-to-read-it">
 <h3>Why I want to read it</h3>
-<p>I believe it when Knuth says that you learn something more about algorithms at the interface of hardware and software. In C for example you may not know what is happening in hardware when you write an if statement, but in assembly this becomes explicit.</p>
+<p>I believe it when Knuth says that you learn something extra about algorithms at the interface of hardware and software. In C for example you may not know what is happening in hardware when you write an if statement, but in assembly this is in-your-face.</p>
 <p>He puts it like this <a class="footnote-reference" href="#knuthmmix" id="id2">[3]</a>:</p>
 <blockquote>
 One of the principal goals of my books is to show how high-level constructions are actually implemented in machines, not simply to show how they are applied.</blockquote>
-<p>This is aligned with my goal to explore the parts of computing that might typically be ignored by many programmers. The more I can understand the software-hardware interface, the happier I will be. Learning algorithms via TAOCP is the software side of my strategy, for hardware I'm exploring TTL series logic and CPU design as well as simple cases of systems integration using vintage microcontrollers. This has also led me to exploring prototyping via FPGA and one day I hope to design a CPU core and bootstrap up to a self hosting multitasking development environment.</p>
+<p>This aligns with my goal of exploring computers to the lowest levels including operating systems as well as CPUs. The more I can understand the software-hardware interface, the happier I will be. Learning algorithms via TAOCP is the software side of my strategy. On the hardware side I'm exploring TTL logic, CPU design, and simple cases of systems integration using vintage microcontrollers. This has also led me to exploring prototyping via FPGA and one day I hope to design a CPU core and bootstrap up to a self hosting multitasking development environment.</p>
 </div>
 </div>
 <div class="section" id="mix">
 <h2>MIX</h2>
-<p>In order to facilitate the teaching of algorithms and how they interact with hardware he has developed a CPU architecture and assembly languages.</p>
+<p>In order to facilitate the teaching of algorithms and how they interact with hardware Knuth has developed a CPU architecture and assembly languages.</p>
 <p>Wikipedia <a class="footnote-reference" href="#mixwiki" id="id3">[2]</a>:</p>
 <blockquote>
 MIX is a hypothetical computer used in Donald Knuth's monograph, The Art of
