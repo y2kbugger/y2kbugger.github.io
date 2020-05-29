@@ -6,7 +6,7 @@ MMIX - Working on TAOCP in RISC
 :tags: assembly, algorithms, MMIX, TAOCP, books
 :author: zak kohler
 :summary: How to read The Art of Computer Programming and do the exercises in modern RISC rather than a 1960s style architecture.
-:status: draft
+:status: published
 :cover: `https://lh3.googleusercontent.com/pw/ACtC-3cmwaXo3THz54nq3bz9bWJ9N3hK5zfHL9o4JAsdri5mZ7AgP4LPpilaSkxatNxccRDbxKgZ65jDB08Akq1UMV1nGGqktUrq8uXJFhs9ODgtUQ1wT6SAapWlK5zTWLP-tliFKDBuARvEVYmHnRilf89CsQ=w572-h85-no`
 
 ..
