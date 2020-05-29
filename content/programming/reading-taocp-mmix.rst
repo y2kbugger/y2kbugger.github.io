@@ -5,27 +5,27 @@ MMIX - Working on TAOCP in RISC
 :modified: 2020-05-18 13:14:09
 :tags: assembly, algorithms, MMIX, TAOCP, books
 :author: zak kohler
-:summary: How to read The Art of Computer Programming for Christmas if you want to do the exercises in RISC rather than a 1960s style architecture.
+:summary: How to read The Art of Computer Programming and do the exercises in modern RISC rather than a 1960s style architecture.
 :status: draft
 :cover: `https://lh3.googleusercontent.com/pw/ACtC-3cmwaXo3THz54nq3bz9bWJ9N3hK5zfHL9o4JAsdri5mZ7AgP4LPpilaSkxatNxccRDbxKgZ65jDB08Akq1UMV1nGGqktUrq8uXJFhs9ODgtUQ1wT6SAapWlK5zTWLP-tliFKDBuARvEVYmHnRilf89CsQ=w572-h85-no`
 
 ..
   Google Photos Album: https://photos.app.goo.gl/dfXck6rcLDcZHtv17
 
-Intro
-=====
-This article covers why I want to read TAOCP as well as my approach. Because the books are in various states of publication, you must use external resources in addition to the book to enjoy the updated RISC material.
+Introduction
+============
+This article I will cover why I want to read TAOCP as well as my approach. Because the books are in various states of publication, one must use additional resources besides the book to enjoy the updated RISC material.
 
 The Art Of Computer Programming
 ===============================
-The Art of Computer Programming is about as legendary as computer science books get. It was originally conceived in 1962 as a 12 chapter book documenting a wide range of algorithms. The rapid pace of change in computer science made these chapters a moving target; while volume one was released in 1968, volume 4 is still in progress as of 2020 [#taocpwiki]_.
+The Art of Computer Programming is a legendary multi-volume computer science textbook. It was originally conceived in 1962 as a 12 chapter book documenting a wide range of algorithms. The rapid pace of change in computer science made these chapters a moving target; while Volume 1 was released in 1968, Volume 4 is still in progress as of 2020 [#taocpwiki]_.
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3fz2RxP2aYWm20KIl9hU_BkQcyTNxSmewF-0TM7KLe2BbVwUsml4DmX7kgHf4E8vARaOSQFJ-d1zou3FMoD4hjaX8q3jSFcKZwty559C8BiomechHmEW7gwmIBd8kJvi0u4Zqx0I6UDlA65QuBUX_CEdQ=w500-h431-no
    :width: 33%
    :alt: The Art of Computer Programming
    :align: center
 
-The book is notable for being comprehensive and precise as well as for the extreme care given to the exercises and solutions. Because it known for being a huge undertaking, some people quip that the book is often recommended but not often read. This might be due to the fact that the algorithms are explained using assembly language rather than structured programming which some people feel is impenetrably  obscure.
+The book is notable for being comprehensive and precise as well as for the extreme care given to the exercises and solutions. Because it known for being a huge undertaking, some people quip that the book is often recommended without actually having been read. I suspect this is be the algorithms are explained using assembly language rather than structured programming which some people deem as impenetrably  obscure.
 
 Why I want to read it
 ---------------------
@@ -36,11 +36,11 @@ He puts it like this:
     One of the principal goals of my books is to show how high-level constructions are actually implemented in machines, not simply to show how they are applied. [#knuthmmix]_
 
 
-This aligns with my goal of exploring computers to the lowest levels including operating systems as well as CPUs. The more I can understand the software-hardware interface, the happier I will be. Learning algorithms via TAOCP is the software side of my strategy. On the hardware side I'm exploring TTL logic, CPU design, and simple cases of systems integration using vintage microcontrollers. This has also led me to explore prototyping via FPGAs and one day I hope to design a CPU core and bootstrap up to a self hosting multitasking development environment.
+This aligns with my goal of exploring computers to the lowest levels including operating systems as well as CPUs. The more I can understand the software-hardware interface, the happier I will be. Learning algorithms via TAOCP is the software side of my strategy. On the hardware side I'm exploring TTL logic, CPU design, and simple cases of systems integration using vintage microprocessors such as z80, 6502 and 1802. This has also led me to explore prototyping via FPGAs and one day I hope to design a CPU core and bootstrap up to a self hosting multitasking development environment.
 
 MIX
 ===
-In order to facilitate the teaching of algorithms and how they interact with hardware Knuth developed a CPU architecture and corresponding assembly language.
+In order to facilitate the teaching of algorithms and how they interact with hardware, Knuth developed a CPU architecture and corresponding assembly language.
 
     MIX is a hypothetical computer used in Donald Knuth's monograph, The Art of
     Computer Programming (TAOCP). MIX's model number is 1009, which was derived
@@ -57,21 +57,21 @@ MMIX
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3cmwaXo3THz54nq3bz9bWJ9N3hK5zfHL9o4JAsdri5mZ7AgP4LPpilaSkxatNxccRDbxKgZ65jDB08Akq1UMV1nGGqktUrq8uXJFhs9ODgtUQ1wT6SAapWlK5zTWLP-tliFKDBuARvEVYmHnRilf89CsQ=w572-h85-no
    :alt: MMIX
 
-Computer have changed a lot since the 60s, as Knuth explains:
+Computer have changed significantly since the 60s, as Knuth explains:
 
     Thirty years have passed since the MIX computer was designed, and computer architecture has been converging during those years towards a rather different style of machine [#knuthmmix]_.
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3fRUt39VqJiEOQ9LhFcwVrsuth55pRA44lyfN51vxoNG0v0DshXSPqc5SdCtLdAnCWPOfLaP-KS5iDdApF0YKfAM8SBZmgyI61tLobpe8lVmxjGyNFkdrOpxaOD4cpvrJddWkV7lvJAUvmMONAoJF6dtg=w683-h131-no
    :alt: Under Construction
 
-In the third edition of volume 1, he explains that MIX will be replaced:
+In Volume 1 3rd Edition, he states his plans to replace MIX:
 
     However, it must be admitted that MIX is now quite obsolete. Therefore MIX will be replaced in subsequent editions of this book by a new machine called MMIX, the 2009. MMIX will be a so-called reduced instruction set computer (RISC). [...] It will be even nicer than MIX and will be similar to machines that have become dominant during the 1990s.
 
 
 Subsequent editions, fascicles
 ==============================
-So we've chosen MMIX, the path towards the future, now what? The dilemma we face is that the next edition has not been released yet. The currently available version of the book has all questions and answers is still all written with MIX.
+So we've chosen MMIX, the path towards the future, now what? The dilemma we face is that the next edition has not been released yet. The most recent edition, V1 3e, has all of the questions and answers still written with MIX.
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3cuRVuJCUSUugDBBPjEjvV-g4h9rh4NuHipmWhjvJbgS3zKZGBYrkea6kFi6MYL6-gC-mmhqHvCIB6FMcG6fHf_wzLQ3FSggliRMHXReoaJXcB4XEkEYYUFVJ-tzUwnb0Htv9v26hcMSSMf6vrfC46HXQ=w683-h459-no
    :alt: The three required books for MMIX
@@ -86,11 +86,11 @@ So what choice do we have then? Well Donald has kindly release what is known as 
 
    Printed the day after I ordered on Amazon.
 
-That covers the basics of the language, but all of the solutions also needed reworked. Knuth put out a request for people to get together and create the solutions, a project he called MMIXMasters [#mmixmasters]_. The end result of this is known as the MMIX supplement. It's available on the web, http://mmix.cs.hm.edu/supplement/index.html as well as in printed form on Amazon: `MMIX Supplement <https://www.amazon.com/MMIX-Supplement-Computer-Programming-Volumes/dp/0133992314>`_.
+That covers the basics of the language, but all of the solutions also needed reworked. Knuth put out a request for people to collaborate on the solutions, a project he called MMIXMasters [#mmixmasters]_. The end result of this is known as the MMIX supplement. It's available on the web, http://mmix.cs.hm.edu/supplement/index.html as well as in printed form on Amazon: `MMIX Supplement <https://www.amazon.com/MMIX-Supplement-Computer-Programming-Volumes/dp/0133992314>`_.
 
 Future Work
 ===========
-I'm excited to keep working through these exercises. To help me try out various algorithms, I have a small project which I have compiled Knuth's original MMIX toolchain to WASM so that I can build a simple IDE for MMIX in the browser.
+I'm excited to keep working through these exercises. To assist the process of testing various algorithms, I've started a side-project which I have compiled Knuth's original MMIX toolchain to WASM and wrapped it in a simple IDE for MMIX in the browser.
 
 Hardware and RISC-V
 ===================
