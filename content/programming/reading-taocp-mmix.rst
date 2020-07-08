@@ -25,7 +25,7 @@ The Art of Computer Programming is a legendary multi-volume computer science tex
    :alt: The Art of Computer Programming
    :align: center
 
-The book is notable for being comprehensive and precise as well as for the extreme care given to the exercises and solutions. Because it known for being a huge undertaking, some people quip that the book is often recommended without actually having been read. I suspect this is be the algorithms are explained using assembly language rather than structured programming which some people deem as impenetrably  obscure.
+The book is notable for being comprehensive and precise as well as for the extreme care given to the exercises and solutions. Because it's known for being a huge undertaking, some people quip that the book is often recommended without actually having been read. I suspect this is because the algorithms are explained using assembly language rather than structured programming which some people deem as impenetrably  obscure.
 
 Why I want to read it
 ---------------------
@@ -36,7 +36,7 @@ He puts it like this:
     One of the principal goals of my books is to show how high-level constructions are actually implemented in machines, not simply to show how they are applied. [#knuthmmix]_
 
 
-This aligns with my goal of exploring computers to the lowest levels including operating systems as well as CPUs. The more I can understand the software-hardware interface, the happier I will be. Learning algorithms via TAOCP is the software side of my strategy. On the hardware side I'm exploring TTL logic, CPU design, and simple cases of systems integration using vintage microprocessors such as z80, 6502 and 1802. This has also led me to explore prototyping via FPGAs and one day I hope to design a CPU core and bootstrap up to a self hosting multitasking development environment.
+This aligns with my goal of exploring computers to the lowest levels including operating systems as well as CPUs. The more I can understand the software-hardware interface, the happier I will be. Learning algorithms via TAOCP is the software side of my strategy. On the hardware side I'm exploring TTL logic, CPU design, and simple cases of systems integration using vintage microprocessors such as z80, 6502 and 1802. This has also led me to explore prototyping via FPGAs and one day I hope to design a CPU core and bootstrap up to a self-hosting multitasking development environment.
 
 MIX
 ===
@@ -71,7 +71,7 @@ In Volume 1 3rd Edition, he states his plans to replace MIX:
 
 Subsequent editions, fascicles
 ==============================
-So we've chosen MMIX, the path towards the future, now what? The dilemma we face is that the next edition has not been released yet. The most recent edition, V1 3e, has all of the questions and answers still written with MIX.
+So we've chosen to explore MMIX, the forward looking ISA of TAOCP, now what? The dilemma we face is that the next edition has not been released yet. The most recent edition, V1 3e, has all of the questions and answers still written with MIX.
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3cuRVuJCUSUugDBBPjEjvV-g4h9rh4NuHipmWhjvJbgS3zKZGBYrkea6kFi6MYL6-gC-mmhqHvCIB6FMcG6fHf_wzLQ3FSggliRMHXReoaJXcB4XEkEYYUFVJ-tzUwnb0Htv9v26hcMSSMf6vrfC46HXQ=w683-h459-no
    :alt: The three required books for MMIX
