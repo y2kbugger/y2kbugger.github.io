@@ -13,7 +13,7 @@ Learn how computers work from opcodes to IO — Building a Virtual Machine in Py
 
 .. code-block:: giturl
 
-   git clone --branch 2018-10-29-COhPy https://y2kbugger@bitbucket.org/y2kbugger/sapy.git
+   git clone --branch 2018-10-29-COhPy https://y2kbugger@github.com/y2kbugger/sapy.git
 
 Programming languages are designed for a specific level of abstraction or distance from the hardware. The main trade off is "developer productivity" vs "control over hardware". C and assembly are low level and therefore map closely to CPU instructions. Python on the other hand goes through many layers, libraries, and a virtual machine before the CPU is reached. This allows powerful programs to be written concisely and cross-platform—but it also leaves an immense "Magic Valley" of faith. Eliminating the magic can lead to interesting insights and a greater appreciation for the subtleties of performance, quirks of legacy compatibility, and the purpose of operating systems.
 
