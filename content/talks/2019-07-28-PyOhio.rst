@@ -14,9 +14,9 @@ Learn How Computers Work Between Silicon and Assembly: Build a CPU with Python
 
 .. code-block:: giturl
 
-   git clone https://y2kbugger@bitbucket.org/y2kbugger/sapy.git
+   git clone https://y2kbugger@github.com/y2kbugger/sapy.git
 
-.. git clone --branch 2019-07-28-PyOhio https://y2kbugger@bitbucket.org/y2kbugger/sapy.git
+.. git clone --branch 2019-07-28-PyOhio https://y2kbugger@github.com/y2kbugger/sapy.git
 
 .. raw:: html
 
