@@ -30,6 +30,8 @@
                 <li><a href="/tags.html">Tags</a>
                 </li>
                         <li><a
+                                href="http://blog.y2kbugger.com/category/electronics.html">electronics</a></li>
+                        <li><a
                                 href="http://blog.y2kbugger.com/category/food.html">food</a></li>
                         <li><a
                                 href="http://blog.y2kbugger.com/category/programming.html">programming</a></li>
@@ -57,7 +59,7 @@
     <div class="article-content">
         <p>&#64; <strong>COhPy October Meeting</strong>, <em>Columbus, Ohio</em></p>
 <p><a class="reference external" href="https://drive.google.com/open?id=1Laue0CnRrtKDYxWJLnYe6d2f8ZJHxvSshZZY9GZTpEI">Slides</a></p>
-<div class="highlight"><pre><span></span>git clone --branch 2018-10-29-COhPy https://y2kbugger@bitbucket.org/y2kbugger/sapy.git
+<div class="highlight"><pre><span></span>git clone --branch 2018-10-29-COhPy https://y2kbugger@github.com/y2kbugger/sapy.git
 </pre></div>
 <p>Programming languages are designed for a specific level of abstraction or distance from the hardware. The main trade off is &quot;developer productivity&quot; vs &quot;control over hardware&quot;. C and assembly are low level and therefore map closely to CPU instructions. Python on the other hand goes through many layers, libraries, and a virtual machine before the CPU is reached. This allows powerful programs to be written concisely and cross-platform—but it also leaves an immense &quot;Magic Valley&quot; of faith. Eliminating the magic can lead to interesting insights and a greater appreciation for the subtleties of performance, quirks of legacy compatibility, and the purpose of operating systems.</p>
 <p>We will build up a virtual machine in Python, and I will connect these concepts to concrete hardware details as they naturally emerge. Guaranteed material: opcodes, CPU, data/address bus, ROM/RAM, and IO. Bonus material: assemblers, interrupts, tty output.</p>
