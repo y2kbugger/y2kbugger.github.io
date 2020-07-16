@@ -18,6 +18,8 @@ Chasing the dream, shower + music
 I have have numerous methods for listening to music and talks in the shower. The first one was a waterproof, battery powered AM/FM radio. The reception was crap. Over the years, other solutions included bluetooth speakers of various quality.
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3e-UXvlfryZbjFfKdu8C9Scfgb_MKWgleQf4XdiA1egEa65oW__iavHXBEk026fI3erJyopEHpfkRPK1fhdW3Rz6RTaogGme3ZuZpQGs4nt1rTS-BL2VIYbZBS9ulICZddxjBBZ7UB6fkGMylSXYULxJA=w683-h554-no
+   :width: 100%
+   :alt: light fixture pieces.
 
 The problem is that it is quite hard to get a speaker loud enough from outside of the shower. Before I moved I had pretty good results with a google home mini and double-sided tape. The new house though has sliding glass doors and that wouldn't work.
 
@@ -66,6 +68,8 @@ Mixing signals
 Since almost all bluetooth receivers are stereo I had to mix the signals. 
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3fzgcIRnJm_WSAoTRZiZII9eRo6IixOsC9C7dHf8LBkvV9I0XxBWdkoA4gXzaJb2-Wg9cDVItT6miSOQRvwjTGlWyRVSGkg5jIv6j6Y4tXcSesvlGZU-bi62LuYc7__TzKHO7iLx0KbAfeR_QEjUwLPdQ=w683-h210-no
+   :width: 100%
+   :alt: Mixer
 
 Delay on for amplifier
 ----------------------
@@ -101,7 +105,11 @@ Final State
 I installed everything in a way that I could reverse everything easily in case we leave. The sound is incredibly loud, and the quality is decent. As the shower is all smooth surfaces, it can be a bit echoey. Maybe some foam/fiberglass would help, but I don't want this thing catching fire. Overall I'm extremely happy with how it turned out.
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3fvLHQzYoWrGIsLTRfDj1ojHNkg8LIswD4eIPcDIDBS2xY3KXA7di_qyv5YifKOyI9_xw1qzfRrJWfyhIKF7hmJdqKBd1mRuPmX9828OSZjqoPsac2v36P0wqug6CQuGyh3sdf7nND3sklTSGL50cMsfQ=w683-h513-no
+   :width: 100%
+   :alt: In place.
 
 And of course it still works as a light.
 
-.. image:: https://lh3.googleusercontent.com/pw/ACtC-3fvLHQzYoWrGIsLTRfDj1ojHNkg8LIswD4eIPcDIDBS2xY3KXA7di_qyv5YifKOyI9_xw1qzfRrJWfyhIKF7hmJdqKBd1mRuPmX9828OSZjqoPsac2v36P0wqug6CQuGyh3sdf7nND3sklTSGL50cMsfQ=w683-h513-no
+.. image:: https://lh3.googleusercontent.com/pw/ACtC-3faWGrhsqaHhWAlsCEMobY7Fl6xDqtZMgx20a5Qh3ezMQjC4OZf7w3S5SV0m3QhiCYsQUJNxdMd35HdtNvuD2IrKtBM-9Qi97HZK4ADUoaHQLwFwkyzEXln3zrR0ujoo2qOo4OW4bbhZpz2y5S7Y6rRDA=w509-h678-no
+   :width: 100%
+   :alt: Light on place.
