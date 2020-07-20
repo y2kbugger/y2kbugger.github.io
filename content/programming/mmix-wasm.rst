@@ -12,8 +12,11 @@ MMIX, WASM, What?
 ..
   Google Photos Album: https://photos.app.goo.gl/dfXck6rcLDcZHtv17
 
-
+Fast feedback for The Art of Computer Programming Exercises
+===========================================================
+As a started working through the `exercises in TAOCP <https://blog.y2kbugger.com/reading-taocp-mmix.html>`_, I wanted a quicker way to work on the problems in assembly language. I was also in the process of learning C so I was interesting in taking a peek at the
 Link to first blog.
+
 
 Explain why I wanted some rapid interation on simple assembly programs.
 
