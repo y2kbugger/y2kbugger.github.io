@@ -5,7 +5,7 @@ The C Programming Language
 :modified: 2020-07-19 22:54:03
 :tags: C, books
 :author: zak kohler
-:summary: Learning C from the book written by the original language designer.
+:summary: Learning C from the book co-written by the one of the original language designers.
 :status: published
 :cover: `https://lh3.googleusercontent.com/pw/ACtC-3eFvejBEI9Qmr_scx1xpuCPMU_1BLAgQ5fxIjrCo0jmv0EnmVyIjUTE2WYtA0sd0aV6oCpb2TIG7xj35pttUYfxmq8fJzAQMEcY1F5Pivo8dOECxbql-qYTUHFIYL8LClxwZNONGlPwkeTvV8mZnv8x4g=w362-h479-no`
 
