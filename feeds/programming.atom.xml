@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>y2kbugger - programming</title><link href="http://blog.y2kbugger.com/" rel="alternate"></link><link href="http://blog.y2kbugger.com/feeds/programming.atom.xml" rel="self"></link><id>http://blog.y2kbugger.com/</id><updated>2020-05-29T15:18:21-04:00</updated><entry><title>I am now a maintainer on the Arch User Repository</title><link href="http://blog.y2kbugger.com/first_arch_user_repository_submission.html" rel="alternate"></link><published>2020-04-14T00:06:28-04:00</published><updated>2020-04-14T00:06:28-04:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2020-04-14:/first_arch_user_repository_submission.html</id><summary type="html">&lt;p class="first last"&gt;Just made my first submission to the arch user repository (AUR)&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>y2kbugger - programming</title><link href="http://blog.y2kbugger.com/" rel="alternate"></link><link href="http://blog.y2kbugger.com/feeds/programming.atom.xml" rel="self"></link><id>http://blog.y2kbugger.com/</id><updated>2020-07-19T22:54:03-04:00</updated><entry><title>I am now a maintainer on the Arch User Repository</title><link href="http://blog.y2kbugger.com/first_arch_user_repository_submission.html" rel="alternate"></link><published>2020-04-14T00:06:28-04:00</published><updated>2020-04-14T00:06:28-04:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2020-04-14:/first_arch_user_repository_submission.html</id><summary type="html">&lt;p class="first last"&gt;Just made my first submission to the arch user repository (AUR)&lt;/p&gt;
 </summary><content type="html">&lt;!-- Google Photos Album: https://photos.app.goo.gl/dfXck6rcLDcZHtv17 --&gt;
 &lt;div class="section" id="long-time-user-first-time-maintainer"&gt;
 &lt;h2&gt;Long time user, first time maintainer&lt;/h2&gt;
@@ -42,7 +42,30 @@
 &lt;p&gt;Finally, submitting is as easy as a git push, but be sure all of your i's are dotted and t's are crossed.&lt;/p&gt;
 &lt;p&gt;Now you are &amp;lt;strike&amp;gt;all done&amp;lt;/strike&amp;gt; just beginning. As a maintainer it's your job to keep the package up-to-date and incorporate suggestions from the community.&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="programming"></category><category term="Linux"></category><category term="packaging"></category><category term="OpenSource"></category><category term="ArchLinux"></category></entry><entry><title>MMIX - Working on TAOCP in RISC</title><link href="http://blog.y2kbugger.com/reading-taocp-mmix.html" rel="alternate"></link><published>2018-12-27T00:00:00-05:00</published><updated>2020-05-29T15:18:21-04:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2018-12-27:/reading-taocp-mmix.html</id><summary type="html">&lt;p class="first last"&gt;How to read The Art of Computer Programming and do the exercises in modern RISC rather than a 1960s style architecture.&lt;/p&gt;
+</content><category term="programming"></category><category term="Linux"></category><category term="packaging"></category><category term="OpenSource"></category><category term="ArchLinux"></category></entry><entry><title>The C Programming Language</title><link href="http://blog.y2kbugger.com/the-c-programming-language.html" rel="alternate"></link><published>2019-12-31T00:00:00-05:00</published><updated>2020-07-19T22:54:03-04:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2019-12-31:/the-c-programming-language.html</id><summary type="html">&lt;p class="first last"&gt;Learning C from the book written by the original language designer.&lt;/p&gt;
+</summary><content type="html">&lt;!-- Google Photos Album: https://photos.app.goo.gl/dfXck6rcLDcZHtv17 --&gt;
+&lt;div class="section" id="get-close-to-the-hardware-so-you-can-c"&gt;
+&lt;h2&gt;Get close to the hardware so you can C&lt;/h2&gt;
+&lt;p&gt;Since I have been learning about hardware and operating systems I wanted to learn a language which is conducive for having full control of computer hardware. C is not just good for this, the level of control C gives you was tuned for writing portable operating systems. The tooling, community, and educational resources reflect this legacy.&lt;/p&gt;
+&lt;p&gt;I chose to read the Kernighan and Ritchie book because I had heard that it was not just a good book for C, but good for programming in general. There is also a historical value to learning from a primary source. I can confirm this. Working through the exercises are key to understanding why C exists.&lt;/p&gt;
+&lt;p&gt;Here are my attempts at the exercises:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone git@github.com:y2kbugger/kr.git
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="section" id="the-k-r-approach"&gt;
+&lt;h3&gt;The K&amp;amp;R approach&lt;/h3&gt;
+&lt;p&gt;Early on they teach about structuring modules so that code and interfaces could be reused. When I previously learning C++ the reason for header files seemed to be hand waved. I appreciated the way these concepts were treated in K&amp;amp;R.&lt;/p&gt;
+&lt;p&gt;Later in the book though we work through reimplement functions from the standard lib. This was insightful, especially the ones which dealt with memory management such as malloc, calloc, and free as well as the Unix system interface.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="conclusion"&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;I would definitely recommend the book to anyone interested in learning about computers. If all you care about is writing programs/computation, other languages could twist you brain in other directions (Haskell, etc), but learning C through K&amp;amp;R is a good start to learning about how computers actually work.&lt;/p&gt;
+&lt;div class="section" id="but-shouldn-t-i-learn-something-modern-like-c"&gt;
+&lt;h4&gt;But shouldn't I learn something modern like C++?&lt;/h4&gt;
+&lt;p&gt;As a side note, don't be swayed to learn C++ merely because C is a subset. The argument goes like this: if you learn C++ you'll also learn C for free. This isn't true. If you want something a bit higher level for systems programming, I've heard good things about Rust.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content><category term="programming"></category><category term="C"></category><category term="books"></category></entry><entry><title>MMIX - Working on TAOCP in RISC</title><link href="http://blog.y2kbugger.com/reading-taocp-mmix.html" rel="alternate"></link><published>2018-12-27T00:00:00-05:00</published><updated>2020-05-29T15:18:21-04:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2018-12-27:/reading-taocp-mmix.html</id><summary type="html">&lt;p class="first last"&gt;How to read The Art of Computer Programming and do the exercises in modern RISC rather than a 1960s style architecture.&lt;/p&gt;
 </summary><content type="html">&lt;!-- Google Photos Album: https://photos.app.goo.gl/dfXck6rcLDcZHtv17 --&gt;
 &lt;div class="section" id="introduction"&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
