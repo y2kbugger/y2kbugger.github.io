@@ -4,8 +4,11 @@ A Compact LED 8-bit Bus Indicator
 :date: 2017-12-19 20:58:08
 :tags: retrocomputing, display, resistor-network, z80
 :author: zak kohler
-:summary: XXXXXXXXXXXXXXXXXXXXXXXXXX
+:summary: Prototyping front panel display components for a z80 or TTL minicomputer.
 :status: draft
+
+..
+  Google Photos Album: https://photos.app.goo.gl/XnXEAZp8C6Nqg5zJ3
 
 Blinkenlights in Binary and Hex
 ===============================
@@ -14,45 +17,42 @@ I will walk through my experimentation that lead to my final design for my front
 
 Motivation
 ==========
+This is made as a component of my single board Z80 trainer. Defining my Single Board Computer (SBC) as a trainer basically means that its purpose it expose as much implementation as possible to the user. This means entering machine code by hand into memory, stopping the clock and directly examining memory. This can be done either mostly in software, or mostly in hardware. If you really want to bootstrap yourself from bare metal then it helps to build some of this monitor functionality into the hardware.
 
-This is made as a component of my single board Z80 trainer. Defining my Single
-Board Computer (SBC) as a trainer basically means that its purpose it expose as
-much implementation as possible to the user. This means entering machine code
-by hand into memory, stopping the clock and directly examining memory. This can
-be done either mostly in software, or mostly in hardware. If you really want to
-bootstrap yourself from bare metal then it helps to build some of this monitor
-functionality into the hardware.
-
-.. image:: https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Altair_8800_at_the_Computer_History_Museum%2C_cropped.jpg/640px-Altair_8800_at_the_Computer_History_Museum%2C_cropped.jpg
-   :width: 99%
+.. image:: https://lh3.googleusercontent.com/pw/ACtC-3c0ghd2mox_6hFrde8tAXjk7DmhvGc71toNKh900qnj-BGMrMak8hZIL-LTVTdHAnEpbCeGC6tg72ETeG5O_yvcOw711jkv_MOECR1ghJIHX8-UBPcf0WgHlSIDumMk3i1R7e-_tDzwGP2CDNyK-RvCLw=w640-h273-no
+   :width: 100%
    :alt: altair
    :align: center
 
 When you have to type your bootstrap and paper tape driver by hand, `it can be a magical experience <https://www.youtube.com/watch?v=5zbtNImG2NE>`_.
 
 
-Simple Beginnings
-=================
-My SBC trainer will be based on the z80, having an 8-bit databus and a 16-bit memory address space. First step was to get the
-up and running and verify that the program counter was working. This can basically be done with resistors and power and a single LED. I got a lot of inspiration from `this video <https://www.youtube.com/watch?v=AZb4NLXx1aMchip>`_.
+Simple Prototype
+================
+My SBC trainer will be based on the z80, having an 8-bit databus and a 16-bit memory address space. First step was to get the up and running and verify that the program counter was working. This can basically be done with resistors and power and a single LED. I got a lot of inspiration from `this video <https://www.youtube.com/watch?v=AZb4NLXx1aMchip>`_.
 
 I wanted a simple way to see that things were happening on the data and address
 bus.
 
-Needed to decided on the resistance to use.
-Don't want to interfere with the operation of the Z80. Is it possible to have a
-low enough current that I don't need to buffer when I am on the data bus for
-instance? My CMOS Z80 can output one TTL load. ** elaborate. Because it is active high but open collector you cannot source enough current in the "On" state.
-Because of the resistor network multiple leds could get lit.
+First attempt was just hooking up simply hooking up LEDs directly. I wanted to make something compact that could be put into a breadboard to peek at the signals on a certain bus. I fell in love with the way the LEDs, resistor network, and header went togethers.
 
+.. image:: https://lh3.googleusercontent.com/pw/ACtC-3dy7Eit3PbmaET6c6RsvxJtBAN3B4c14yo7qbImlrWUBt9yPcNIiw6sbGSteRL0b3DI9h51ugACrEwIm6x4eLPJNslq_RJj4ZWvpWGTe8rhIFcsnakEeJhLvKCTeq1RfZGN5K2UA81C0XTfE-k_5Vj3Gg=w405-h678-no
+   :width: 70%
+   :alt: first 8 bit display prototype
+   :align: center
 
-First attempt was just hooking up straight LEDs.
+But alas, this design had a problem.
 
-Then tried to make a simple tiny bus.
+I was getting some weird results so I though I just needed to tweak the resistance. If you draw too much current, you might influence the levels you are trying to display. This would interfere with the operation of the Z80. Is it possible to have a low enough current that I don't need to buffer when I am on the data bus for instance? My CMOS Z80 can output one TTL load, so yes, but because it is active high but open collector you cannot source enough current in the "On" state.  Because of the resistor network multiple LEDs can be turned on inadvertently.
 
-Here is the first prototype after realizing I really would need the buffer. 
+Buffers
+=======
 
-.. image:: https://lh3.googleusercontent.com/ZTkNGM90GbQT8HR81Rduccpxjj79qDLCY-85zkK3d7mkg_VRtMOqrp16hxp4TQbGaku3aU63lVxi4A0cvnjfDfOIo65njsBgHUzoM53d2TlL5aKNgpNWbP8hNK2NK3HrGteIINT4AZYWX7icQdwNDAy7vMvNwKddkttm30-fwabXxzjacTN9rJ8zyG9ppb2XhPEkxyD_K4zs7H8MXh05IJgKW1QZo40tZtwoZFfuRPJv1JKYs1iHFEZuV476mOVL3GjvPr_iCFiV7nwQVKxnaYDugkJbgfoRQKBHmKlyozC1lU_vbIPMJ8TDyyFe7fpQk5ZE6CSben5H9Br98RtM_9bSuSlCS8guK1oJbbVvx_Q6n_BHFBznelrsgHVUdH0zT08Y23mG8Oqo_TEzpa2g50kRNR5b0_eeZAsiwFGc5o2z4PAw5ETGI8ZUdabBP2G6kjECVhMfEkjgQVK13Sh0kLk4qfcbu9zcJttApBr8AdavU7bs1vF008qQbsR5BQIk_P1QLpl1cCtA8IcBOlDBiQ53Beq19Cdd-zZXFJsXwlTKH0KMRip4CtiBkyir29qylmWZ61WSR3NQdkGPCRbllEPBKwIGGnuEnJdGcyZMbx-B5Hukcko6urYcFKn_olunzLcKveFFHo5SlkDkAW9fWHRXWVwBUs31mP-DQWjoiw7mZDpp5FVMU9G3Yw=w521-h385-no
+In order to overcome the issue of sourcing current, and lighting leds though others, we can use a buffer. This repeats and optionally inverts a bus of signals. 
+
+Here is the first prototype after realizing I really would need the buffer.
+
+.. image:: https://lh3.googleusercontent.com/pw/ACtC-3fCsSxakX4v-i5FCPm6vPRPEihtgqh8RpKpm1WuWQ5-h8Bp90ppqkQuCbi0IrAuOBX9LJmMCpq-YQP7Oen_cojJzra6_5WGsbq8lr4UIJz5oYpuVbG9QH3msjh4FqVyVTq4XJYbRdBX6GXYwJSPPjj3uQ=w521-h385-no
    :width: 100%
    :alt: 8 bit display
    :align: center
