@@ -1,39 +1,25 @@
-MMIX, WASM, What?
-#################
+blog.y2kbugger.com How To
+#########################
 
-:date: 2018-03-04
-:modified: 2020-05-18 13:14:09
-:tags: assembly, algorithms, MMIX, TAOCP, books
+:date: 2017-12-15 23:12:30
+:modified: 2020-03-26 01:45:46
+:tags: testing, meta
 :author: zak kohler
-:summary: Compiling the MMIX Assembler and Simulator to Web Assembly
+:summary: Just an explanation to myself about how to write these blog articles and use the features a standardized way for me.
 :status: draft
-:cover: `https://lh3.googleusercontent.com/pw/ACtC-3cmwaXo3THz54nq3bz9bWJ9N3hK5zfHL9o4JAsdri5mZ7AgP4LPpilaSkxatNxccRDbxKgZ65jDB08Akq1UMV1nGGqktUrq8uXJFhs9ODgtUQ1wT6SAapWlK5zTWLP-tliFKDBuARvEVYmHnRilf89CsQ=w572-h85-no`
+:cover: `https://lh3.googleusercontent.com/fFckzfWfYfJxByZOaCE0Ltebvu6MBaaKLyrmEpeoIzAfbbPDGi2eq7_r85fu_LkDZ8JxyGm-puuyOX5EXamAm4Hq2NYSpVxa8mar7La6EMJAlOzFI9uQCaHBGNUUt7Jddhb4O1tzIhI=w683-h447-no`
 
 ..
-  Google Photos Album: https://photos.app.goo.gl/dfXck6rcLDcZHtv17
-
-Fast feedback for The Art of Computer Programming Exercises
-===========================================================
-As a started working through the `exercises in TAOCP <https://blog.y2kbugger.com/reading-taocp-mmix.html>`_, I wanted a quicker way to work on the problems in assembly language. I was also in the process of learning C so I was interesting in taking a peek at the
-Link to first blog.
-
-
-Explain why I wanted some rapid interation on simple assembly programs.
-
-
-link to my repo and demo.
-
-Give high level of process.
-
-Explain problems, Literate Programming Tools WEB etc, Issue with make files. and vestigial extension to MMIX.
-
-Show shirt
-
-Explain future plans
+  Google Photos Album: https://photos.app.goo.gl/NwiirCi5DN8tfZqP8
 
 
 Quick start section
 ===================
+.. raw:: html
+
+    <iframe frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="" width="150" height="267" src="https://youtube.googleapis.com/embed/?autohide=1&amp;html5=1&amp;ps=picasaweb&amp;use_native_controls=0&amp;enablecastapi=0&amp;color=white&amp;mute=false&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fphotos.google.com&amp;widgetid=1" id="widget2"></iframe>
+
+
 Here is the official quick start guide::
 https://docs.getpelican.com/en/stable/quickstart.html
 

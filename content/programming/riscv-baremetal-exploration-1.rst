@@ -22,12 +22,17 @@ Explain documentation sources
 
 ELF as used by renode
 
-Setting up GCC for targeting Risc-V
-
-Explain process of setting up interupt
-
-Explain hardware registers (refer to Miro Samek blinkly light)
+Building a cross-compiling toolchain up GCC for targeting Risc-V
 
 Explain that I will be cloning MIROS following each of his videos.
+OUtline which ones
+
+Final output will be a Preview to the UART echoer as a "blinky"
+
+Do i try again and setup VSCODE with gdb.
+
+Part 2...I think.
+Explain process of setting up interupt handler.
+Explain hardware registers (refer to Miro Samek blinkly light)
 
 
