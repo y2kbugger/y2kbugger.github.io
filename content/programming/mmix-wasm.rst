@@ -20,16 +20,15 @@ Link to first blog.
 
 Explain why I wanted some rapid interation on simple assembly programs.
 
-
 link to my repo and demo.
+
+Give a string processing version of program.
 
 Give high level of process.
 
 Explain problems, Literate Programming Tools WEB etc, Issue with make files. and vestigial extension to MMIX.
 
 Show shirt
-
-Explain future plans
 
 
 Quick start section
