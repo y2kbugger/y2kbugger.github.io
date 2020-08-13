@@ -1,5 +1,5 @@
-Battery free wireless switch?
-#############################
+Energy harvesting wireless switch?
+##################################
 
 :date: 2020-03-26
 :modified: 2020-08-13 13:07:57
