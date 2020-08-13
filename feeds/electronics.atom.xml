@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>y2kbugger - electronics</title><link href="http://blog.y2kbugger.com/" rel="alternate"></link><link href="http://blog.y2kbugger.com/feeds/electronics.atom.xml" rel="self"></link><id>http://blog.y2kbugger.com/</id><updated>2020-01-23T00:00:00-05:00</updated><entry><title>Shower Speaker</title><link href="http://blog.y2kbugger.com/shower_speaker.html" rel="alternate"></link><published>2020-01-23T00:00:00-05:00</published><updated>2020-01-23T00:00:00-05:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2020-01-23:/shower_speaker.html</id><summary type="html">&lt;p class="first last"&gt;How I turned a light fixture into a bluetooth speaker.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>y2kbugger - electronics</title><link href="http://blog.y2kbugger.com/" rel="alternate"></link><link href="http://blog.y2kbugger.com/feeds/electronics.atom.xml" rel="self"></link><id>http://blog.y2kbugger.com/</id><updated>2020-08-13T13:07:57-04:00</updated><entry><title>Battery free wireless switch?</title><link href="http://blog.y2kbugger.com/energy-havesting-lightswitch.html" rel="alternate"></link><published>2020-03-26T00:00:00-04:00</published><updated>2020-08-13T13:07:57-04:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2020-03-26:/energy-havesting-lightswitch.html</id><summary type="html">&lt;p class="first last"&gt;Settling a bet of whether a wireless switch really didn't have a battery.&lt;/p&gt;
+</summary><content type="html">&lt;!-- Google Photos Album: https://photos.app.goo.gl/NwiirCi5DN8tfZqP8 --&gt;
+&lt;div class="section" id="robust-wireless-light-switch"&gt;
+&lt;h2&gt;Robust wireless light switch&lt;/h2&gt;
+&lt;p&gt;I was looking for a system of wireless switches that didn't rely on wifi. I wanted something standalone because of reliability and security. I noticed one brand advertised &amp;quot;no battery&amp;quot; and I took that at face value.&lt;/p&gt;
+&lt;img alt="Amazon ad for acegoo switch" class="align-center" src="https://lh3.googleusercontent.com/pw/ACtC-3e3prwqvj3a56qTJPbfABldmo3IkhC8qyUA-hQMQvfjgDAdBOoHMsoCTAzI85O0CJ7_4CWY1MkytaMcMZJrZ9Um_irie8TJzTkK5IOfanQZCBFIoD6gDQctsvO9ePqWhZYthBHM4cjlzgTPprOCVqv7XQ=w683-h264-no" style="width: 100%;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="too-good-to-be-true"&gt;
+&lt;h2&gt;Too good to be true&lt;/h2&gt;
+&lt;p&gt;Sometime after installing I was talking to a co-worker and we started wondering: &amp;quot;Could it be a sealed lithium battery?&amp;quot; I knew this was done in the 10 year no maintenance smoke detectors, and I thought the &amp;quot;battery free&amp;quot; might actually be marketing lies.&lt;/p&gt;
+&lt;img alt="How the switch is used." class="align-center" src="https://lh3.googleusercontent.com/pw/ACtC-3eEjxUTaaF23O8dVz19PxDf7caH6lX0eH2OfvC3i9QWno-S8bUwrJWe22icYK_95z0cyQeo_E3ASTuOUXszwaWRlbKE6G8yyNIEQl4Lg7DPehRRJbfFhZ3mC29LrRFxwPuwhqRa6uAWOL4Jy5D-ADTNlA=w545-h678-no" style="width: 60%;" /&gt;
+&lt;/div&gt;
+&lt;div class="section" id="teardown"&gt;
+&lt;h2&gt;Teardown&lt;/h2&gt;
+&lt;p&gt;A large mechanical switch, with a smaller module in the center. There are more membrane switches than one expect for an on off switch. The antenna was run around the outside.&lt;/p&gt;
+&lt;img alt="Removing the case." class="align-center" src="https://lh3.googleusercontent.com/pw/ACtC-3e1pcK6VhYyIFg91zihsp8w7e9nSO3cSF1nDEVS4DLI0UFMD1PHxYkd0rWXgBNOSGo7R8NQIMLTfiMmC9PrqIpx9LVGSGF71q1Jt0iigbclF4qC-hIENJEj0azfWJJNvAXSAtw4vxTCNzfegz86OJ4pfA=w683-h513-no" style="width: 100%;" /&gt;
+&lt;p&gt;There are levers which are moved by the switch and seem to move something back and forth internally.&lt;/p&gt;
+&lt;img alt="Levers" class="align-center" src="https://lh3.googleusercontent.com/pw/ACtC-3eam4ql5dpjHEB7kGDh28Vdq4zkvUHnVUczglv_y9HZpwTd5qKrNMH5at6RRGBqsBmi-g0KFc2hcFoKFY_rWDIKVgs6ofzoLT8gUS53uc0Q6QfeQNWk21qGmOPRCm15zUYCYCvu6UnhC_-sthopvhCpGw=w683-h329-no" style="width: 100%;" /&gt;
+&lt;p&gt;Aha, magnets and a coil, it really does generate its own power!&lt;/p&gt;
+&lt;img alt="Coil and magnets" class="align-center" src="https://lh3.googleusercontent.com/pw/ACtC-3cQPGUj_ta7hJ2nne7fHtr5S-rWLGC6o7--OqfTB7Umxolq0qH8iqd1wrLGGYLsYyJad4dTfShZOrgBVWvBhJJJ7eeqJjcgt4OZI-e8-d96kC8506VMQPcYerhZnFbLOMZ7GxOPyVgP114q5FITNwIXEQ=w532-h630-no" style="width: 100%;" /&gt;
+&lt;/div&gt;
+</content><category term="electronics"></category><category term="teardown"></category></entry><entry><title>Shower Speaker</title><link href="http://blog.y2kbugger.com/shower_speaker.html" rel="alternate"></link><published>2020-01-23T00:00:00-05:00</published><updated>2020-01-23T00:00:00-05:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2020-01-23:/shower_speaker.html</id><summary type="html">&lt;p class="first last"&gt;How I turned a light fixture into a bluetooth speaker.&lt;/p&gt;
 </summary><content type="html">&lt;!-- Google Photos Album: https://photos.app.goo.gl/PUs3gPhkiMCq87nNA --&gt;
 &lt;div class="section" id="chasing-the-dream-shower-music"&gt;
 &lt;h2&gt;Chasing the dream, shower + music&lt;/h2&gt;
