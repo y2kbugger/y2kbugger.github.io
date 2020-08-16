@@ -26,8 +26,8 @@ MMIXware is made up of an assembler, and a simulator. Details can be found at th
 
 The first issue you'll run into is that MMIXware is written in CWEB, the literate programming system developed by Donald Knuth. The WEB files compile to C, but you'll likely need to install all of texlive to do so.
 
-***problem with make file
-***Show shirt
+.. ***problem with make file
+.. ***Show shirt
 
 Emscripten
 ----------
@@ -41,7 +41,12 @@ My little REPL
 
    git clone git@github.com:y2kbugger/mmix-wasm.git
 
-Give an example string processing version of program.
+Before publishing this:
 
-embed the demo here
+ - label "error", input and output text areas
+ - clean up example program
+
+.. raw:: html
+
+    <iframe frameborder="0" width="100%" height="1200px"  src="http://mmix.y2kbugger.com.s3-website.us-east-2.amazonaws.com"></iframe>
 
