@@ -26,8 +26,10 @@ MMIXware is made up of an assembler, and a simulator. Details can be found at th
 
 The first issue you'll run into is that MMIXware is written in CWEB, the literate programming system developed by Donald Knuth. The WEB files compile to C, but you'll likely need to install all of texlive to do so.
 
-.. ***problem with make file
-.. ***Show shirt
+problem with make file!!!!!!!!!
+
+
+.. image:: https://lh3.googleusercontent.com/pw/ACtC-3ezdKEXl-Hb4fRD5jeCqHH2lObD7xjwU3zH2j9jQC3-O-Cd01Cubl6hFdAh3sYxz-kZ52qdDVVwsUSYNmcNBJ-S3tcBbPp2a_NkfXnbZh97fpfgewD7SF1I0RrLHS-uzDrbDsb8NzhqfS2EcLJDBGWKrg=w471-h628-no
 
 Emscripten
 ----------
