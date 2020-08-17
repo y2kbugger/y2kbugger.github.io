@@ -9,12 +9,13 @@ Chicken Paprikás
 :cover: `https://lh3.googleusercontent.com/pw/ACtC-3eYOIF2b1hhDRxDx3L4re8JzhX-c5MLR3D3O84bvOhUs1g_F4-5oGNYAEAalR3KrRocmKsmCrvbF9U0QViCwxEtE7LZZuStd2e5rz8nkzSTKJxGhNH3iu979YY1xgNRlmzAReKvd_ErvSwgWC9QQPppew=w683-h284-no`
 
 ..
+  Google Photos Album Misc: https://photos.app.goo.gl/dfXck6rcLDcZHtv17
   Google Photos Album I: https://photos.app.goo.gl/4jcGDYtw2jQDj5QM7
   Google Photos Album II: https://photos.app.goo.gl/tk89uXTZvQuDoXk7A
 
 Chicken paprikás, a family favorite.
 ====================================
-One of my favorite meals growing up was my grandmothers chicken paprikás. Recently my wife Sara and I have been visiting Grandma Jean and making dinner for her.
+One of my favorite meals growing up was my grandmothers chicken paprikás. Recently my wife Sara and I have been visiting Grandma Jean and making dinner for her. This week it was our turn to make my this dish for her.
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3eYOIF2b1hhDRxDx3L4re8JzhX-c5MLR3D3O84bvOhUs1g_F4-5oGNYAEAalR3KrRocmKsmCrvbF9U0QViCwxEtE7LZZuStd2e5rz8nkzSTKJxGhNH3iu979YY1xgNRlmzAReKvd_ErvSwgWC9QQPppew=w683-h284-no
    :width: 100%
@@ -34,7 +35,7 @@ This recipe is full on from scratch, including the stock.
    :alt: Vegetals as part of the stock base.
    :align: center
 
-After breaking down the chicken into skin-on legs, wings and breast, I browned the chicken scraps before adding them to simmer in the stockpot.
+After breaking down the chicken into skin-on legs, wings and breasts, I browned the chicken scraps by roasting them in the oven before adding them to simmer in the stockpot.
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3fLHCX556ZB7Cr6LnPCrzHeS785nn_Q7T_NsDR59bUevbi4GtgccbQfMsxoj-3gjJcgJmEB1zCyLRlFwOosciCd2cmv8LztAiXuNqKHhsb6fB57hv69VvwU4XJtDETvazDH-X9oAn78zIffed-SHrB6eQ=w683-h513-no
    :width: 100%
@@ -50,7 +51,6 @@ Liquid chicken gold.
 
 Brining the chicken pieces
 --------------------------
-
 One key to extra moist and flavorful chicken is a 6 hour brine.
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3fILdbGA-kThHo4xGFgwT9xKnz9v2UJyS2rktRxM1X836UIN_xq_UHLNVLwpxm9zO4pwoFDuNYo4CU20JwJbc87BgTr_5iKmfC_RW5YbTpHgW5cAq3l8oQ37L8mxw_Zg0SknRWzzFlARAOWHnQsDtJStA=w683-h513-no
@@ -60,19 +60,26 @@ One key to extra moist and flavorful chicken is a 6 hour brine.
 
 The dumplings
 -------------
-Because they are time-consuming, I also made the dumplings the day before. We have always made them larger than german spaetzle, and slightly larger than tradition Nokedli.
+Because they are time-consuming, I also made the dumplings the day before. 
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3f4LDWeShY3fEcshKv89xY-6nZpF3tJUsXmRmlYXrzYyzEpVrK4YdIrDrbTshkjCm3uHlXfpsPNf7BjP3n_8v-U8Stgmr4TlVK3LWmiKNjIa0HTqMGotCOYDiM50I4gL16lI1dkbbIWqCnchtZCRp5REA=w683-h513-no
    :width: 100%
    :alt: The wet and dry of the dumplings
    :align: center
 
+Use the "well" technique.
+
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3eA6haMJ4cmGMLzC1FBaw-UHuql5T80bN2nEVG37DIsmXAJ_wdDFohzu2Sr1M1sK30_GegByUtiPy0Xv3wHmPQM0oTHJ8txs7DUpXvDjD3z9nxFXecZvENMZ-t9xg85AnKo6tEKqAsfpnKw4PZaJqZo4A=w576-h678-no
    :width: 100%
    :alt: How to start the dumplings
    :align: center
 
-XXXXadd animation of adding to water here.
+We have always made them larger than german spaetzle, and slightly larger than tradition Nokedli.
+
+.. image:: https://lh3.googleusercontent.com/pw/ACtC-3e-ybKcJcb4ZRRw5_qQ7M2fUnrgHnQd54imbs8ltQsXF_wR0Pk-KXYsEAml73dtLS6JjN_Upop5D06ScBJ3zzdfQ6VizWdwvx2l6n_spg9IOZ2HtXJueAxGccwmvApv7IdtJs8gYBPbkeHVt9AQkbq9_g=w496-h628-no
+   :width: 100%
+   :alt: Forming the dumplings
+   :align: center
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3dfNnhWKH9nki9wz3sHvA98Xn7wrL22Kj78r1mfZhRf30B3h0BQJVXiG6cr5ZjVfs_y_9kkON3UI_5zvqRgr0yw-NXO4dMwCAbRJDDMxzEc8GoeDY6f7XSypNGJQ8jLiJAuMiatAa8cV12cNuCLl7Q85w=w509-h678-no
    :width: 100%
@@ -102,6 +109,13 @@ On the day - we heated all cooked the chicken and made the sauce.
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3dWiHUKAU_5ycPhrSYtirXqpimrVShLMqR7-5rxXJveOtUE_z74tFKJw0lJSg-o5U8GF1TPvakeyXcibbay_BuF5uAiO380-s70Hq_1ILdyqF27PANmF34Sih1LSmBSqP4_CcQxkuM8MFr7S-gFX0L1Pg=w683-h513-no
    :width: 100%
    :alt: Fry the chicken in the bacon grease
+   :align: center
+
+Now simmer the onions in the remaining grease just until translucent.
+
+.. image:: https://lh3.googleusercontent.com/pw/ACtC-3eh_YXjy5JUNkZYRLobin11IUgtXy88Uzfw7l1_-mV2ZzTTt7eOunFC7hMTfMoTP0kghnoyQ-VpRxCqu0ZBDtg7eCAXvRDdpzLSYesdyUKAdBrs9zSZgyXgzyb5fCm1Le3L8wdmuVwKeWDUQ_Pe9KKVRw=w269-h400-no
+   :width: 40%
+   :alt: Onions simmering
    :align: center
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3fDPVdn6tcsNr3T1W8N0x2iYM6DN48oXUpgvKbRKhDG8sGIe-eza3_MOkcA1pN4gZzx-ZwApbccCrEp7xGL2YnY4x1NW88-r9Hv-K7BwJDC5IXC7SaG5wQpF7vpVhrP_R9uJ4-JGvfD2a-AanqNDZ0Ajg=w683-h513-no
