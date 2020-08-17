@@ -1,11 +1,12 @@
 Chicken Paprikás
 ################
 
-:date: 2018-01-26 18:11
+:date: 2019-10-09 18:28
+:modified: 2020-08-17 19:21:36
 :tags: dinners
 :author: zak kohler
-:summary: Hungarian Chicken Paprikás
-:status: draft
+:summary: My take on Hungarian chicken paprikás from scratch.
+:status: published
 :cover: `https://lh3.googleusercontent.com/pw/ACtC-3eYOIF2b1hhDRxDx3L4re8JzhX-c5MLR3D3O84bvOhUs1g_F4-5oGNYAEAalR3KrRocmKsmCrvbF9U0QViCwxEtE7LZZuStd2e5rz8nkzSTKJxGhNH3iu979YY1xgNRlmzAReKvd_ErvSwgWC9QQPppew=w683-h284-no`
 
 ..
