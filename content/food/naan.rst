@@ -1,5 +1,5 @@
-Naan
-####
+Naan on the stove
+#################
 
 :date: 2018-01-26 18:11
 :tags: bread
@@ -11,37 +11,62 @@ Naan
 ..
   Google Photos Album: https://photos.app.goo.gl/RmPRKto1Vn1mCPJFA
 
-Naan on the stove
-=================
+Ingredients
+===========
 
-Whisk in bowl:
-1 cup warm
-1/3c warm milk
-3 Tbl yogurt
-4 Tbl sucrose (yeast food)
-2 tsp instant yeast
-1 egg
-2 Tbl olive oil
-3 Tbl veg oil
-2 Tbl bread flour
+Whisk in bowl
+-------------
+.. Highlights::
+    | 1 cup warm
+    | 1/3c warm milk
+    | 3 Tbl yogurt/light sour cream
+    | 4 Tbl sucrose (yeast food)
+    | 2 tsp instant yeast
+    | 1 egg
+    | 2 Tbl olive oil
+    | 3 Tbl veg oil
+    | 2 Tbl bread flour
 
-Add:
-100g bread flour
-50g whole wheat
-230g AP flour
+Flour
+-----
+.. Highlights::
+    | 50g whole wheat
+    | 150g bread flour
+    | 170g AP flour [#flour]_
+
+Delayed ingredients
+-------------------
+.. Highlights::
+    | 2 tsp salt
+    | 4 cloves coasely minced garlic
+
+Butter
+------
+.. Highlights::
+    | 1 stick of butter
+    | 3 cloves finely minced garlic
+
+.. [#flour] You can tune the flour ratios to your preference, whole wheat adds texture, bread flour adds strength/chewiness.
+
+
+Mix all of the `Whisk in bowl` ingredients. Set aside for about 10 minutes, or while weighing up the flour.
+
+Weigh up the flour.
+
+Incorporate the wet into the dry via the well method.
 
 Fold until shaggy and incorporated
 Let starch granules activate in absence of salt for 15 to 20 minutes. Should become less sticky.
 
-Add:
-2 Tbl AP flour at a time, until dough is just barely handleable.
+Next, add 1 Tbl AP flour at a time, until dough is just handleable.
 
 Transfer to well oiled bowl.
+
 Cover and proof in a warm area, I heated to the oven to 125F and turned it off while leaving light on. Let rise for about 1-3 hours until doubled in size.
 
 In meantime mince up 2 heads of garlic to about the size of a lentil. Some will go into dough, the rest into the butter.
 
-Melt a stick of butter of butter over very low heat. Skim the milk solids off of the top. Then separte the fat from the aqueous phase. You can either skim, pour with a measureming cup or use a gravy separator.  You don't want wet butter, going for approximation of ghee. Add 1/3 of garlic to the butter and heat slightly.
+Melt a stick of butter of butter over very low heat. Skim the milk solids off of the top. Then separate the fat from the aqueous phase. You can either skim, pour with a measurement cup or use a gravy separator.  You don't want wet butter, going for approximation of ghee. Add 1/3 of garlic to the butter and heat slightly.
 
 Fold in 2tsp salt and the remaining 2/3rds of garlic into dough during deflation. Knead a bit enough to get the dough mass together and gluten in some tension. Portion into 65g pieces, dough was extremely sticky. Do the best you can and get them separated. After setting them on silicone pad I added little oil to the outside of each and shaped into ball with oiled hand. This maybe could have been done better by oiling hands before portioning step...?
 
@@ -67,61 +92,6 @@ Whenever I visit `Jungle Jim's <https://junglejims.com/>`_, a Cincinnati interna
    :alt: Clearance persimmons from Jungle Jims.
 
 After a bit of googling, I settled on making an English style holiday pudding. Not being British, this was a dish I was only vaguely aware of. After reading about the dessert a bit on the internet, I had a case of what googling calls the `Baader-Meinhof Phenomenon <https://english.stackexchange.com/questions/153166/what-is-the-term-for-when-you-become-more-aware-of-something>`_. It was everywhere. The strongest example was when I went to see a Christman Carol *again*, I can't believe that the "pudding scene" had always been there, never stirring my brain to ask "wtf is this pudding?" before, I think I thought it was meat.
-
-My recipe is based on:
-
-    https://www.marthastewart.com/340210/steamed-persimmon-pudding
-
-
-Ingredients
-===========
-Wet
----
-.. Highlights::
-    | 1/2 c. unsalted butter
-    | 2.25 c. sugar [#sugar]_
-    | 6 very soft persimmons
-    | 1.5 c. whole milk
-    | 5 large eggs
-    | 2 teaspoons pure vanilla extract
-    | 1 lemon
-
-
-Dry
----
-.. Highlights::
-    | 3 c. all-purpose flour
-    | 3 teaspoons ground cinnamon
-    | 1 whole freshly ground nutmeg
-    | 21 allspice berries
-    | 13 cloves [#cloves]_
-    | 3 segment of a star anise [#anise]_
-    | 1/2 teaspoon coarse salt
-    | 1 1/2 teaspoons baking soda
-
-
-Simmered
---------
-.. Highlights::
-    | 1/2 c. brandy
-    | 1/3 c. sultanas (golden raisins)
-    | 1 c. pecans, coarsely chopped
-    | 1/3 c. finely chopped candied ginger
-    | 4oz chopped candied citron
-
-
-Topping
--------
-.. Highlights::
-     | 2 c. heavy cream
-     | 1/4 c. brandy
-     | 2 T Powdered Sugar
-
---------
-
-.. [#sugar] Yes, I know sugar is not actually wet.
-.. [#cloves] I didn't include cloves in the mine, but I thought it would be good addition.
-.. [#anise] I originally only included one segment of anise.
 
 Directions
 ==========
