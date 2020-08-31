@@ -1,5 +1,5 @@
-MMIX, WASM, What?
-#################
+MMIX WASM
+##########
 
 :date: 2018-03-04
 :modified: 2020-05-18 13:14:09
@@ -22,22 +22,24 @@ Dependencies
 
 MMIXlib
 -------
-MMIXware is made up of an assembler, and a simulator. Details can be found at the homepage here: http://mmix.cs.hm.edu. One thing I noticed while browsing the SVN trunk was MMIXlib. This is a refactoring of the original MMIX tools for integrating into an ide. I decided to use this as the base for how I would plug into the MMIX assembler and simulator.
+MMIXware is made up of an assembler, and a simulator. Details can be found at the homepage here: http://mmix.cs.hm.edu. When browsing the SVN trunk I noticed something called MMIXlib. This is a refactoring effort by Martin Ruckert to partition the original MMIX tools into something he could integrate into an IDE. I decided to use this as the base for how I would plug into the MMIX assembler and simulator.
 
-The first issue you'll run into is that MMIXware is written in CWEB, the literate programming system developed by Donald Knuth. The WEB files compile to C, but you'll likely need to install all of texlive to do so.
+One thing that is surprising if you haven't seen it before is that MMIXware is written in CWEB, the literate programming system developed by Donald Knuth. The WEB files compile to C, but I needed to install all of texlive to do so.
 
-problem with make file!!!!!!!!!
-
+When I was working through the compilation process, I found a couple of errors, and also I suggested a small enhancement to the Makefile for mmixlib. As is tradition with Donald Knuth projects, there is a reward for finding errors. Even though I think my contribution was small i'm proud to have gotten a cool MMIX shirt.
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3ezdKEXl-Hb4fRD5jeCqHH2lObD7xjwU3zH2j9jQC3-O-Cd01Cubl6hFdAh3sYxz-kZ52qdDVVwsUSYNmcNBJ-S3tcBbPp2a_NkfXnbZh97fpfgewD7SF1I0RrLHS-uzDrbDsb8NzhqfS2EcLJDBGWKrg=w471-h628-no
 
 Emscripten
 ----------
-Since the web is a killer UI framework, and I also wanted to see what it took to compile some legacy C program to WASM, I decided to try to compile parts of MMIX to web assembly.
+I decided to compile to WASM for two reasons:
+I decided to try to compile parts of MMIX to web assembly.
 
+ - I wanted to see what it took to compile some legacy C program to WASM
+ - The web is a flexible for UIs, I could make it as polished as I wanted
 
-My little REPL
-==============
+Demo
+====
 
 .. code-block:: giturl
 
@@ -47,6 +49,7 @@ Before publishing this:
 
  - label "error", input and output text areas
  - clean up example program
+ - recompile with unsigned int fix
 
 .. raw:: html
 
