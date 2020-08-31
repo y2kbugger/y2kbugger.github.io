@@ -57,21 +57,125 @@
 
     <main class="content">
     <div class="article-content">
-        <!-- Google Photos Album: https://photos.app.goo.gl/dfXck6rcLDcZHtv17 -->
-<div class="section" id="start-from-nothing">
-<h2>Start from nothing</h2>
-<p>Usually when you start working on an embedded project, you get a toolkit. I didn't know this but still knew I wanted to understand what I takes to get a cpu up and running actual code.</p>
-<p>Explain Renode setup
-Explain documentation sources</p>
-<p>ELF as used by renode</p>
-<p>Building a cross-compiling toolchain up GCC for targeting Risc-V</p>
-<p>Explain that I will be cloning MIROS following each of his videos.
-OUtline which ones</p>
-<p>Final output will be a Preview to the UART echoer as a &quot;blinky&quot;</p>
-<p>Do i try again and setup VSCODE with gdb.</p>
-<p>Part 2...I think.
-Explain process of setting up interupt handler.
-Explain hardware registers (refer to Miro Samek blinkly light)</p>
+        <!-- Google Photos Album: https://photos.app.goo.gl/LUXeip6Xz85QRTn78
+https://www.youtube.com/watch?v=D0VuYe77Wu0&list=PLb-MsRpo_wlLW0EWRpAqnbbDsf4kxSI1x -->
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#background" id="id1">Background</a><ul>
+<li><a class="reference internal" href="#why-do-this" id="id2">Why do this</a></li>
+<li><a class="reference internal" href="#what-is-baremetal" id="id3">What is baremetal?</a></li>
+<li><a class="reference internal" href="#what-is-risc-v" id="id4">What is RISC-V?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolchain-setup" id="id5">Toolchain setup</a><ul>
+<li><a class="reference internal" href="#gcc" id="id6">gcc</a></li>
+<li><a class="reference internal" href="#renode" id="id7">renode</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#blinking-the-virtual-led" id="id8">Blinking the virtual led</a></li>
+<li><a class="reference internal" href="#miro-samek-and-the-modern-embedded-course-series" id="id9">Miro Samek and the modern embedded course series</a></li>
+</ul>
+</div>
+<div class="section" id="background">
+<h2><a class="toc-backref" href="#id1">Background</a></h2>
+<div class="section" id="why-do-this">
+<h3><a class="toc-backref" href="#id2">Why do this</a></h3>
+<p>The goal of this series explore the line between hardware and software while creating a minimal, vendor-free environment to play with toy operating systems.</p>
+</div>
+<div class="section" id="what-is-baremetal">
+<h3><a class="toc-backref" href="#id3">What is baremetal?</a></h3>
+<p>In the non-embedded world, when you compile and link a C program into an executable you are doing so with the intention of running it <em>within</em> a specific operating system. When you compile baremetal or <tt class="docutils literal"><span class="pre">--freestanding</span></tt> you are telling the compiler that you intend to run this without relying on an operating system. The could be used, for example, to write an operating system. Alternatively it can be used to access the hardware of a system directly on an embedded system. Doing so you sacrifice things such as memory management, standard IO, thread/process control, etc. Because of this, you can also compile to run on a small RTOS or even an embedded linux system depending on the amount of system resources you have available.</p>
+<p>When you use a commercial development platform, you will likely be provided with a cross compiling toolchain and so easy way to run within a small RTOS for example <a class="reference external" href="https://github.com/sifive/freedom-e-sdk">freedom-e-sdk</a>. Alternatively, there are also attempts to make small, but hardware agonistic RTOS see <a class="reference external" href="https://www.zephyrproject.org/">zephyr</a></p>
+</div>
+<div class="section" id="what-is-risc-v">
+<h3><a class="toc-backref" href="#id4">What is RISC-V?</a></h3>
+<p>Wikipedia</p>
+<blockquote>
+RISC-V (pronounced &quot;risk-five&quot;) is an open standard instruction set architecture (ISA) based on established reduced instruction set computer (RISC) principles. Unlike most other ISA designs, the RISC-V ISA is provided under open source licenses that do not require fees to use.</blockquote>
+</div>
+</div>
+<div class="section" id="toolchain-setup">
+<h2><a class="toc-backref" href="#id5">Toolchain setup</a></h2>
+<p>you can get these from anywhere, but i suggesting compiling from source to ensure we have matching versions. For gcc be aware you have compile the cross-compiling toolchain for rv32i.</p>
+<p>There are some compilation prerequisites and gotchas. If my package hints fail, just refer to the official project documentation for each.</p>
+<p>To get started, clone my repo, including sub repos:</p>
+<div class="highlight"><pre><span></span>git clone --recursive git@github.com:y2kbugger/baremetal-riscv-renode.git
+</pre></div>
+<p>Install the build requirements, using the hints below if you have trouble. Then build the toolchains:</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> baremetal-riskv-renode
+make toolchains
+</pre></div>
+<div class="section" id="gcc">
+<h3><a class="toc-backref" href="#id6">gcc</a></h3>
+<p><a class="reference external" href="https://github.com/riscv/riscv-gnu-toolchain">https://github.com/riscv/riscv-gnu-toolchain</a></p>
+<p>Packages I needed on my system</p>
+<pre class="code literal-block">
+gawk, makeinfo(texinfo package), bison, flex
+</pre>
+<p>on an ubuntu test system i noticed that if you are missing a curses header, gdb will silently build without the text user interface tui.</p>
+<pre class="code literal-block">
+libncurses5-dev libncursesw5-dev
+</pre>
+</div>
+<div class="section" id="renode">
+<h3><a class="toc-backref" href="#id7">renode</a></h3>
+<p><a class="reference external" href="https://renode.readthedocs.io/en/latest/advanced/building_from_sources.html#building-from-source">https://renode.readthedocs.io/en/latest/advanced/building_from_sources.html#building-from-source</a></p>
+<p>mono-complete</p>
+<ul class="simple">
+<li>Arch: i think everything worked fine using the mono package.</li>
+<li>Ubuntu: I had inexplicable issues when installing from the standard repos. Following the mono site <a class="reference external" href="https://www.mono-project.com/download/stable/">https://www.mono-project.com/download/stable/</a> worked great.</li>
+</ul>
+<p>some other misc packages that i needed.</p>
+<pre class="code literal-block">
+automake autoconf libtool g++ realpath(coreutils on debian) policykit-1 libgtk2.0-dev screen uml-utilities gtk-sharp2 python3
+</pre>
+</div>
+</div>
+<div class="section" id="blinking-the-virtual-led">
+<h2><a class="toc-backref" href="#id8">Blinking the virtual led</a></h2>
+<p>For the first part of this series, we'll cover the minimal viable demo which blinks an LED. This will allow us to get started using renode, gcc riscv cross compiling, and using gdb.</p>
+<p>To build and run our first example within renode:</p>
+<div class="highlight"><pre><span></span><span class="nb">source</span> activate_toolchains.sh
+<span class="nb">cd</span> 1_blinky
+make launch
+</pre></div>
+<p>If everything went correctly, you should see something like this:</p>
+<img alt="" src="https://lh3.googleusercontent.com/pw/ACtC-3dKs20yaz1biM2MWXyi7HAcI0pb-BHYDYD1XM92Al11dQPQ26OJY8YULAlHPHtduGETCN5Y5D6aXtkiFi3-9tB3RNtj4A687SGo765evyqri2TjKMCyQeNSLNfZ-SV52yXlIEar9iQj2aEzPKAmBGrQOA=w628-h449-no" />
+<p>Todo Explain:</p>
+<ul class="simple">
+<li>make monitor</li>
+<li>make debug</li>
+<li>memory mapped hardware registers.</li>
+<li>reset vector</li>
+</ul>
+<p>Program code</p>
+<div class="highlight"><pre><span></span><span class="na">.equ</span> <span class="no">LED</span><span class="p">,</span> <span class="mi">0x60000800</span>
+
+<span class="na">.section</span> <span class="no">.text</span>
+<span class="na">.global</span> <span class="no">_start</span>
+
+<span class="nl">_start:</span>
+        <span class="nf">li</span> <span class="no">a0</span><span class="p">,</span> <span class="mi">0x00</span>
+        <span class="nf">li</span> <span class="no">a0</span><span class="p">,</span> <span class="mi">0x00</span>
+        <span class="nf">li</span> <span class="no">a3</span><span class="p">,</span> <span class="mi">0x1200000</span>
+        <span class="nf">li</span> <span class="no">a5</span><span class="p">,</span> <span class="no">LED</span>
+<span class="nl">loop:</span>
+        <span class="nf">addi</span> <span class="no">a0</span><span class="p">,</span> <span class="no">a0</span><span class="p">,</span> <span class="mi">0x01</span>
+        <span class="nf">bne</span> <span class="no">a0</span><span class="p">,</span> <span class="no">a3</span><span class="p">,</span>  <span class="no">loop</span>
+
+<span class="nl">toggle_led:</span>
+        <span class="nf">lw</span> <span class="no">a4</span><span class="p">,</span> <span class="mi">0x0</span><span class="p">(</span><span class="no">a5</span><span class="p">)</span>
+        <span class="nf">xori</span> <span class="no">a4</span><span class="p">,</span> <span class="no">a4</span><span class="p">,</span> <span class="mi">0x1</span>
+        <span class="nf">sw</span> <span class="no">a4</span><span class="p">,</span> <span class="mi">0x0</span><span class="p">(</span><span class="no">a5</span><span class="p">)</span>
+        <span class="nf">jump</span> <span class="no">_start</span><span class="p">,</span> <span class="no">t0</span>
+</pre></div>
+<p>gdb tui</p>
+<img alt="" src="https://lh3.googleusercontent.com/pw/ACtC-3eVGqrh2Gm1lQJKH27cWNYUQO8fVTUAvM1FNZ_pUis0Upip6vEa4ZNGOh79vosxGnBtFcacVX8QRNDgKEeklwFnI9hs6WrAlnzpTDZIyyn1oyTclXxU4_IlzydFbb0UFDkm0CFMsU8f3KIEKY0OWxoPzQ=w354-h710-no" />
+</div>
+<div class="section" id="miro-samek-and-the-modern-embedded-course-series">
+<h2><a class="toc-backref" href="#id9">Miro Samek and the modern embedded course series</a></h2>
+<p>I will be loosing cloning MIROS following some of his videos in spirit. He does a great introduction to many concepts in embedded and I want to share that in a way that we don't need to have a real board.</p>
 </div>
 
     </div>
