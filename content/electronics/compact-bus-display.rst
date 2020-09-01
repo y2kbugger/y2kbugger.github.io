@@ -17,7 +17,16 @@ I walk through my experimentation that lead to a satisfying design for my front 
 
 Motivation
 ==========
-The goal was to make an easy way to glance at the bus signals on my breadboard Z80 computer. My goasls for this project is to learn about what the cpu is doing, and watch it happen. This means features such as: writing memory by hand, stopping the clock, single stepping the processor, watching as various signals on the computer change. This can be done either mostly in software, or mostly in hardware. When it's software we call it a monitor program, and for hardware it's commonly called a trainer. In my case, I want to add these features in hardware..
+The goal was to make an easy way to glance at the bus signals on my breadboard Z80 computer. The purpose of this project is to learn about what the cpu is doing, and watch it happen.
+
+This means features such as:
+
+- writing memory by hand
+- stopping the clock
+- single stepping the processor
+- observe bus-transfers and IO
+
+This can be done either mostly in software, or mostly in hardware. When it's software we call it a monitor program, and for hardware it's commonly called a trainer. In my case, I want to add these features in hardware..
 
 .. figure :: https://lh3.googleusercontent.com/pw/ACtC-3c0ghd2mox_6hFrde8tAXjk7DmhvGc71toNKh900qnj-BGMrMak8hZIL-LTVTdHAnEpbCeGC6tg72ETeG5O_yvcOw711jkv_MOECR1ghJIHX8-UBPcf0WgHlSIDumMk3i1R7e-_tDzwGP2CDNyK-RvCLw=w640-h273-no
    :width: 100%
