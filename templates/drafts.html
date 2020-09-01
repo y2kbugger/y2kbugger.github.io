@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block header %}
+    <h1>Drafts</h1>
+{% endblock %}
+
+{% block content %}
+    <ul id="article-list">
+        {% for article in drafts|sort(attribute='date', reverse=True) %}
+            <li class="article-list">
+                <article>
+                    <header class="article-list">
+                        <h2 class="article-title">
+                            <a href="{{ SITEURL }}/{{ article.url }}"
+                               title="link to {{ article.title|striptags }}">{{ article.title }}</a>
+                        </h2>
+                        <div class="article-meta">
+                            {{ author_and_date(article) }}
+                        </div>
+                    </header>
+                    <div class="article-content article-summary">
+                        {% if article.cover %}<img src="{{ article.cover }}" alt="">{% endif %}
+                        {{ article.summary }}
+                        <div class="read-more">
+                            <a href="{{ SITEURL }}/{{ article.url }}"
+                               title="link to {{ article.title|striptags }}">Read more</a>
+                        </div>
+                    </div>
+                </article>
+            </li>
+        {% endfor %}
+    </ul>
+
+
+{% endblock content %}
