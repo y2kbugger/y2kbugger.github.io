@@ -42,6 +42,10 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Jinja2', 'http://jinja.pocoo.org/'),
          ('You can modify those links in your config file', '#'),)
 
+PLUGINS = [
+    'drafts',
+]
+
 # Social widget
 SOCIAL = (('You can add links in your config file', '#'),
           ('Another social link', '#'),)
@@ -66,7 +70,6 @@ HEAD_EXTRA_PROD = """
 """
 
 HEAD_EXTRA_DEBUG = """
-<script type="text/javascript" src="http://livejs.com/live.js"></script>
 """
 
 HEAD_EXTRA = HEAD_EXTRA_PROD + HEAD_EXTRA_DEBUG
