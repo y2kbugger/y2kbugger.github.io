@@ -59,5 +59,5 @@ More programming examples can be found in the MMIX repository https://gitlab.lrz
 
 .. raw:: html
 
-    <iframe frameborder="0" width="100%" height="1400px"  src="http://mmix.y2kbugger.com.s3-website.us-east-2.amazonaws.com"></iframe>
+    <iframe frameborder="0" width="100%" height="1400px"  src="https://mmix.y2kbugger.com.s3-website.us-east-2.amazonaws.com"></iframe>
 
