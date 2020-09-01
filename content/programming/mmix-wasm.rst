@@ -1,7 +1,7 @@
 MMIX WASM
 ##########
 
-:date: 2018-03-04
+:date: 2019-09-28 02:14:30
 :modified: 2020-09-01 02:32:27
 :tags: assembly, algorithms, MMIX, TAOCP, books
 :author: zak kohler
