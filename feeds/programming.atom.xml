@@ -114,7 +114,7 @@
 &lt;p&gt;More programming examples can be found in the MMIX repository &lt;a class="reference external" href="https://gitlab.lrz.de/mmix/mmixware"&gt;https://gitlab.lrz.de/mmix/mmixware&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone git@github.com:y2kbugger/mmix-wasm.git
 &lt;/pre&gt;&lt;/div&gt;
-&lt;iframe frameborder="0" width="100%" height="1400px"  src="https://mmix.y2kbugger.com.s3-website.us-east-2.amazonaws.com"&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;iframe frameborder="0" width="100%" height="1400px"  src="https://d1aby3vgncc46a.cloudfront.net/mmix-wasm.html"&gt;&lt;/iframe&gt;&lt;/div&gt;
 </content><category term="programming"></category><category term="assembly"></category><category term="algorithms"></category><category term="MMIX"></category><category term="TAOCP"></category><category term="books"></category></entry><entry><title>MMIX - Working on TAOCP in RISC</title><link href="http://blog.y2kbugger.com/reading-taocp-mmix.html" rel="alternate"></link><published>2018-12-27T00:00:00-05:00</published><updated>2020-05-29T15:18:21-04:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2018-12-27:/reading-taocp-mmix.html</id><summary type="html">&lt;p class="first last"&gt;How to read The Art of Computer Programming and do the exercises in modern RISC rather than a 1960s style architecture.&lt;/p&gt;
 </summary><content type="html">&lt;!-- Google Photos Album: https://photos.app.goo.gl/dfXck6rcLDcZHtv17 --&gt;
 &lt;div class="section" id="introduction"&gt;
