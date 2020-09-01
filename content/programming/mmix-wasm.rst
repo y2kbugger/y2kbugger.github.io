@@ -7,7 +7,7 @@ MMIX WASM
 :author: zak kohler
 :summary: Compiling the MMIX Assembler and Simulator to Web Assembly
 :status: published
-:cover: `https://lh3.googleusercontent.com/pw/ACtC-3cWmidturYjMU3_cwB6Ua8wiLjaA-Mi0dEi1is9zM_yERr43pXbx_NvXRVyp-pTs22cTJnlltpjbxl6eC_RPQIt8vaDBMFKUM_rJU6tYJhZ7CXTQvm0N9qFNX0bCxTC4s3W2UcnzmMtzC4Yriznw4BeZQ=w572-h85-no`
+:cover: `https://lh3.googleusercontent.com/pw/ACtC-3cFCw5pcP4PjQ42htLHTNWtHNCmNJq4lxvQjEMtxlMtKjBK_P6DHh2c05aIIGVsdb5RBNnMFY7dOzUsMa8EECwxEvNJY8tTF4hpSk00R7sk52YwUXK55kyJkIC9epT5yxHK_k8DqhKY6qrrMXL1YOaC3Q=w742-h989-no`
 
 ..
   Google Photos Album: https://photos.app.goo.gl/dfXck6rcLDcZHtv17
