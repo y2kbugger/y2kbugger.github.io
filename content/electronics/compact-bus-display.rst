@@ -1,5 +1,5 @@
-A Compact LED 8-bit Bus Indicator
-#################################
+A Compact LED 8-bit Bus Display
+###############################
 
 :date: 2017-12-19 20:58:08
 :tags: retrocomputing, display, resistor-network, z80
@@ -17,14 +17,14 @@ What started out as a way to work on a prototype turned into a pretty cool displ
 
 Motivation
 ==========
-I wanted an easy way to glance at the bus signals on my breadboard Z80 prototype. The purpose of this the overall Z80 project is to learn about what the cpu is doing, and watch it happen.
+I wanted an easy way to glance at the bus signals on my breadboard Z80 prototype. The goal of my Z80 computer is to learn about about what a cpu does, and watch it interact with memory and peripherals.
 
 This means having features such as:
 
 - writing to memory by hand
 - stopping the clock
 - single stepping the processor
-- observe the state of the buses and IO
+- observe the state of the buses and I/O
 
 This can be done either mostly in software, or mostly in hardware. When it's software we call it a monitor program, and for hardware it's commonly called a trainer. In my case, I want to add these features in hardware.
 
@@ -42,7 +42,7 @@ My trainer will be based on the Z80, having an 8-bit databus and a 16-bit memory
 
 Input First
 ===========
-At I was prototyped the  "Keyboard" module.
+First, I prototyped the "Keyboard" module.
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3fE2a-FpZLw8R6JkFSXoGRJ1Nfz_cHQOcbysIO11ySk9vkcqz00k0kcQITJES1ocRBrjHBSg4lDK5fZIIMVibu_l-NFW4GeA9fa_yBWb1nCgNYaKbCQ_Qp6TiIMvMiBsvjLeuT2U6j9kyVmKFVOBjoMpg=w960-h940-no
    :alt: the keyboard
@@ -133,17 +133,17 @@ Hold the pieces in place with gaffers tape
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3efzzHBPWMn256AYGDUWSWhWS0ZYvOlyQ0KWivKxk7cvamg7CBJDLHTVfMd6ASrW2ew-Gkky5aQRufsOJiGiRxgPcsnItF51LuW95ftM3qgUq0IbFDAJSoF5kSJuRxAQPwWin_tpZesOul9nyvg2z_j6g=s960-no
    :alt: Fine wiring
 
-It's alright to have crossing wires because we only remove enable right at the solder joint.
+It's alright to have crossing wires because we only remove enamel at the solder joint.
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3dXtlvsc8phKZQBTGvsIZoRiU25C0tyOfv3nC4Mg0fyfl94NLjZ39e_keXr6QC8AlLCuDtA-nOlJy0J0wFomY4-3QwpOYGpuebMZlzxSF5BpLSX3UdYd99hwPhsSZDdPo-LGz7dxFyVkqpFUq3_wyNIJQ=w570-h989-no
    :alt: Backside, crossing wires
 
-These two devices are equivalent, each having a 8bits of hex and 8bits binary. The final module is satisfyingly compact.
+These two devices are equivalent, each having a 8 bits of hex and 8 bits of binary. The final module is satisfyingly compact.
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3dNRdys80vZDo2Yjc06wpy94Xq_PGtWSMmVyGzDddIox1RXK7uT77T6Qt2JKLiGai-1ERXvmmGCHEtdszBy4o-rw7gcMQbiSZFGS6iZIJcn2wDPkqvSFyxC0QwO1UJ_q4-tshn3hiKMIPuqbV_6T5koyw=w960-h775-no
     :alt: Size comparison
 
-Driving the finished finished module with an ardunio to test
+Driving the finished module with an ardunio to test.
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3eclInsbfzOgu6H4e9nNESdtCFPdL3JA8iWfcpG9dvcJC5xj554EXis4rYAPzbyzwEWUKt2jIbGPfvSvXZXH75SE8wOwV9YGUYm54DPQBwuf_cZl-7UE4JmJSdQEOK7iy8CKXLjYMo-hvA2m8IOohrK4Q=w617-h940-no
    :alt: it works
