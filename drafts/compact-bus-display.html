@@ -3,7 +3,7 @@
 <head>
             <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
-        <title>A Compact LED 8-bit Bus Indicator - y2kbugger</title>
+        <title>A Compact LED 8-bit Bus Display - y2kbugger</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/theme/css/normalize.css">
         <link rel="stylesheet" href="/theme/css/styles.css">
@@ -42,12 +42,12 @@
     </nav>
 
     <header class="page-header">
-    <h1>A Compact LED 8-bit Bus Indicator</h1>
+    <h1>A Compact LED 8-bit Bus Display</h1>
 
     <div class="article-meta">
                 <span class="author">By zak kohler</span>
         <span class="publication-date" title="2017-12-19T20:58:08-05:00"> on 2017.12.19 @ 20:58</span>
-        <span class="modification-date" title="2020-09-02T12:43:56.005321-04:00"> last modified on 2020.09.02 @ 12:43</span>
+        <span class="modification-date" title="2020-09-02T19:50:14.989634-04:00"> last modified on 2020.09.02 @ 19:50</span>
 
 
             <div class="tags">
@@ -66,13 +66,13 @@
 </div>
 <div class="section" id="motivation">
 <h2>Motivation</h2>
-<p>I wanted an easy way to glance at the bus signals on my breadboard Z80 prototype. The purpose of this the overall Z80 project is to learn about what the cpu is doing, and watch it happen.</p>
+<p>I wanted an easy way to glance at the bus signals on my breadboard Z80 prototype. The goal of my Z80 computer is to learn about about what a cpu does, and watch it interact with memory and peripherals.</p>
 <p>This means having features such as:</p>
 <ul class="simple">
 <li>writing to memory by hand</li>
 <li>stopping the clock</li>
 <li>single stepping the processor</li>
-<li>observe the state of the buses and IO</li>
+<li>observe the state of the buses and I/O</li>
 </ul>
 <p>This can be done either mostly in software, or mostly in hardware. When it's software we call it a monitor program, and for hardware it's commonly called a trainer. In my case, I want to add these features in hardware.</p>
 <div class="figure align-center">
@@ -84,7 +84,7 @@
 </div>
 <div class="section" id="input-first">
 <h2>Input First</h2>
-<p>At I was prototyped the  &quot;Keyboard&quot; module.</p>
+<p>First, I prototyped the &quot;Keyboard&quot; module.</p>
 <img alt="the keyboard" src="https://lh3.googleusercontent.com/pw/ACtC-3fE2a-FpZLw8R6JkFSXoGRJ1Nfz_cHQOcbysIO11ySk9vkcqz00k0kcQITJES1ocRBrjHBSg4lDK5fZIIMVibu_l-NFW4GeA9fa_yBWb1nCgNYaKbCQ_Qp6TiIMvMiBsvjLeuT2U6j9kyVmKFVOBjoMpg=w960-h940-no" />
 </div>
 <div class="section" id="simple-prototype">
@@ -126,11 +126,11 @@
 <p>Hold the pieces in place with gaffers tape</p>
 <img alt="" src="https://lh3.googleusercontent.com/pw/ACtC-3fXwmP759cJQh0MwywwbvuxqR2uZl5Y1IkEZBU-FXB-QuBgzgQg3VVT3k24ibbBctvESS_WDwbW2iP5wc6sjAnkcMa1uXVy00cw1Ulza3YZo3U1Tatj2B0A5LGqHJgMLXEwo8EwpsN4u9JO7lm2iBY5yA=w742-h989-no" />
 <img alt="Fine wiring" src="https://lh3.googleusercontent.com/pw/ACtC-3efzzHBPWMn256AYGDUWSWhWS0ZYvOlyQ0KWivKxk7cvamg7CBJDLHTVfMd6ASrW2ew-Gkky5aQRufsOJiGiRxgPcsnItF51LuW95ftM3qgUq0IbFDAJSoF5kSJuRxAQPwWin_tpZesOul9nyvg2z_j6g=s960-no" />
-<p>It's alright to have crossing wires because we only remove enable right at the solder joint.</p>
+<p>It's alright to have crossing wires because we only remove enamel at the solder joint.</p>
 <img alt="Backside, crossing wires" src="https://lh3.googleusercontent.com/pw/ACtC-3dXtlvsc8phKZQBTGvsIZoRiU25C0tyOfv3nC4Mg0fyfl94NLjZ39e_keXr6QC8AlLCuDtA-nOlJy0J0wFomY4-3QwpOYGpuebMZlzxSF5BpLSX3UdYd99hwPhsSZDdPo-LGz7dxFyVkqpFUq3_wyNIJQ=w570-h989-no" />
-<p>These two devices are equivalent, each having a 8bits of hex and 8bits binary. The final module is satisfyingly compact.</p>
+<p>These two devices are equivalent, each having a 8 bits of hex and 8 bits of binary. The final module is satisfyingly compact.</p>
 <img alt="Size comparison" src="https://lh3.googleusercontent.com/pw/ACtC-3dNRdys80vZDo2Yjc06wpy94Xq_PGtWSMmVyGzDddIox1RXK7uT77T6Qt2JKLiGai-1ERXvmmGCHEtdszBy4o-rw7gcMQbiSZFGS6iZIJcn2wDPkqvSFyxC0QwO1UJ_q4-tshn3hiKMIPuqbV_6T5koyw=w960-h775-no" />
-<p>Driving the finished finished module with an ardunio to test</p>
+<p>Driving the finished module with an ardunio to test.</p>
 <img alt="it works" src="https://lh3.googleusercontent.com/pw/ACtC-3eclInsbfzOgu6H4e9nNESdtCFPdL3JA8iWfcpG9dvcJC5xj554EXis4rYAPzbyzwEWUKt2jIbGPfvSvXZXH75SE8wOwV9YGUYm54DPQBwuf_cZl-7UE4JmJSdQEOK7iy8CKXLjYMo-hvA2m8IOohrK4Q=w617-h940-no" />
 </div>
 
