@@ -78,10 +78,16 @@ p {
     margin-top: 1em;
     margin-bottom: 1em;
 }
-code, pre {
-    font-size: 0.8em;
+tt {
+    padding-inline-end: .2em;
+    padding-inline-start: .2em;
+}
+tt, code, pre {
     color: #222;
     background-color: #f6f6f6;
+}
+code, pre {
+    font-size: 0.8em;
 }
 
 pre {
