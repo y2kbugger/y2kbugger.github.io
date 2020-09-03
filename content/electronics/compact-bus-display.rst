@@ -1,11 +1,11 @@
-A Compact LED 8-bit Bus Display
-###############################
+A Compact 8-bit Bus Display
+###########################
 
 :date: 2017-12-19 20:58:08
 :tags: retrocomputing, display, resistor-network, z80
 :author: zak kohler
-:summary: Prototyping front panel display components for a z80 or TTL minicomputer.
-:status: draft
+:summary: Prototyping front panel display components for a Z80 or TTL minicomputer.
+:status: published
 :cover: `https://lh3.googleusercontent.com/pw/ACtC-3cBalSP4v9ccpbxUJh9GvoOm17yEIM7RKbHRytZBRG3nFXhiVK3gzi0doJjcABb-UgmT6YEu4mHgpKo5I9wZqqnw8hDA0yYaoDn2vv8u4O4MlZbisDjxHfqNG20vVDOb1krMxj8qptTq9ZZoJmXSnGfWw=w605-h474-no`
 
 ..
