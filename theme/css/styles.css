@@ -69,15 +69,25 @@ h4, h5, h6 {
     letter-spacing: 0.15em;
 }
 
-p, ul, pre, table {
+ul, pre, table {
     margin: 0;
     margin-bottom: 1em;
 }
 
-code, pre {
-    font-size: 0.8em;
+p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+tt {
+    padding-inline-end: .2em;
+    padding-inline-start: .2em;
+}
+tt, code, pre {
     color: #222;
     background-color: #f6f6f6;
+}
+code, pre {
+    font-size: 0.8em;
 }
 
 pre {
@@ -361,6 +371,7 @@ footer.page-footer {
     background-color: #f6f6f6;
 }
 .admonition p {
+    margin-top: 0px;
     padding: 5px;
 }
 .admonition-title {
