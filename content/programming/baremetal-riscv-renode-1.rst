@@ -20,7 +20,7 @@ Background
 
 Why do this
 -----------
-The goal of this series explore the line between hardware and software while creating a minimal, vendor-free environment to play with toy operating systems.
+The goal of this series explore the line between hardware and software while creating a minimal, vendor-free environment to write and play with toy operating systems.
 
 What is baremetal?
 ------------------
@@ -34,66 +34,90 @@ Wikipedia
 
     RISC-V (pronounced "risk-five") is an open standard instruction set architecture (ISA) based on established reduced instruction set computer (RISC) principles. Unlike most other ISA designs, the RISC-V ISA is provided under open source licenses that do not require fees to use.
 
-Toolchain setup
-===============
-you can get these from anywhere, but i suggesting compiling from source to ensure we have matching versions. For gcc be aware you have compile the cross-compiling toolchain for rv32i.
+Obtain the source code
+======================
+To get started you will need to clone the repository. This includes all of the examples as well as the source for Renode simulator and gcc riscv tool chain.
 
-There are some compilation prerequisites and gotchas. If my package hints fail, just refer to the official project documentation for each.
-
-To get started, clone my repo, including sub repos:
+Renode and GCC are git submodules so if you use ``--recursive`` you can get everything downloaded in one shot.
 
 .. code-block:: giturl
 
    git clone --recursive git@github.com:y2kbugger/baremetal-riscv-renode.git
 
-Install the build requirements, using the hints below if you have trouble. Then build the toolchains:
+Toolchain compilation
+=====================
+Technically you could try to find these pre-compiled from your distro or elsewhere, but I suggest compiling from source to ensure we have matching versions and build options.
+
+There are some compilation prerequisites and gotchas. If my package hints fail, just refer to the official project documentation for each.
+
+Building
+--------
+I have added a ``Makefile`` which build the toolchains. If you have all of the build requirements already installed, building both can be as simple as:
 
 .. code-block:: bash
 
     cd baremetal-riskv-renode
     make toolchains
 
+Running it should usually be enough to let you know what you are missing. I have included some hints below, check the comments as well as different platforms may have different packages.
+
+.. important::
+
+    Make sure you have ``curses``/``ncurses`` headers.
+
+    If they are missing the build will **succeed**, but you will **not be able to access** the GDB text user interface, TUI. This is import for being able to step through the source code. See the GCC hints.
+
+Build requirement hints
+-----------------------
+Below are my hints for which packages to install, this can be different depending on the distribution. I've include links to the official guides should you get stuck on either.
+
 gcc
----
+^^^
 https://github.com/riscv/riscv-gnu-toolchain
 
-Packages I needed on my system
+.. code::
+
+    gawk texinfo bison flex libncurses5-dev libncursesw5-dev
+
+The package ``libncurses*`` provides ``ncurses``, and  ``texinfo`` provides ``makeinfo``.
+
+Renode
+^^^^^^
+https://renode.readthedocs.io/en/latest/advanced/building_from_sources.html
+
+Mono provides CLR runtime and C# compiler required for Renode. Installing it can be tricky on some distros and having a mono that is incomplete or outdated can lead to hard-to-understand errors. Make sure your whole system is up-to-date if you run into issue compiling Renode.
+
+Arch
+  Everything worked fine using the ``mono`` package from extra.
+Ubuntu
+  **Do not** use the mono from standard repos. Follow instruction for ``mono-complete`` here https://www.mono-project.com/download/stable/.
 
 .. code::
 
-    gawk, makeinfo(texinfo package), bison, flex
+    automake autoconf libtool g++ coreutils policykit-1 libgtk2.0-dev screen uml-utilities gtk-sharp2 python3
 
-on an ubuntu test system i noticed that if you are missing a curses header, gdb will silently build without the text user interface tui.
+The package ``coreutils`` provides ``realpath`` on Debian.
 
-.. code::
-
-    libncurses5-dev libncursesw5-dev
-
-
-renode
-------
-https://renode.readthedocs.io/en/latest/advanced/building_from_sources.html#building-from-source
-
-mono-complete
-
-- Arch: i think everything worked fine using the mono package.
-- Ubuntu: I had inexplicable issues when installing from the standard repos. Following the mono site https://www.mono-project.com/download/stable/ worked great.
-
-some other misc packages that i needed.
-
-.. code::
-
-    automake autoconf libtool g++ realpath(coreutils on debian) policykit-1 libgtk2.0-dev screen uml-utilities gtk-sharp2 python3
-
-Blinking the virtual led
-========================
-For the first part of this series, we'll cover the minimal viable demo which blinks an LED. This will allow us to get started using renode, gcc riscv cross compiling, and using gdb.
-
-To build and run our first example within renode:
+Activating the toolchains
+=========================
+In order to run renode and gdb, you must put them on your ``PATH``.
 
 .. code-block:: bash
 
     source activate_toolchains.sh
+
+Blinking a virtual LED
+======================
+This is the part where we see whether the toolchains are compiled correctly.
+
+We will learn how to control Renode and band step through the source code using the GNU debugger, ``gdb``.
+
+Since we are just getting familiar with the tools we'll start off with the 'Hello, World' of hardware projects, blinking an LED.
+
+To build and run our first example within Renode:
+
+.. code-block:: bash
+
     cd 1_blinky
     make launch
 
@@ -101,14 +125,34 @@ If everything went correctly, you should see something like this:
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3dKs20yaz1biM2MWXyi7HAcI0pb-BHYDYD1XM92Al11dQPQ26OJY8YULAlHPHtduGETCN5Y5D6aXtkiFi3-9tB3RNtj4A687SGo765evyqri2TjKMCyQeNSLNfZ-SV52yXlIEar9iQj2aEzPKAmBGrQOA=w628-h449-no
 
-Todo Explain:
 
-- make monitor
-- make debug
-- memory mapped hardware registers.
-- reset vector
+- todo explain make monitor open monitor and type quit to shutdown renode.
+
+What did we just do?
+--------------------
+The first thing that happened is that we built our image that will be loaded into Renode. You can think of the image like a ROM and Renode is the emulator.
+
+.. code-block:: bash
+
+    riscv32-unknown-elf-gcc baremetal.s baremetal.c -ggdb -O0 -o image -ffreestanding -nostdlib
+
+
+riscv32-unknown-elf-gcc
+  gnu compiler. This will compile, assemble any link source code. This is the special cross compiling variant that we built earlier which runs on you host architecture (e.g. x86), but outputs binaries for riscv32.
+baremetal.s baremetal.c
+  adsf
+
+
+-ggdb  Turn on debugging symbols so that gdb can reference memory locations by name.
+-O  Sets the optimization level, 0 for off
+-o image  Name of the output ELF binary
+-ffreestanding  don't use or require main. Don't assume we have an operating system.
+-nostdlib  don't rely on c standard libraries being available.
+
+
 
 Program code
+------------
 
 .. code-block:: asm
 
@@ -132,10 +176,29 @@ Program code
             sw a4, 0x0(a5)
             jump _start, t0
 
+- explain reset vector TODO
+- explain memory mapped hardware registers.
+
+renode
+------
+- todo explain how we launched Renode
+- explain reset vector TODO againg? for first time here instead?
+- explain the platform and and command files for renode.
+
+
 gdb tui
+-------
+- todo explain:
+- how to step through code
+- now to set breakpoint
+- how to continue
+- inspecting registers
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3eVGqrh2Gm1lQJKH27cWNYUQO8fVTUAvM1FNZ_pUis0Upip6vEa4ZNGOh79vosxGnBtFcacVX8QRNDgKEeklwFnI9hs6WrAlnzpTDZIyyn1oyTclXxU4_IlzydFbb0UFDkm0CFMsU8f3KIEKY0OWxoPzQ=w354-h710-no
 
 Miro Samek and the modern embedded course series
 ================================================
 I will be loosing cloning MIROS following some of his videos in spirit. He does a great introduction to many concepts in embedded and I want to share that in a way that we don't need to have a real board.
+
+Preview of next post
+====================
