@@ -129,6 +129,7 @@ First layout
 Hold the pieces in place with gaffers tape
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3fXwmP759cJQh0MwywwbvuxqR2uZl5Y1IkEZBU-FXB-QuBgzgQg3VVT3k24ibbBctvESS_WDwbW2iP5wc6sjAnkcMa1uXVy00cw1Ulza3YZo3U1Tatj2B0A5LGqHJgMLXEwo8EwpsN4u9JO7lm2iBY5yA=w742-h989-no
+   :alt: holding pieces with gaf tape
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3efzzHBPWMn256AYGDUWSWhWS0ZYvOlyQ0KWivKxk7cvamg7CBJDLHTVfMd6ASrW2ew-Gkky5aQRufsOJiGiRxgPcsnItF51LuW95ftM3qgUq0IbFDAJSoF5kSJuRxAQPwWin_tpZesOul9nyvg2z_j6g=s960-no
    :alt: Fine wiring
