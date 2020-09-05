@@ -31,6 +31,7 @@ One thing that is surprising if you haven't seen it before is MMIXware being wri
 When I was working through the compilation process, I found a couple of errors in MMIXlib, and also I suggested a small enhancement to the Makefile. As is tradition with Donald Knuth's projects, there was a reward for finding errors in MMIXware. Even though I think my contribution was small I'm proud to have gotten a MMIX shirt for the contribution.
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3cFCw5pcP4PjQ42htLHTNWtHNCmNJq4lxvQjEMtxlMtKjBK_P6DHh2c05aIIGVsdb5RBNnMFY7dOzUsMa8EECwxEvNJY8tTF4hpSk00R7sk52YwUXK55kyJkIC9epT5yxHK_k8DqhKY6qrrMXL1YOaC3Q=w742-h989-no
+   :alt: mmix shirt
 
 Emscripten
 ----------
