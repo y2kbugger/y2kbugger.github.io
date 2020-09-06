@@ -192,6 +192,7 @@ Block quotes are just
 Recipe Ingredients
 ==================
 For ingredients combine highlights directive with bulletless(pipe) lists
+Also this is an example of a footnote reference
 
 Wet
 ---
