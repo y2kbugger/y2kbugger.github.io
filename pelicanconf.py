@@ -57,7 +57,8 @@ DEFAULT_PAGINATION = False
 
 STATIC_PATHS = [
     'extra/favicon.ico',
-    'images', 'extra/CNAME',
+    # 'images',
+    'extra/CNAME',
 ]
 
 EXTRA_PATH_METADATA = {
