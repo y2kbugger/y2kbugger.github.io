@@ -141,7 +141,7 @@ Quit using ``q`` or ``quit``::
 
     (vexriscv-machine) quit
 
-Alternatively you can `ctrl-c` in the original terminal window kill renode.
+Alternatively you can ``ctrl-c`` in the original terminal window kill renode.
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3fnOWf9q-DJAwfFMefjlX6-CqAgGpGfDzBTi36NOuASben_jmeDlka0AlgziFE5yXRDwnwLE16sFeVXKcKaIfjMaLDhFeLXYv9baJi8OI7C5Hhk35XOuAY78VAZiGmhAJT7GSi0ItsGKk1oQSAnoWN6Tg=w318-h92-no
    :alt: renode quitting
@@ -154,19 +154,47 @@ vexriscv.repl::
 
     mem: Memory.MappedMemory @ sysbus 0x0
         size: 0x00040000
+
     cpu: CPU.VexRiscv @ sysbus
+
     gpio_out: GPIOPort.LiteX_GPIO @ sysbus 0x60000800
         type: Type.Out
-        0 -> led@0
-    led : Miscellaneous.LED @ gpio_out 0
+        0 -> led0@0
+        1 -> led1@0
 
-I like this because we can make a very minimal hardware configuration, free from any vendor specific complexity. Besides the cpu and memory, we have a GPIO register mapped to memory location ``0x60000800``. The ``->`` makes a connection from the GPIO pin 0 to the LED.
+    led0 : Miscellaneous.LED @ gpio_out 0
+    led1 : Miscellaneous.LED @ gpio_out 1
+
+I like this because we can make a very minimal hardware configuration, free from any vendor specific complexity. Besides the cpu and memory, we have a GPIO register mapped to memory location ``0x60000800``. The ``->`` makes a connection from the GPIO pins to the LEDs.
 
 To toggle the LED we will need to write a driver that knows how to control the GPIO by writing to the register.
+
+- todo: toggle led by manually editing memory using gdb
+
+Blinky manually with gdb
+------------------------
+Manually blink led by ediiting memory
 
 Blinky source code
 ------------------
 This initial program is written exclusively in risc-v assemble [#riscv-prgrammers-guide]_ this is simple enough that every instruction that gets executed can be traced to this source file.
+
+The code to drive a GPIO device is dead simple, You just need to write a data to a memory location that maps to GPIO pins. 
+
+draw a memory map table to explain the GPIO register
+
+=====  ======  ======
+adf    Inputs  Output
+-----  ------  ------
+  A      B     A or B
+=====  ======  ======
+False  False   False
+True   False   True
+False  True    True
+True   True    True
+=====  ======  ======
+
+I want them to go into the source code and change the XOR bitmask
 
 baremetal.s:
 
@@ -186,10 +214,17 @@ baremetal.s:
             bnez a0, delay_loop
     toggle_led:
             lw a4, 0x0(a5)          # read in old led state
-            xori a4, a4, 0x1        # toggle led state
+            xori a4, a4, 0b01       # toggle led state word
             sw a4, 0x0(a5)          # write new state
             jump loop, t0
 
+- todo which approach?? both? breakpoint and continue, or edit register;
+- todo teach howoto stop through program using gdb. explain the need to lower the delay_count (you can do it in situ via register hack)
+- todo inspecting registers
+- todo how to step through code
+- todo now to set breakpoint
+- todo how to continue
+- todo change led mask in situ?
 
 Building an elf binary using gcc
 --------------------------------
@@ -197,7 +232,7 @@ GCC will build am image based on our assembly source code. In video game terms, 
 
 By default, gcc outputs a format called ELF. This format is understood and loaded by the OS, `i.e. linux, <https://lwn.net/Articles/631631/>`_. Renode also has the ability to understand ELF files and will load the sections into memory and put the program counter at the right spot to start executing [#renode-machine]_.
 
-
+- explain reset vector TODO
 
 .. code-block:: bash
 
@@ -214,26 +249,6 @@ baremetal.s
 -o image  Name of the output ELF binary
 -ffreestanding  don't use or require main. Don't assume we have an operating system.
 -nostdlib  don't rely on c standard libraries being available.
-
-
-
-- explain reset vector TODO
-- explain memory mapped hardware registers.
-
-renode
-------
-- todo explain how we launched Renode
-- explain reset vector TODO againg? For first time here instead?
-- explain the platform end and command files for renode.
-
-
-gdb tui
--------
-- too explain:
-- how to step through code
-- now to set breakpoint
-- how to continue
-- inspecting registers
 
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3eVGqrh2Gm1lQJKH27cWNYUQO8fVTUAvM1FNZ_pUis0Upip6vEa4ZNGOh79vosxGnBtFcacVX8QRNDgKEeklwFnI9hs6WrAlnzpTDZIyyn1oyTclXxU4_IlzydFbb0UFDkm0CFMsU8f3KIEKY0OWxoPzQ=w354-h710-no
    :alt: gdb tui
