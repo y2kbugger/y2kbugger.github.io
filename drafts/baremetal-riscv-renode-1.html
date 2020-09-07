@@ -3,7 +3,7 @@
 <head>
             <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
-        <title>Baremetal RISC-V Renode - Part 1 - y2kbugger</title>
+        <title>Baremetal RISC-V Renode - Part 1: Blinky - y2kbugger</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/theme/css/normalize.css">
         <link rel="stylesheet" href="/theme/css/styles.css">
@@ -40,7 +40,7 @@
     </nav>
 
     <header class="page-header">
-    <h1>Baremetal RISC-V Renode - Part 1</h1>
+    <h1>Baremetal RISC-V Renode - Part 1: Blinky</h1>
 
     <div class="article-meta">
                 <span class="author">By zak kohler</span>
@@ -62,89 +62,88 @@ https://www.youtube.com/watch?v=D0VuYe77Wu0&list=PLb-MsRpo_wlLW0EWRpAqnbbDsf4kxS
 <div class="contents topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#background" id="id2">Background</a><ul>
-<li><a class="reference internal" href="#why-do-this" id="id3">Why do this</a></li>
-<li><a class="reference internal" href="#what-is-baremetal" id="id4">What is baremetal?</a></li>
-<li><a class="reference internal" href="#what-is-risc-v" id="id5">What is RISC-V?</a></li>
+<li><a class="reference internal" href="#background" id="id4">Background</a><ul>
+<li><a class="reference internal" href="#the-baremetal-risc-v-renode-series" id="id5">The baremetal risc-v renode series</a></li>
+<li><a class="reference internal" href="#what-is-baremetal" id="id6">What is baremetal?</a></li>
+<li><a class="reference internal" href="#what-is-risc-v" id="id7">What is RISC-V?</a></li>
+<li><a class="reference internal" href="#what-is-renode" id="id8">What is Renode?</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#obtain-the-source-code" id="id6">Obtain the source code</a></li>
-<li><a class="reference internal" href="#toolchain-compilation" id="id7">Toolchain compilation</a><ul>
-<li><a class="reference internal" href="#building" id="id8">Building</a></li>
-<li><a class="reference internal" href="#build-requirement-hints" id="id9">Build requirement hints</a><ul>
-<li><a class="reference internal" href="#gcc" id="id10">gcc</a></li>
-<li><a class="reference internal" href="#renode" id="id11">Renode</a></li>
+<li><a class="reference internal" href="#obtain-the-source-code" id="id9">Obtain the source code</a></li>
+<li><a class="reference internal" href="#toolchain-compilation" id="id10">Toolchain compilation</a><ul>
+<li><a class="reference internal" href="#building" id="id11">Building</a></li>
+<li><a class="reference internal" href="#build-requirement-hints" id="id12">Build requirement hints</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#activating-the-toolchains" id="id13">Activating the toolchains</a></li>
+<li><a class="reference internal" href="#blinking-a-virtual-led" id="id14">Blinking a virtual LED</a><ul>
+<li><a class="reference internal" href="#just-get-it-running" id="id15">Just get it running</a></li>
+<li><a class="reference internal" href="#hardware-configuration" id="id16">Hardware configuration</a></li>
+<li><a class="reference internal" href="#blinky-manually-with-gdb" id="id17">Blinky manually with gdb</a></li>
+<li><a class="reference internal" href="#blinky-source-code" id="id18">Blinky source code</a></li>
+<li><a class="reference internal" href="#building-an-elf-binary-using-gcc" id="id19">Building an elf binary using gcc</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#activating-the-toolchains" id="id12">Activating the toolchains</a></li>
-<li><a class="reference internal" href="#blinking-a-virtual-led" id="id13">Blinking a virtual LED</a><ul>
-<li><a class="reference internal" href="#what-did-we-just-do" id="id14">What did we just do?</a></li>
-<li><a class="reference internal" href="#program-code" id="id15">Program code</a></li>
-<li><a class="reference internal" href="#id1" id="id16">renode</a></li>
-<li><a class="reference internal" href="#gdb-tui" id="id17">gdb tui</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#miro-samek-and-the-modern-embedded-course-series" id="id18">Miro Samek and the modern embedded course series</a></li>
-<li><a class="reference internal" href="#preview-of-next-post" id="id19">Preview of next post</a></li>
+<li><a class="reference internal" href="#miro-samek-and-the-modern-embedded-course-series" id="id20">Miro Samek and the modern embedded course series</a></li>
+<li><a class="reference internal" href="#preview-of-next-post" id="id21">Preview of next post</a></li>
 </ul>
 </div>
 <div class="section" id="background">
-<h2><a class="toc-backref" href="#id2">Background</a></h2>
-<div class="section" id="why-do-this">
-<h3><a class="toc-backref" href="#id3">Why do this</a></h3>
-<p>The goal of this series explore the line between hardware and software while creating a minimal, vendor-free environment to write and play with toy operating systems.</p>
+<h2><a class="toc-backref" href="#id4">Background</a></h2>
+<div class="section" id="the-baremetal-risc-v-renode-series">
+<h3><a class="toc-backref" href="#id5">The baremetal risc-v renode series</a></h3>
+<p>This series seeks to explore the line between hardware and software while creating a minimal, vendor-free environment to write and play with toy operating systems.</p>
 </div>
 <div class="section" id="what-is-baremetal">
-<h3><a class="toc-backref" href="#id4">What is baremetal?</a></h3>
-<p>In the non-embedded world, when you compile and link a C program into an executable you are doing so with the intention of running it <em>within</em> a specific operating system. When you compile baremetal or <tt class="docutils literal"><span class="pre">--freestanding</span></tt> you are telling the compiler that you intend to run this without relying on an operating system. The could be used, for example, to write an operating system. Alternatively it can be used to access the hardware of a system directly on an embedded system. Doing so you sacrifice things such as memory management, standard IO, thread/process control, etc. Because of this, you can also compile to run on a small RTOS or even an embedded linux system depending on the amount of system resources you have available.</p>
-<p>When you use a commercial development platform, you will likely be provided with a cross compiling toolchain and so easy way to run within a small RTOS for example <a class="reference external" href="https://github.com/sifive/freedom-e-sdk">freedom-e-sdk</a>. Alternatively, there are also attempts to make small, but hardware agonistic RTOS see <a class="reference external" href="https://www.zephyrproject.org/">zephyr</a></p>
+<h3><a class="toc-backref" href="#id6">What is baremetal?</a></h3>
+<p>In the non-embedded world, when you compile and link a C program into an executable you are doing so with the intention of running it <em>within</em> a specific operating system. When you compile baremetal or <tt class="docutils literal"><span class="pre">-freestanding</span></tt> you are telling the compiler that you intend to run this without relying on an operating system. The could be used, for example, to write an operating system. Alternatively it can be used to access the hardware of a system directly on an embedded system. Doing so sacrifices higher level luxuries such as memory management, standard IO, thread/process control, etc. Because of this, sometimes it makes sense to run on a type of minimal OS optimized for embedded, e.g. a real time operating system (RTOS).</p>
+<p>When you use a commercial development platform, you will likely be provided with a cross compiling toolchain and an RTOS. For an example see <a class="reference external" href="https://github.com/sifive/freedom-e-sdk">freedom-e-sdk</a>. Alternatively, there are also attempts to make small, but hardware agonistic RTOS see <a class="reference external" href="https://www.zephyrproject.org/">zephyr</a></p>
 </div>
 <div class="section" id="what-is-risc-v">
-<h3><a class="toc-backref" href="#id5">What is RISC-V?</a></h3>
+<h3><a class="toc-backref" href="#id7">What is RISC-V?</a></h3>
 <p>Wikipedia</p>
 <blockquote>
 RISC-V (pronounced &quot;risk-five&quot;) is an open standard instruction set architecture (ISA) based on established reduced instruction set computer (RISC) principles. Unlike most other ISA designs, the RISC-V ISA is provided under open source licenses that do not require fees to use.</blockquote>
 </div>
+<div class="section" id="what-is-renode">
+<h3><a class="toc-backref" href="#id8">What is Renode?</a></h3>
+<p>Renode is a simulator designed for embedded firmware. What sets it apart is the goal of not only emulating CPUs and SOCs, but also entire boards with peripherals such as ethernet and even multi-node networks of devices.</p>
+<p>Alternatives such as QEMU aren't as optimized for the embedded space.</p>
+<p>An emulator that you might use for playing video game ROMs is specialized for a single platform, i.e. things like cpu, graphics chips, audio, memory-map, etc are fixed and optimized. Renode on the other hand configures each platform with a config file.</p>
+</div>
 </div>
 <div class="section" id="obtain-the-source-code">
-<h2><a class="toc-backref" href="#id6">Obtain the source code</a></h2>
+<h2><a class="toc-backref" href="#id9">Obtain the source code</a></h2>
 <p>To get started you will need to clone the repository. This includes all of the examples as well as the source for Renode simulator and gcc riscv tool chain.</p>
 <p>Renode and GCC are git submodules so if you use <tt class="docutils literal"><span class="pre">--recursive</span></tt> you can get everything downloaded in one shot.</p>
 <div class="highlight"><pre><span></span>git clone --recursive git@github.com:y2kbugger/baremetal-riscv-renode.git
 </pre></div>
 </div>
 <div class="section" id="toolchain-compilation">
-<h2><a class="toc-backref" href="#id7">Toolchain compilation</a></h2>
+<h2><a class="toc-backref" href="#id10">Toolchain compilation</a></h2>
 <p>Technically you could try to find these pre-compiled from your distro or elsewhere, but I suggest compiling from source to ensure we have matching versions and build options.</p>
-<p>There are some compilation prerequisites and gotchas. If my package hints fail, just refer to the official project documentation for each.</p>
+<p>There are some compilation prerequisites and gotchas. If my hints don't help, just refer to the official project documentation for each.</p>
 <div class="section" id="building">
-<h3><a class="toc-backref" href="#id8">Building</a></h3>
-<p>I have added a <tt class="docutils literal">Makefile</tt> which build the toolchains. If you have all of the build requirements already installed, building both can be as simple as:</p>
-<div class="highlight"><pre><span></span><span class="nb">cd</span> baremetal-riskv-renode
-make toolchains
+<h3><a class="toc-backref" href="#id11">Building</a></h3>
+<p>I have added a <tt class="docutils literal">Makefile</tt> to capture the various build options for the toolchains. If you have all of the build requirements already installed, building both can be as simple as:</p>
+<div class="highlight"><pre><span></span>$ <span class="nb">cd</span> baremetal-riskv-renode
+$ make toolchains
 </pre></div>
-<p>Running it should usually be enough to let you know what you are missing. I have included some hints below, check the comments as well as different platforms may have different packages.</p>
-<div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p>Make sure you have <tt class="docutils literal">curses</tt>/<tt class="docutils literal">ncurses</tt> headers.</p>
-<p class="last">If they are missing the build will <strong>succeed</strong>, but you will <strong>not be able to access</strong> the GDB text user interface, TUI. This is import for being able to step through the source code. See the GCC hints.</p>
-</div>
+<p>Running <tt class="docutils literal">make toolchains</tt> should usually be enough to let you know what you are missing. I have included some hints below, check the comments as well as different platforms may have different packages.</p>
 </div>
 <div class="section" id="build-requirement-hints">
-<h3><a class="toc-backref" href="#id9">Build requirement hints</a></h3>
+<h3><a class="toc-backref" href="#id12">Build requirement hints</a></h3>
 <p>Below are my hints for which packages to install, this can be different depending on the distribution. I've include links to the official guides should you get stuck on either.</p>
 <div class="section" id="gcc">
-<h4><a class="toc-backref" href="#id10">gcc</a></h4>
+<h4>gcc</h4>
 <p><a class="reference external" href="https://github.com/riscv/riscv-gnu-toolchain">https://github.com/riscv/riscv-gnu-toolchain</a></p>
 <pre class="code literal-block">
 gawk texinfo bison flex libncurses5-dev libncursesw5-dev
 </pre>
-<p>The package <tt class="docutils literal">libncurses*</tt> provides <tt class="docutils literal">ncurses</tt>, and  <tt class="docutils literal">texinfo</tt> provides <tt class="docutils literal">makeinfo</tt>.</p>
+<p>The package <tt class="docutils literal"><span class="pre">libncurses5-dev*</span></tt> provides headers for <tt class="docutils literal">ncurses</tt>, and  <tt class="docutils literal">texinfo</tt> provides <tt class="docutils literal">makeinfo</tt>.</p>
 </div>
 <div class="section" id="renode">
-<h4><a class="toc-backref" href="#id11">Renode</a></h4>
+<h4>Renode</h4>
 <p><a class="reference external" href="https://renode.readthedocs.io/en/latest/advanced/building_from_sources.html">https://renode.readthedocs.io/en/latest/advanced/building_from_sources.html</a></p>
 <p>Mono provides CLR runtime and C# compiler required for Renode. Installing it can be tricky on some distros and having a mono that is incomplete or outdated can lead to hard-to-understand errors. Make sure your whole system is up-to-date if you run into issue compiling Renode.</p>
 <dl class="docutils">
@@ -161,35 +160,152 @@ automake autoconf libtool g++ coreutils policykit-1 libgtk2.0-dev screen uml-uti
 </div>
 </div>
 <div class="section" id="activating-the-toolchains">
-<h2><a class="toc-backref" href="#id12">Activating the toolchains</a></h2>
+<h2><a class="toc-backref" href="#id13">Activating the toolchains</a></h2>
 <p>In order to run renode and gdb, you must put them on your <tt class="docutils literal">PATH</tt>.</p>
-<div class="highlight"><pre><span></span><span class="nb">source</span> activate_toolchains.sh
+<div class="highlight"><pre><span></span>$ <span class="nb">source</span> activate-toolchains.sh
 </pre></div>
 </div>
 <div class="section" id="blinking-a-virtual-led">
-<h2><a class="toc-backref" href="#id13">Blinking a virtual LED</a></h2>
-<p>This is the part where we see whether the toolchains are compiled correctly.</p>
-<p>We will learn how to control Renode and band step through the source code using the GNU debugger, <tt class="docutils literal">gdb</tt>.</p>
-<p>Since we are just getting familiar with the tools we'll start off with the 'Hello, World' of hardware projects, blinking an LED.</p>
-<p>To build and run our first example within Renode:</p>
-<div class="highlight"><pre><span></span><span class="nb">cd</span> 1_blinky
-make launch
-</pre></div>
+<h2><a class="toc-backref" href="#id14">Blinking a virtual LED</a></h2>
+<p>To verify and get familiar with the tools we'll start off with the 'Hello, World' of hardware projects: blinking an LED.</p>
+<p>Blinking a virtual &quot;LED&quot; involves a few steps:</p>
+<ol class="arabic simple">
+<li>Build <strong>image</strong> from source code</li>
+<li>Launch the hardware <strong>simulator</strong> configured by the platform (real) file</li>
+<li>Load the image into <strong>RAM</strong> of the simulator</li>
+</ol>
+<div class="section" id="just-get-it-running">
+<h3><a class="toc-backref" href="#id15">Just get it running</a></h3>
+<p>First open up the project folder:</p>
+<pre class="literal-block">
+$ cd 1_blinky
+</pre>
+<p>Then following command will handle all steps 1-3, we'll break this down later:</p>
+<pre class="literal-block">
+$ make launch
+</pre>
 <p>If everything went correctly, you should see something like this:</p>
-<img alt="" src="https://lh3.googleusercontent.com/pw/ACtC-3dKs20yaz1biM2MWXyi7HAcI0pb-BHYDYD1XM92Al11dQPQ26OJY8YULAlHPHtduGETCN5Y5D6aXtkiFi3-9tB3RNtj4A687SGo765evyqri2TjKMCyQeNSLNfZ-SV52yXlIEar9iQj2aEzPKAmBGrQOA=w628-h449-no" />
+<img alt="blinky demo running" src="https://lh3.googleusercontent.com/pw/ACtC-3dKs20yaz1biM2MWXyi7HAcI0pb-BHYDYD1XM92Al11dQPQ26OJY8YULAlHPHtduGETCN5Y5D6aXtkiFi3-9tB3RNtj4A687SGo765evyqri2TjKMCyQeNSLNfZ-SV52yXlIEar9iQj2aEzPKAmBGrQOA=w628-h449-no" />
+<p>You should have also noticed the monitor window open up. This is used to control the running renode machine; <tt class="docutils literal">?</tt> will show a list of what commands are available. The tab completion is also very helpful.</p>
+<p>Quit using <tt class="docutils literal">q</tt> or <tt class="docutils literal">quit</tt>:</p>
+<pre class="literal-block">
+(vexriscv-machine) quit
+</pre>
+<p>Alternatively you can <tt class="docutils literal"><span class="pre">ctrl-c</span></tt> in the original terminal window kill renode.</p>
+<img alt="renode quitting" src="https://lh3.googleusercontent.com/pw/ACtC-3fnOWf9q-DJAwfFMefjlX6-CqAgGpGfDzBTi36NOuASben_jmeDlka0AlgziFE5yXRDwnwLE16sFeVXKcKaIfjMaLDhFeLXYv9baJi8OI7C5Hhk35XOuAY78VAZiGmhAJT7GSi0ItsGKk1oQSAnoWN6Tg=w318-h92-no" />
+</div>
+<div class="section" id="hardware-configuration">
+<h3><a class="toc-backref" href="#id16">Hardware configuration</a></h3>
+<p>The hardware that will be simulated is defined in the using a renode specific platform description format <a class="footnote-reference" href="#renode-describing-platforms" id="id1">[2]</a></p>
+<p>vexriscv.repl:</p>
+<pre class="literal-block">
+mem: Memory.MappedMemory &#64; sysbus 0x0
+    size: 0x00040000
+
+cpu: CPU.VexRiscv &#64; sysbus
+
+gpio_out: GPIOPort.LiteX_GPIO &#64; sysbus 0x60000800
+    type: Type.Out
+    0 -&gt; led0&#64;0
+    1 -&gt; led1&#64;0
+
+led0 : Miscellaneous.LED &#64; gpio_out 0
+led1 : Miscellaneous.LED &#64; gpio_out 1
+</pre>
+<p>I like this because we can make a very minimal hardware configuration, free from any vendor specific complexity. Besides the cpu and memory, we have a GPIO register mapped to memory location <tt class="docutils literal">0x60000800</tt>. The <tt class="docutils literal"><span class="pre">-&gt;</span></tt> makes a connection from the GPIO pins to the LEDs.</p>
+<p>To toggle the LED we will need to write a driver that knows how to control the GPIO by writing to the register.</p>
 <ul class="simple">
-<li>todo explain make monitor open monitor and type quit to shutdown renode.</li>
+<li>todo: toggle led by manually editing memory using gdb</li>
 </ul>
-<div class="section" id="what-did-we-just-do">
-<h3><a class="toc-backref" href="#id14">What did we just do?</a></h3>
-<p>The first thing that happened is that we built our image that will be loaded into Renode. You can think of the image like a ROM and Renode is the emulator.</p>
+</div>
+<div class="section" id="blinky-manually-with-gdb">
+<h3><a class="toc-backref" href="#id17">Blinky manually with gdb</a></h3>
+<p>Manually blink led by ediiting memory</p>
+</div>
+<div class="section" id="blinky-source-code">
+<h3><a class="toc-backref" href="#id18">Blinky source code</a></h3>
+<p>This initial program is written exclusively in risc-v assemble <a class="footnote-reference" href="#riscv-prgrammers-guide" id="id2">[3]</a> this is simple enough that every instruction that gets executed can be traced to this source file.</p>
+<p>The code to drive a GPIO device is dead simple, You just need to write a data to a memory location that maps to GPIO pins.</p>
+<p>draw a memory map table to explain the GPIO register</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="35%" />
+<col width="35%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">adf</th>
+<th class="head">Inputs</th>
+<th class="head">Output</th>
+</tr>
+<tr><th class="head">A</th>
+<th class="head">B</th>
+<th class="head">A or B</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr><td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr><td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr><td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p>I want them to go into the source code and change the XOR bitmask</p>
+<p>baremetal.s:</p>
+<div class="highlight"><pre><span></span><span class="na">.equ</span> <span class="no">LED</span><span class="p">,</span> <span class="mi">0x60000800</span>
+<span class="na">.equ</span> <span class="no">DELAY_COUNT</span><span class="p">,</span> <span class="mi">9000000</span>
+
+<span class="na">.section</span> <span class="no">.text</span>
+<span class="na">.global</span> <span class="no">_start</span>
+<span class="nl">_start:</span>
+        <span class="nf">li</span> <span class="no">a5</span><span class="p">,</span> <span class="no">LED</span>
+<span class="nl">loop:</span>
+        <span class="nf">li</span> <span class="no">a0</span><span class="p">,</span> <span class="no">DELAY_COUNT</span>      <span class="c1"># reset counter</span>
+<span class="nl">delay_loop:</span>
+        <span class="nf">addi</span> <span class="no">a0</span><span class="p">,</span> <span class="no">a0</span><span class="p">,</span> <span class="p">-</span><span class="mi">1</span>         <span class="c1"># count down</span>
+        <span class="nf">bnez</span> <span class="no">a0</span><span class="p">,</span> <span class="no">delay_loop</span>
+<span class="nl">toggle_led:</span>
+        <span class="nf">lw</span> <span class="no">a4</span><span class="p">,</span> <span class="mi">0x0</span><span class="p">(</span><span class="no">a5</span><span class="p">)</span>          <span class="c1"># read in old led state</span>
+        <span class="nf">xori</span> <span class="no">a4</span><span class="p">,</span> <span class="no">a4</span><span class="p">,</span> <span class="mi">0</span><span class="no">b01</span>       <span class="c1"># toggle led state word</span>
+        <span class="nf">sw</span> <span class="no">a4</span><span class="p">,</span> <span class="mi">0x0</span><span class="p">(</span><span class="no">a5</span><span class="p">)</span>          <span class="c1"># write new state</span>
+        <span class="nf">jump</span> <span class="no">loop</span><span class="p">,</span> <span class="no">t0</span>
+</pre></div>
+<ul class="simple">
+<li>todo which approach?? both? breakpoint and continue, or edit register;</li>
+<li>todo teach howoto stop through program using gdb. explain the need to lower the delay_count (you can do it in situ via register hack)</li>
+<li>todo inspecting registers</li>
+<li>todo how to step through code</li>
+<li>todo now to set breakpoint</li>
+<li>todo how to continue</li>
+<li>todo change led mask in situ?</li>
+</ul>
+</div>
+<div class="section" id="building-an-elf-binary-using-gcc">
+<h3><a class="toc-backref" href="#id19">Building an elf binary using gcc</a></h3>
+<p>GCC will build am image based on our assembly source code. In video game terms, the image like a ROM and Renode is the emulator.</p>
+<p>By default, gcc outputs a format called ELF. This format is understood and loaded by the OS, <a class="reference external" href="https://lwn.net/Articles/631631/">i.e. linux,</a>. Renode also has the ability to understand ELF files and will load the sections into memory and put the program counter at the right spot to start executing <a class="footnote-reference" href="#renode-machine" id="id3">[1]</a>.</p>
+<ul class="simple">
+<li>explain reset vector TODO</li>
+</ul>
 <div class="highlight"><pre><span></span>riscv32-unknown-elf-gcc baremetal.s baremetal.c -ggdb -O0 -o image -ffreestanding -nostdlib
 </pre></div>
 <dl class="docutils">
 <dt>riscv32-unknown-elf-gcc</dt>
 <dd>gnu compiler. This will compile, assemble any link source code. This is the special cross compiling variant that we built earlier which runs on you host architecture (e.g. x86), but outputs binaries for riscv32.</dd>
-<dt>baremetal.s baremetal.c</dt>
-<dd>adsf</dd>
+<dt>baremetal.s</dt>
+<dd>Assemble source file.</dd>
 </dl>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
@@ -212,60 +328,33 @@ make launch
 <td>don't rely on c standard libraries being available.</td></tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="program-code">
-<h3><a class="toc-backref" href="#id15">Program code</a></h3>
-<div class="highlight"><pre><span></span><span class="na">.equ</span> <span class="no">LED</span><span class="p">,</span> <span class="mi">0x60000800</span>
-
-<span class="na">.section</span> <span class="no">.text</span>
-<span class="na">.global</span> <span class="no">_start</span>
-
-<span class="nl">_start:</span>
-        <span class="nf">li</span> <span class="no">a0</span><span class="p">,</span> <span class="mi">0x00</span>
-        <span class="nf">li</span> <span class="no">a0</span><span class="p">,</span> <span class="mi">0x00</span>
-        <span class="nf">li</span> <span class="no">a3</span><span class="p">,</span> <span class="mi">0x1200000</span>
-        <span class="nf">li</span> <span class="no">a5</span><span class="p">,</span> <span class="no">LED</span>
-<span class="nl">loop:</span>
-        <span class="nf">addi</span> <span class="no">a0</span><span class="p">,</span> <span class="no">a0</span><span class="p">,</span> <span class="mi">0x01</span>
-        <span class="nf">bne</span> <span class="no">a0</span><span class="p">,</span> <span class="no">a3</span><span class="p">,</span>  <span class="no">loop</span>
-
-<span class="nl">toggle_led:</span>
-        <span class="nf">lw</span> <span class="no">a4</span><span class="p">,</span> <span class="mi">0x0</span><span class="p">(</span><span class="no">a5</span><span class="p">)</span>
-        <span class="nf">xori</span> <span class="no">a4</span><span class="p">,</span> <span class="no">a4</span><span class="p">,</span> <span class="mi">0x1</span>
-        <span class="nf">sw</span> <span class="no">a4</span><span class="p">,</span> <span class="mi">0x0</span><span class="p">(</span><span class="no">a5</span><span class="p">)</span>
-        <span class="nf">jump</span> <span class="no">_start</span><span class="p">,</span> <span class="no">t0</span>
-</pre></div>
-<ul class="simple">
-<li>explain reset vector TODO</li>
-<li>explain memory mapped hardware registers.</li>
-</ul>
-</div>
-<div class="section" id="id1">
-<h3><a class="toc-backref" href="#id16">renode</a></h3>
-<ul class="simple">
-<li>todo explain how we launched Renode</li>
-<li>explain reset vector TODO againg? for first time here instead?</li>
-<li>explain the platform and and command files for renode.</li>
-</ul>
-</div>
-<div class="section" id="gdb-tui">
-<h3><a class="toc-backref" href="#id17">gdb tui</a></h3>
-<ul class="simple">
-<li>todo explain:</li>
-<li>how to step through code</li>
-<li>now to set breakpoint</li>
-<li>how to continue</li>
-<li>inspecting registers</li>
-</ul>
-<img alt="" src="https://lh3.googleusercontent.com/pw/ACtC-3eVGqrh2Gm1lQJKH27cWNYUQO8fVTUAvM1FNZ_pUis0Upip6vEa4ZNGOh79vosxGnBtFcacVX8QRNDgKEeklwFnI9hs6WrAlnzpTDZIyyn1oyTclXxU4_IlzydFbb0UFDkm0CFMsU8f3KIEKY0OWxoPzQ=w354-h710-no" />
+<img alt="gdb tui" src="https://lh3.googleusercontent.com/pw/ACtC-3eVGqrh2Gm1lQJKH27cWNYUQO8fVTUAvM1FNZ_pUis0Upip6vEa4ZNGOh79vosxGnBtFcacVX8QRNDgKEeklwFnI9hs6WrAlnzpTDZIyyn1oyTclXxU4_IlzydFbb0UFDkm0CFMsU8f3KIEKY0OWxoPzQ=w354-h710-no" />
 </div>
 </div>
 <div class="section" id="miro-samek-and-the-modern-embedded-course-series">
-<h2><a class="toc-backref" href="#id18">Miro Samek and the modern embedded course series</a></h2>
+<h2><a class="toc-backref" href="#id20">Miro Samek and the modern embedded course series</a></h2>
 <p>I will be loosing cloning MIROS following some of his videos in spirit. He does a great introduction to many concepts in embedded and I want to share that in a way that we don't need to have a real board.</p>
 </div>
 <div class="section" id="preview-of-next-post">
-<h2><a class="toc-backref" href="#id19">Preview of next post</a></h2>
+<h2><a class="toc-backref" href="#id21">Preview of next post</a></h2>
+<table class="docutils footnote" frame="void" id="renode-machine" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[1]</a></td><td><a class="reference external" href="https://renode.readthedocs.io/en/latest/basic/machines.html">https://renode.readthedocs.io/en/latest/basic/machines.html</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="renode-describing-platforms" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[2]</a></td><td><a class="reference external" href="https://renode.readthedocs.io/en/latest/basic/describing_platforms.html">https://renode.readthedocs.io/en/latest/basic/describing_platforms.html</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="riscv-prgrammers-guide" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[3]</a></td><td><a class="reference external" href="https://github.com/riscv/riscv-asm-manual/blob/master/riscv-asm.md">https://github.com/riscv/riscv-asm-manual/blob/master/riscv-asm.md</a></td></tr>
+</tbody>
+</table>
 </div>
 
     </div>
