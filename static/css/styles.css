@@ -277,8 +277,35 @@ main.content img {
     max-width: 100%;
 }
 
-figcaption {
+p.caption {
+    margin-top: 0px;
+    font-style: italic;
+    color: #777;
+}
+
+.align-left img {
+    margin-right: auto;
+    margin-left: 0px;
+    display: block;
+}
+.align-center img {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+.align-right img {
+    margin-right: 0px;
+    margin-left: auto;
+    display: block;
+}
+.align-left p {
+    text-align: left;
+}
+.align-center p {
     text-align: center;
+}
+.align-right p {
+    text-align: right;
 }
 
 .article-meta {
