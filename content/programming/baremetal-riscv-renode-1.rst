@@ -19,18 +19,18 @@ Baremetal RISC-V Renode - Part 1: Blinky
 Background
 ==========
 
-The baremetal risc-v renode series
-----------------------------------
-This series seeks to explore the line between hardware and software while creating a minimal, vendor-free environment to write and play with toy operating systems.
+I'm exploring the line between hardware and software by creating a minimal, vendor-free environment to write and play with toy operating systems.
 
 What is baremetal?
 ------------------
-In the non-embedded world, when you compile and link a C program into an executable you are doing so with the intention of running it *within* a specific operating system. When you compile baremetal or ``-freestanding`` you are telling the compiler that you intend to run this without relying on an operating system. The could be used, for example, to write an operating system. Alternatively it can be used to access the hardware of a system directly on an embedded system. Doing so sacrifices higher level luxuries such as memory management, standard IO, thread/process control, etc. Because of this, sometimes it makes sense to run on a type of minimal OS optimized for embedded, e.g. a real time operating system (RTOS).
+In the non-embedded world, when you compile and link a C program into an executable you are doing so with the intention of running it *within* a specific operating system. When you compile baremetal or ``-freestanding`` you are telling the compiler that you intend to run this without relying on an operating system. This could be used, for example, to write an operating system. Alternatively it can be used to access the hardware of a system directly on an embedded system. Doing so sacrifices higher level luxuries such as memory management, standard IO, thread/process control, etc. Because of this, sometimes it makes sense to run on a type of minimal OS optimized for embedded, e.g. a real time operating system or RTOS.
 
-When you use a commercial development platform, you will likely be provided with a cross compiling toolchain and an RTOS. For an example see `freedom-e-sdk <https://github.com/sifive/freedom-e-sdk>`_. Alternatively, there are also attempts to make small, but hardware agonistic RTOS see `zephyr <https://www.zephyrproject.org/>`_
+When you use a commercial development platform, you will likely be provided with a cross compiling toolchain and possibly an RTOS. For an example see `freedom-e-sdk <https://github.com/sifive/freedom-e-sdk>`_. Alternatively, there are also attempts to make small, but hardware agonistic RTOS see `zephyr <https://www.zephyrproject.org/>`_.
 
 What is RISC-V?
 ---------------
+RISV-V is an open alternative to ARM or x86.
+
 Wikipedia
 
     RISC-V (pronounced "risk-five") is an open standard instruction set architecture (ISA) based on established reduced instruction set computer (RISC) principles. Unlike most other ISA designs, the RISC-V ISA is provided under open source licenses that do not require fees to use.
@@ -41,13 +41,13 @@ Renode is a simulator designed for embedded firmware. What sets it apart is the 
 
 Alternatives such as QEMU aren't as optimized for the embedded space.
 
-An emulator that you might use for playing video game ROMs is specialized for a single platform, i.e. things like cpu, graphics chips, audio, memory-map, etc are fixed and optimized. Renode on the other hand configures each platform with a config file. 
+An emulator that you might use for playing video game ROMs is specialized for a single platform. For example, in an emulator cpu, graphics chips, audio, memory-map, etc are fixed and optimized. Renode on the other hand configures each platform with a config file.
 
-Obtain the source code
-======================
-To get started you will need to clone the repository. This includes all of the examples as well as the source for Renode simulator and gcc riscv tool chain.
+Source code
+===========
+To get started you will need to clone the repository. This includes all of the examples as well as the source for Renode simulator and GCC RISC-V toolchain.
 
-Renode and GCC are git submodules so if you use ``--recursive`` you can get everything downloaded in one shot.
+Renode and GCC are linked via ``git submodule`` so if you use ``--recursive`` you can clone everything in one shot.
 
 .. code-block:: giturl
 
@@ -61,7 +61,7 @@ There are some compilation prerequisites and gotchas. If my hints don't help, ju
 
 Building
 --------
-I have added a ``Makefile`` to capture the various build options for the toolchains. If you have all of the build requirements already installed, building both can be as simple as:
+To easy the burden on my own memory, I have added a ``Makefile`` to capture the various build options for the toolchains. If you have all of the build requirements already installed, building both can be as simple as:
 
 .. code-block:: bash
 
@@ -72,7 +72,7 @@ Running ``make toolchains`` should usually be enough to let you know what you ar
 
 Build requirement hints
 -----------------------
-Below are my hints for which packages to install, this can be different depending on the distribution. I've include links to the official guides should you get stuck on either.
+Below are my hints for which packages to install, this can be different depending on the distribution. I've include links to the official guides for getting unstuck.
 
 gcc
 ^^^
@@ -103,7 +103,7 @@ The package ``coreutils`` provides ``realpath`` on Debian.
 
 Activating the toolchains
 =========================
-In order to run renode and gdb, you must put them on your ``PATH``.
+This guide assumes both renode and riscv-gcc are on your ``PATH``.
 
 .. code-block:: bash
 
@@ -116,7 +116,7 @@ To verify and get familiar with the tools we'll start off with the 'Hello, World
 Blinking a virtual "LED" involves a few steps:
 
 1. Build **image** from source code
-2. Launch the hardware **simulator** configured by the platform (real) file
+2. Launch the hardware **simulator** configured by the platform (repl) file
 3. Load the image into **RAM** of the simulator
 
 
@@ -165,36 +165,17 @@ vexriscv.repl::
     led0 : Miscellaneous.LED @ gpio_out 0
     led1 : Miscellaneous.LED @ gpio_out 1
 
-I like this because we can make a very minimal hardware configuration, free from any vendor specific complexity. Besides the cpu and memory, we have a GPIO register mapped to memory location ``0x60000800``. The ``->`` makes a connection from the GPIO pins to the LEDs.
+I like this because we can make a very minimal hardware configuration, free from any vendor specific complexity. Besides the cpu and memory, we have a GPIO register mapped to memory location ``0x60000800``. The ``->`` makes a connection from the GPIO pins to the LEDs. I don't exactly know why we need both ``0 -> led0@0`` and ``@ gpio_out 0`` as it seems redundant. ``->`` is used more commonly for connecting interrupts.
 
-To toggle the LED we will need to write a driver that knows how to control the GPIO by writing to the register.
-
-- todo: toggle led by manually editing memory using gdb
-
-Blinky manually with gdb
-------------------------
-Manually blink led by ediiting memory
+To toggle the LED we will need to write a driver that knows how to control the GPIO by writing to it's register.
 
 Blinky source code
 ------------------
 This initial program is written exclusively in risc-v assemble [#riscv-prgrammers-guide]_ this is simple enough that every instruction that gets executed can be traced to this source file.
 
-The code to drive a GPIO device is dead simple, You just need to write a data to a memory location that maps to GPIO pins. 
+The code to drive this GPIO device is dead simple, You just need to write a data to the memory location that maps to the GPIO pins.
 
-draw a memory map table to explain the GPIO register
-
-=====  ======  ======
-adf    Inputs  Output
------  ------  ------
-  A      B     A or B
-=====  ======  ======
-False  False   False
-True   False   True
-False  True    True
-True   True    True
-=====  ======  ======
-
-I want them to go into the source code and change the XOR bitmask
+Note that the platform specifies that the GPIO register is mapped to memory location ``0x60000800``
 
 baremetal.s:
 
@@ -217,6 +198,7 @@ baremetal.s:
             xori a4, a4, 0b01       # toggle led state word
             sw a4, 0x0(a5)          # write new state
             jump loop, t0
+
 
 - todo which approach?? both? breakpoint and continue, or edit register;
 - todo teach howoto stop through program using gdb. explain the need to lower the delay_count (you can do it in situ via register hack)
