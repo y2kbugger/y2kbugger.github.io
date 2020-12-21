@@ -19,7 +19,7 @@ Baremetal RISC-V Renode - Part 1: Blinky
 Background
 ==========
 
-I'm exploring the line between hardware and software by creating a minimal, vendor-free environment to write and play with toy operating systems.
+I'm exploring the line between hardware and software by creating a series of demos within a minimal, free and open source environment to write and play with toy operating systems. The goal is to minimize parts of the system that we take for granted and gain a better understanding of computers and operating systems.
 
 What is baremetal?
 ------------------
@@ -29,7 +29,7 @@ When you use a commercial development platform, you will likely be provided with
 
 What is RISC-V?
 ---------------
-RISV-V is an open alternative to ARM or x86.
+RISC-V is an open alternative to ARM or x86.
 
 Wikipedia
 
@@ -183,11 +183,16 @@ baremetal.s:
 
     .equ LED, 0x60000800
     .equ DELAY_COUNT, 9000000
+    .equ LED_STATE_INITIAL, 0b00
+    .equ LED_STATE_TOGGLE_MASK, 0b01
 
     .section .text
     .global _start
     _start:
             li a5, LED
+            li a4, LED_STATE_INITIAL
+            li a6, LED_STATE_TOGGLE_MASK
+            sw a4, 0x0(a5)
     loop:
             li a0, DELAY_COUNT      # reset counter
     delay_loop:
@@ -195,26 +200,16 @@ baremetal.s:
             bnez a0, delay_loop
     toggle_led:
             lw a4, 0x0(a5)          # read in old led state
-            xori a4, a4, 0b01       # toggle led state word
+            xor a4, a4, a6          # toggle led state word
             sw a4, 0x0(a5)          # write new state
             jump loop, t0
 
-
-- todo which approach?? both? breakpoint and continue, or edit register;
-- todo teach howoto stop through program using gdb. explain the need to lower the delay_count (you can do it in situ via register hack)
-- todo inspecting registers
-- todo how to step through code
-- todo now to set breakpoint
-- todo how to continue
-- todo change led mask in situ?
-
 Building an elf binary using gcc
---------------------------------
-GCC will build am image based on our assembly source code. In video game terms, the image like a ROM and Renode is the emulator.
+================================
+GCC will build am image based on our assembly source code. The ELF binary is the ROM image and Renode is the emulator.
 
-By default, gcc outputs a format called ELF. This format is understood and loaded by the OS, `i.e. linux, <https://lwn.net/Articles/631631/>`_. Renode also has the ability to understand ELF files and will load the sections into memory and put the program counter at the right spot to start executing [#renode-machine]_.
+By default, gcc outputs a format called ELF. This format is understood and loaded by the OS, `i.e. linux, <https://lwn.net/Articles/631631/>`_. Renode also has the ability to understand ELF files and will load the sections into memory and put the program counter at the right spot to start executing [#renode-elf-start]_.
 
-- explain reset vector TODO
 
 .. code-block:: bash
 
@@ -232,20 +227,172 @@ baremetal.s
 -ffreestanding  don't use or require main. Don't assume we have an operating system.
 -nostdlib  don't rely on c standard libraries being available.
 
-.. figure:: https://lh3.googleusercontent.com/pw/ACtC-3eVGqrh2Gm1lQJKH27cWNYUQO8fVTUAvM1FNZ_pUis0Upip6vEa4ZNGOh79vosxGnBtFcacVX8QRNDgKEeklwFnI9hs6WrAlnzpTDZIyyn1oyTclXxU4_IlzydFbb0UFDkm0CFMsU8f3KIEKY0OWxoPzQ=w354-h710-no
+Interactively Debugging Renode
+==============================
+Pause an step though code that is running on the simulator.
+
+Attaching the GNU Debugger
+--------------------------
+After launching, you may attach GDB using `make debug`. This connects to the GDB server already running within Renode. It uses a gdb script to store default configuration, such as breaking execution and starting the text user interface or TUI, which source code along side the disassembly.
+
+.. code-block:: bash
+
+    $ make launch
+    $ make debug
+
+If you are familiar with GDB you know the power of setting breakpoint, inspecting stacks, and much much more.
+
+.. figure:: https://lh3.googleusercontent.com/pw/ACtC-3chg3Hd7-XPkvOum0SQv3f9EZ30vjZ3BB70OMbEqWVWO9GkvjOh-sBBWg-cU_oD2xo7jj4TTvQReAX-2F4HSt6OPOur1bb06A-fQZUti-STZ0clEEkYPsCrHAhMq2rVkKLU2psnCGzE_pfs5rIWrda0xg=w454-h669-no
    :alt: gdb tui
    :align: left
 
-   This is a caption
+   GDB Text User Interface (TUI)
+
+
+Useful GDB scenarios
+--------------------
+There are a couple simple commands that I find to be useful when exploring baremetal programming.
+
+Step a single instruction
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Type ``S`` ``I`` ``Enter``
+
+.. code-block:: gdb
+
+    (gdb) si
+    (gdb) █
+
+To repeat the last command, just repeatedly hit ``Enter``. This make it easy to single step through the program.
+
+You will notice that you get stuck in the delay loop, you would have to hit ``Enter`` 9,000,000 times to make it though that delay. This is not a good way to add delays since it uses 100% of the CPU. If we were building an operating system, we could utilize a hardware timer and allow programs to request sleeps through an API. During the sleep the OS could go about running other processes, and then wake up the sleeping process at the appropriate time.
+
+Continue normal execution
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: gdb
+
+    (gdb) c
+    Continuing.
+
+Break normal execution
+^^^^^^^^^^^^^^^^^^^^^^
+
+Send a keyboard interupt, e.g. ``CTRL`` + ``C``
+
+.. code-block:: gdb
+
+    (gdb) c
+    Continuing.
+
+    Program received signal SIGTRAP, Trace/breakpoint trap.
+    delay_loop () at baremetal.s:13
+    (gdb) █
+
+Set a breakpoint
+^^^^^^^^^^^^^^^^
+
+You can set a breakpoint at a line or symbol. Tab completion should work here to display available symbols. So ``B`` ``Space`` ``T`` ``Tab`` ``Enter``
+
+.. code-block:: gdb
+
+    (gdb) b toggle_led
+    Breakpoint 1 at 0x10074: file baremetal.s, line 16.
+    (gdb) c
+    Continuing.
+
+    Breakpoint 1, toggle_led () at baremetal.s:16
+    (gdb) █
+
+Read Registers
+^^^^^^^^^^^^^^
+
+You can dump all registers,
+
+.. code-block:: gdb
+
+
+    (gdb) info registers
+        ra             0x0      0x0
+        fp             0x0      0x0
+        s1             0x0      0
+        a0             0x24648f 2385039
+        ...
+        t4             0x0      0
+        t5             0x0      0
+        t6             0x0      0
+        pc             0x1006c  0x1006c <delay_loop>
+
+or you can print a specific one:
+
+.. code-block:: gdb
+
+    (gdb) p $pc
+    $5 = (void (*)()) 0x10074 <toggle_led>
+    (gdb) p $a4
+    $6 = 2
+
+Setting a register
+^^^^^^^^^^^^^^^^^^
+
+You can mutate a register value and continue on:
+
+.. code-block:: gdb
+
+    (gdb) set $pc=delay_loop
+    (gdb) c
+    Continuing.
+
+Changing the bitmask for blinky
+===============================
+Let's prove we can modify a program's state after after breaking..
+
+If we just run the blinky example, note that we are Blinking ``led0``:
+
+.. code-block:: text
+
+    15:09:23.7671 [NOISY] gpio_out.led0: LED state changed to True
+    15:09:24.0805 [NOISY] gpio_out.led0: LED state changed to False
+    15:09:24.3872 [NOISY] gpio_out.led0: LED state changed to True
+    15:09:24.7525 [NOISY] gpio_out.led0: LED state changed to False
+
+Change the bitmask:
+
+.. code-block:: gdb
+
+    (gdb) set $a6=0b10
+    (gdb) c
+    Continuing.
+
+Now we are blinking ``led1`` instead of ``led0``:
+
+.. code-block:: text
+
+    15:09:42.5007 [NOISY] gpio_out.led1: LED state changed to True
+    15:09:42.7653 [NOISY] gpio_out.led1: LED state changed to False
+    15:09:43.0602 [NOISY] gpio_out.led1: LED state changed to True
+    15:09:43.3263 [NOISY] gpio_out.led1: LED state changed to False
 
 Miro Samek and the modern embedded course series
 ================================================
-I will be loosing cloning MIROS following some of his videos in spirit. He does a great introduction to many concepts in embedded and I want to share that in a way that we don't need to have a real board.
+I am inspired by Miro Samek. He does a great introduction to many concepts in embedded and I want to share that in a way that we don't need to have a real board.
 
-Preview of next post
-====================
+Check out his course here: https://www.state-machine.com/quickstart/
 
+Next post
+=========
+In the next post, I'll talk about alternate dev environments and how I converged on what I've described here. There are many easier and more *complete/integrated* solutions, but we have a stated goal of gaining understanding and this is a forcing function for more control over details.
+
+Footnotes
+=========
+.. [#renode-elf-start] The computer has to start executing somewhere on reset, the exact memory location is called the reset vector and on RISC-V it is implementation dependent and Renode coordinates the reset vector in its simulator with the memory address of the `e_entry header <https://refspecs.linuxfoundation.org/elf/gabi4+/ch4.eheader.html>`_.
+
+    `Renode changes the reset vector based on the ELF binary <https://github.com/renode/renode-infrastructure/blob/8ad326eefe85acc127fdb01d70dbbc9a6a99dca8/src/Emulator/Peripherals/Peripherals/CPU/TranslationCPU.cs#L107>`_
+
+    .. code-block:: csharp
+
+        this.Log(LogLevel.Info, "Setting PC value to 0x{0:X}.", elf.GetEntryPoint());
+        SetPCFromEntryPoint(elf.GetEntryPoint());
 .. [#renode-machine] https://renode.readthedocs.io/en/latest/basic/machines.html
 .. [#renode-describing-platforms] https://renode.readthedocs.io/en/latest/basic/describing_platforms.html
 .. [#riscv-prgrammers-guide] https://github.com/riscv/riscv-asm-manual/blob/master/riscv-asm.md
-
