@@ -3,7 +3,7 @@
 <head>
             <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
-        <title>Learn how computers work between silicon and assembly — Build a CPU with Python - y2kbugger</title>
+        <title>Baremetal RISC-V Renode - y2kbugger</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/theme/css/normalize.css">
         <link rel="stylesheet" href="/theme/css/styles.css">
@@ -14,9 +14,10 @@
 
 
 
-        <meta name="tags" contents="CARPE"/>
+        <meta name="tags" contents="Ohio Linuxfest"/>
         <meta name="tags" contents="Python"/>
         <meta name="tags" contents="Retrocomputing"/>
+        <meta name="tags" contents="CPUs"/>
 </head>
 
 <body>
@@ -41,31 +42,33 @@
     </nav>
 
     <header class="page-header">
-    <h1>Learn how computers work between silicon and assembly — Build a CPU with Python</h1>
+    <h1>Baremetal RISC-V Renode</h1>
 
     <div class="article-meta">
                 <span class="author">By zak kohler</span>
-        <span class="publication-date" title="2018-12-11T00:00:00-05:00"> on 2018.12.11</span>
-        <span class="modification-date" title="2020-12-14T12:09:04.476676-05:00"> last modified on 2020.12.14 @ 12:09</span>
+        <span class="publication-date" title="2020-11-06T00:00:00-05:00"> on 2020.11.06</span>
+        <span class="modification-date" title="2020-12-21T12:59:38.571560-05:00"> last modified on 2020.12.21 @ 12:59</span>
 
 
             <div class="tags">
                 Tagged:
-                    <a href="http://blog.y2kbugger.com/tag/carpe.html">CARPE</a>,                    <a href="http://blog.y2kbugger.com/tag/python.html">Python</a>,                    <a href="http://blog.y2kbugger.com/tag/retrocomputing.html">Retrocomputing</a>            </div>
+                    <a href="http://blog.y2kbugger.com/tag/ohio-linuxfest.html">Ohio Linuxfest</a>,                    <a href="http://blog.y2kbugger.com/tag/python.html">Python</a>,                    <a href="http://blog.y2kbugger.com/tag/retrocomputing.html">Retrocomputing</a>,                    <a href="http://blog.y2kbugger.com/tag/cpus.html">CPUs</a>            </div>
     </div>
 
     </header>
 
     <main class="content">
     <div class="article-content">
-        <p>&#64; <strong>CARPE December Meeting</strong>, <em>Columbus, Ohio</em></p>
-<p><a class="reference external" href="https://drive.google.com/open?id=12KYvWFvr7uSeOLgl2vSXf_TAWIMcBV3WC4VD1vP2Oag">Slides</a></p>
-<div class="highlight"><pre><span></span>git clone --branch 2018-12-11-CARPE https://y2kbugger@github.com/y2kbugger/sapy.git
+        <p>&#64; <strong>Ohio Linuxfest</strong>, <em>Virtual</em></p>
+<!-- Google Photos Album: https://photos.app.goo.gl/LUXeip6Xz85QRTn78 -->
+<p><a class="reference external" href="https://drive.google.com/open?id=1u8qlAK4SeqFX3ybT7zVuKWItMvCadhsgF9WmCCOM3dQ">Slides</a> <a class="reference external" href="https://mybinder.org/v2/gh/y2kbugger/sapy.git/mybinder-release?filepath=Simple%20As%20Possible.ipynb">Live Jupyter Notebook</a></p>
+<div class="highlight"><pre><span></span>git clone https://y2kbugger@github.com/y2kbugger/sapy.git
 </pre></div>
-<img alt="Slide about my CPU presentation." class="align-center" src="https://lh3.googleusercontent.com/ZXuaqX-m6ynsOKnvGmfCwM3ov2loiSR3v2blG5vykRSaExcyKPn1WL-BS2tEj5kS_Dp0PojmRHXiyDcioR6WHKNAOWr_P_hSRZ0Vj98yR8fn-mBovfziqiXAZj5poI7Wl_O98YkYQIQ=w596-h447-no" style="width: 100%;" />
-<p>Programming languages are designed for a specific level of abstraction or distance from the hardware. The main trade off is &quot;developer productivity&quot; vs &quot;control over hardware&quot;. C and assembly are low level and therefore map closely to CPU instructions. Python on the other hand goes through many layers, libraries, and a virtual machine before the CPU is reached. This allows powerful programs to be written concisely and cross-platform—but it also conceals the true nature at the heart of our modern world. Unveiling the magic within can lead to interesting insights about how computing got to where it is today.</p>
-<p>We will build up CPU focused on transparency, interactivity, and modularity. Our CPU has a configurable architecture and machine language. Yes, you can invent your own assembly instructors to add functionality. We will cover registers, data/address busses, memory&nbsp;(ROM/RAM), IO, and assemblers.</p>
-<p>Specs for nerds: 8-bit words, 256 memory addresses, Von Neumann w/ shared address+data bus, DMA with numpy based buffer.</p>
+<!-- git clone - -branch 2019-07-28-PyOhio https://y2kbugger@github.com/y2kbugger/sapy.git -->
+<div class="videoembed-container">
+<iframe class="videoembed-iframe" src="https://www.youtube.com/embed/JkeRezvCVfM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p>Explore the line between hardware and software by writing code with absolute control over the cpu and peripherals. We’ll explore how to do this using a completely free and open source simulator (Renode), toolchain (GCC), and instruction set (RISC-V). Using assembly, we’ll initialize parts of the system such as CPU interrupts and privilege levels, and setting up a call stack so we can use C. Using C we’ll build a handler for serial IO. Finally we’ll talk about the next steps in building a toy operating system such as building a simple monitor menu, memory management, and multitasking.</p>
+<p>Bio:
+Zak Kohler is a Chemical Engineer by education but true computer geek at heart. He started programming in 3rd grade and has never looked back. Often zak states that his biggest regret is not finding Python and Linux sooner...that didn't happen until university. Electronics is his second love and he fuses the two by playing with early computer hardware as well as modern microcontrollers. When zak isn't messing with computers he can be found turning milk into cheese, drawing, or exploring the world on long walks.</p>
 
     </div>
 
@@ -73,8 +76,8 @@
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'blog-y2kbugger'; // required: replace example with your forum shortname
-        var disqus_identifier = '2018-12-11-carpe.html';
-        var disqus_url = 'http://blog.y2kbugger.com/2018-12-11-carpe.html';
+        var disqus_identifier = 'drafts/2020-11-06-ohiolinuxfest.html';
+        var disqus_url = 'http://blog.y2kbugger.com/drafts/2020-11-06-ohiolinuxfest.html';
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function () {
