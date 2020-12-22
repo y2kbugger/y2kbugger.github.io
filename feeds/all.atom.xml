@@ -62,7 +62,7 @@ RISC-V (pronounced &amp;quot;risk-five&amp;quot;) is an open standard instructio
 &lt;h2&gt;&lt;a class="toc-backref" href="#id8"&gt;Source code&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;To get started you will need to clone the repository. This includes all of the examples as well as the source for Renode simulator and GCC RISC-V toolchain.&lt;/p&gt;
 &lt;p&gt;Renode and GCC are linked via &lt;tt class="docutils literal"&gt;git submodule&lt;/tt&gt; so if you use &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--recursive&lt;/span&gt;&lt;/tt&gt; you can clone everything in one shot.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone --recursive git@github.com:y2kbugger/baremetal-riscv-renode.git
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone --recursive https://github.com/y2kbugger/baremetal-riscv-renode.git
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="toolchain-compilation"&gt;
