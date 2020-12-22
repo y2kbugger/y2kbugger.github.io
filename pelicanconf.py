@@ -79,3 +79,7 @@ thisyear = datetime.today().strftime("%Y")
 COPYRIGHT = f"zak kohler {thisyear} &mdash; Happy Hacking"
 
 ENABLE_SLICKNAV = False
+
+UTTERANCES_REPO = 'y2kbugger/y2kbugger.github.io'
+UTTERANCES_THEME = 'github-light'
+UTTERANCES_LABEL = 'utterances'
