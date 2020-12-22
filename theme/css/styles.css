@@ -424,6 +424,9 @@ table.footnote {
 }
 /* end hack */
 
+#footnotes.section {
+    margin: 18px 0px;
+}
 
 /* hack to get correct 100% youtube embeds */
 .videoembed-container {
@@ -441,9 +444,13 @@ table.footnote {
     height: 100%;
 }
 /* end hack */
+
 .twitter-follow-button {
     color: #1DA1F2;
     font-size: 75%;
+}
+.utterances-frame {
+    margin: 5px 0px;
 }
 
 @media print {
