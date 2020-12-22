@@ -7,7 +7,7 @@ Baremetal RISC-V Renode - Part 1: Blinky
 :author: zak kohler
 :summary: Explore the line between hardware and software while creating a minimal, vendor-free environment to write and play with toy operating systems.
 :status: published
-:cover: `https://lh3.googleusercontent.com/pw/ACtC-3dpMyfpSU2fcKBVPje2OZukgNuYhAubg0xkc6ycUbfd-OcxDFhj_bQ4OJL_vb5riU6mzwl9lKCACZT-DHryR9M3IJmk5DJ9oBN1-Vt29PM3DW_qe5cbSrrhRbMOc557s5uCDQOnBEw4WXLsEik6EXt4_A=w526-h295-no`
+:cover: `https://lh3.googleusercontent.com/pw/ACtC-3chg3Hd7-XPkvOum0SQv3f9EZ30vjZ3BB70OMbEqWVWO9GkvjOh-sBBWg-cU_oD2xo7jj4TTvQReAX-2F4HSt6OPOur1bb06A-fQZUti-STZ0clEEkYPsCrHAhMq2rVkKLU2psnCGzE_pfs5rIWrda0xg=w454-h669-no`
 
 ..
   Google Photos Album: https://photos.app.goo.gl/LUXeip6Xz85QRTn78
