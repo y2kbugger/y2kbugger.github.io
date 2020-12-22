@@ -1,12 +1,12 @@
 Baremetal RISC-V Renode - Part 1: Blinky
 ########################################
 
-:date: 2020-05-21 17:48:03
-:modified: 2020-05-21 17:48:03
+:date: 2020-12-22 00:11:42
+:modified: 2020-12-22 00:11:42
 :tags: baremetal, RISC-V, Renode, assembly, CPUs
 :author: zak kohler
 :summary: Explore the line between hardware and software while creating a minimal, vendor-free environment to write and play with toy operating systems.
-:status: draft
+:status: published
 :cover: `https://lh3.googleusercontent.com/pw/ACtC-3dpMyfpSU2fcKBVPje2OZukgNuYhAubg0xkc6ycUbfd-OcxDFhj_bQ4OJL_vb5riU6mzwl9lKCACZT-DHryR9M3IJmk5DJ9oBN1-Vt29PM3DW_qe5cbSrrhRbMOc557s5uCDQOnBEw4WXLsEik6EXt4_A=w526-h295-no`
 
 ..

@@ -7,7 +7,7 @@ Baremetal RISC-V Renode
 :author: zak kohler
 :summary: Ohio Linuxfest 2020, Virtual
 :cover: `https://lh3.googleusercontent.com/pw/ACtC-3fTB1LkFo46llCKGgulxWISEd4Zgl1PYIxxgWs3G9-7Y066QGthphrKyyol1XWuLFGSB87o8O4xFLejO-0CvLRUsXJpT-ERFGPPC0AB2ElSFhAVQYxS6fwoxrFvr5xrM6xN-y0OH7OJ_OfNrzLN4Es6ww=w640-h369-no`
-:status: draft
+:status: published
 
 @ **Ohio Linuxfest**, *Virtual*
 
@@ -15,6 +15,7 @@ Baremetal RISC-V Renode
   Google Photos Album: https://photos.app.goo.gl/LUXeip6Xz85QRTn78
 
 `Slides <https://docs.google.com/presentation/d/1BnCyFaq_yDQMpGsGNcsVLQeVmer9JnVh4CuCS1wOK_c/edit?usp=sharing>`_
+`Main Blog Article <{filename}/programming/baremetal-riscv-renode-1.rst>`_
 
 .. code-block:: giturl
 
