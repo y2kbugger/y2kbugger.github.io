@@ -51,7 +51,7 @@ Renode and GCC are linked via ``git submodule`` so if you use ``--recursive`` yo
 
 .. code-block:: giturl
 
-   git clone --recursive git@github.com:y2kbugger/baremetal-riscv-renode.git
+   git clone --recursive https://github.com/y2kbugger/baremetal-riscv-renode.git
 
 Toolchain compilation
 =====================
