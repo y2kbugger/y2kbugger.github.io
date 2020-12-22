@@ -15,8 +15,10 @@
 
 
         <meta name="tags" contents="Ohio Linuxfest"/>
-        <meta name="tags" contents="Python"/>
-        <meta name="tags" contents="Retrocomputing"/>
+        <meta name="tags" contents="baremetal"/>
+        <meta name="tags" contents="RISC-V"/>
+        <meta name="tags" contents="Renode"/>
+        <meta name="tags" contents="assembly"/>
         <meta name="tags" contents="CPUs"/>
 </head>
 
@@ -38,6 +40,9 @@
                                 href="http://blog.y2kbugger.com/category/programming.html">programming</a></li>
                         <li class="active"><a
                                 href="http://blog.y2kbugger.com/category/talks.html">talks</a></li>
+            <li class="twitter">
+                <a href="https://twitter.com/y2kbugger" class="twitter-follow-button" >Follow on Twitter @y2kbugger</a>
+            </li>
         </ul>
     </nav>
 
@@ -47,12 +52,11 @@
     <div class="article-meta">
                 <span class="author">By zak kohler</span>
         <span class="publication-date" title="2020-11-06T00:00:00-05:00"> on 2020.11.06</span>
-        <span class="modification-date" title="2020-12-21T12:59:38.571560-05:00"> last modified on 2020.12.21 @ 12:59</span>
 
 
             <div class="tags">
                 Tagged:
-                    <a href="http://blog.y2kbugger.com/tag/ohio-linuxfest.html">Ohio Linuxfest</a>,                    <a href="http://blog.y2kbugger.com/tag/python.html">Python</a>,                    <a href="http://blog.y2kbugger.com/tag/retrocomputing.html">Retrocomputing</a>,                    <a href="http://blog.y2kbugger.com/tag/cpus.html">CPUs</a>            </div>
+                    <a href="http://blog.y2kbugger.com/tag/ohio-linuxfest.html">Ohio Linuxfest</a>,                    <a href="http://blog.y2kbugger.com/tag/baremetal.html">baremetal</a>,                    <a href="http://blog.y2kbugger.com/tag/risc-v.html">RISC-V</a>,                    <a href="http://blog.y2kbugger.com/tag/renode.html">Renode</a>,                    <a href="http://blog.y2kbugger.com/tag/assembly.html">assembly</a>,                    <a href="http://blog.y2kbugger.com/tag/cpus.html">CPUs</a>            </div>
     </div>
 
     </header>
@@ -61,10 +65,10 @@
     <div class="article-content">
         <p>&#64; <strong>Ohio Linuxfest</strong>, <em>Virtual</em></p>
 <!-- Google Photos Album: https://photos.app.goo.gl/LUXeip6Xz85QRTn78 -->
-<p><a class="reference external" href="https://drive.google.com/open?id=1u8qlAK4SeqFX3ybT7zVuKWItMvCadhsgF9WmCCOM3dQ">Slides</a> <a class="reference external" href="https://mybinder.org/v2/gh/y2kbugger/sapy.git/mybinder-release?filepath=Simple%20As%20Possible.ipynb">Live Jupyter Notebook</a></p>
-<div class="highlight"><pre><span></span>git clone https://y2kbugger@github.com/y2kbugger/sapy.git
+<p><a class="reference external" href="https://docs.google.com/presentation/d/1BnCyFaq_yDQMpGsGNcsVLQeVmer9JnVh4CuCS1wOK_c/edit?usp=sharing">Slides</a>
+<a class="reference external" href="http://blog.y2kbugger.com/baremetal-riscv-renode-1.html">Main Blog Article</a></p>
+<div class="highlight"><pre><span></span>git clone https://github.com/y2kbugger/baremetal-riscv-renode.git
 </pre></div>
-<!-- git clone - -branch 2019-07-28-PyOhio https://y2kbugger@github.com/y2kbugger/sapy.git -->
 <div class="videoembed-container">
 <iframe class="videoembed-iframe" src="https://www.youtube.com/embed/JkeRezvCVfM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p>Explore the line between hardware and software by writing code with absolute control over the cpu and peripherals. We’ll explore how to do this using a completely free and open source simulator (Renode), toolchain (GCC), and instruction set (RISC-V). Using assembly, we’ll initialize parts of the system such as CPU interrupts and privilege levels, and setting up a call stack so we can use C. Using C we’ll build a handler for serial IO. Finally we’ll talk about the next steps in building a toy operating system such as building a simple monitor menu, memory management, and multitasking.</p>
 <p>Bio:
@@ -76,8 +80,8 @@ Zak Kohler is a Chemical Engineer by education but true computer geek at heart. 
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'blog-y2kbugger'; // required: replace example with your forum shortname
-        var disqus_identifier = 'drafts/2020-11-06-ohiolinuxfest.html';
-        var disqus_url = 'http://blog.y2kbugger.com/drafts/2020-11-06-ohiolinuxfest.html';
+        var disqus_identifier = '2020-11-06-ohiolinuxfest.html';
+        var disqus_url = 'http://blog.y2kbugger.com/2020-11-06-ohiolinuxfest.html';
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function () {

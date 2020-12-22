@@ -15,7 +15,10 @@
 
 
         <meta name="tags" contents="baremetal"/>
+        <meta name="tags" contents="RISC-V"/>
+        <meta name="tags" contents="Renode"/>
         <meta name="tags" contents="assembly"/>
+        <meta name="tags" contents="CPUs"/>
 </head>
 
 <body>
@@ -36,6 +39,9 @@
                                 href="http://blog.y2kbugger.com/category/programming.html">programming</a></li>
                         <li><a
                                 href="http://blog.y2kbugger.com/category/talks.html">talks</a></li>
+            <li class="twitter">
+                <a href="https://twitter.com/y2kbugger" class="twitter-follow-button" >Follow on Twitter @y2kbugger</a>
+            </li>
         </ul>
     </nav>
 
@@ -44,13 +50,12 @@
 
     <div class="article-meta">
                 <span class="author">By zak kohler</span>
-        <span class="publication-date" title="2020-05-21T17:48:03-04:00"> on 2020.05.21 @ 17:48</span>
-        <span class="modification-date" title="2020-05-21T17:48:03-04:00"> last modified on 2020.05.21 @ 17:48</span>
+        <span class="publication-date" title="2020-12-22T00:11:42-05:00"> on 2020.12.22 @ 00:11</span>
 
 
             <div class="tags">
                 Tagged:
-                    <a href="http://blog.y2kbugger.com/tag/baremetal.html">baremetal</a>,                    <a href="http://blog.y2kbugger.com/tag/assembly.html">assembly</a>            </div>
+                    <a href="http://blog.y2kbugger.com/tag/baremetal.html">baremetal</a>,                    <a href="http://blog.y2kbugger.com/tag/risc-v.html">RISC-V</a>,                    <a href="http://blog.y2kbugger.com/tag/renode.html">Renode</a>,                    <a href="http://blog.y2kbugger.com/tag/assembly.html">assembly</a>,                    <a href="http://blog.y2kbugger.com/tag/cpus.html">CPUs</a>            </div>
     </div>
 
     </header>
@@ -95,7 +100,7 @@ https://www.youtube.com/watch?v=D0VuYe77Wu0&list=PLb-MsRpo_wlLW0EWRpAqnbbDsf4kxS
 </div>
 <div class="section" id="background">
 <h2><a class="toc-backref" href="#id4">Background</a></h2>
-<p>I'm exploring the line between hardware and software by creating a series of demos within a minimal, free and open source environment to write and play with toy operating systems. The goal is to minimize parts of the system that we take for granted and gain a better understanding of computers and operating systems.</p>
+<p>I'm exploring the line between hardware and software by creating a series of demos within a minimal, free and open source environment. These demos span from blinking an LED to implementing a toy operating system. The goal is to minimize parts of the system that we take for granted and gain a better understanding of computers and operating systems.</p>
 <div class="section" id="what-is-baremetal">
 <h3><a class="toc-backref" href="#id5">What is baremetal?</a></h3>
 <p>In the non-embedded world, when you compile and link a C program into an executable you are doing so with the intention of running it <em>within</em> a specific operating system. When you compile baremetal or <tt class="docutils literal"><span class="pre">-freestanding</span></tt> you are telling the compiler that you intend to run this without relying on an operating system. This could be used, for example, to write an operating system. Alternatively it can be used to access the hardware of a system directly on an embedded system. Doing so sacrifices higher level luxuries such as memory management, standard IO, thread/process control, etc. Because of this, sometimes it makes sense to run on a type of minimal OS optimized for embedded, e.g. a real time operating system or RTOS.</p>
@@ -128,15 +133,15 @@ RISC-V (pronounced &quot;risk-five&quot;) is an open standard instruction set ar
 <p>There are some compilation prerequisites and gotchas. If my hints don't help, just refer to the official project documentation for each.</p>
 <div class="section" id="building">
 <h3><a class="toc-backref" href="#id10">Building</a></h3>
-<p>To easy the burden on my own memory, I have added a <tt class="docutils literal">Makefile</tt> to capture the various build options for the toolchains. If you have all of the build requirements already installed, building both can be as simple as:</p>
-<div class="highlight"><pre><span></span>$ <span class="nb">cd</span> baremetal-riskv-renode
+<p>To ease the burden on my own memory, I have added a <tt class="docutils literal">Makefile</tt> to capture the various build options for the toolchains. If you have all of the build requirements already installed, building both can be as simple as:</p>
+<div class="highlight"><pre><span></span>$ <span class="nb">cd</span> baremetal-riscv-renode
 $ make toolchains
 </pre></div>
-<p>Running <tt class="docutils literal">make toolchains</tt> should usually be enough to let you know what you are missing. I have included some hints below, check the comments as well as different platforms may have different packages.</p>
+<p>Running <tt class="docutils literal">make toolchains</tt> should usually be enough to let you know what you are missing. I have included some hints below, check the comments as well as different distros may have different packages.</p>
 </div>
 <div class="section" id="build-requirement-hints">
 <h3><a class="toc-backref" href="#id11">Build requirement hints</a></h3>
-<p>Below are my hints for which packages to install, this can be different depending on the distribution. I've include links to the official guides for getting unstuck.</p>
+<p>Below are my hints for which packages to install, this can be different depending on the distribution. I've also included links to the official guides for getting unstuck.</p>
 <div class="section" id="gcc">
 <h4>gcc</h4>
 <p><a class="reference external" href="https://github.com/riscv/riscv-gnu-toolchain">https://github.com/riscv/riscv-gnu-toolchain</a></p>
@@ -148,12 +153,12 @@ gawk texinfo bison flex libncurses5-dev libncursesw5-dev
 <div class="section" id="renode">
 <h4>Renode</h4>
 <p><a class="reference external" href="https://renode.readthedocs.io/en/latest/advanced/building_from_sources.html">https://renode.readthedocs.io/en/latest/advanced/building_from_sources.html</a></p>
-<p>Mono provides CLR runtime and C# compiler required for Renode. Installing it can be tricky on some distros and having a mono that is incomplete or outdated can lead to hard-to-understand errors. Make sure your whole system is up-to-date if you run into issue compiling Renode.</p>
+<p>Mono provides the runtime and C# compiler required for Renode. Installing it can be tricky on some distros and having a mono that is incomplete or outdated can lead to hard to understand errors. Make sure your whole system is up-to-date if you run into issues compiling Renode.</p>
 <dl class="docutils">
 <dt>Arch</dt>
 <dd>Everything worked fine using the <tt class="docutils literal">mono</tt> package from extra.</dd>
 <dt>Ubuntu</dt>
-<dd><strong>Do not</strong> use the mono from standard repos. Follow instruction for <tt class="docutils literal"><span class="pre">mono-complete</span></tt> here <a class="reference external" href="https://www.mono-project.com/download/stable/">https://www.mono-project.com/download/stable/</a>.</dd>
+<dd><strong>Do not</strong> use the mono from standard repos. Follow the instructions for <tt class="docutils literal"><span class="pre">mono-complete</span></tt> here <a class="reference external" href="https://www.mono-project.com/download/stable/">https://www.mono-project.com/download/stable/</a>.</dd>
 </dl>
 <pre class="code literal-block">
 automake autoconf libtool g++ coreutils policykit-1 libgtk2.0-dev screen uml-utilities gtk-sharp2 python3
@@ -164,13 +169,13 @@ automake autoconf libtool g++ coreutils policykit-1 libgtk2.0-dev screen uml-uti
 </div>
 <div class="section" id="activating-the-toolchains">
 <h2><a class="toc-backref" href="#id12">Activating the toolchains</a></h2>
-<p>This guide assumes both renode and riscv-gcc are on your <tt class="docutils literal">PATH</tt>.</p>
+<p>Beyond here, we assume both renode and riscv-gcc are on your <tt class="docutils literal">PATH</tt>. To accomplish this, you can source this activation script.</p>
 <div class="highlight"><pre><span></span>$ <span class="nb">source</span> activate-toolchains.sh
 </pre></div>
 </div>
 <div class="section" id="blinking-a-virtual-led">
 <h2><a class="toc-backref" href="#id13">Blinking a virtual LED</a></h2>
-<p>To verify and get familiar with the tools we'll start off with the 'Hello, World' of hardware projects: blinking an LED.</p>
+<p>To verify and get familiar with the tools we'll start off with the &quot;Hello, World&quot; of hardware projects: blinking an LED.</p>
 <p>Blinking a virtual &quot;LED&quot; involves a few steps:</p>
 <ol class="arabic simple">
 <li>Build <strong>image</strong> from source code</li>
@@ -189,17 +194,17 @@ $ make launch
 </pre>
 <p>If everything went correctly, you should see something like this:</p>
 <img alt="blinky demo running" src="https://lh3.googleusercontent.com/pw/ACtC-3dKs20yaz1biM2MWXyi7HAcI0pb-BHYDYD1XM92Al11dQPQ26OJY8YULAlHPHtduGETCN5Y5D6aXtkiFi3-9tB3RNtj4A687SGo765evyqri2TjKMCyQeNSLNfZ-SV52yXlIEar9iQj2aEzPKAmBGrQOA=w628-h449-no" />
-<p>You should have also noticed the monitor window open up. This is used to control the running renode machine; <tt class="docutils literal">?</tt> will show a list of what commands are available. The tab completion is also very helpful.</p>
+<p>You should have also noticed the monitor window open up. This is used to control the running renode machine; the <tt class="docutils literal">?</tt> command will list the rest. The tab completion is also very helpful.</p>
+<img alt="renode monitor" src="https://lh3.googleusercontent.com/pw/ACtC-3f6eXxClG8aqr6wk2twPPD-lXLA7C4vskcZkecZVwPlqSYNCrxrdtvzBSEgK0YLixLm3OuJzJeM63alK8B1ATSZUp594xdfz2u8-vQeMlTSLMRl_ihZHDEQtH4scresowV29jguNfTZpzdqeX1sTttQng=w442-h197-no" />
 <p>Quit using <tt class="docutils literal">q</tt> or <tt class="docutils literal">quit</tt>:</p>
 <pre class="literal-block">
 (vexriscv-machine) quit
 </pre>
-<p>Alternatively you can <tt class="docutils literal"><span class="pre">ctrl-c</span></tt> in the original terminal window kill renode.</p>
-<img alt="renode quitting" src="https://lh3.googleusercontent.com/pw/ACtC-3fnOWf9q-DJAwfFMefjlX6-CqAgGpGfDzBTi36NOuASben_jmeDlka0AlgziFE5yXRDwnwLE16sFeVXKcKaIfjMaLDhFeLXYv9baJi8OI7C5Hhk35XOuAY78VAZiGmhAJT7GSi0ItsGKk1oQSAnoWN6Tg=w318-h92-no" />
+<p>Alternatively you can kill renode using <tt class="docutils literal">CTRL</tt> + <tt class="docutils literal">C</tt> in the terminal that you launched it from.</p>
 </div>
 <div class="section" id="hardware-configuration">
 <h3><a class="toc-backref" href="#id15">Hardware configuration</a></h3>
-<p>The hardware that will be simulated is defined in the using a renode specific platform description format <a class="footnote-reference" href="#renode-describing-platforms" id="id1">[3]</a></p>
+<p>The hardware to will be simulated is defined using a renode specific platform description format <a class="footnote-reference" href="#renode-describing-platforms" id="id1">[3]</a></p>
 <p>vexriscv.repl:</p>
 <pre class="literal-block">
 mem: Memory.MappedMemory &#64; sysbus 0x0
@@ -215,14 +220,14 @@ gpio_out: GPIOPort.LiteX_GPIO &#64; sysbus 0x60000800
 led0 : Miscellaneous.LED &#64; gpio_out 0
 led1 : Miscellaneous.LED &#64; gpio_out 1
 </pre>
-<p>I like this because we can make a very minimal hardware configuration, free from any vendor specific complexity. Besides the cpu and memory, we have a GPIO register mapped to memory location <tt class="docutils literal">0x60000800</tt>. The <tt class="docutils literal"><span class="pre">-&gt;</span></tt> makes a connection from the GPIO pins to the LEDs. I don't exactly know why we need both <tt class="docutils literal">0 <span class="pre">-&gt;</span> led0&#64;0</tt> and <tt class="docutils literal">&#64; gpio_out 0</tt> as it seems redundant. <tt class="docutils literal"><span class="pre">-&gt;</span></tt> is used more commonly for connecting interrupts.</p>
+<p>I like this because we can make a very minimal hardware configuration, free from any vendor specific complexity. Besides the cpu and memory, we have a general purpose input output (GPIO) register mapped to memory location <tt class="docutils literal">0x60000800</tt>. The <tt class="docutils literal"><span class="pre">-&gt;</span></tt> makes a connection from the GPIO pins to the LEDs. I don't exactly know why we need both <tt class="docutils literal">0 <span class="pre">-&gt;</span> led0&#64;0</tt> and <tt class="docutils literal">&#64; gpio_out 0</tt> as it seems redundant; if anyone knows, please let me know. You'll also commonly see  <tt class="docutils literal"><span class="pre">-&gt;</span></tt> used for connecting interrupts.</p>
 <p>To toggle the LED we will need to write a driver that knows how to control the GPIO by writing to it's register.</p>
 </div>
 <div class="section" id="blinky-source-code">
 <h3><a class="toc-backref" href="#id16">Blinky source code</a></h3>
-<p>This initial program is written exclusively in risc-v assemble <a class="footnote-reference" href="#riscv-prgrammers-guide" id="id2">[4]</a> this is simple enough that every instruction that gets executed can be traced to this source file.</p>
-<p>The code to drive this GPIO device is dead simple, You just need to write a data to the memory location that maps to the GPIO pins.</p>
-<p>Note that the platform specifies that the GPIO register is mapped to memory location <tt class="docutils literal">0x60000800</tt></p>
+<p>This initial program is written exclusively in RISC-V assembly <a class="footnote-reference" href="#riscv-prgrammers-guide" id="id2">[4]</a> this is simple enough that every instruction that gets executed can be traced to this source file.</p>
+<p>The code to drive this GPIO device is dead simple, you just need to write data to the memory location that maps to the GPIO pins.</p>
+<p>Note that the platform specifies the mapping of <tt class="docutils literal">0x60000800</tt> to the GPIO register.</p>
 <p>baremetal.s:</p>
 <div class="highlight"><pre><span></span><span class="na">.equ</span> <span class="no">LED</span><span class="p">,</span> <span class="mi">0x60000800</span>
 <span class="na">.equ</span> <span class="no">DELAY_COUNT</span><span class="p">,</span> <span class="mi">9000000</span>
@@ -251,13 +256,13 @@ led1 : Miscellaneous.LED &#64; gpio_out 1
 </div>
 <div class="section" id="building-an-elf-binary-using-gcc">
 <h2><a class="toc-backref" href="#id17">Building an elf binary using gcc</a></h2>
-<p>GCC will build am image based on our assembly source code. The ELF binary is the ROM image and Renode is the emulator.</p>
+<p>GCC will build an ELF binary based on our assembly source code. This binary is the ROM image and Renode is the emulator.</p>
 <p>By default, gcc outputs a format called ELF. This format is understood and loaded by the OS, <a class="reference external" href="https://lwn.net/Articles/631631/">i.e. linux,</a>. Renode also has the ability to understand ELF files and will load the sections into memory and put the program counter at the right spot to start executing <a class="footnote-reference" href="#renode-elf-start" id="id3">[1]</a>.</p>
 <div class="highlight"><pre><span></span>riscv32-unknown-elf-gcc baremetal.s baremetal.c -ggdb -O0 -o image -ffreestanding -nostdlib
 </pre></div>
 <dl class="docutils">
 <dt>riscv32-unknown-elf-gcc</dt>
-<dd>gnu compiler. This will compile, assemble any link source code. This is the special cross compiling variant that we built earlier which runs on you host architecture (e.g. x86), but outputs binaries for riscv32.</dd>
+<dd>gnu compiler. This compiles, assembles, and links input source code. This is the special cross compiling variant that we built earlier which runs on your host architecture (e.g. x86), but outputs binaries for riscv32.</dd>
 <dt>baremetal.s</dt>
 <dd>Assemble source file.</dd>
 </dl>
@@ -285,10 +290,10 @@ led1 : Miscellaneous.LED &#64; gpio_out 1
 </div>
 <div class="section" id="interactively-debugging-renode">
 <h2><a class="toc-backref" href="#id18">Interactively Debugging Renode</a></h2>
-<p>Pause an step though code that is running on the simulator.</p>
+<p>Pause and step though code that is running on the simulator.</p>
 <div class="section" id="attaching-the-gnu-debugger">
 <h3><a class="toc-backref" href="#id19">Attaching the GNU Debugger</a></h3>
-<p>After launching, you may attach GDB using <cite>make debug</cite>. This connects to the GDB server already running within Renode. It uses a gdb script to store default configuration, such as breaking execution and starting the text user interface or TUI, which source code along side the disassembly.</p>
+<p>After launching, you may attach GDB using <cite>make debug</cite>. This connects to the GDB server already running within Renode. It uses a GDB script to store default configuration, such as breaking execution and starting the text user interface or TUI, which shows source code alongside the disassembly.</p>
 <div class="highlight"><pre><span></span>$ make launch
 $ make debug
 </pre></div>
@@ -307,7 +312,7 @@ $ make debug
 <div class="highlight"><pre><span></span>(gdb) si
 (gdb) █
 </pre></div>
-<p>To repeat the last command, just repeatedly hit <tt class="docutils literal">Enter</tt>. This make it easy to single step through the program.</p>
+<p>To repeat the last command, just repeatedly hit <tt class="docutils literal">Enter</tt>. This makes it easy to single step through the program.</p>
 <p>You will notice that you get stuck in the delay loop, you would have to hit <tt class="docutils literal">Enter</tt> 9,000,000 times to make it though that delay. This is not a good way to add delays since it uses 100% of the CPU. If we were building an operating system, we could utilize a hardware timer and allow programs to request sleeps through an API. During the sleep the OS could go about running other processes, and then wake up the sleeping process at the appropriate time.</p>
 </div>
 <div class="section" id="continue-normal-execution">
@@ -318,7 +323,7 @@ Continuing.
 </div>
 <div class="section" id="break-normal-execution">
 <h4>Break normal execution</h4>
-<p>Send a keyboard interupt, e.g. <tt class="docutils literal">CTRL</tt> + <tt class="docutils literal">C</tt></p>
+<p>Send a keyboard interrupt, e.g. <tt class="docutils literal">CTRL</tt> + <tt class="docutils literal">C</tt></p>
 <div class="highlight"><pre><span></span>(gdb) c
 Continuing.
 
@@ -372,8 +377,8 @@ Continuing.
 </div>
 <div class="section" id="changing-the-bitmask-for-blinky">
 <h2><a class="toc-backref" href="#id21">Changing the bitmask for blinky</a></h2>
-<p>Let's prove we can modify a program's state after after breaking..</p>
-<p>If we just run the blinky example, note that we are Blinking <tt class="docutils literal">led0</tt>:</p>
+<p>Let's do something fun and prove we can modify a program's state after breaking.</p>
+<p>If we just run the blinky example, note that we are blinking <tt class="docutils literal">led0</tt>:</p>
 <div class="highlight"><pre><span></span>15:09:23.7671 [NOISY] gpio_out.led0: LED state changed to True
 15:09:24.0805 [NOISY] gpio_out.led0: LED state changed to False
 15:09:24.3872 [NOISY] gpio_out.led0: LED state changed to True
@@ -393,7 +398,7 @@ Continuing.
 </div>
 <div class="section" id="miro-samek-and-the-modern-embedded-course-series">
 <h2><a class="toc-backref" href="#id22">Miro Samek and the modern embedded course series</a></h2>
-<p>I am inspired by Miro Samek. He does a great introduction to many concepts in embedded and I want to share that in a way that we don't need to have a real board.</p>
+<p>I am inspired by Miro Samek. He does a great introduction to many embedded programming concepts and I want to share that in a way that we don't need to have a real board.</p>
 <p>Check out his course here: <a class="reference external" href="https://www.state-machine.com/quickstart/">https://www.state-machine.com/quickstart/</a></p>
 </div>
 <div class="section" id="next-post">
@@ -439,8 +444,8 @@ Continuing.
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'blog-y2kbugger'; // required: replace example with your forum shortname
-        var disqus_identifier = 'drafts/baremetal-riscv-renode-1.html';
-        var disqus_url = 'http://blog.y2kbugger.com/drafts/baremetal-riscv-renode-1.html';
+        var disqus_identifier = 'baremetal-riscv-renode-1.html';
+        var disqus_url = 'http://blog.y2kbugger.com/baremetal-riscv-renode-1.html';
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function () {
