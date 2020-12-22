@@ -3,7 +3,7 @@ Baremetal RISC-V Renode - Part 1: Blinky
 
 :date: 2020-05-21 17:48:03
 :modified: 2020-05-21 17:48:03
-:tags: baremetal, assembly
+:tags: baremetal, RISC-V, Renode, assembly, CPUs
 :author: zak kohler
 :summary: Explore the line between hardware and software while creating a minimal, vendor-free environment to write and play with toy operating systems.
 :status: draft
@@ -345,7 +345,7 @@ You can mutate a register value and continue on:
 
 Changing the bitmask for blinky
 ===============================
-Let's prove we can modify a program's state after after breaking..
+Let's do something fun and prove we can modify a program's state after after breaking..
 
 If we just run the blinky example, note that we are Blinking ``led0``:
 
