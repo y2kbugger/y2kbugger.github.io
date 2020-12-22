@@ -20,7 +20,10 @@ CATEGORY_FEED_ATOM = 'feeds/{slug}.atom.xml'
 DELETE_OUTPUT_DIRECTORY = True
 
 # Following items are often useful when publishing
-DISQUS_SITENAME = "blog-y2kbugger"
+UTTERANCES_REPO = 'y2kbugger/y2kbugger.github.io'
+UTTERANCES_THEME = 'github-light'
+UTTERANCES_LABEL = 'utterances'
+
 GOOGLE_ANALYTICS = "UA-111274102-1"
 
 HEAD_EXTRA = HEAD_EXTRA_PROD
