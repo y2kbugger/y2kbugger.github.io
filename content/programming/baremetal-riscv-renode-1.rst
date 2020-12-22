@@ -19,7 +19,7 @@ Baremetal RISC-V Renode - Part 1: Blinky
 Background
 ==========
 
-I'm exploring the line between hardware and software by creating a series of demos within a minimal, free and open source environment to write and play with toy operating systems. The goal is to minimize parts of the system that we take for granted and gain a better understanding of computers and operating systems.
+I'm exploring the line between hardware and software by creating a series of demos within a minimal, free and open source environment. These demos span from blinking an LED to implementing a toy operating system. The goal is to minimize parts of the system that we take for granted and gain a better understanding of computers and operating systems.
 
 What is baremetal?
 ------------------
@@ -61,18 +61,18 @@ There are some compilation prerequisites and gotchas. If my hints don't help, ju
 
 Building
 --------
-To easy the burden on my own memory, I have added a ``Makefile`` to capture the various build options for the toolchains. If you have all of the build requirements already installed, building both can be as simple as:
+To ease the burden on my own memory, I have added a ``Makefile`` to capture the various build options for the toolchains. If you have all of the build requirements already installed, building both can be as simple as:
 
 .. code-block:: bash
 
-    $ cd baremetal-riskv-renode
+    $ cd baremetal-riscv-renode
     $ make toolchains
 
-Running ``make toolchains`` should usually be enough to let you know what you are missing. I have included some hints below, check the comments as well as different platforms may have different packages.
+Running ``make toolchains`` should usually be enough to let you know what you are missing. I have included some hints below, check the comments as well as different distros may have different packages.
 
 Build requirement hints
 -----------------------
-Below are my hints for which packages to install, this can be different depending on the distribution. I've include links to the official guides for getting unstuck.
+Below are my hints for which packages to install, this can be different depending on the distribution. I've also included links to the official guides for getting unstuck.
 
 gcc
 ^^^
@@ -88,12 +88,12 @@ Renode
 ^^^^^^
 https://renode.readthedocs.io/en/latest/advanced/building_from_sources.html
 
-Mono provides CLR runtime and C# compiler required for Renode. Installing it can be tricky on some distros and having a mono that is incomplete or outdated can lead to hard-to-understand errors. Make sure your whole system is up-to-date if you run into issue compiling Renode.
+Mono provides the runtime and C# compiler required for Renode. Installing it can be tricky on some distros and having a mono that is incomplete or outdated can lead to hard to understand errors. Make sure your whole system is up-to-date if you run into issues compiling Renode.
 
 Arch
   Everything worked fine using the ``mono`` package from extra.
 Ubuntu
-  **Do not** use the mono from standard repos. Follow instruction for ``mono-complete`` here https://www.mono-project.com/download/stable/.
+  **Do not** use the mono from standard repos. Follow the instructions for ``mono-complete`` here https://www.mono-project.com/download/stable/.
 
 .. code::
 
@@ -103,7 +103,7 @@ The package ``coreutils`` provides ``realpath`` on Debian.
 
 Activating the toolchains
 =========================
-This guide assumes both renode and riscv-gcc are on your ``PATH``.
+Beyond here, we assume both renode and riscv-gcc are on your ``PATH``. To accomplish this, you can source this activation script.
 
 .. code-block:: bash
 
@@ -111,7 +111,7 @@ This guide assumes both renode and riscv-gcc are on your ``PATH``.
 
 Blinking a virtual LED
 ======================
-To verify and get familiar with the tools we'll start off with the 'Hello, World' of hardware projects: blinking an LED.
+To verify and get familiar with the tools we'll start off with the "Hello, World" of hardware projects: blinking an LED.
 
 Blinking a virtual "LED" involves a few steps:
 
@@ -135,20 +135,20 @@ If everything went correctly, you should see something like this:
 .. image:: https://lh3.googleusercontent.com/pw/ACtC-3dKs20yaz1biM2MWXyi7HAcI0pb-BHYDYD1XM92Al11dQPQ26OJY8YULAlHPHtduGETCN5Y5D6aXtkiFi3-9tB3RNtj4A687SGo765evyqri2TjKMCyQeNSLNfZ-SV52yXlIEar9iQj2aEzPKAmBGrQOA=w628-h449-no
    :alt: blinky demo running
 
-You should have also noticed the monitor window open up. This is used to control the running renode machine; ``?`` will show a list of what commands are available. The tab completion is also very helpful.
+You should have also noticed the monitor window open up. This is used to control the running renode machine; the ``?`` command will list the rest. The tab completion is also very helpful.
+
+.. image:: https://lh3.googleusercontent.com/pw/ACtC-3f6eXxClG8aqr6wk2twPPD-lXLA7C4vskcZkecZVwPlqSYNCrxrdtvzBSEgK0YLixLm3OuJzJeM63alK8B1ATSZUp594xdfz2u8-vQeMlTSLMRl_ihZHDEQtH4scresowV29jguNfTZpzdqeX1sTttQng=w442-h197-no
+   :alt: renode monitor
 
 Quit using ``q`` or ``quit``::
 
     (vexriscv-machine) quit
 
-Alternatively you can ``ctrl-c`` in the original terminal window kill renode.
-
-.. image:: https://lh3.googleusercontent.com/pw/ACtC-3fnOWf9q-DJAwfFMefjlX6-CqAgGpGfDzBTi36NOuASben_jmeDlka0AlgziFE5yXRDwnwLE16sFeVXKcKaIfjMaLDhFeLXYv9baJi8OI7C5Hhk35XOuAY78VAZiGmhAJT7GSi0ItsGKk1oQSAnoWN6Tg=w318-h92-no
-   :alt: renode quitting
+Alternatively you can kill renode using ``CTRL`` + ``C`` in the terminal that you launched it from.
 
 Hardware configuration
 ----------------------
-The hardware that will be simulated is defined in the using a renode specific platform description format [#renode-describing-platforms]_
+The hardware to will be simulated is defined using a renode specific platform description format [#renode-describing-platforms]_
 
 vexriscv.repl::
 
@@ -165,17 +165,17 @@ vexriscv.repl::
     led0 : Miscellaneous.LED @ gpio_out 0
     led1 : Miscellaneous.LED @ gpio_out 1
 
-I like this because we can make a very minimal hardware configuration, free from any vendor specific complexity. Besides the cpu and memory, we have a GPIO register mapped to memory location ``0x60000800``. The ``->`` makes a connection from the GPIO pins to the LEDs. I don't exactly know why we need both ``0 -> led0@0`` and ``@ gpio_out 0`` as it seems redundant. ``->`` is used more commonly for connecting interrupts.
+I like this because we can make a very minimal hardware configuration, free from any vendor specific complexity. Besides the cpu and memory, we have a general purpose input output (GPIO) register mapped to memory location ``0x60000800``. The ``->`` makes a connection from the GPIO pins to the LEDs. I don't exactly know why we need both ``0 -> led0@0`` and ``@ gpio_out 0`` as it seems redundant; if anyone knows, please let me know. You'll also commonly see  ``->`` used for connecting interrupts.
 
 To toggle the LED we will need to write a driver that knows how to control the GPIO by writing to it's register.
 
 Blinky source code
 ------------------
-This initial program is written exclusively in risc-v assemble [#riscv-prgrammers-guide]_ this is simple enough that every instruction that gets executed can be traced to this source file.
+This initial program is written exclusively in RISC-V assembly [#riscv-prgrammers-guide]_ this is simple enough that every instruction that gets executed can be traced to this source file.
 
-The code to drive this GPIO device is dead simple, You just need to write a data to the memory location that maps to the GPIO pins.
+The code to drive this GPIO device is dead simple, you just need to write data to the memory location that maps to the GPIO pins.
 
-Note that the platform specifies that the GPIO register is mapped to memory location ``0x60000800``
+Note that the platform specifies the mapping of ``0x60000800`` to the GPIO register.
 
 baremetal.s:
 
@@ -206,7 +206,7 @@ baremetal.s:
 
 Building an elf binary using gcc
 ================================
-GCC will build am image based on our assembly source code. The ELF binary is the ROM image and Renode is the emulator.
+GCC will build an ELF binary based on our assembly source code. This binary is the ROM image and Renode is the emulator.
 
 By default, gcc outputs a format called ELF. This format is understood and loaded by the OS, `i.e. linux, <https://lwn.net/Articles/631631/>`_. Renode also has the ability to understand ELF files and will load the sections into memory and put the program counter at the right spot to start executing [#renode-elf-start]_.
 
@@ -216,7 +216,7 @@ By default, gcc outputs a format called ELF. This format is understood and loade
     riscv32-unknown-elf-gcc baremetal.s baremetal.c -ggdb -O0 -o image -ffreestanding -nostdlib
 
 riscv32-unknown-elf-gcc
-    gnu compiler. This will compile, assemble any link source code. This is the special cross compiling variant that we built earlier which runs on you host architecture (e.g. x86), but outputs binaries for riscv32.
+    gnu compiler. This compiles, assembles, and links input source code. This is the special cross compiling variant that we built earlier which runs on your host architecture (e.g. x86), but outputs binaries for riscv32.
 baremetal.s
     Assemble source file.
 
@@ -229,11 +229,11 @@ baremetal.s
 
 Interactively Debugging Renode
 ==============================
-Pause an step though code that is running on the simulator.
+Pause and step though code that is running on the simulator.
 
 Attaching the GNU Debugger
 --------------------------
-After launching, you may attach GDB using `make debug`. This connects to the GDB server already running within Renode. It uses a gdb script to store default configuration, such as breaking execution and starting the text user interface or TUI, which source code along side the disassembly.
+After launching, you may attach GDB using `make debug`. This connects to the GDB server already running within Renode. It uses a GDB script to store default configuration, such as breaking execution and starting the text user interface or TUI, which shows source code alongside the disassembly.
 
 .. code-block:: bash
 
@@ -263,7 +263,7 @@ Type ``S`` ``I`` ``Enter``
     (gdb) si
     (gdb) █
 
-To repeat the last command, just repeatedly hit ``Enter``. This make it easy to single step through the program.
+To repeat the last command, just repeatedly hit ``Enter``. This makes it easy to single step through the program.
 
 You will notice that you get stuck in the delay loop, you would have to hit ``Enter`` 9,000,000 times to make it though that delay. This is not a good way to add delays since it uses 100% of the CPU. If we were building an operating system, we could utilize a hardware timer and allow programs to request sleeps through an API. During the sleep the OS could go about running other processes, and then wake up the sleeping process at the appropriate time.
 
@@ -278,7 +278,7 @@ Continue normal execution
 Break normal execution
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Send a keyboard interupt, e.g. ``CTRL`` + ``C``
+Send a keyboard interrupt, e.g. ``CTRL`` + ``C``
 
 .. code-block:: gdb
 
@@ -345,9 +345,9 @@ You can mutate a register value and continue on:
 
 Changing the bitmask for blinky
 ===============================
-Let's do something fun and prove we can modify a program's state after after breaking..
+Let's do something fun and prove we can modify a program's state after breaking.
 
-If we just run the blinky example, note that we are Blinking ``led0``:
+If we just run the blinky example, note that we are blinking ``led0``:
 
 .. code-block:: text
 
@@ -375,7 +375,7 @@ Now we are blinking ``led1`` instead of ``led0``:
 
 Miro Samek and the modern embedded course series
 ================================================
-I am inspired by Miro Samek. He does a great introduction to many concepts in embedded and I want to share that in a way that we don't need to have a real board.
+I am inspired by Miro Samek. He does a great introduction to many embedded programming concepts and I want to share that in a way that we don't need to have a real board.
 
 Check out his course here: https://www.state-machine.com/quickstart/
 
