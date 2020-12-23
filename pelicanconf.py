@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from datetime import datetime
 
 AUTHOR = 'zak kohler'
-SITENAME = 'y2kbugger'
+SITENAME = 'blog.y2kbugger.com'
 SITEURL = ''
 
 PATH = 'content'
@@ -29,7 +29,7 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 MENUITEMS = [
-    ("y2kbugger", '/index.html'),
+    ("blog.y2kbugger.com", '/index.html'),
     ('Tags', '/tags.html'),
     # ('About', '/pages/about.html'),
 ]
@@ -47,8 +47,11 @@ PLUGINS = [
 ]
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (
+    ('twitter', 'https://twitter.com/y2kbugger', 'Twitter @y2kbugger'),
+    ('github', 'https://github.com/y2kbugger', 'GitHub'),
+    ('linkedin', 'http://zakkohler.com', 'LinkedIn'),
+)
 
 DEFAULT_PAGINATION = False
 
