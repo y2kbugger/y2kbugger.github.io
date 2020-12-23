@@ -50,11 +50,16 @@
                     {% endif %}
                 {% endfor %}
             {% endif %}
-            <li class="twitter">
-                <a href="https://twitter.com/y2kbugger" class="twitter-follow-button" >Follow on Twitter @y2kbugger</a>
-            </li>
         </ul>
     </nav>
+    <div class="social-container">
+        Find me on:
+        <ul>
+            {% for (site, url, linktext) in SOCIAL %}
+            <li class="social-item social-{{site}}"><a href="{{url}}">{{linktext}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
 
     <header class="page-header">
         {% block header %}
@@ -66,7 +71,16 @@
         {% endblock %}
     </main>
 
+
     <footer class="page-footer">
+        <div class="social-container">
+            <ul>
+                <li class="social-item">Find me on:</li>
+                {% for (site, url, linktext) in SOCIAL %}
+                <li class="social-item social-{{site}}"><a href="{{url}}">{{linktext}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
         {% block footer %}
             {{ COPYRIGHT }}
         {% endblock %}
@@ -74,18 +88,6 @@
 
 </div>
 </body>
-
-<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-{% if ENABLE_SLICKNAV %}
-    <link rel="stylesheet" href="/theme/lib/slicknav/slicknav.min.css">
-    <script src="/theme/lib/slicknav/jquery.slicknav.min.js"></script>
-    <script>
-        $(function () {
-            $('#menu').addClass("with-slicknav").slicknav({'label': ''});
-        });
-    </script>
-{% endif %} -->
 
 {% include 'integrations/googleanalytics.html' %}
 
