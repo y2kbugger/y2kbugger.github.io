@@ -29,7 +29,7 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 MENUITEMS = [
-    ("blog.y2kbugger.com", '/index.html'),
+    # ("blog.y2kbugger.com", '/index.html'),
     ('Tags', '/tags.html'),
     # ('About', '/pages/about.html'),
 ]
