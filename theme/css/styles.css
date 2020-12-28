@@ -31,8 +31,7 @@ strong {
 
 h1, h2, h3,
 h4, h5, h6 {
-    font-family: 'Anonymous Pro',  "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
-    font-style: Bold;
+    font-family: 'Anonymous Pro',  "monospace";
     font-weight: 900;
     color: #222;
     margin: 1.4em 0 0.6em 0;
@@ -445,7 +444,7 @@ table.footnote {
     padding: 0px;
 }
 .social-item {
-    font-size: 92%;
+    font-size: 87%;
     list-style-type: none;
     display: inline-block;
     margin-left: 0px;
