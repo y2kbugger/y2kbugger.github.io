@@ -459,19 +459,13 @@ table.footnote {
     margin: 5px 0px;
 }
 
-#logo-container {
+#logo-image {
+    object-fit: contain;
+    object-position: left top;
     background-color: black;
-    background-image: url("https://lh3.googleusercontent.com/pw/ACtC-3dZJEyHJN3-FqVljZiFt0SZ5xelIGeV8Ka7eKH78bwV-mQAm2_NQiqMboKonLEBfBAXn8PrzqoL7iN9vLy6aO6MQsxkDehaCUxfTxm_DgSCn0ek6oZ4aG4OHat6BY51Y7X4eSBsvUbvi787atMXXAZzzw=w400-h160-no?authuser=0");
-    width: 100%;
-    height: 150px;
-    background-repeat: no-repeat;
+    max-height: 100px;
+    width: 118%;
     margin: 0px -9%;
-
-}
-@media screen and (max-width: 450px) {
-    #logo-container {
-        background-size: cover;
-    }
 }
 
 @media print {
@@ -509,7 +503,8 @@ table.footnote {
 
     #wrapper {
         margin: 0 15px;
-        padding: 10px 0 0;
+        padding: 0 0 0;
+        padding: 0 0 0;
     }
 
     header.page-header {
@@ -517,8 +512,9 @@ table.footnote {
         margin: 0;
     }
 
-    #logo-container {
-            margin: 0;
+    #logo-image {
+        width: 100%;
+        margin: 0px 0px;
     }
 
     header.page-header h1 {
