@@ -381,7 +381,8 @@ Check out his course here: https://www.state-machine.com/quickstart/
 
 Next post
 =========
-In the next post, I'll talk about alternate dev environments and how I converged on what I've described here. There are many easier and more *complete/integrated* solutions, but we have a stated goal of gaining understanding and this is a forcing function for more control over details.
+
+In `Part 2 <{filename}/programming/baremetal-riscv-renode-2.rst>`_ I review a list alternate dev environment and how I converged on what I've described here. There are many easier and more *complete/integrated* solutions, but we have a stated goal of gaining understanding and this is a forcing function for more control over details.
 
 Footnotes
 =========
