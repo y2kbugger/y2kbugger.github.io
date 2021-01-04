@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <title>Baremetal RISC-V Renode - Part 2: Tool considerations - blog.y2kbugger.com</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link rel="stylesheet" href="/theme/css/styles.css">
+        <link rel="stylesheet" href="/theme/css/pygment.css">
+        
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
+
+
+
+
+        <meta name="tags" contents="baremetal"/>
+        <meta name="tags" contents="RISC-V"/>
+        <meta name="tags" contents="Renode"/>
+        <meta name="tags" contents="assembly"/>
+        <meta name="tags" contents="CPUs"/>
+</head>
+
+<body>
+
+
+<div id="wrapper">
+    <a href="/index.html">
+        <img id="logo-image" src="https://lh3.googleusercontent.com/pw/ACtC-3dZJEyHJN3-FqVljZiFt0SZ5xelIGeV8Ka7eKH78bwV-mQAm2_NQiqMboKonLEBfBAXn8PrzqoL7iN9vLy6aO6MQsxkDehaCUxfTxm_DgSCn0ek6oZ4aG4OHat6BY51Y7X4eSBsvUbvi787atMXXAZzzw=w400-h160-no?authuser=0" />
+    </a>
+    <nav>
+        <ul id="menu">
+                <li><a href="/tags.html">Tags</a>
+                </li>
+                        <li><a
+                                href="http://blog.y2kbugger.com/category/electronics.html">electronics</a></li>
+                        <li><a
+                                href="http://blog.y2kbugger.com/category/food.html">food</a></li>
+                        <li class="active"><a
+                                href="http://blog.y2kbugger.com/category/programming.html">programming</a></li>
+                        <li><a
+                                href="http://blog.y2kbugger.com/category/talks.html">talks</a></li>
+        </ul>
+    </nav>
+        <div class="social-container">
+        <ul>
+            <li class="social-item">Find me on:</li>
+            <li class="social-item social-twitter"><a href="https://twitter.com/y2kbugger">Twitter @y2kbugger</a></li>
+            <li class="social-item social-github"><a href="https://github.com/y2kbugger">GitHub</a></li>
+            <li class="social-item social-linkedin"><a href="http://zakkohler.com">LinkedIn</a></li>
+        </ul>
+    </div>
+
+
+    <header class="page-header">
+    <h1>Baremetal RISC-V Renode - Part 2: Tool considerations</h1>
+
+    <div class="article-meta">
+                <span class="author">By zak kohler</span>
+        <span class="publication-date" title="2021-01-03T23:55:43-05:00"> on 2021.01.03 @ 23:55</span>
+        <span class="modification-date" title="2021-01-22T23:55:43-05:00"> last modified on 2021.01.22 @ 23:55</span>
+
+
+            <div class="tags">
+                Tagged:
+                    <a href="http://blog.y2kbugger.com/tag/baremetal.html">baremetal</a>,                    <a href="http://blog.y2kbugger.com/tag/risc-v.html">RISC-V</a>,                    <a href="http://blog.y2kbugger.com/tag/renode.html">Renode</a>,                    <a href="http://blog.y2kbugger.com/tag/assembly.html">assembly</a>,                    <a href="http://blog.y2kbugger.com/tag/cpus.html">CPUs</a>            </div>
+    </div>
+
+    </header>
+
+    <main class="content">
+    <div class="article-content">
+        <!-- Google Photos Album: https://photos.app.goo.gl/LUXeip6Xz85QRTn78
+https://www.youtube.com/watch?v=D0VuYe77Wu0&list=PLb-MsRpo_wlLW0EWRpAqnbbDsf4kxSI1x -->
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#series" id="id2">Series</a></li>
+<li><a class="reference internal" href="#background" id="id3">Background</a></li>
+<li><a class="reference internal" href="#compiler-toolchains" id="id4">Compiler toolchains</a><ul>
+<li><a class="reference internal" href="#gcc" id="id5">GCC</a></li>
+<li><a class="reference internal" href="#llvm-clang" id="id6">LLVM/Clang</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#simulators-emulators" id="id7">Simulators/Emulators</a><ul>
+<li><a class="reference internal" href="#renode" id="id8">Renode</a></li>
+<li><a class="reference internal" href="#qemu" id="id9">Qemu</a></li>
+<li><a class="reference internal" href="#spike" id="id10">Spike</a></li>
+<li><a class="reference internal" href="#educational" id="id11">Educational</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#integrated-development-environments" id="id12">Integrated Development environments</a><ul>
+<li><a class="reference internal" href="#eclipse-cdt" id="id13">Eclipse CDT</a></li>
+<li><a class="reference internal" href="#platformio" id="id14">Platformio</a></li>
+<li><a class="reference internal" href="#vs-code" id="id15">VS Code</a></li>
+<li><a class="reference internal" href="#litex-buildenv" id="id16">litex buildenv</a></li>
+<li><a class="reference internal" href="#other" id="id17">Other</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#operating-systems-sdk" id="id18">Operating systems/SDK</a></li>
+<li><a class="reference internal" href="#next-post" id="id19">Next post</a></li>
+</ul>
+</div>
+<div class="section" id="series">
+<h2><a class="toc-backref" href="#id2">Series</a></h2>
+<p>I'm exploring the line between hardware and software by creating a series of demos within a minimal, free and open source environment. These demos span from blinking an LED to implementing a toy operating system. The goal is to minimize parts of the system that we take for granted and gain a better understanding of computers and operating systems.</p>
+<p>Start at <a class="reference external" href="http://blog.y2kbugger.com/baremetal-riscv-renode-1.html">Part 1</a>, we setup a bare minimum LED blinking example to demonstrate how to compile your development environment and debug the software in real-time using GDB.</p>
+</div>
+<div class="section" id="background">
+<h2><a class="toc-backref" href="#id3">Background</a></h2>
+<p>This post catalogs the tools I tried as well as the tools I skipped over when developing the dev environment from Part 1. Comment below if I missed something or if something new has come out.</p>
+</div>
+<div class="section" id="compiler-toolchains">
+<h2><a class="toc-backref" href="#id4">Compiler toolchains</a></h2>
+<p>As stated in part one, because one goal is to run RISC-V binaries, we need a compiler that can run on an x86 PC, but compile to RISC-V bytecode.</p>
+<div class="section" id="gcc">
+<h3><a class="toc-backref" href="#id5">GCC</a></h3>
+<p>In <a class="reference external" href="http://blog.y2kbugger.com/baremetal-riscv-renode-1.html">Part 1</a> we set up a RISC-V cross compiling GCC. To me, riscv-gnu-toolchain seemed to be the official C compiler for RISCV. Many other SDKs/IDEs are based on the gcc as well.</p>
+<p>I use riscv-gnu-toolchain instead of upstream gcc because it includes binutils and C library build configurations.</p>
+</div>
+<div class="section" id="llvm-clang">
+<h3><a class="toc-backref" href="#id6">LLVM/Clang</a></h3>
+<p>As of September 2019, LLVM 9 has promoted the <em>experimental</em> RISC-V backend to <em>official</em>. The support has been prototyped as <cite>lowRISC</cite> starting in 2016, which was then merged upstream as <em>experimental</em> before being promoted to <em>official</em>. This history indicates that there has probably been considerable testing, comment if you know of any production applications.</p>
+<p>LLVM has some features/warnings that GCC might be missing. It may also integrate with code analysis tools and autocompletion in a more streamlined way.</p>
+<p>One other thing I find interesting is that the main author of LLVM, Chris Lattner, has been <a class="reference external" href="https://www.sifive.com/blog/with-sifive-we-can-change-the-world">hired by the RISC-V company SiFive</a>.</p>
+</div>
+</div>
+<div class="section" id="simulators-emulators">
+<h2><a class="toc-backref" href="#id7">Simulators/Emulators</a></h2>
+<p>In order to run non-native code, we need a simulator. This can be as simple as just translating the from one ISA to another, but it can also include peripherals and OS functionality, such as standard input output.</p>
+<div class="section" id="renode">
+<h3><a class="toc-backref" href="#id8">Renode</a></h3>
+<p>I learned of Renode from the FPGA community. From what I can tell, they are able  high level hardware description language and compile it to either an FPGA bitstream or a Renode platform. This allows simulating an entire system, hardware and software together, without ever needing physical hardware and therefore, easier and more complete automatic testing.</p>
+</div>
+<div class="section" id="qemu">
+<h3><a class="toc-backref" href="#id9">Qemu</a></h3>
+<p>Qemu a very popular emulation and virtualization tool. It is very useful for running non-native binaries within linux. Others use it for running guest operating systems. When I spent some time with it, I couldn't control the low-level details of the platform as much as Renode. A lot of complexity in the system seemed to revolve around PC peripherals, GUI, and virtualization that doesn't matter for trying to learn about baremetal programming. I also couldn't figure out a way to get rid of PC BIOS.</p>
+</div>
+<div class="section" id="spike">
+<h3><a class="toc-backref" href="#id10">Spike</a></h3>
+<p>Spike is a RISC-V specific emulator: <a class="reference external" href="https://github.com/riscv/riscv-isa-sim">https://github.com/riscv/riscv-isa-sim</a></p>
+<p>I haven't tried this one myself. I looks like configurability is focused on customizing the CPU, e.g. custom opcodes, rather than IO or other embedded hardware.</p>
+</div>
+<div class="section" id="educational">
+<h3><a class="toc-backref" href="#id11">Educational</a></h3>
+<p>Below are a few graphical simulators that try to explain the execution as it is happening. These are targeted at understanding opcodes and other RISC-V specifics rather than actually programming for a hardware platform with peripherals.</p>
+<ul class="simple">
+<li><a class="reference external" href="http://tice.sea.eseo.fr/riscv/">http://tice.sea.eseo.fr/riscv/</a></li>
+<li><a class="reference external" href="https://ascslab.org/research/briscv/simulator/simulator.html">https://ascslab.org/research/briscv/simulator/simulator.html</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="integrated-development-environments">
+<h2><a class="toc-backref" href="#id12">Integrated Development environments</a></h2>
+<p>There are many good IDE solutions if your goal get work done on an embedded application, I discuss a few in detail below.</p>
+<p>These IDEs provide standard development tools such as compiler and debugger, but also support deploying to a board for testing and debugging on a board via JTAG or other hardware debugger.</p>
+<p>Some even support deploying to a simulator rather than real-work target. To me this is very valuable as it enables testing automation without requiring specific hardware.</p>
+<div class="section" id="eclipse-cdt">
+<h3><a class="toc-backref" href="#id13">Eclipse CDT</a></h3>
+<p>After figuring out the Java runtime and getting the versions of Eclipse and the CDT extension all working, I kinda ran out steam as every configuration was overly &quot;eclipse centric&quot;. I wanted to spend my time learning about embedded not learning about eclipse.</p>
+</div>
+<div class="section" id="platformio">
+<h3><a class="toc-backref" href="#id14">Platformio</a></h3>
+<p>Platformio is a universal embedded development extension for Microsoft's VS Code.</p>
+<p>Platformio describes itself as:</p>
+<blockquote>
+Open source, cross-platform IDE and Unified Debugger. Static Code Analyzer and Remote Unit Testing. Multi-platform and Multi-architecture Build System.</blockquote>
+<p>I found that it was super convenient for &quot;just getting starting&quot; and getting stuff done. It is heavy but the extension bootstraps itself and the defaults are very sane. However, like eclipse, I didn't want to spend my time learning &quot;how does Platformio work&quot; every time I want to peek behind the curtain or tweak something low-level.</p>
+<p>Additionally, it only supported a handful of real boards when integrating with Renode, and it wasn't straightforward on how to customize the Renode platform and keep the integration working.</p>
+<p>Lastly, since it is a VS Code extension, we don't have a way to reproducibly build the platform and therefore any blog I write could go outdated as Platformio evolves.</p>
+<div class="figure">
+<img alt="Platformio screenshot" src="https://lh3.googleusercontent.com/pw/ACtC-3eEUNqaGzfNKQxydmtODWEllXemhHGT0fzswHlEIpK1-o6kQRy-xxHL1m7rXy64cLI5j_JHbVO4oqtAif-M9_Hn8XCUCGBlf6dCj-eDa-T7O2RWrMZZ86d-NbUUlHxEnBg3XXIWZUalZfbfj-oYOsRHIQ=w960-h494-no" />
+<p class="caption">Using Platformio to interact with registers, memory, source code and disassembly.</p>
+</div>
+</div>
+<div class="section" id="vs-code">
+<h3><a class="toc-backref" href="#id15">VS Code</a></h3>
+<p>I also tried to configure a handful different VS Code extensions to support our manually compiled GCC cross compiling toolchains. None ever ended up with better GDB support than the native GDB TUI. The three most promising were:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools">C/C++ for Visual Studio Code</a> - Microsoft's official C extension. Configurable but not configurable enough.</li>
+<li><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=webfreak.debug">Native Debugger</a> - This one seems like it could work, but I don't think I ever got it launching/debugging how I wanted it. It's open source so I think it could be done, even if it required more than just configuration.</li>
+<li><cite>Cortex-Debug</cite> &lt;<a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug">https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug</a>&gt;`_ Another open source extension. Although it is ARM specific, you provide your own gnu toolchain, so it may be viable.</li>
+</ul>
+</div>
+<div class="section" id="litex-buildenv">
+<h3><a class="toc-backref" href="#id16">litex buildenv</a></h3>
+<p><a class="reference external" href="https://github.com/timvideos/litex-buildenv">https://github.com/timvideos/litex-buildenv</a></p>
+<p>Litex buildenv is much more than just a way to compile code and get it running on real or simulated hardware. It actually facilitates specifying hardware in high level hardware description languages and compiling that down to create a soft CPU core on an FPGA. As part of the environment, it can be configured to deploy software to either a renode simulator, or to actual hardware.</p>
+</div>
+<div class="section" id="other">
+<h3><a class="toc-backref" href="#id17">Other</a></h3>
+<ul class="simple">
+<li>IAR</li>
+<li>Segger</li>
+<li><a class="reference external" href="https://www.sam-solutions.com/blog/top-ten-embedded-software-development-tools/">https://www.sam-solutions.com/blog/top-ten-embedded-software-development-tools/</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="operating-systems-sdk">
+<h2><a class="toc-backref" href="#id18">Operating systems/SDK</a></h2>
+<ul class="simple">
+<li>freedom e sdk - <a class="reference external" href="https://github.com/sifive/freedom-e-sdk">https://github.com/sifive/freedom-e-sdk</a> This SDK is totally worth reading through and trying. You will learn a lot.</li>
+<li>Zephyr <a class="reference external" href="https://www.zephyrproject.org/zephyr-an-operating-system-for-iot/">https://www.zephyrproject.org/zephyr-an-operating-system-for-iot/</a></li>
+<li>Linux</li>
+<li>FreeRTOS</li>
+<li>MBed OS</li>
+<li>NuttX</li>
+<li><a class="reference external" href="https://micro-ros.github.io/docs/concepts/rtos/comparison/">https://micro-ros.github.io/docs/concepts/rtos/comparison/</a></li>
+</ul>
+</div>
+<div class="section" id="next-post">
+<h2><a class="toc-backref" href="#id19">Next post</a></h2>
+<p>In the next post I will show how to do basic IO via Serial UART. This introduces how to utilize hardware interrupts and how to compile C along with the RISC-V assembly.</p>
+</div>
+
+    </div>
+
+    <script src="https://utteranc.es/client.js"
+            repo="y2kbugger/y2kbugger.github.io"
+            issue-term="pathname"
+            label="utterances"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    </main>
+
+
+    <footer class="page-footer">
+            <div class="social-container">
+        <ul>
+            <li class="social-item">Find me on:</li>
+            <li class="social-item social-twitter"><a href="https://twitter.com/y2kbugger">Twitter @y2kbugger</a></li>
+            <li class="social-item social-github"><a href="https://github.com/y2kbugger">GitHub</a></li>
+            <li class="social-item social-linkedin"><a href="http://zakkohler.com">LinkedIn</a></li>
+        </ul>
+    </div>
+
+            zak kohler 2021 &mdash; Happy Hacking
+    </footer>
+
+</div>
+</body>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-111274102-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</html>
