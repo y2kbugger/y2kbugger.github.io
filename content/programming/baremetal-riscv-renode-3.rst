@@ -1,12 +1,12 @@
-Baremetal RISC-V Renode - Part 1: Blinky
-########################################
+Baremetal RISC-V Renode - Part 3: Interrupts, C, and UART IO
+############################################################
 
 :date: 2020-12-22 00:11:42
 :modified: 2020-12-22 00:11:42
 :tags: baremetal, RISC-V, Renode, assembly, CPUs
 :author: zak kohler
 :summary: Explore the line between hardware and software while creating a minimal, vendor-free environment to write and play with toy operating systems.
-:status: published
+:status: draft
 :cover: `https://lh3.googleusercontent.com/pw/ACtC-3chg3Hd7-XPkvOum0SQv3f9EZ30vjZ3BB70OMbEqWVWO9GkvjOh-sBBWg-cU_oD2xo7jj4TTvQReAX-2F4HSt6OPOur1bb06A-fQZUti-STZ0clEEkYPsCrHAhMq2rVkKLU2psnCGzE_pfs5rIWrda0xg=w454-h669-no`
 
 ..
@@ -16,10 +16,21 @@ Baremetal RISC-V Renode - Part 1: Blinky
 .. contents::
     :depth: 2
 
+Series
+======
+I'm exploring the line between hardware and software by creating a series of demos within a minimal, free and open source environment. These demos span from blinking an LED to implementing a toy operating system. The goal is to minimize parts of the system that we take for granted and gain a better understanding of computers and operating systems.
+
+Start at `Part 1 <{filename}/programming/baremetal-riscv-renode-1.rst>`_, we setup a bare minimum LED blinking example to demonstrate how to compile your development environment and debug the software in real-time using GDB.
+
 Background
 ==========
+In this article we will interfacing with a virtual UART. This will allow to do character based serial input and output.
 
-I'm exploring the line between hardware and software by creating a series of demos within a minimal, free and open source environment. These demos span from blinking an LED to implementing a toy operating system. The goal is to minimize parts of the system that we take for granted and gain a better understanding of computers and operating systems.
+To accomplish with there are a few new things to learn:
+
+- Interrupts
+- 
+
 
 What is baremetal?
 ------------------
