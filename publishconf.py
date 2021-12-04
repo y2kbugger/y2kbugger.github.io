@@ -10,6 +10,9 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
+MENUITEMS = [(text, link) for text,link in MENUITEMS if text != 'Drafts']
+
+
 DEBUG = False
 SITEURL = 'http://blog.y2kbugger.com'
 RELATIVE_URLS = False

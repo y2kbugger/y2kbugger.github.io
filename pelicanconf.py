@@ -30,6 +30,7 @@ AUTHOR_FEED_RSS = None
 
 MENUITEMS = [
     # ("blog.y2kbugger.com", '/index.html'),
+    ('Drafts', '/drafts'),
     ('Tags', '/tags.html'),
     # ('About', '/pages/about.html'),
 ]
