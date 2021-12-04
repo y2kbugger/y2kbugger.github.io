@@ -5,7 +5,7 @@ https://www.youtube.com/watch?v=D0VuYe77Wu0&amp;list=PLb-MsRpo_wlLW0EWRpAqnbbDsf
 &lt;div class="contents topic" id="contents"&gt;
 &lt;p class="topic-title"&gt;Contents&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#series" id="id2"&gt;Series&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#baremetal-risc-v-renode-series" id="id2"&gt;Baremetal RISC-V Renode Series&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#background" id="id3"&gt;Background&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#compiler-toolchains" id="id4"&gt;Compiler toolchains&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#gcc" id="id5"&gt;GCC&lt;/a&gt;&lt;/li&gt;
@@ -31,8 +31,8 @@ https://www.youtube.com/watch?v=D0VuYe77Wu0&amp;list=PLb-MsRpo_wlLW0EWRpAqnbbDsf
 &lt;li&gt;&lt;a class="reference internal" href="#next-post" id="id19"&gt;Next post&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;div class="section" id="series"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#id2"&gt;Series&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="section" id="baremetal-risc-v-renode-series"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id2"&gt;Baremetal RISC-V Renode Series&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;I'm exploring the line between hardware and software by creating a series of demos within a minimal, free and open source environment. These demos span from blinking an LED to implementing a toy operating system. The goal is to minimize parts of the system that we take for granted and gain a better understanding of computers and operating systems.&lt;/p&gt;
 &lt;p&gt;Start at &lt;a class="reference external" href="http://blog.y2kbugger.com/baremetal-riscv-renode-1.html"&gt;Part 1&lt;/a&gt;, we setup a bare minimum LED blinking example to demonstrate how to compile your development environment and debug the software in real-time using GDB.&lt;/p&gt;
 &lt;/div&gt;
