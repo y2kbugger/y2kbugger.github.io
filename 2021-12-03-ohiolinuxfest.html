@@ -3,7 +3,7 @@
 <head>
             <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
-        <title>Baremetal RISC-V Renode - blog.y2kbugger.com</title>
+        <title>A Simple RISC-V Multitasking OS for Learning - blog.y2kbugger.com</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/theme/css/normalize.css">
         <link rel="stylesheet" href="/theme/css/styles.css">
@@ -54,11 +54,11 @@
 
 
     <header class="page-header">
-    <h1>Baremetal RISC-V Renode</h1>
+    <h1>A Simple RISC-V Multitasking OS for Learning</h1>
 
     <div class="article-meta">
                 <span class="author">By zak kohler</span>
-        <span class="publication-date" title="2020-11-06T00:00:00-05:00"> on 2020.11.06</span>
+        <span class="publication-date" title="2021-12-03T00:00:00-05:00"> on 2021.12.03</span>
 
 
             <div class="tags">
@@ -70,20 +70,22 @@
 
     <main class="content">
     <div class="article-content">
-        <p>&#64; <strong>Ohio Linuxfest</strong>, <em>Virtual</em></p>
-<!-- Google Photos Album: https://photos.app.goo.gl/LUXeip6Xz85QRTn78 -->
-<p><a class="reference external" href="https://docs.google.com/presentation/d/1BnCyFaq_yDQMpGsGNcsVLQeVmer9JnVh4CuCS1wOK_c/edit?usp=sharing">Slides</a>
-<a class="reference external" href="http://blog.y2kbugger.com/baremetal-riscv-renode-1.html">Main Blog Article</a></p>
+        <p>&#64; <strong>Ohio Linuxfest</strong>, <em>Columbus, Ohio</em></p>
+<!-- Google Photos Album: https://photos.app.goo.gl/dfXck6rcLDcZHtv17 -->
+<p><a class="reference external" href="https://docs.google.com/presentation/d/1BQ1FQoe7_6b0b84McHxIMIjrNTbw7o7dNMAjr6hmTFw/edit?usp=sharing">Slides</a></p>
+<p><a class="reference external" href="{filename}/programming/baremetal-riscv-renode-4.rst">Blog Article (coming soon)</a></p>
 <div class="highlight"><pre><span></span>git clone https://github.com/y2kbugger/baremetal-riscv-renode.git
 </pre></div>
 <div class="videoembed-container">
-<iframe class="videoembed-iframe" src="https://www.youtube.com/embed/JkeRezvCVfM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="section" id="abstract">
+Youtube embed coming soon
+<!-- <iframe class="videoembed-iframe" src="https://www.youtube.com/embed/JkeRezvCVfM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>--!>
+</div><div class="section" id="abstract">
 <h2>Abstract</h2>
-<p>Explore the line between hardware and software by writing code with absolute control over the cpu and peripherals. We’ll explore how to do this using a completely free and open source simulator (Renode), toolchain (GCC), and instruction set (RISC-V). Using assembly, we’ll initialize parts of the system such as CPU interrupts and privilege levels, and setting up a call stack so we can use C. Using C we’ll build a handler for serial IO. Finally we’ll talk about the next steps in building a toy operating system such as building a simple monitor menu, memory management, and multitasking.</p>
+<p>Explore the line between hardware and software by writing code with absolute control over the cpu and peripherals. We'll explore how to do this using a completely free and open source simulator (Renode), toolchain (GCC), and instruction set (RISC-V). Using assembly, we'll initialize parts of the system such as CPU interrupts and privilege levels. Finally we'll review the assembly code for doing a context switch, the key software to which enables multitasking via timesharing.</p>
 </div>
 <div class="section" id="bio">
 <h2>Bio</h2>
-<p>Zak Kohler is a Chemical Engineer by education but true computer geek at heart. He started programming in 3rd grade and has never looked back. Often zak states that his biggest regret is not finding Python and Linux sooner...that didn't happen until university. Electronics is his second love and he fuses the two by playing with early computer hardware as well as modern microcontrollers. When zak isn't messing with computers he can be found turning milk into cheese, drawing, or exploring the world on long walks.</p>
+<p>Zak Kohler is a Chemical Engineer by training but a hacker at heart. He started programming in 3rd grade and has never let up. His first foray in open source was in early high school, and he discovered Linux and Free Software at university. Electronics is his second love and he fuses the two by playing with early computer hardware, modern microcontrollers and FPGAs. When zak isn't messing with computers he can be found growing plants, drawing, and exploring the world on foot.</p>
 </div>
 
     </div>
