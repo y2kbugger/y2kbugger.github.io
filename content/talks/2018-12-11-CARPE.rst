@@ -21,7 +21,8 @@ Learn how computers work between silicon and assembly — Build a CPU with Pytho
    :alt: Slide about my CPU presentation.
    :align: center
 
-
+Abstract
+========
 Programming languages are designed for a specific level of abstraction or distance from the hardware. The main trade off is "developer productivity" vs "control over hardware". C and assembly are low level and therefore map closely to CPU instructions. Python on the other hand goes through many layers, libraries, and a virtual machine before the CPU is reached. This allows powerful programs to be written concisely and cross-platform—but it also conceals the true nature at the heart of our modern world. Unveiling the magic within can lead to interesting insights about how computing got to where it is today.
 
 
