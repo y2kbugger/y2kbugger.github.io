@@ -24,45 +24,53 @@ Start at `Part 1 <{filename}/programming/baremetal-riscv-renode-1.rst>`_, we set
 
 Background
 ==========
-In this article we will interfacing with a virtual UART. This will allow to do character based serial input and output.
+In this article we will interfacing with a virtual UART. This will allow us to input and output a serial stream of character bytes.
 
-To accomplish with there are a few new things to learn:
+This example includes a few new concepts.
 
 - Interrupts
-- 
+- C, including initialization
+
+Adding a UART to Renode
+=======================
+We are using the UART from the Litex project. todo:link Litex is a High Level HDL project that makes it easy to design a system on a ship and target both simulations and FPGA.
+
+Because we are dealing with virtual hardware there isn't actual a datasheet. Instead we the we have 3 different code repositories that can are useful for understanding the virtual hardware.
 
 
-What is baremetal?
-------------------
-In the non-embedded world, when you compile and link a C program into an executable you are doing so with the intention of running it *within* a specific operating system. When you compile baremetal or ``-freestanding`` you are telling the compiler that you intend to run this without relying on an operating system. This could be used, for example, to write an operating system. Alternatively it can be used to access the hardware of a system directly on an embedded system. Doing so sacrifices higher level luxuries such as memory management, standard IO, thread/process control, etc. Because of this, sometimes it makes sense to run on a type of minimal OS optimized for embedded, e.g. a real time operating system or RTOS.
+- The actual Litex  `hardware description <https://github.com/enjoy-digital/litex/blob/master/litex/soc/cores/uart.py>`_ for the UART
+- A `UART driver <https://github.com/enjoy-digital/litex/blob/master/litex/soc/software/libbase/uart.c>`_ also provided by the Litex project
+- The Renode project provides a software `emulation <https://github.com/renode/renode-infrastructure/blob/master/src/Emulator/Peripherals/Peripherals/UART/LiteX_UART.cs>`_ of the Litex UART. This implements the hardware functionality without have to a full verilog/gate level fimulaation.
 
-When you use a commercial development platform, you will likely be provided with a cross compiling toolchain and possibly an RTOS. For an example see `freedom-e-sdk <https://github.com/sifive/freedom-e-sdk>`_. Alternatively, there are also attempts to make small, but hardware agonistic RTOS see `zephyr <https://www.zephyrproject.org/>`_.
+To get the offsets and registers the easiest way was to look at the Renode emulation directly. You can see that
 
-What is RISC-V?
----------------
-RISC-V is an open alternative to ARM or x86.
+.. code-block:: csharp
 
-Wikipedia
+    Event....etc show renode source
 
-    RISC-V (pronounced "risk-five") is an open standard instruction set architecture (ISA) based on established reduced instruction set computer (RISC) principles. Unlike most other ISA designs, the RISC-V ISA is provided under open source licenses that do not require fees to use.
+Interrupt Handling
+==================
+Interrupts are an asyncronous way to externally trigger the CPU to jump.
 
-What is Renode?
----------------
-Renode is a simulator designed for embedded firmware. What sets it apart is the goal of not only emulating CPUs and SOCs, but also entire boards with peripherals such as ethernet and even multi-node networks of devices.
+Typically they jump to a particular memory location, or a location + an offset based on the reason for the interrupt.
 
-Alternatives such as QEMU aren't as optimized for the embedded space.
-
-An emulator that you might use for playing video game ROMs is specialized for a single platform. For example, in an emulator cpu, graphics chips, audio, memory-map, etc are fixed and optimized. Renode on the other hand configures each platform with a config file.
+RISC-V interrupts
+-----------------
+RISC-V interrupts come in two flavor, the original Core Local Interrupter (CLINT), and the Core Local Interrupt Controller (CLIC).
+The difference between the two is described here. CLINT is the default, and CLIC can be turned on during through Control Status Registers.
+https://sifive.cdn.prismic.io/sifive/0d163928-2128-42be-a75a-464df65e04e0_sifive-interrupt-cookbook.pdf
 
 Source code
 ===========
-To get started you will need to clone the repository. This includes all of the examples as well as the source for Renode simulator and GCC RISC-V toolchain.
+Switch to the forlder ``3_uart``
 
-Renode and GCC are linked via ``git submodule`` so if you use ``--recursive`` you can clone everything in one shot.
+``make launch``
+then in another terminal
+``make uart``
 
-.. code-block:: giturl
 
-   git clone --recursive https://github.com/y2kbugger/baremetal-riscv-renode.git
+XXXXXXXXXXXXXXXXXXX
+===================
 
 Toolchain compilation
 =====================
