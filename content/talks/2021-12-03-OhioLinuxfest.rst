@@ -39,4 +39,3 @@ Bio
 ===
 Zak Kohler is a Chemical Engineer by training but a hacker at heart. He started programming in 3rd grade and has never let up. His first foray in open source was in early high school, and he discovered Linux and Free Software at university. Electronics is his second love and he fuses the two by playing with early computer hardware, modern microcontrollers and FPGAs. When zak isn't messing with computers he can be found growing plants, drawing, and exploring the world on foot.
 
-
