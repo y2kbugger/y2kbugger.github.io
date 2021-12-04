@@ -16,8 +16,8 @@ Baremetal RISC-V Renode - Part 2: Tool considerations
 .. contents::
     :depth: 2
 
-Series
-======
+Baremetal RISC-V Renode Series
+==============================
 I'm exploring the line between hardware and software by creating a series of demos within a minimal, free and open source environment. These demos span from blinking an LED to implementing a toy operating system. The goal is to minimize parts of the system that we take for granted and gain a better understanding of computers and operating systems.
 
 Start at `Part 1 <{filename}/programming/baremetal-riscv-renode-1.rst>`_, we setup a bare minimum LED blinking example to demonstrate how to compile your development environment and debug the software in real-time using GDB.
