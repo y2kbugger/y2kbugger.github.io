@@ -1,13 +1,13 @@
 Baremetal RISC-V Renode - Part 3: Interrupts, C, and UART IO
 ############################################################
 
-:date: 2020-12-04
-:modified: 2020-12-04
+:date: 2021-12-13
+:modified: 2021-12-13
 :tags: baremetal, RISC-V, Renode, assembly, CPUs
 :author: zak kohler
 :summary: Explore the line between hardware and software while creating a minimal, vendor-free environment to write and play with toy operating systems.
-:status: draft
-:cover: `https://lh3.googleusercontent.com/pw/ACtC-3chg3Hd7-XPkvOum0SQv3f9EZ30vjZ3BB70OMbEqWVWO9GkvjOh-sBBWg-cU_oD2xo7jj4TTvQReAX-2F4HSt6OPOur1bb06A-fQZUti-STZ0clEEkYPsCrHAhMq2rVkKLU2psnCGzE_pfs5rIWrda0xg=w454-h669-no`
+:status: published
+:cover: `https://lh3.googleusercontent.com/pw/AM-JKLU9jeZK0bt91k_1mjK0PrsbQCBmSrmMlj6vP40BDauxYDfznSIpzJCo4Okmorm2MTxD09NqPpE312n2_zsL1KFb1tmPIPIy5gEITFFvelJ6MV-o_HuRFnm628B4GCPsQss2awXpu5HZ7vj0-gHXov2www=w425-h241-no`
 
 ..
   Google Photos Album: https://photos.app.goo.gl/LUXeip6Xz85QRTn78
