@@ -24,7 +24,7 @@ Start at `Part 1 <{filename}/programming/baremetal-riscv-renode-1.rst>`_, we set
 
 Background
 ==========
-In this article we will interfacing with a virtual UART. This will allow us to input and output a serial stream of character bytes.
+In this article we will be interfacing with a virtual UART. This will allow us to input and output a serial stream of character bytes.
 
 This example includes a few new concepts.
 
@@ -35,12 +35,12 @@ Adding a UART to Renode
 =======================
 We are using the UART from the Litex project. Litex is a High Level HDL project that makes it easy to design a system on a ship and target both simulations and FPGA.
 
-Because we are dealing with virtual hardware there isn't actual a datasheet. Instead we the we have 3 different code repositories that can are useful for understanding the virtual hardware.
+Because we are dealing with virtual hardware there isn't a datasheet. Instead we have 3 different code repositories that are useful for understanding the virtual hardware.
 
 
 - The actual Litex  `hardware description <https://github.com/enjoy-digital/litex/blob/master/litex/soc/cores/uart.py>`_ for the UART
 - A `UART driver <https://github.com/enjoy-digital/litex/blob/master/litex/soc/software/libbase/uart.c>`_ also provided by the Litex project
-- The Renode project provides a software `emulation <https://github.com/renode/renode-infrastructure/blob/master/src/Emulator/Peripherals/Peripherals/UART/LiteX_UART.cs>`_ of the Litex UART. This implements the hardware functionality without have to a full verilog/gate level fimulaation.
+- The Renode project provides a software `emulation <https://github.com/renode/renode-infrastructure/blob/master/src/Emulator/Peripherals/Peripherals/UART/LiteX_UART.cs>`_ of the Litex UART. This implements the hardware functionality without have to do a full verilog or gate-level simulation.
 
 To get the offsets and registers the easiest way was to look at the Renode emulation directly. You can see that
 
@@ -156,9 +156,9 @@ Then we just need to specify what to do when an interrupt comes in.
 In the real world you would need to check the reason code and figure out:
 
 1. What type of interrupt are we handling
-2. What is reason for interrupt?
+2. What is the reason for the interrupt?
 
-We can safely ignore this for out demo because the only source of interrupts will be the UART receiving a character.
+We can safely ignore this for our demo because the only source of interrupts will be the UART receiving a character.
 
 .. code-block:: C
 
