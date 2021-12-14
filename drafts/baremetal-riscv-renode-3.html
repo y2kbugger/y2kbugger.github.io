@@ -94,7 +94,7 @@ https://www.youtube.com/watch?v=D0VuYe77Wu0&list=PLb-MsRpo_wlLW0EWRpAqnbbDsf4kxS
 </div>
 <div class="section" id="background">
 <h2><a class="toc-backref" href="#id3">Background</a></h2>
-<p>In this article we will interfacing with a virtual UART. This will allow us to input and output a serial stream of character bytes.</p>
+<p>In this article we will be interfacing with a virtual UART. This will allow us to input and output a serial stream of character bytes.</p>
 <p>This example includes a few new concepts.</p>
 <ul class="simple">
 <li>Interrupts</li>
@@ -104,11 +104,11 @@ https://www.youtube.com/watch?v=D0VuYe77Wu0&list=PLb-MsRpo_wlLW0EWRpAqnbbDsf4kxS
 <div class="section" id="adding-a-uart-to-renode">
 <h2><a class="toc-backref" href="#id4">Adding a UART to Renode</a></h2>
 <p>We are using the UART from the Litex project. Litex is a High Level HDL project that makes it easy to design a system on a ship and target both simulations and FPGA.</p>
-<p>Because we are dealing with virtual hardware there isn't actual a datasheet. Instead we the we have 3 different code repositories that can are useful for understanding the virtual hardware.</p>
+<p>Because we are dealing with virtual hardware there isn't a datasheet. Instead we have 3 different code repositories that are useful for understanding the virtual hardware.</p>
 <ul class="simple">
 <li>The actual Litex  <a class="reference external" href="https://github.com/enjoy-digital/litex/blob/master/litex/soc/cores/uart.py">hardware description</a> for the UART</li>
 <li>A <a class="reference external" href="https://github.com/enjoy-digital/litex/blob/master/litex/soc/software/libbase/uart.c">UART driver</a> also provided by the Litex project</li>
-<li>The Renode project provides a software <a class="reference external" href="https://github.com/renode/renode-infrastructure/blob/master/src/Emulator/Peripherals/Peripherals/UART/LiteX_UART.cs">emulation</a> of the Litex UART. This implements the hardware functionality without have to a full verilog/gate level fimulaation.</li>
+<li>The Renode project provides a software <a class="reference external" href="https://github.com/renode/renode-infrastructure/blob/master/src/Emulator/Peripherals/Peripherals/UART/LiteX_UART.cs">emulation</a> of the Litex UART. This implements the hardware functionality without have to do a full verilog or gate-level simulation.</li>
 </ul>
 <p>To get the offsets and registers the easiest way was to look at the Renode emulation directly. You can see that</p>
 <div class="highlight"><pre><span></span><span class="k">private</span> <span class="k">enum</span> <span class="n">Registers</span> <span class="p">:</span> <span class="kt">long</span>
@@ -194,9 +194,9 @@ The difference between the two, and much more, is described in the sifive interr
 <p>In the real world you would need to check the reason code and figure out:</p>
 <ol class="arabic simple">
 <li>What type of interrupt are we handling</li>
-<li>What is reason for interrupt?</li>
+<li>What is the reason for the interrupt?</li>
 </ol>
-<p>We can safely ignore this for out demo because the only source of interrupts will be the UART receiving a character.</p>
+<p>We can safely ignore this for our demo because the only source of interrupts will be the UART receiving a character.</p>
 <div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">interrupt_handler</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="n">fancy_char</span><span class="p">((</span><span class="kt">char</span><span class="p">)</span><span class="n">uart</span><span class="o">-&gt;</span><span class="n">RxTx</span><span class="p">);</span>
