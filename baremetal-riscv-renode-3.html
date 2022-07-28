@@ -74,26 +74,26 @@ https://www.youtube.com/watch?v=D0VuYe77Wu0&list=PLb-MsRpo_wlLW0EWRpAqnbbDsf4kxS
 <div class="contents topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#baremetal-risc-v-renode-series" id="id2">Baremetal RISC-V Renode Series</a></li>
-<li><a class="reference internal" href="#background" id="id3">Background</a></li>
-<li><a class="reference internal" href="#adding-a-uart-to-renode" id="id4">Adding a UART to Renode</a></li>
-<li><a class="reference internal" href="#a-quick-note-about-using-c" id="id5">A quick note about using C</a></li>
-<li><a class="reference internal" href="#interrupt-handling" id="id6">Interrupt Handling</a><ul>
-<li><a class="reference internal" href="#risc-v-interrupts" id="id7">RISC-V interrupts</a></li>
+<li><a class="reference internal" href="#baremetal-risc-v-renode-series" id="toc-entry-1">Baremetal RISC-V Renode Series</a></li>
+<li><a class="reference internal" href="#background" id="toc-entry-2">Background</a></li>
+<li><a class="reference internal" href="#adding-a-uart-to-renode" id="toc-entry-3">Adding a UART to Renode</a></li>
+<li><a class="reference internal" href="#a-quick-note-about-using-c" id="toc-entry-4">A quick note about using C</a></li>
+<li><a class="reference internal" href="#interrupt-handling" id="toc-entry-5">Interrupt Handling</a><ul>
+<li><a class="reference internal" href="#risc-v-interrupts" id="toc-entry-6">RISC-V interrupts</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#driver-code" id="id8">Driver Code</a></li>
-<li><a class="reference internal" href="#run-the-example" id="id9">Run the example</a></li>
-<li><a class="reference internal" href="#next-post" id="id10">Next post</a></li>
+<li><a class="reference internal" href="#driver-code" id="toc-entry-7">Driver Code</a></li>
+<li><a class="reference internal" href="#run-the-example" id="toc-entry-8">Run the example</a></li>
+<li><a class="reference internal" href="#next-post" id="toc-entry-9">Next post</a></li>
 </ul>
 </div>
 <div class="section" id="baremetal-risc-v-renode-series">
-<h2><a class="toc-backref" href="#id2">Baremetal RISC-V Renode Series</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-1">Baremetal RISC-V Renode Series</a></h2>
 <p>I'm exploring the line between hardware and software by creating a series of demos within a minimal, free and open source environment. These demos span from blinking an LED to implementing a toy operating system. The goal is to minimize parts of the system that we take for granted and gain a better understanding of computers and operating systems.</p>
 <p>Start at <a class="reference external" href="http://blog.y2kbugger.com/baremetal-riscv-renode-1.html">Part 1</a>, we setup a bare minimum LED blinking example to demonstrate how to compile your development environment and debug the software in real-time using GDB.</p>
 </div>
 <div class="section" id="background">
-<h2><a class="toc-backref" href="#id3">Background</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-2">Background</a></h2>
 <p>In this article we will be interfacing with a virtual UART. This will allow us to input and output a serial stream of character bytes.</p>
 <p>This example includes a few new concepts.</p>
 <ul class="simple">
@@ -102,7 +102,7 @@ https://www.youtube.com/watch?v=D0VuYe77Wu0&list=PLb-MsRpo_wlLW0EWRpAqnbbDsf4kxS
 </ul>
 </div>
 <div class="section" id="adding-a-uart-to-renode">
-<h2><a class="toc-backref" href="#id4">Adding a UART to Renode</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-3">Adding a UART to Renode</a></h2>
 <p>We are using the UART from the Litex project. Litex is a High Level HDL project that makes it easy to design a system on a ship and target both simulations and FPGA.</p>
 <p>Because we are dealing with virtual hardware there isn't a datasheet. Instead we have 3 different code repositories that are useful for understanding the virtual hardware.</p>
 <ul class="simple">
@@ -111,15 +111,15 @@ https://www.youtube.com/watch?v=D0VuYe77Wu0&list=PLb-MsRpo_wlLW0EWRpAqnbbDsf4kxS
 <li>The Renode project provides a software <a class="reference external" href="https://github.com/renode/renode-infrastructure/blob/master/src/Emulator/Peripherals/Peripherals/UART/LiteX_UART.cs">emulation</a> of the Litex UART. This implements the hardware functionality without have to do a full verilog or gate-level simulation.</li>
 </ul>
 <p>To get the offsets and registers the easiest way was to look at the Renode emulation directly. You can see that</p>
-<div class="highlight"><pre><span></span><span class="k">private</span> <span class="k">enum</span> <span class="n">Registers</span> <span class="p">:</span> <span class="kt">long</span>
-<span class="p">{</span>
-    <span class="n">RxTx</span> <span class="p">=</span> <span class="m">0</span><span class="n">x0</span><span class="p">,</span>
-    <span class="n">TxFull</span> <span class="p">=</span> <span class="m">0</span><span class="n">x04</span><span class="p">,</span>
-    <span class="n">RxEmpty</span> <span class="p">=</span> <span class="m">0</span><span class="n">x08</span><span class="p">,</span>
-    <span class="n">EventStatus</span> <span class="p">=</span> <span class="m">0</span><span class="n">x0c</span><span class="p">,</span>
-    <span class="n">EventPending</span> <span class="p">=</span> <span class="m">0</span><span class="n">x10</span><span class="p">,</span>
-    <span class="n">EventEnable</span> <span class="p">=</span> <span class="m">0</span><span class="n">x14</span><span class="p">,</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="n">Registers</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kt">long</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">RxTx</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="m">0</span><span class="n">x0</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">TxFull</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="m">0</span><span class="n">x04</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">RxEmpty</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="m">0</span><span class="n">x08</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">EventStatus</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="m">0</span><span class="n">x0c</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">EventPending</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="m">0</span><span class="n">x10</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">EventEnable</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="m">0</span><span class="n">x14</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 <p>The actual configuration of the UART hardware is a very simple addition:</p>
 <p>vexriscv.repl</p>
@@ -131,64 +131,64 @@ uart: UART.LiteX_UART @ sysbus 0x60001800
 <p>All we needed to decide was where in memory to map the hardware, and what interrupt number to wire it to.</p>
 </div>
 <div class="section" id="a-quick-note-about-using-c">
-<h2><a class="toc-backref" href="#id5">A quick note about using C</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-4">A quick note about using C</a></h2>
 <p>This example is going to use C functions in addition to assembly.</p>
 <p>Since we are baremetal we need to set up the stack pointer ourselves.</p>
 <p>baremetal.s</p>
 <div class="highlight"><pre><span></span><span class="c1"># setup a stack pointer</span>
-<span class="nf">la</span> <span class="no">sp</span><span class="p">,</span> <span class="no">memtop</span>
+<span class="nf">la</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="no">memtop</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="section" id="interrupt-handling">
-<h2><a class="toc-backref" href="#id6">Interrupt Handling</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-5">Interrupt Handling</a></h2>
 <p>Interrupts are an asynchronous way to externally trigger the CPU to jump.</p>
 <p>Typically they jump to a particular memory location, or a location + an offset based on the reason for the interrupt.</p>
 <div class="section" id="risc-v-interrupts">
-<h3><a class="toc-backref" href="#id7">RISC-V interrupts</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-6">RISC-V interrupts</a></h3>
 <p>RISC-V interrupts come in two flavors, the original Core Local Interrupter (CLINT), and the Core Local Interrupt Controller (CLIC).
 The difference between the two, and much more, is described in the sifive interrupt cookbook.</p>
 <p><a class="reference external" href="https://sifive.cdn.prismic.io/sifive/0d163928-2128-42be-a75a-464df65e04e0_sifive-interrupt-cookbook.pdf">https://sifive.cdn.prismic.io/sifive/0d163928-2128-42be-a75a-464df65e04e0_sifive-interrupt-cookbook.pdf</a></p>
 </div>
 </div>
 <div class="section" id="driver-code">
-<h2><a class="toc-backref" href="#id8">Driver Code</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-7">Driver Code</a></h2>
 <p>All that is left is to write the code to actually interact with the hardware.</p>
 <p>Note that we are going for understandability, not performance, so we are creating an unbuffered solution here.</p>
 <p>Define a hardware register map to memory.</p>
 <p>baremetal.c</p>
-<div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span>
-<span class="p">{</span>
-    <span class="kt">uint32_t</span> <span class="n">RxTx</span><span class="p">;</span>
-    <span class="kt">uint32_t</span> <span class="n">TxFull</span><span class="p">;</span>
-    <span class="kt">uint32_t</span> <span class="n">RxEmpty</span><span class="p">;</span>
-    <span class="kt">uint32_t</span> <span class="n">EventStatus</span><span class="p">;</span>
-    <span class="kt">uint32_t</span> <span class="n">EventPending</span><span class="p">;</span>
-    <span class="kt">uint32_t</span> <span class="n">EventEnable</span><span class="p">;</span>
-<span class="p">}</span> <span class="n">UART</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">RxTx</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">TxFull</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">RxEmpty</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">EventStatus</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">EventPending</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">EventEnable</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="n">UART</span><span class="p">;</span><span class="w"></span>
 
-<span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">TxEvent</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b01</span><span class="p">;</span>
-<span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">RxEvent</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b10</span><span class="p">;</span>
-<span class="k">volatile</span> <span class="n">UART</span> <span class="o">*</span><span class="k">const</span> <span class="n">uart</span> <span class="o">=</span> <span class="p">(</span><span class="n">UART</span> <span class="o">*</span><span class="p">)</span><span class="mh">0x60001800</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">TxEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mb">0b01</span><span class="p">;</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">RxEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mb">0b10</span><span class="p">;</span><span class="w"></span>
+<span class="k">volatile</span><span class="w"> </span><span class="n">UART</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">uart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">UART</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="mh">0x60001800</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 <p>We need to set a flag in the UART to enable interrupt events.</p>
-<div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">init_uart</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">uart</span><span class="o">-&gt;</span><span class="n">EventEnable</span> <span class="o">=</span> <span class="n">RxEvent</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">init_uart</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">uart</span><span class="o">-&gt;</span><span class="n">EventEnable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RxEvent</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 <p>This is called in during startup, right before the final <cite>wfi</cite> spin-loop.</p>
-<div class="highlight"><pre><span></span><span class="na">...</span>
+<div class="highlight"><pre><span></span><span class="na">...</span><span class="w"></span>
 
-    <span class="c1"># set mie.MEIE=1 (enable M mode external interrupts)</span>
-    <span class="nf">li</span>      <span class="no">t0</span><span class="p">,</span> <span class="mi">0</span><span class="no">b0000100000000000</span>
-    <span class="nf">csrrs</span>   <span class="no">zero</span><span class="p">,</span> <span class="no">mie</span><span class="p">,</span> <span class="no">t0</span>
+<span class="w">    </span><span class="c1"># set mie.MEIE=1 (enable M mode external interrupts)</span>
+<span class="w">    </span><span class="nf">li</span><span class="w">      </span><span class="no">t0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="no">b0000100000000000</span><span class="w"></span>
+<span class="w">    </span><span class="nf">csrrs</span><span class="w">   </span><span class="no">zero</span><span class="p">,</span><span class="w"> </span><span class="no">mie</span><span class="p">,</span><span class="w"> </span><span class="no">t0</span><span class="w"></span>
 
-    <span class="nf">call</span> <span class="no">init_uart</span>
+<span class="w">    </span><span class="nf">call</span><span class="w"> </span><span class="no">init_uart</span><span class="w"></span>
 
-<span class="nl">wait_for_interrupt:</span>
-    <span class="nf">wfi</span>
-    <span class="nf">j</span> <span class="no">wait_for_interrupt</span>
-<span class="na">...</span>
+<span class="nl">wait_for_interrupt:</span><span class="w"></span>
+<span class="w">    </span><span class="nf">wfi</span><span class="w"></span>
+<span class="w">    </span><span class="nf">j</span><span class="w"> </span><span class="no">wait_for_interrupt</span><span class="w"></span>
+<span class="na">...</span><span class="w"></span>
 </pre></div>
 <p>Then we just need to specify what to do when an interrupt comes in.</p>
 <p>In the real world you would need to check the reason code and figure out:</p>
@@ -197,33 +197,33 @@ The difference between the two, and much more, is described in the sifive interr
 <li>What is the reason for the interrupt?</li>
 </ol>
 <p>We can safely ignore this for our demo because the only source of interrupts will be the UART receiving a character.</p>
-<div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">interrupt_handler</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">fancy_char</span><span class="p">((</span><span class="kt">char</span><span class="p">)</span><span class="n">uart</span><span class="o">-&gt;</span><span class="n">RxTx</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">interrupt_handler</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">fancy_char</span><span class="p">((</span><span class="kt">char</span><span class="p">)</span><span class="n">uart</span><span class="o">-&gt;</span><span class="n">RxTx</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 <p>For fun, we echo the transmitted character surrounded by an ASCII art border.</p>
-<div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">fancy_char</span><span class="p">(</span><span class="kt">char</span> <span class="n">c</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">char</span> <span class="n">s</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">###</span><span class="se">\n\r</span><span class="s">#X#</span><span class="se">\n\r</span><span class="s">###</span><span class="se">\n\r\n\r</span><span class="s">&quot;</span><span class="p">;</span>
-    <span class="n">s</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
-    <span class="n">puts</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">fancy_char</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">s</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">###</span><span class="se">\n\r</span><span class="s">#X#</span><span class="se">\n\r</span><span class="s">###</span><span class="se">\n\r\n\r</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">s</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">puts</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">void</span> <span class="nf">putc</span><span class="p">(</span><span class="kt">char</span> <span class="n">c</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">uart</span><span class="o">-&gt;</span><span class="n">RxTx</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">putc</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">uart</span><span class="o">-&gt;</span><span class="n">RxTx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">void</span> <span class="nf">puts</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">str</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">while</span> <span class="p">(</span><span class="o">*</span><span class="n">str</span> <span class="o">!=</span> <span class="sc">&#39;\0&#39;</span><span class="p">)</span>
-        <span class="n">putc</span><span class="p">(</span><span class="o">*</span><span class="n">str</span><span class="o">++</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">puts</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">str</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">str</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">&#39;\0&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="n">putc</span><span class="p">(</span><span class="o">*</span><span class="n">str</span><span class="o">++</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="section" id="run-the-example">
-<h2><a class="toc-backref" href="#id9">Run the example</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-8">Run the example</a></h2>
 <p>Ensure you have the setup from <a class="reference external" href="http://blog.y2kbugger.com/baremetal-riscv-renode-1.html">Part 1</a> completed.</p>
 <p>Switch to the folder <tt class="docutils literal">3_uart</tt></p>
 <p>In one terminal run:</p>
@@ -239,7 +239,7 @@ The difference between the two, and much more, is described in the sifive interr
 </div>
 </div>
 <div class="section" id="next-post">
-<h2><a class="toc-backref" href="#id10">Next post</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-9">Next post</a></h2>
 <!-- <{filename}/programming/baremetal-riscv-renode-4.rst>`_ -->
 <p>In <a class="reference external" href="comingsoon">Part 4 (Coming soon)</a> I will cover how to write a preemptive multitasking toy OS, the key aspect being &quot;the context switch&quot;.</p>
 </div>
@@ -267,7 +267,7 @@ The difference between the two, and much more, is described in the sifive interr
         </ul>
     </div>
 
-            zak kohler 2021 &mdash; Happy Hacking
+            zak kohler 2022 &mdash; Happy Hacking
     </footer>
 
 </div>

@@ -233,7 +233,7 @@ Also this is an example of a footnote reference</p>
 <blockquote class="highlights">
 <div class="line-block">
 <div class="line">1/2 c. unsalted butter</div>
-<div class="line">2.25 c. sugar <a class="footnote-reference" href="#sugar" id="id1">[1]</a></div>
+<div class="line">2.25 c. sugar <a class="footnote-reference" href="#sugar" id="footnote-reference-1">[1]</a></div>
 <div class="line">6 very soft persimmons</div>
 <div class="line">1.5 c. whole milk</div>
 <div class="line">5 large eggs</div>
@@ -245,7 +245,7 @@ Also this is an example of a footnote reference</p>
 <table class="docutils footnote" frame="void" id="sugar" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Is sugar wet today?</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#footnote-reference-1">[1]</a></td><td>Is sugar wet today?</td></tr>
 </tbody>
 </table>
 </div>
@@ -267,30 +267,30 @@ Also this is an example of a footnote reference</p>
 $ pipenv run python
 </pre></div>
 <p>Here is a more detailed code block including line numbers:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="kn">from</span> <span class="nn">htooze</span> <span class="kn">import</span> <span class="n">world</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span> <span class="kn">from</span> <span class="nn">htooze</span> <span class="kn">import</span> <span class="n">world</span>
 
  <span class="k">def</span> <span class="nf">test_planet_exists</span><span class="p">():</span>
      <span class="n">p</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">Planet</span><span class="p">()</span>
@@ -314,8 +314,8 @@ $ pipenv run python
          <span class="k">assert</span> <span class="n">cell</span> <span class="ow">is</span> <span class="n">mycell</span>
          <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span>
          <span class="k">assert</span> <span class="nb">int</span><span class="p">(</span><span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</td></tr></table></div>
+</pre></div></td></tr></table></div>
+</div>
 <div class="section" id="my-architecture-details">
 <h2>My architecture details</h2>
 <div class="section" id="git-branches">
@@ -366,7 +366,7 @@ $ pipenv run python
         </ul>
     </div>
 
-            zak kohler 2021 &mdash; Happy Hacking
+            zak kohler 2022 &mdash; Happy Hacking
     </footer>
 
 </div>
