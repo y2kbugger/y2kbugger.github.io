@@ -74,31 +74,31 @@
 <div class="contents topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#fast-feedback-for-the-art-of-computer-programming-exercises" id="id1">Fast feedback for The Art of Computer Programming Exercises</a></li>
-<li><a class="reference internal" href="#dependencies" id="id2">Dependencies</a><ul>
-<li><a class="reference internal" href="#mmixlib" id="id3">MMIXlib</a></li>
-<li><a class="reference internal" href="#emscripten" id="id4">Emscripten</a></li>
+<li><a class="reference internal" href="#fast-feedback-for-the-art-of-computer-programming-exercises" id="toc-entry-1">Fast feedback for The Art of Computer Programming Exercises</a></li>
+<li><a class="reference internal" href="#dependencies" id="toc-entry-2">Dependencies</a><ul>
+<li><a class="reference internal" href="#mmixlib" id="toc-entry-3">MMIXlib</a></li>
+<li><a class="reference internal" href="#emscripten" id="toc-entry-4">Emscripten</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#approach" id="id5">Approach</a></li>
-<li><a class="reference internal" href="#demo" id="id6">Demo</a></li>
+<li><a class="reference internal" href="#approach" id="toc-entry-5">Approach</a></li>
+<li><a class="reference internal" href="#demo" id="toc-entry-6">Demo</a></li>
 </ul>
 </div>
 <div class="section" id="fast-feedback-for-the-art-of-computer-programming-exercises">
-<h2><a class="toc-backref" href="#id1">Fast feedback for The Art of Computer Programming Exercises</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-1">Fast feedback for The Art of Computer Programming Exercises</a></h2>
 <p>As I started working through the <a class="reference external" href="https://blog.y2kbugger.com/reading-taocp-mmix.html">exercises in TAOCP</a>, I wanted a quicker way to work on the problems in the MMIX assembly language. I was also in the process of learning C so I was interested in trying to understand the code behind MMIXware, the simulators for the MMIX computer.</p>
 </div>
 <div class="section" id="dependencies">
-<h2><a class="toc-backref" href="#id2">Dependencies</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-2">Dependencies</a></h2>
 <div class="section" id="mmixlib">
-<h3><a class="toc-backref" href="#id3">MMIXlib</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-3">MMIXlib</a></h3>
 <p>MMIXware is made up of multiple programs, including an assembler and a simulator. Details can be found at the homepage here: <a class="reference external" href="http://mmix.cs.hm.edu">http://mmix.cs.hm.edu</a>. When browsing the SVN trunk I noticed a project called MMIXlib. This is a refactoring effort by Martin Ruckert to partition the original MMIX tools into something he could integrate into an IDE. I decided to use this as the base for how I would plug into the MMIX assembler and simulator.</p>
 <p>One thing that is surprising if you haven't seen it before is MMIXware being written in CWEB, This is a literate programming system developed by Donald Knuth. The CWEB files compile to C, but I needed to install all of texlive to do so. There is a rule that you are not to change the original source code but only apply CWEB style &quot;change files&quot;. This allows the entire refactoring to actually be a layer of explained changes applied to the original MMIXware.</p>
 <p>When I was working through the compilation process, I found a couple of errors in MMIXlib, and also I suggested a small enhancement to the Makefile. As is tradition with Donald Knuth's projects, there was a reward for finding errors in MMIXware. Even though I think my contribution was small I'm proud to have gotten a MMIX shirt for the contribution.</p>
 <img alt="mmix shirt" src="https://lh3.googleusercontent.com/pw/ACtC-3cFCw5pcP4PjQ42htLHTNWtHNCmNJq4lxvQjEMtxlMtKjBK_P6DHh2c05aIIGVsdb5RBNnMFY7dOzUsMa8EECwxEvNJY8tTF4hpSk00R7sk52YwUXK55kyJkIC9epT5yxHK_k8DqhKY6qrrMXL1YOaC3Q=w742-h989-no" />
 </div>
 <div class="section" id="emscripten">
-<h3><a class="toc-backref" href="#id4">Emscripten</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-4">Emscripten</a></h3>
 <p>I decided to compile to MMIXware to web assembly for two reasons:</p>
 <ol class="arabic simple">
 <li>I wanted to see what it took to compile some legacy C program to WASM</li>
@@ -107,13 +107,13 @@
 </div>
 </div>
 <div class="section" id="approach">
-<h2><a class="toc-backref" href="#id5">Approach</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-5">Approach</a></h2>
 <p>MMIXlib allows you to hook into various parts of the simulator and emscripten allows exposing C functions directly to JavaScript. This allows the main loop to run in js, with all of the hard work being done on the WASM side. Emscripten also has the ability to fake out a file system and expose that to JavaScript as well. This allowed me to be extra lazy and not even have to modify the IO of MMIXware.</p>
 <p>The hardest part was deciphering compile errors/warnings that manifested from compiling old C code with a modern compiler while also tracing through CWEB source and change files.</p>
 <p>The part that I can take the most credit for is adding the register watcher. This involved work on both the js side and the C code. I hope to add the ability for watching multiple registers. Other inner workings I would like to expose are special registers and memory ranges.</p>
 </div>
 <div class="section" id="demo">
-<h2><a class="toc-backref" href="#id6">Demo</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-6">Demo</a></h2>
 <p>As you modify the input, the simulator will reassemble and restart. Choose a general register to watch, 0-255. You can also change the frequency we run the simulator at.</p>
 <p>More programming examples can be found in the MMIX repository <a class="reference external" href="https://gitlab.lrz.de/mmix/mmixware">https://gitlab.lrz.de/mmix/mmixware</a>.</p>
 <div class="highlight"><pre><span></span>git clone git@github.com:y2kbugger/mmix-wasm.git
@@ -143,7 +143,7 @@
         </ul>
     </div>
 
-            zak kohler 2021 &mdash; Happy Hacking
+            zak kohler 2022 &mdash; Happy Hacking
     </footer>
 
 </div>

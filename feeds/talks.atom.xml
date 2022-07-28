@@ -3,12 +3,11 @@
 </summary><content type="html">&lt;p&gt;&amp;#64; &lt;strong&gt;Ohio Linuxfest&lt;/strong&gt;, &lt;em&gt;Columbus, Ohio&lt;/em&gt;&lt;/p&gt;
 &lt;!-- Google Photos Album: https://photos.app.goo.gl/dfXck6rcLDcZHtv17 --&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://docs.google.com/presentation/d/1BQ1FQoe7_6b0b84McHxIMIjrNTbw7o7dNMAjr6hmTFw/edit?usp=sharing"&gt;Slides&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="{filename}/programming/baremetal-riscv-renode-4.rst"&gt;Blog Article (coming soon)&lt;/a&gt;&lt;/p&gt;
+&lt;!-- `Blog Article (future) &lt;{filename}/programming/baremetal-riscv-renode-4.rst&gt;`_ --&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/y2kbugger/baremetal-riscv-renode.git
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="videoembed-container"&gt;
-Youtube embed coming soon
-&lt;!-- &lt;iframe class="videoembed-iframe" src="https://www.youtube.com/embed/JkeRezvCVfM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;--!&gt;
+&lt;iframe class="videoembed-iframe" src="https://www.youtube.com/embed/LEBw4PUKlxg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 &lt;/div&gt;&lt;div class="section" id="abstract"&gt;
 &lt;h2&gt;Abstract&lt;/h2&gt;
 &lt;p&gt;Explore the line between hardware and software by writing code with absolute control over the cpu and peripherals. We'll explore how to do this using a completely free and open source simulator (Renode), toolchain (GCC), and instruction set (RISC-V). Using assembly, we'll initialize parts of the system such as CPU interrupts and privilege levels. Finally we'll review the assembly code for doing a context switch, the key software to which enables multitasking via timesharing.&lt;/p&gt;
