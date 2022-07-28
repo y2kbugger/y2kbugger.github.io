@@ -16,7 +16,7 @@ A Simple RISC-V Multitasking OS for Learning
 
 `Slides <https://docs.google.com/presentation/d/1BQ1FQoe7_6b0b84McHxIMIjrNTbw7o7dNMAjr6hmTFw/edit?usp=sharing>`_
 
-`Blog Article (coming soon) <{filename}/programming/baremetal-riscv-renode-4.rst>`_
+.. `Blog Article (future) <{filename}/programming/baremetal-riscv-renode-4.rst>`_
 
 .. code-block:: giturl
 
@@ -26,8 +26,7 @@ A Simple RISC-V Multitasking OS for Learning
 .. raw:: html
 
     <div class="videoembed-container">
-    Youtube embed coming soon
-    <!-- <iframe class="videoembed-iframe" src="https://www.youtube.com/embed/JkeRezvCVfM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>--!>
+    <iframe class="videoembed-iframe" src="https://www.youtube.com/embed/LEBw4PUKlxg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
 
