@@ -134,4 +134,4 @@ Operating systems/SDK
 
 Next post
 =========
-In the next post I will show how to do basic IO via Serial UART. This introduces how to utilize hardware interrupts and how to compile C along with the RISC-V assembly.
+In `Part 3 <{filename}/programming/baremetal-riscv-renode-2.rst>`_ I demonstrate basic IO via a hardware Serial UART. This introduces hardware interrupts and how to initialize, compile and link baremetal C along with the RISC-V assembly.
