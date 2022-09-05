@@ -1,5 +1,5 @@
 Baremetal RISC-V Renode - Part 4: KOS Programs and Processes
-############################################################
+###############################################################
 
 :date: 2020-12-04
 :modified: 2020-12-04
@@ -20,19 +20,52 @@ Baremetal RISC-V Renode Series
 ==============================
 I'm exploring the line between hardware and software by creating a series of demos within a minimal, free and open source environment. These demos span from blinking an LED to implementing a toy operating system. The goal is to minimize parts of the system that we take for granted and gain a better understanding of computers and operating systems.
 
-Start at `Part 1 <{filename}/programming/baremetal-riscv-renode-1.rst>`_, we setup a bare minimum LED blinking example to demonstrate how to compile your development environment and debug the software in real-time using GDB.
+In `Part 1 <{filename}/programming/baremetal-riscv-renode-1.rst>`_, we setup a bare minimum LED blinking example to demonstrate how to compile your development environment and debug the software in real-time using GDB.
 
 Background
 ==========
-In this article we will be interfacing with a virtual UART. This will allow us to input and output a serial stream of character bytes.
+In this part we'll start working towards operating system features, specifically being able to share a CPU with multiple processes simultaneously. I call this toy operating system **KohlerOS** or **KOS**, pronounced chaos, for short.
 
-This example includes a few new concepts.
-
-- Processes
-- Multitasking, the context switch
-- System calls
+At a minimum, the there are a few things required to demonstrate multitasking. First you need a way to define a program. In linux, this would be an `ELF binary <https://en.wikipedia.org/wiki/Executable_and_Linkable_Format>`_, on windows it would `PE format <https://en.wikipedia.org/wiki/Portable_Executable>`_. The job of both of these are to deliver native machine code with enough metadata to launch and link with other binaries such as libraries. Next you need a way to actually start and manage a program running within particular region of memory. This we call a `process <https://en.wikipedia.org/wiki/Process_(computing)>`_..
 
 
+Programs
+========
+Programs are simply C functions registered with a name.
+
+.. code-block:: c
+
+    struct Program
+    {
+        void (*function)();
+        unsigned char name;
+    };
+
+To create a chaos program, first write the program as a function or set of functions.
+
+.. code-block:: c
+
+    void helloworld()
+    {
+        puts("Hello World\n");
+        end_this_process();
+    }
+
+
+Then register the entrypoint with a name. The entrypoint of a normal binary is normally defined in the binary file, e.g. in the ELF.
+
+.. code-block:: c
+
+    register_program('h', helloworld);
+
+
+***explain the "end this program" function.
+
+Processes
+=========
+
+
+We are not giving our programs an isolated memory space and therefore multiple processes of the same program are pointing at the same single copy of the `Program` in memory
 
 
 
@@ -40,11 +73,7 @@ This example includes a few new concepts.
 
 
 
-
-
-
-
-Adding a UART to Renode
+Program
 =======================
 We are using the UART from the Litex project. Litex is a High Level HDL project that makes it easy to design a system on a ship and target both simulations and FPGA.
 
