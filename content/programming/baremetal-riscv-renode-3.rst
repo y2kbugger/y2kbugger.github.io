@@ -134,7 +134,7 @@ We need to set a flag in the UART to enable interrupt events.
         uart->EventEnable = RxEvent;
     }
 
-This is called in during startup, right before the final `wfi` spin-loop.
+This is called in during startup, right before the final ``wfi`` spin-loop.
 
 .. code-block:: asm
 
@@ -212,16 +212,13 @@ then you can send characters via the UART connection.
 
 
 .. figure:: https://lh3.googleusercontent.com/pw/AM-JKLWBRQ2x4E66nGtG01cZwj8pHpktyqHNbFu-jPL4BldkuMT51PuDdQMCjAxspc5UlsWdlN-rky0GYTgTTVdnJo5k-_27zZ_ECc-95RBs0KeLv61zU0FYAZbv1HNzeQOYpGNNuvd85t99DtqatXXfeFysjw=w960-h423-no
-   :alt: usrt fancy echo demo
+   :alt: uart fancy echo demo
    :align: left
 
    Demo of the Fancy Character Echo
 
 Next post
 =========
-..
-    <{filename}/programming/baremetal-riscv-renode-4.rst>`_
-
-In `Part 4 (Coming soon) <coming soon>`_ I will cover how to write a preemptive multitasking toy OS, the key aspect being "the context switch".
+In `Part 4 <{filename}/programming/baremetal-riscv-renode-4.rst>`_ we'll start to build the basics of a minimal preemptive multitasking toy OS called KOS as a way to learn more about baremetal programming. The first part we'll cover is how programs and processes are defined.
 
 
