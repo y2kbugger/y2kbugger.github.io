@@ -24,6 +24,18 @@ DELETE_OUTPUT_DIRECTORY = True
 
 GOOGLE_ANALYTICS = "UA-111274102-1"
 
-HEAD_EXTRA = HEAD_EXTRA_PROD
+HEAD_EXTRA_PROD = """
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0V39RV6EWP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0V39RV6EWP');
+</script>
+"""
+
+HEAD_EXTRA = HEAD_EXTRA_COMMON + HEAD_EXTRA_PROD
 
 SHOW_DRAFTS = False
