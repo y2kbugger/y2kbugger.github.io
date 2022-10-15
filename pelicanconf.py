@@ -70,14 +70,14 @@ EXTRA_PATH_METADATA = {
     'extra/CNAME': {'path': 'CNAME'},
 }
 
-HEAD_EXTRA_PROD = """
+HEAD_EXTRA_COMMMON = """
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
 """
 
 HEAD_EXTRA_DEBUG = """
 """
 
-HEAD_EXTRA = HEAD_EXTRA_PROD + HEAD_EXTRA_DEBUG
+HEAD_EXTRA = HEAD_EXTRA_COMMON + HEAD_EXTRA_DEBUG
 
 thisyear = datetime.today().strftime("%Y")
 COPYRIGHT = f"zak kohler {thisyear} &mdash; Happy Hacking"
