@@ -11,6 +11,16 @@
         
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0V39RV6EWP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0V39RV6EWP');
+</script>
+
 
 
 
@@ -79,7 +89,7 @@
 <div class="section" id="write-subsubsection-use-sparingly">
 <h4>Write subsubsection (use sparingly)</h4>
 <p>Start up dev environment:</p>
-<div class="highlight"><pre><span></span>$ wo-blog
+<div class="highlight"><pre><span></span>$<span class="w"> </span>wo-blog
 </pre></div>
 <ul class="simple">
 <li>Add/modify the files in blog/content/CATEGORY/SLUG-OF-THE-PAGE.rst</li>
@@ -99,12 +109,12 @@
 <h4>Publish</h4>
 <p>Publishing makes the blog entry available to the world.</p>
 <p>To publish, commit articles additions/changes:</p>
-<div class="highlight"><pre><span></span>$ git add content/
-$ git commit
-$ git push origin write
+<div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>content/
+$<span class="w"> </span>git<span class="w"> </span>commit
+$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>write
 </pre></div>
 <p>Finally publish your changes:</p>
-<div class="highlight"><pre><span></span>$ pipenv run make github
+<div class="highlight"><pre><span></span>$<span class="w"> </span>pipenv<span class="w"> </span>run<span class="w"> </span>make<span class="w"> </span>github
 </pre></div>
 </div>
 </div>
@@ -263,8 +273,8 @@ Also this is an example of a footnote reference</p>
 :status: draft
 </pre>
 <p>You can specify a particular language:</p>
-<div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~/devel/blog
-$ pipenv run python
+<div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/devel/blog
+$<span class="w"> </span>pipenv<span class="w"> </span>run<span class="w"> </span>python
 </pre></div>
 <p>Here is a more detailed code block including line numbers:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
@@ -366,7 +376,7 @@ $ pipenv run python
         </ul>
     </div>
 
-            zak kohler 2022 &mdash; Happy Hacking
+            zak kohler 2023 &mdash; Happy Hacking
     </footer>
 
 </div>
