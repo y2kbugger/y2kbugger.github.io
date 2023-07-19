@@ -70,7 +70,7 @@ EXTRA_PATH_METADATA = {
     'extra/CNAME': {'path': 'CNAME'},
 }
 
-HEAD_EXTRA_COMMMON = """
+HEAD_EXTRA_COMMON = """
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
 """
 
