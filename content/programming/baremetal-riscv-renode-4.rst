@@ -41,7 +41,7 @@ Programs are simply C functions registered with a name.
         unsigned char name;
     };
 
-To create a chaos program, first write the program as a function or set of functions.
+To create a KOH program, first write the program as a function or set of functions. All KOS programs must terminate via call to ``end_this_process``.
 
 .. code-block:: c
 
@@ -51,22 +51,31 @@ To create a chaos program, first write the program as a function or set of funct
         end_this_process();
     }
 
-
 Then register the entrypoint with a name. The entrypoint of a normal binary is normally defined in the binary file, e.g. in the ELF.
 
 .. code-block:: c
 
     register_program('h', helloworld);
 
-
-***explain the "end this program" function.
+The upside to this approach is simplicity, all code is statically linked into the same image. The downside is that you can't add programs at runtime. In all desktop operating systems this is a main requirement. For many embedded systems a single immutable image is sufficient or even desired..
 
 Processes
 =========
+A process tracks an instance of a running process. In addition to a pointer to the actual byte, it stores
 
+.. code-block:: c
 
-We are not giving our programs an isolated memory space and therefore multiple processes of the same program are pointing at the same single copy of the `Program` in memory
+    struct Process
+    {
+        size_t *sp;
+        struct Program *program;
+        enum ProcessStatus status;
+        size_t stack[PROC_STACK_SIZE];
+    };
 
+For simplicities sake, we have also make sacrifices in the way programs are launched. Firstly, there is no dynamic memory allocation provided by KOS. There are a fixed number of processes each with a fixed stack space. The size and number of these stack spaces are determined at compile time.
+
+Because the processes are not given isolated memory space, multiple processes of the same program are pointing at the same single copy of the ``Program`` in memory.
 
 
 
@@ -176,7 +185,7 @@ We need to set a flag in the UART to enable interrupt events.
         uart->EventEnable = RxEvent;
     }
 
-This is called in during startup, right before the final `wfi` spin-loop.
+This is called in during startup, right before the final ``wfi`` spin-loop.
 
 .. code-block:: asm
 
@@ -261,9 +270,6 @@ then you can send characters via the UART connection.
 
 Next post
 =========
-..
-    <{filename}/programming/baremetal-riscv-renode-4.rst>`_
-
-In `Part 4 (Coming soon) <coming soon>`_ I will cover how to write a preemptive multitasking toy OS, the key aspect being "the context switch".
+In `Part 5 <{filename}/programming/baremetal-riscv-renode-5.rst>`_ I will cover how KOS runs more than one ``Process`` at once, this is called the context switch.
 
 
