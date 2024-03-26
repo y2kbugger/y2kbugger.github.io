@@ -456,6 +456,13 @@ table.footnote {
 .social-github {
     color: #279a43
 }
+.social-rss {
+    color: #f26522;
+}
+img.feed-icon{
+    margin: 0 5px -.1em 20px;
+    height: 1.1em;
+}
 
 .utterances-frame {
     margin: 5px 0px;
