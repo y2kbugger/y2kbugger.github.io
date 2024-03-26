@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="/theme/css/normalize.css">
         <link rel="stylesheet" href="/theme/css/styles.css">
         <link rel="stylesheet" href="/theme/css/pygment.css">
+        <link rel="alternate" type="application/atom+xml" href="{{ SITEURL }}/feeds/all.atom.xml" title="All Categories">
         {{ HEAD_EXTRA }}
         {% if DEBUG %}
         {% endif %}
@@ -35,6 +36,8 @@
             {% for (site, url, linktext) in SOCIAL %}
             <li class="social-item social-{{site}}"><a href="{{url}}">{{linktext}}</a></li>
             {% endfor %}
+
+            <li class="social-item social-rss"><img class="feed-icon" src="/theme/feed.svg"/><a href="/feeds/all.atom.xml">ATOM Feed</a></li>
         </ul>
     </div>
 {% endmacro %}
