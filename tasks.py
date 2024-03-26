@@ -25,7 +25,7 @@ CONFIG = {
     'github_pages_branch': 'master',
     'commit_message': "'Publish site on {}'".format(datetime.date.today().isoformat()),
     # Port for `serve`
-    'port': 8000,
+    'port': 8109, #blog=8l09
 }
 
 @task
