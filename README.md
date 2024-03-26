@@ -41,12 +41,6 @@ This is a non-exhaustive list of features of the theme with example configuratio
     GOOGLE_ANALYTICS = 'UA-XXXX-YYYY'
     ```
 
-- [Disqus](http://www.disqus.com) integration: use the configuration variable setting the variable `DISQUS_SITENAME`
-
-    ```
-    DISQUS_SITENAME = "your_site_name"
-    ```
-
 - Use `HEAD_EXTRA` to inject customisation elements into HTML head. 
     - For example to set up favicon/apple-touch-icon (stored under `content/extra/`):
     
