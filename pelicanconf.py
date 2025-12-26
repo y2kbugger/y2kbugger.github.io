@@ -10,6 +10,15 @@ SITEURL = ''
 PATH = 'content'
 THEME = 'themes/william-pelican/'
 
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.extra': {},
+        'markdown.extensions.meta': {},
+    },
+    'output_format': 'html5',
+}
+
 TIMEZONE = 'America/New_York'
 DEFAULT_DATE_FORMAT = '%Y.%m.%d @ %H:%M'
 DEFAULT_DATE = 'fs'
@@ -61,7 +70,7 @@ DEFAULT_PAGINATION = False
 
 STATIC_PATHS = [
     'extra/favicon.ico',
-    # 'images',
+    'img',
     'extra/CNAME',
 ]
 
