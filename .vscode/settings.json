@@ -1,4 +1,7 @@
 {
   "python.experiments.enabled": false,
-  "python.useEnvironmentsExtension": true
+  "python.useEnvironmentsExtension": true,
+  "cSpell.words": [
+    "PISPIGOT"
+  ]
 }
