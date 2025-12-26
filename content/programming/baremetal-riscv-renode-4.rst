@@ -28,6 +28,11 @@ In this part we'll start working towards operating system features, specifically
 
 At a minimum, the there are a few things required to demonstrate multitasking. First you need a way to define a program. In linux, this would be an `ELF binary <https://en.wikipedia.org/wiki/Executable_and_Linkable_Format>`_, on windows it would `PE format <https://en.wikipedia.org/wiki/Portable_Executable>`_. The job of both of these are to deliver native machine code with enough metadata to launch and link with other binaries such as libraries. Next you need a way to actually start and manage a program running within particular region of memory. This we call a `process <https://en.wikipedia.org/wiki/Process_(computing)>`_..
 
+Source Code
+===========
+The code for **KOS** uses the same environment as previous example. Find the code in the ``kos`` subdirectory.
+
+This was written based on the state of the code as of commit ``c227fbc``.
 
 Programs
 ========
@@ -61,7 +66,9 @@ The upside to this approach is simplicity, all code is statically linked into th
 
 Processes
 =========
-A process tracks an instance of a running process. In addition to a pointer to the actual byte, it stores
+A process tracks an instance of a running process. In addition to a pointer to the actual bytecode, it stores the stack memory, and the status of the process.
+
+Because the processes are not given isolated memory space, multiple processes of the same program are pointing at the same single copy of the ``Program`` in memory.
 
 .. code-block:: c
 
@@ -73,11 +80,32 @@ A process tracks an instance of a running process. In addition to a pointer to t
         size_t stack[PROC_STACK_SIZE];
     };
 
-For simplicities sake, we have also make sacrifices in the way programs are launched. Firstly, there is no dynamic memory allocation provided by KOS. There are a fixed number of processes each with a fixed stack space. The size and number of these stack spaces are determined at compile time.
 
-Because the processes are not given isolated memory space, multiple processes of the same program are pointing at the same single copy of the ``Program`` in memory.
+Currently a process supports enough statuses to be able to have an interesting multitasking demo.
+
+.. code-block:: c
+
+    enum ProcessStatus
+    {
+        Uninitialized,
+        Ready,
+        Running,
+        Dead,
+        Stopping,
+        Stopped,
+    };
 
 
+For simplicity's sake, we make some decisions that make the concepts clearer in this toy OS, but wouldn't make sense in a production OS. Firstly, there is no dynamic memory allocation provided by **KOS**. This means that we have to statically allocate all the stack space for as many processes as you want to be able to run at once. Currently there is space for 10 simultaneous processes each with 200 words worth of stack space.
+
+.. code-block:: c
+
+    #define MAX_PROCESS_COUNT 10
+    struct Process PROCESSES[MAX_PROCESS_COUNT];
+
+.. code-block:: c
+
+    #define PROC_STACK_SIZE 200
 
 
 
