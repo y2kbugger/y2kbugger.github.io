@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>blog.y2kbugger.com - meta</title><link href="http://blog.y2kbugger.com/" rel="alternate"></link><link href="http://blog.y2kbugger.com/feeds/meta.atom.xml" rel="self"></link><id>http://blog.y2kbugger.com/</id><updated>2020-03-28T22:16:59-04:00</updated><entry><title>blog.y2kbugger.com - Timeline of my Projects</title><link href="http://blog.y2kbugger.com/origin.html" rel="alternate"></link><published>1991-09-29T00:00:00-04:00</published><updated>2020-03-28T22:16:59-04:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,1991-09-29:/origin.html</id><summary type="html">&lt;p class="first last"&gt;I explain how I use dates on this blog. The purpose of this blog is to showcase my projects past and future and so publication dates shouldn't be taken as the actual data the article was written.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>blog.y2kbugger.com - meta</title><link href="http://blog.y2kbugger.com/" rel="alternate"/><link href="http://blog.y2kbugger.com/feeds/meta.atom.xml" rel="self"/><id>http://blog.y2kbugger.com/</id><updated>2020-03-28T22:16:59-04:00</updated><entry><title>blog.y2kbugger.com - Timeline of my Projects</title><link href="http://blog.y2kbugger.com/origin.html" rel="alternate"/><published>1991-09-29T00:00:00-04:00</published><updated>2020-03-28T22:16:59-04:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,1991-09-29:/origin.html</id><summary type="html">&lt;p class="first last"&gt;I explain how I use dates on this blog. The purpose of this blog is to showcase my projects past and future and so publication dates shouldn't be taken as the actual data the article was written.&lt;/p&gt;
 </summary><content type="html">&lt;!-- https://photos.app.goo.gl/nBk15GV92Uvt7ZzF8 --&gt;
 &lt;div class="section" id="purpose-of-this-blog"&gt;
 &lt;h2&gt;Purpose of this blog&lt;/h2&gt;
@@ -32,4 +32,4 @@ opportunity to go back and curate past projects.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</content><category term="meta"></category><category term="origin"></category></entry></feed>
+</content><category term="meta"/><category term="origin"/></entry></feed>
