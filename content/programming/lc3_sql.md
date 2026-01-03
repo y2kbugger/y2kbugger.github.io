@@ -5,7 +5,7 @@ tags: assembly, algorithms, CPUs, emulation, sql
 author: zak kohler
 summary: An LC-3 CPU emulator in pure SQL, using tables for state and triggers for transitions.
 status: published
-cover: /img/2025-12-26_lc3_sql__cover_screenshot.png
+cover: /img/2025-12-26__lc3_sql__cover_screenshot.png
 ---
 
 SQL may be a perverse platform to implement a CPU emulator on, but works well for a demo because all it requires is the SQLite cli binary to run.
@@ -282,9 +282,9 @@ Various interactive notebook tools:
 
 ### Raw SQL notebook magic `%%sql`
 
-![SQL magic screenshot](/img/2025-12-26_lc3_sql__sql_magic_screenshot.png)
+![SQL magic screenshot](/img/2025-12-26__lc3_sql__sql_magic_screenshot.png)
 
 ### SQLVM widget
 
-![LC-3 SQL VM interactive widget screenshot](/img/2025-12-26_lc3_sql__pispigot_ipynb.apng)
+![LC-3 SQL VM interactive widget screenshot](/img/2025-12-26__lc3_sql__pispigot_ipynb.apng)
 

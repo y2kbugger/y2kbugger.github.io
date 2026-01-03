@@ -2,6 +2,10 @@
   "python.experiments.enabled": false,
   "python.useEnvironmentsExtension": true,
   "cSpell.words": [
-    "PISPIGOT"
+    "Firekissed",
+    "PISPIGOT",
+    "SQLVM",
+    "clkt",
+    "msgout"
   ]
 }
