@@ -1,21 +1,17 @@
 # Run Dev Server
 Open vscode
 
+`Ctrl-Shift-B` should start the dev server with live reload and open Simple Browser to drafts.
 
-`Ctrl-Shift-B` should start the dev server with live reload.
-
-by hand this would be
-
+By hand:
 ```bash
-    invoke livereload
+./.venv/bin/python devserver.py
 ```
-Invoke, configured in tasks.py is a simple python script launcher
 
-livereload is one of its subcommands which starts the filewatcher and livereload server.
-
-# Open Browser in vscode
-
-`Ctrl-Shift-P` should open the command palette. and allow you to choose simple simple browser (if not already open as a tab)
+Or with make:
+```bash
+make livereload
+```
 
 # publish
     make github

@@ -5,29 +5,89 @@
   "tasks": [
     {
       "label": "Run blog dev server",
-      "type": "shell",
-      "command": "source ./.venv/bin/activate && invoke livereload 2>&1 | tee /dev/tty | grep --line-buffered ERR |  xargs -d '\n' -I % notify-send -u critical -t 3600 '%'",
-      "problemMatcher": [],
-      "group": {
-        "kind": "build",
-        "isDefault": true
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "${workspaceFolder}/devserver.py"
+      ],
+      "problemMatcher": {
+        "owner": "pelican",
+        "fileLocation": [
+          "relative",
+          "${workspaceFolder}"
+        ],
+        "pattern": {
+          "regexp": "^.*(ERROR|CRITICAL|WARNING)\\s+(.*)$",
+          "severity": 1,
+          "message": 2,
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^Done: Processed",
+          "endsPattern": "Serving on http://127\\.0\\.0\\.1:8109"
+        }
       },
       "presentation": {
-        "reveal": "always"
+        "reveal": "always",
+        "panel": "dedicated"
       },
+      "runOptions": {
+        "instanceLimit": 1,
+        "instancePolicy": "terminateOldest"
+      },
+      "isBackground": true,
       "dependsOn": [
         "checkout write git branch"
       ]
+    },
+    {
+      "label": "Open drafts in Simple Browser",
+      "type": "shell",
+      "command": "echo ${input:openDraftsBrowser}",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "never",
+        "echo": false,
+        "focus": false,
+        "panel": "shared",
+        "close": true
+      }
     },
     {
       "label": "checkout write git branch",
       "type": "shell",
       "command": "git checkout write",
       "problemMatcher": [],
+      "presentation": {
+        "reveal": "never",
+        "echo": false,
+        "focus": false,
+        "panel": "shared",
+        "close": true
+      }
+    },
+    {
+      "label": "Dev server + browser",
+      "dependsOn": [
+        "Run blog dev server",
+        "Open drafts in Simple Browser"
+      ],
+      "dependsOrder": "sequence",
       "group": {
         "kind": "build",
-        "isDefault": false
-      }
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "openDraftsBrowser",
+      "type": "command",
+      "command": "simpleBrowser.api.open",
+      "args": [
+        "http://localhost:8109/drafts/"
+      ]
     }
   ]
 }
