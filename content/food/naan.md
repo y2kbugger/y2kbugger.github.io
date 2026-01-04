@@ -35,21 +35,21 @@ cover: /img/2026-01-02__naan__cover.jpg
 
 ---
 
-## Dough prep
+## Preparation
+### Dough
 - Whisk together all wet ingredients, set aside for ~10 minutes
 - Incorporate the wet into the dry via the well method, let autolyse for ~20 minutes.
 - Knead for ~10 minutes until smooth and elastic, adjusting with flour or water as necessary.
 - Bulk rise in oiled and covered bowl 1-3 hours until doubled.
 
-## Garlic Butter
+### Garlic Butter
 In meantime mince up garlic, and separate. Some will go into dough, the rest into the butter.
 
 - Combine clarified butter with finely minced garlic, set aside to infuse. Make sure you don't have any water left in butter, or it will soggy the naan.
 
 Wait until dough has doubled.
 
-## Shaping and cooking
-
+### Shaping and cooking
 - Divide dough
 - Heat cast iron to ~450F. Should have a very well seasoned surface. These going in dry because oil would just burn.
 - Transfer a proofed ball to the to the stretching surface, dust surface with flour before setting it down. Use flour to keep things from sticking. Roll out thin, sprinkle in garlic and fold to laminate, this will help prevent burnt garlic. Roll out again to ~1/8" thickness.
@@ -58,6 +58,6 @@ Wait until dough has doubled.
 
 ![Cast Iron and grill setup](/img/2026-01-02__naan__iron_grill.png)
 
-- flip the entire piece over directly over the flame suspending with a little grate. You can use pretty intense heat and move the naan around  to get char more evenly. Should take ~15-30 seconds on this side.
+- flip the entire naan over directly over the flame suspending with a little grate. You can use pretty intense heat and move the naan around  to get char more evenly. Should take ~15-30 seconds on this side.
 
 - Remove from fire with tongs. Brush with garlic butter immediately. Keep warm in a towel while you cook the rest.
