@@ -3,7 +3,7 @@ title: Pollo all'Arancia con Gremolata
 date: 2026-01-04
 tags: chicken, italian
 author: zak kohler
-summary: Pan-fried chicken breast with orange gremolata and a tangy pan sauce.
+summary: Francaise chicken with orange gremolata and a tangy pan sauce.
 status: published
 cover: /img/2024-11-24__pollo-arancia-gremolata__cover.jpg
 ---
