@@ -27,7 +27,7 @@ cover: /img/2024-11-24__pollo-arancia-gremolata__cover.jpg
     - 1 shallot, _finely diced_
     - juice of remaining 1.5 oranges
     - 1 Tbsp preserves, _orange-colored such as orange, fig, pear, or dandelion_
-    - 2 tsp chicken stock concentrate
+    - 2 cup chicken stock
     - 1 cup dry white wine
     - 3 Tbsp Grand Marnier, _optional_
     - 2 Tbsp butter
@@ -37,7 +37,7 @@ cover: /img/2024-11-24__pollo-arancia-gremolata__cover.jpg
     - salt, _1% by weight of the chicken, for dry brining_
     - flour, _for dredging_
     - 2 eggs, _beaten with ~1 Tbsp water_
-    - olive oil plus neutral oil, _for frying_
+    - olive / neutral oil, _to taste,for frying_
 
 
 ## Preparation
@@ -48,17 +48,16 @@ Mix parsley, orange zest, lemon zest, garlic, orange juice, and lemon juice. Add
 
 
 ### Chicken
-Dry brine the flattened cutlets overnight with 1% salt by weight, packing them tightly together. The brine and colder temperature firm them up, which makes the flour dredge easier and helps them cook more evenly.
 
-Beat the eggs with about 1 tablespoon of water until the mixture is very smooth and thinned out.
+Dredge the chicken in flour and let rest.
 
-Dredge the still-cold chicken in flour, then francaise the cutlets by dipping them in the egg mixture. Fry in a mix of olive oil and neutral oil, taking care not to overcook. Move the fried cutlets to a covered Dutch oven preheated to 170 F.
+Francaise the cutlets by dipping them in the egg mixture and immediately frying, taking care not to overcook. Move the fried cutlets to a covered Dutch oven preheated to 170°F.
 
 ### Pan Sauce
 ![pan sauce](../img/2024-11-24__pollo-arancia-gremolata__pan-sauce.png)
 
-- Sauté shallots and cherry tomatoes together until softened
-- Add orange juice, preserves, stock concentrate, white wine, and Grand Marnier, then reduce to deepen flavors
+- Sauté shallots and cherry tomatoes together in the fry pan until softened
+- Add orange juice, preserves, stock, wine, and Grand Marnier, then reduce.
 - Remove from heat and stir in butter
 - Pour the finished sauce into the warm Dutch oven and gently turn the cutlets for full coverage.
 
