@@ -298,6 +298,6 @@ then you can send characters via the UART connection.
 
 Next post
 =========
-In `Part 5 <{filename}/programming/baremetal-riscv-renode-5.rst>`_ I will cover how KOS runs more than one ``Process`` at once, this is called the context switch.
+.. In `Part 5 <{filename}/programming/baremetal-riscv-renode-5.rst>`_ I will cover how KOS runs more than one ``Process`` at once, this is called the context switch.
 
 
