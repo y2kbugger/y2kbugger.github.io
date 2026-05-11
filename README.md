@@ -15,3 +15,9 @@ make livereload
 
 # publish
     make github
+
+# TODO
+- exif stripper/checker
+- convert all to MD
+- make all files local
+- strip out js? what is slicknav for?
