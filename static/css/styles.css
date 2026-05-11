@@ -25,13 +25,22 @@ em {
     font-style: italic;
 }
 
+ul.ingredients li em {
+    color: #888;
+    font-size: .85em;
+}
+
 strong {
     font-weight: 600;
 }
 
-h1, h2, h3,
-h4, h5, h6 {
-    font-family: 'Anonymous Pro',  "monospace";
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Anonymous Pro', "monospace";
     font-weight: 900;
     color: #222;
     margin: 1.4em 0 0.6em 0;
@@ -63,12 +72,16 @@ h6 {
     font-size: 0.6em;
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
     text-transform: uppercase;
     letter-spacing: 0.15em;
 }
 
-ul, pre, table {
+ul,
+pre,
+table {
     margin: 0;
     margin-bottom: 1em;
 }
@@ -77,16 +90,22 @@ p {
     margin-top: 1em;
     margin-bottom: 1em;
 }
+
 tt.literal {
     padding-inline-end: .2em;
     padding-inline-start: .2em;
     white-space: nowrap;
 }
-tt.literal, code, pre {
+
+tt.literal,
+code,
+pre {
     color: #222;
     background-color: #f6f6f6;
 }
-code, pre {
+
+code,
+pre {
     font-size: 0.8em;
 }
 
@@ -107,7 +126,8 @@ table {
     width: 100%;
 }
 
-th, td {
+th,
+td {
     padding: 0.3em;
 }
 
@@ -120,6 +140,7 @@ th {
     text-align: center;
     color: #222;
 }
+
 td.option-group {
     white-space: nowrap;
 }
@@ -241,7 +262,7 @@ ul.overview-tags li {
 
 .overview-tags .count {
     font-size: 75%;
-    color: #ccc;g
+    color: #ccc;
 }
 
 .overview-tags li:hover .count {
@@ -287,22 +308,27 @@ p.caption {
     margin-left: 0px;
     display: block;
 }
+
 .align-center img {
     margin-right: auto;
     margin-left: auto;
     display: block;
 }
+
 .align-right img {
     margin-right: 0px;
     margin-left: auto;
     display: block;
 }
+
 .align-left p {
     text-align: left;
 }
+
 .align-center p {
     text-align: center;
 }
+
 .align-right p {
     text-align: right;
 }
@@ -336,7 +362,7 @@ header.page-header .article-meta {
     /* font-size: 12pt; */
 }
 
-div#content > h1:first-child {
+div#content>h1:first-child {
     display: none;
 }
 
@@ -388,17 +414,53 @@ footer.page-footer {
     color: #666;
 }
 
-.admonition {
-    border: 2px solid #dadada;
-    background-color: #f6f6f6;
-}
-.admonition p {
-    margin-top: 0px;
-    padding: 5px;
-}
-.admonition-title {
-    background-color: #cfcfcf;
-    font-weight: bold;
+.admonition.section {
+    /* margin: 1.5em 0 2em; */
+    padding: 0 1.5em 1.35em;
+    border: 1px solid #e6dbc6;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #fffdf8 0%, #fbf5e8 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 1px 2px rgba(93, 72, 33, 0.06);
+
+    & p {
+        margin-top: 0;
+        padding: 0;
+    }
+
+    & .admonition-title {
+        margin: 0 -1.5em;
+        padding: 0.6em 1.5em 0.55em;
+        border-bottom: 1px solid #e2d3ba;
+        border-radius: 8px 8px 0 0;
+        background: linear-gradient(180deg, #f5ead3 0%, #efe1c3 100%);
+        color: #74592d;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+    }
+
+    &>h2:first-of-type {
+        display: none;
+    }
+
+    & h3 {
+        margin-top: 1.25em;
+    }
+
+    & ul,
+    & ol {
+        padding-left: 1.4em;
+    }
+
+    & em {
+        margin-inline-start: .4em;
+        color: #887b67;
+        font-size: 0.88em;
+    }
+
+    &> :last-child {
+        margin-bottom: 0;
+    }
 }
 
 /* hack to workaround https://github.com/sphinx-doc/sphinx/issues/1567 */
@@ -407,12 +469,15 @@ table.footnote {
     font-size: 0.77em;
     line-height: 1.0em;
 }
+
 .footnote td.label {
     width: 33px;
 }
-.footnote td  {
+
+.footnote td {
     padding: 4px;
 }
+
 /* end hack */
 
 #footnotes.section {
@@ -434,15 +499,18 @@ table.footnote {
     width: 100%;
     height: 100%;
 }
+
 /* end hack */
 
 .social-container {
     /* font-size: 90%; */
     margin: 0px;
 }
+
 .social-container ul {
     padding: 0px;
 }
+
 .social-item {
     font-size: 87%;
     list-style-type: none;
@@ -450,16 +518,20 @@ table.footnote {
     margin-left: 0px;
     margin-right: 9px;
 }
+
 .social-twitter {
     color: #1DA1F2;
 }
+
 .social-github {
     color: #279a43
 }
+
 .social-rss {
     color: #f26522;
 }
-img.feed-icon{
+
+img.feed-icon {
     margin: 0 5px -.1em 20px;
     height: 1.1em;
 }
@@ -476,6 +548,7 @@ img.feed-icon{
     width: 132%;
     margin: 0px -9% 0px -23%;
 }
+
 @media screen and (max-width: 1000px) {
     #logo-image {
         width: 118%;
