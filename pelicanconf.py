@@ -12,6 +12,7 @@ THEME = 'themes/william-pelican/'
 
 MARKDOWN = {
     'extension_configs': {
+        'markdown.extensions.admonition': {},
         'markdown.extensions.codehilite': {'css_class': 'highlight'},
         'markdown.extensions.extra': {},
         'markdown.extensions.meta': {},
