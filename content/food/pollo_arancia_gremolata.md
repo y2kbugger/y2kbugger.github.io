@@ -5,9 +5,9 @@ tags: chicken, italian
 author: zak kohler
 summary: Francaise chicken with orange gremolata and a tangy pan sauce.
 status: published
-cover: /img/2024-11-24__pollo-arancia-gremolata__cover.jpg
+cover: /img/2024-11-24__pollo-arancia-gremolata__cover2.jpg
 ---
-![finished plated gremolata chicken](../img/2024-11-24__pollo-arancia-gremolata__cover.jpg)
+![finished plated gremolata chicken](../img/2024-11-24__pollo-arancia-gremolata__cover2.jpg)
 
 !!! section "Ingredients"
     ## Ingredients {: #ingredients }
@@ -37,7 +37,7 @@ cover: /img/2024-11-24__pollo-arancia-gremolata__cover.jpg
     - salt, _1% by weight of the chicken, for dry brining_
     - flour, _for dredging_
     - 2 eggs, _beaten with ~1 Tbsp water_
-    - olive / neutral oil, _to taste,for frying_
+    - olive / neutral oil, _to taste, for frying_
 
 
 ## Preparation
