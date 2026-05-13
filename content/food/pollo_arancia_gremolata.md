@@ -43,7 +43,9 @@ cover: /img/2024-11-24__pollo-arancia-gremolata__cover2.jpg
 ## Preparation
 ### Gremolata
 ![gremolata ingredients](../img/2024-11-24__pollo-arancia-gremolata__gremolata-ingredients.png)
+
 Mix parsley, orange zest, lemon zest, garlic, orange juice, and lemon juice. Add just enough olive oil to coat the mixture and season with salt to taste.
+
 ![mixed gremolata](../img/2024-11-24__pollo-arancia-gremolata__gremolata-mixed.png)
 
 
@@ -67,8 +69,9 @@ Francaise the cutlets by dipping them in the egg mixture and immediately frying,
 ![plated pollo all'arancia](../img/2024-11-24__pollo-arancia-gremolata__plated.png)
 
 ## Notes
-
 - Chicken prep: slice breasts and then pound flat. Then portion for a final yield of 3-4 cutlets per breast. Dry brine the flattened cutlets with ~1% salt, packed tight and covered overnight, this improves texture, firming them up for dredging and frying.
 - The lemon is for adjusting acidity, and I find crystallized lemon convenient
 - Use crushed red pepper, harissa, or calabrian chili paste to spice up the sauce.
 - The chicken holds well sauced and warm in the Dutch oven.
+
+![eaten pollo all'arancia](../img/2024-11-24__pollo-arancia-gremolata__eaten.png)
