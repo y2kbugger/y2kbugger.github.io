@@ -69,5 +69,4 @@ configured via the `content/extra/CNAME` file and the registrar's DNS records.
     - Once finished expunge the talk about rst and google photos in all articles and howto and readme. This should decrease length of docs.
 - make all files local
 - strip out js? what is slicknav for?
-- unsubrepo the template/theme
 

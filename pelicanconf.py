@@ -8,7 +8,7 @@ SITENAME = 'blog.y2kbugger.com'
 SITEURL = ''
 
 PATH = 'content'
-THEME = 'themes/william-pelican/'
+THEME = 'themes/y2kbugger/'
 
 MARKDOWN = {
     'extension_configs': {
