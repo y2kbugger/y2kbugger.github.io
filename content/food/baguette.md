@@ -15,7 +15,7 @@ Makes **3 small baguettes**.
     ## Ingredients {: #ingredients }
 
     - 500 g bread flour
-    - 325 g water, _15 g reserved_
+    - 325 g water
     - 10 g salt
     - 1 g instant yeast
 
@@ -24,25 +24,11 @@ Makes **3 small baguettes**.
 Add to stand mixer bowl:
 
 - 500 g flour
-- 310 g water
+- 325 g water
+- 10 g salt
 - 1 g instant yeast
 
-Mix with dough hook:
-
-- **Speed 1:** 2 min
-- **Rest:** 20–30 min
-
-Add:
-
-- 10 g salt
-- 15 g reserved water
-
-Mix:
-
-- **Speed 1:** 2 min
-- **Speed 2:** 3–5 min
-
-Stop when dough is smoother, elastic, and mostly clearing the sides, but still tacky. No full windowpane needed.
+Mix with dough hook until smoother, elastic, and mostly clearing the sides, but still tacky. No full windowpane needed.
 
 ## Stage 2: Room-temp bulk
 
