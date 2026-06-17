@@ -1,19 +1,16 @@
 {
   "python.experiments.enabled": false,
   "python.useEnvironmentsExtension": true,
-  "cSpell.words": [
-    "Aceto",
-    "all'Arancia",
-    "Balsamico",
-    "clkt",
-    "Firekissed",
-    "gremolata",
-    "harissa",
-    "livereload",
-    "msgout",
-    "pelicanconf",
-    "PISPIGOT",
-    "Pollo",
-    "SQLVM"
-  ]
+  "cSpell.autocorrect": true,
+  "cSpell.diagnosticLevel": "Error",
+  "cSpell.customDictionaries": {
+    "blog-words": {
+      "name": "blog-words",
+      "description": "Blog-specific terms",
+      "path": "${workspaceFolder}/.cspell/blog-words.txt",
+      "addWords": true,
+      "scope": "workspace"
+    }
+  },
+  "cSpell.autoFormatConfigFile": false
 }

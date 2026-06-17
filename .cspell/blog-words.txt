@@ -1,0 +1,37 @@
+# Blog-specific cSpell dictionary.
+#
+# One word per line. Add real domain terms here that the spell checker does not
+# know (baking/cooking terms, product names, jargon). The "Add to Dictionary"
+# quick fix in VS Code writes here because this dictionary has `addWords: true`.
+#
+# `autolyse` below is a genuine bread-making technique that cSpell flags as a
+# misspelling (a false positive). It lives here to prove the dictionary
+# suppresses the Information-level spelling problem.
+
+autolyse
+arancia
+y2kbugger
+Aceto
+all'Arancia
+Balsamico
+clkt
+Firekissed
+Francaise
+gremolata
+harissa
+livereload
+msgout
+pelicanconf
+PISPIGOT
+Pollo
+SQLVM
+venv
+devserver
+publishconf
+codehilite
+isinstance
+htooze
+exif
+slicknav
+unsubrepo
+Marnier

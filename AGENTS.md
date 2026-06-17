@@ -1,0 +1,74 @@
+# AGENTS.md
+
+Instructions for AI agents working in this blog repository.
+
+## Make it RIGHT, not just WORKING
+
+Fix root causes, not symptoms. When something is broken, find and repair the
+underlying defect instead of routing around it with a one-off workaround.
+
+A concrete example: when `uv sync` failed to parse `pyproject.toml`, the
+*workaround* was to install the package separately into the existing `.venv`;
+the *right* fix was to repair the malformed `name = ""` field (and the stale
+`uv.lock` that mirrored it) so the normal `uv sync` workflow works for everyone,
+every time. Prefer the latter.
+
+Applied generally:
+
+- Treat a failing standard workflow (build, sync, lint, test) as a bug to fix,
+  not an obstacle to bypass.
+- Don't disable checks, pin around breakage, hardcode, or special-case to make
+  output appear correct — fix the thing that is actually wrong.
+- If the proper fix is genuinely out of scope, say so explicitly and flag it
+  rather than quietly shipping a workaround.
+
+## Always verify articles against the How To
+
+[content/howto.md](content/howto.md) is the canonical guide for how articles are
+authored (Markdown, front matter, links, images, recipe ingredient blocks,
+draft status, naming conventions, etc.).
+
+Also referenced and compare against the last 3 most recent articles to ensure consistency with the How To.
+It will help you draft, but it will also help me keep the howto consistent and up-to-date with what I am actually writing.
+
+**After every change to an article**, re-read the relevant parts of
+`content/howto.md` and verify the article follows *all* of its rules. Do this
+check on every edit, not just the first.
+
+In your end-of-turn summary, report:
+
+- **Non-trivial conflicts** between the article and `content/howto.md` — e.g. a
+  recipe that does not use the `!!! section "Ingredients"` block with the
+  `## Ingredients {: #ingredients }` anchor, a published article still on a
+  Google-hosted image, an `# H1` title instead of a `title:` front-matter field,
+  a wrong slug/category, or a missing required metadata field. Skip purely
+  cosmetic nits, and fix trivial or even moderately straight forward violations.
+- **Problems in `content/howto.md` itself** — ambiguities, contradictions, or
+  possible correctness errors such as invalid or deprecated syntax, links that
+  no longer resolve, or guidance that conflicts with `pelicanconf.py` or the
+  installed Markdown extensions. Flag these rather than silently following them.
+
+Do not auto-"fix" the How To or force an article to comply when the rule itself
+looks wrong — surface it for review instead.
+
+## New articles start as drafts
+
+Every new article must be created with `status: draft` in its front matter, even
+before the content exists. Only flip to `status: published` when explicitly asked.
+
+## Triage spelling problems on every edit
+
+The cSpell extension reports misspellings as **Information**-level problems (see
+`.vscode/settings.json`, `cSpell.diagnosticLevel`). After editing any content,
+check the Problems panel and resolve **every** spelling problem you introduced or
+touched — do not leave them outstanding. For each one, do exactly one of:
+
+1. **Correct it** if it is a genuine typo.
+2. **Add it to the dictionary** if it is a correct domain term or proper noun
+   (a false positive). Add the word to [.cspell/blog-words.txt](.cspell/blog-words.txt)
+   (one word per line), which is the workspace dictionary configured with
+   `addWords: true`. The `cSpell.words` array in `.vscode/settings.json` is the
+   legacy location; prefer the dictionary file for new words.
+
+Never suppress a real misspelling by adding it to the dictionary, and never
+leave a genuine domain term flagged.

@@ -7,7 +7,7 @@ summary: Francaise chicken with orange gremolata and a tangy pan sauce.
 status: published
 cover: /img/2024-11-24__pollo-arancia-gremolata__cover2.jpg
 ---
-![finished plated gremolata chicken](../img/2024-11-24__pollo-arancia-gremolata__cover2.jpg)
+![Pollo all'arancia plated and finished with gremolata.](../img/2024-11-24__pollo-arancia-gremolata__cover2.jpg)
 
 !!! section "Ingredients"
     ## Ingredients {: #ingredients }
@@ -42,11 +42,11 @@ cover: /img/2024-11-24__pollo-arancia-gremolata__cover2.jpg
 
 ## Preparation
 ### Gremolata
-![gremolata ingredients](../img/2024-11-24__pollo-arancia-gremolata__gremolata-ingredients.png)
+![Gremolata ingredients: orange and lemon zest, parsley, and garlic.](../img/2024-11-24__pollo-arancia-gremolata__gremolata-ingredients.png)
 
 Mix parsley, orange zest, lemon zest, garlic, orange juice, and lemon juice. Add just enough olive oil to coat the mixture and season with salt to taste.
 
-![mixed gremolata](../img/2024-11-24__pollo-arancia-gremolata__gremolata-mixed.png)
+![The finished gremolata, mixed and coated with olive oil.](../img/2024-11-24__pollo-arancia-gremolata__gremolata-mixed.png)
 
 
 ### Chicken
@@ -56,7 +56,7 @@ Dredge the chicken in flour and let rest.
 Francaise the cutlets by dipping them in the egg mixture and immediately frying, taking care not to overcook. Move the fried cutlets to a covered Dutch oven preheated to 170°F.
 
 ### Pan Sauce
-![pan sauce](../img/2024-11-24__pollo-arancia-gremolata__pan-sauce.png)
+![The orange pan sauce reducing with shallots and cherry tomatoes.](../img/2024-11-24__pollo-arancia-gremolata__pan-sauce.png)
 
 - Sauté shallots and cherry tomatoes together in the fry pan until softened
 - Add orange juice, preserves, stock, wine, and Grand Marnier, then reduce.
@@ -66,7 +66,7 @@ Francaise the cutlets by dipping them in the egg mixture and immediately frying,
 ### Plating
 - Serve chicken topped with spoonful each of extra sauce and gremolata.
 
-![plated pollo all'arancia](../img/2024-11-24__pollo-arancia-gremolata__plated.png)
+![Plated pollo all'arancia, topped with extra sauce and gremolata.](../img/2024-11-24__pollo-arancia-gremolata__plated.png)
 
 ## Notes
 - Chicken prep: slice breasts and then pound flat. Then portion for a final yield of 3-4 cutlets per breast. Dry brine the flattened cutlets with ~1% salt, packed tight and covered overnight, this improves texture, firming them up for dredging and frying.
@@ -74,4 +74,4 @@ Francaise the cutlets by dipping them in the egg mixture and immediately frying,
 - Use crushed red pepper, harissa, or calabrian chili paste to spice up the sauce.
 - The chicken holds well sauced and warm in the Dutch oven.
 
-![eaten pollo all'arancia](../img/2024-11-24__pollo-arancia-gremolata__eaten.png)
+![The plate, happily cleaned.](../img/2024-11-24__pollo-arancia-gremolata__eaten.png)
