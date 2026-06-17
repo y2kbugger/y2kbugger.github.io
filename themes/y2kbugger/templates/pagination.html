@@ -1,0 +1,13 @@
+{% if DEFAULT_PAGINATION %}
+    <div class="pager">
+        {% if articles_page.has_previous() %}
+            <a href="{{ SITEURL }}/{{ articles_previous_page.url }}">&laquo; previous</a>
+        {% endif %}
+
+        page {{ articles_page.number }} / {{ articles_paginator.num_pages }}
+
+        {% if articles_page.has_next() %}
+            <a href="{{ SITEURL }}/{{ articles_next_page.url }}">next &raquo;</a>
+        {% endif %}
+    </div>
+{% endif %}

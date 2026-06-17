@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+    {% block htmlhead %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <title>{% block html_title %}{{ SITENAME }}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/theme/css/normalize.css">
+        <link rel="stylesheet" href="/theme/css/styles.css">
+        <link rel="stylesheet" href="/theme/css/pygment.css">
+        <link rel="alternate" type="application/atom+xml" href="{{ SITEURL }}/feeds/all.atom.xml" title="All Categories">
+        {{ HEAD_EXTRA }}
+        {% if DEBUG %}
+        {% endif %}
+    {% endblock %}
+</head>
+
+<body>
+{% macro author_and_date(article) %}
+    {% if article.author %}
+        <span class="author">By {{ article.author }}</span>
+    {% endif %}
+    {% if article.locale_date %}
+        <span class="publication-date" title="{{ article.date.isoformat() }}"> on {{ article.locale_date | replace(" @ 00:00","") }}</span>
+    {% endif %}
+    {% if article.modified and article.modified != article.date %}
+        <span class="modification-date" title="{{ article.modified.isoformat() }}"> last modified on {{ article.modified|strftime(DEFAULT_DATE_FORMAT) | replace(" @ 00:00","") }}</span>
+    {% endif %}
+{% endmacro %}
+
+{% macro social() %}
+    <div class="social-container">
+        <ul>
+            <li class="social-item">Find me on:</li>
+            {% for (site, url, linktext) in SOCIAL %}
+            <li class="social-item social-{{site}}"><a href="{{url}}">{{linktext}}</a></li>
+            {% endfor %}
+
+            <li class="social-item social-rss"><img class="feed-icon" src="/theme/feed.svg"/><a href="/feeds/all.atom.xml">ATOM Feed</a></li>
+        </ul>
+    </div>
+{% endmacro %}
+
+<div id="wrapper">
+    <a href="/index.html">
+        <img id="logo-image" src="/theme/logo-image.png" />
+    </a>
+    <nav>
+        <ul id="menu">
+            {% for title, link in MENUITEMS %}
+                <li{% if link == '/' + output_file %} class="active"{% endif %}><a href="{{ link }}">{{ title }}</a>
+                </li>
+            {% endfor %}
+            {% if DISPLAY_PAGES_ON_MENU %}
+                {% for p in pages %}
+                    <li{% if p == page %} class="active"{% endif %}><a
+                            href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+                {% endfor %}
+            {% endif %}
+            {% if DISPLAY_CATEGORIES_ON_MENU %}
+                {% for cat, null in categories %}
+                    {% if cat != 'meta'  %}
+                        <li class="category-menu-item{% if loop.first %} category-menu-item-first{% endif %}{% if cat == category %} active{% endif %}"><a
+                                href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </nav>
+    {{ social() }}
+
+    <header class="page-header">
+        {% block header %}
+        {% endblock %}
+    </header>
+
+    <main class="content">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+
+    <footer class="page-footer">
+        {{ social() }}
+        {% block footer %}
+            {{ COPYRIGHT }}
+        {% endblock %}
+    </footer>
+
+</div>
+</body>
+
+{% include 'integrations/googleanalytics.html' %}
+
+</html>

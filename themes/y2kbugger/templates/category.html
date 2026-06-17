@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+
+{% block htmlhead %}
+    {{ super() }}
+    <link rel="alternate" type="application/atom+xml" href="{{ SITEURL }}/feeds/{{ category }}.atom.xml" title="{{ category }}">
+{% endblock %}
+
+{% block html_title %}{{ category }} - {{ SITENAME }}{% endblock %}
+
+{% block header %}
+    <h1>Category<br />&ldquo;{{ category }}&rdquo;</h1>
+{% endblock %}

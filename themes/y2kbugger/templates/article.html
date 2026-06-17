@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block html_title %}{{ article.title }} - {{ SITENAME }}{% endblock %}
+
+{% block htmlhead %}
+    {{ super() }}
+    {% for keyword in article.keywords %}
+        <meta name="keywords" contents="{{ keyword }}"/>
+    {% endfor %}
+
+    {% for description in article.description %}
+        <meta name="description" contents="{{ description }}"/>
+    {% endfor %}
+
+    {% for tag in article.tags %}
+        <meta name="tags" contents="{{ tag }}"/>
+    {% endfor %}
+{% endblock %}
+
+{% block header %}
+    <h1>{{ article.title }}</h1>
+
+    <div class="article-meta">
+        {{ author_and_date(article) }}
+
+        {% if article.tags|length > 0 %}
+            <div class="tags">
+                Tagged:
+                {% for tag in article.tags %}
+                    <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %},{% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}
+
+{% block content %}
+    <div class="article-content">
+        {{ article.content }}
+    </div>
+
+    {% include 'integrations/utterances.html' %}
+{% endblock %}
