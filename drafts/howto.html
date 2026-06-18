@@ -110,7 +110,18 @@ of <em>this</em> file's source is a live example — refer to it instead of dupl
 one here. The fields:</p>
 <ul>
 <li><code>title</code> — displayed title, <code>Title Case</code>.</li>
-<li><code>date</code> / <code>modified</code> — <code>YYYY-MM-DD</code> or <code>YYYY-MM-DD HH:MM:SS</code>.</li>
+<li><code>date</code> / <code>modified</code> — <code>YYYY-MM-DD</code> or <code>YYYY-MM-DD HH:MM:SS</code>. Both are
+  <strong>mandatory</strong>. <code>date</code> is the original publish date and never changes. Set
+  <code>modified</code> equal to <code>date</code> when the article is first written, then bump it
+  only when the <em>content</em> meaningfully changes — new sections, revised steps,
+  corrected facts, added images, reworked conclusions. Do <strong>not</strong> bump it for
+  cosmetic or mechanical work that leaves the meaning intact: copy editing,
+  fixing typos, reformatting, restyling, re-slugging, translating the source
+  format (e.g. the reStructuredText → Markdown migration), or moving an image to
+  a local path. When in doubt, ask "would a returning reader find something new
+  to read?" — if not, leave <code>modified</code> alone. The "last modified" line is hidden
+  on the rendered page whenever <code>modified</code> still equals <code>date</code>, so keeping the
+  field present-but-equal costs nothing and saves churning the key in and out.</li>
 <li><code>tags</code> — comma-separated.</li>
 <li><code>author</code> — usually <code>zak kohler</code>.</li>
 <li><code>summary</code> — one-line description for listings and meta tags.</li>
@@ -132,9 +143,20 @@ attribute lists, footnotes, definition lists), <code>meta</code>, and <code>capt
 to <a href="#metadata">the metadata fields</a> or down to <a href="#recipe-ingredients">recipe ingredients</a>.</p>
 <p>Link to <em>another</em> article by its source path with <code>{filename}</code> — here's a live
 link to the <a href="http://blog.y2kbugger.com/naan.html">naan recipe</a> and one to the
-<a href="http://blog.y2kbugger.com/drafts/baguette.html">baguette recipe</a>.</p>
+<a href="http://blog.y2kbugger.com/baguette.html">baguette recipe</a>.</p>
 <p>External inline link: <a href="https://junglejims.com/">Jungle Jim's</a>. Bare URLs also
 render: <a href="http://google.com">http://google.com</a>.</p>
+<h3 id="comments">Comments</h3>
+<p>To leave a note in the source, use a standard HTML comment:</p>
+<div class="highlight"><pre><span></span><code>&lt;!-- a note to self about this section --&gt;
+</code></pre></div>
+
+<p>This blog is open source, so there's nothing to hide — HTML comments are
+readable in the repo and pass through into the published page source, which is
+fine. They're stripped from the <em>visible</em> page. Keep each comment on its own
+line with a blank line above and below.</p>
+<p>For a note meant for <em>readers</em>, don't use a comment at all — use a <code>note</code>
+admonition (see <a href="#inline-styles">Inline styles</a>).</p>
 <h3 id="images">Images</h3>
 <p><strong>All new images are stored locally</strong> in <code>content/img/</code> and committed to the
 repo. Name them with the convention:</p>
@@ -150,6 +172,8 @@ caption</strong>, not a terse description:</p>
 <figure><img src="../img/2024-11-24__pollo-arancia-gremolata__plated.png"><figcaption>Plated pollo all'arancia, finished with gremolata and pan sauce.</figcaption>
 </figure>
 </p>
+<p>Keep captions <strong>short — one plain line</strong>. Say what the photo shows; don't
+restate the surrounding step or pile on adjectives.</p>
 <p>Use a site-absolute path for the <code>cover</code> metadata:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">cover</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/img/2024-11-24__pollo-arancia-gremolata__cover2.jpg</span>
 </code></pre></div>
