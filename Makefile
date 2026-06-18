@@ -21,7 +21,4 @@ github: publish
 	git push origin $(GITHUB_PAGES_BRANCH)
 	git push origin write
 
-list-rst:
-	./list_rst.sh
-
-.PHONY: livereload publish github list-rst
+.PHONY: livereload publish github

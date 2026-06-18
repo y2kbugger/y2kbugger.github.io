@@ -107,5 +107,3 @@ ENV/
 
 #pelican
 output/
-# reference snapshot used while converting rst -> md
-output_reference/
