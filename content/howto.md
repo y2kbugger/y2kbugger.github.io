@@ -96,6 +96,11 @@ Use a site-absolute path for the `cover` metadata:
 cover: /img/2024-11-24__pollo-arancia-gremolata__cover2.jpg
 ```
 
+Image metadata (EXIF/GPS/device info) is stripped automatically — a pre-commit
+hook blocks any commit that stages a photo carrying GPS, serial, or device
+metadata. If it trips, run `make exif-strip`, re-stage, and commit again. See
+the [README](../README.md) for details.
+
 ### Recipe ingredients
 
 Wrap the ingredient list in an `ingredients` admonition. The block's own title

@@ -13,7 +13,17 @@ GITHUB_PAGES_BRANCH=master
 livereload:
 	$(PY) devserver.py
 
-publish:
+exif-check:
+	$(PY) exifguard.py check
+
+exif-strip:
+	$(PY) exifguard.py strip
+
+hooks:
+	git config core.hooksPath .githooks
+	@echo "git hooks installed (core.hooksPath=.githooks)"
+
+publish: exif-check
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 github: publish
@@ -21,4 +31,4 @@ github: publish
 	git push origin $(GITHUB_PAGES_BRANCH)
 	git push origin write
 
-.PHONY: livereload publish github
+.PHONY: livereload exif-check exif-strip hooks publish github

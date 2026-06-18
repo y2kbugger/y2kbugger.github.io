@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# Block commits that would leak privacy-sensitive image metadata onto the
+# `write` branch. Scans staged image files with exifguard and refuses the
+# commit if any GPS/device/serial/XMP metadata is present.
+#
+# Installed via `make hooks` (sets core.hooksPath to .githooks). Bypass in a
+# genuine emergency with `git commit --no-verify`.
+set -euo pipefail
+
+repo_root="$(git rev-parse --show-toplevel)"
+cd "$repo_root"
+
+# Collect staged (added/copied/modified) image files, NUL-separated for safety.
+mapfile -d '' -t staged < <(
+    git diff --cached --name-only --diff-filter=ACM -z \
+        | grep -ziE '\.(jpe?g|png|gif|tiff?|webp)$' || true
+)
+
+if [ ${#staged[@]} -eq 0 ]; then
+    exit 0
+fi
+
+if [ -x ./.venv/bin/python ]; then
+    py=./.venv/bin/python
+else
+    py=python3
+fi
+
+if ! "$py" exifguard.py check "${staged[@]}"; then
+    echo
+    echo "pre-commit: refusing to commit images with sensitive metadata." >&2
+    echo "Fix with: make exif-strip   (then re-stage and commit)" >&2
+    echo "Override (not recommended): git commit --no-verify" >&2
+    exit 1
+fi

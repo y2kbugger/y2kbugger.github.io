@@ -37,9 +37,40 @@ make github
 `master` branch, and pushes both `master` and `write`. GitHub Pages serves
 `master`.
 
+## Image metadata (EXIF) guard
+
+Photos straight off a phone embed GPS coordinates, device make/model, serial
+numbers, and timestamps. To avoid leaking those, `exifguard.py` scans
+`content/img` and strips the sensitive metadata losslessly (it keeps the EXIF
+`Orientation` tag and embedded ICC color profile so images still render
+correctly).
+
+```bash
+make exif-check   # report any leaks (non-zero exit if found)
+make exif-strip   # remove the metadata in place
+```
+
+Two layers enforce this automatically:
+
+- **Pre-commit hook** — blocks any commit on `write` that stages an image with
+  sensitive metadata. Install it once with `make hooks` (sets
+  `core.hooksPath` to `.githooks`). Bypass only in emergencies with
+  `git commit --no-verify`.
+- **Publish** — `make publish`/`make github` run `exif-check` first and abort
+  if anything is dirty.
+
 ## Initial Setup
 
 Create your virtual environment using `uv sync`.
+
+After cloning, install the git hooks so the EXIF guard runs on commit:
+
+```bash
+make hooks
+```
+
+Requires the `exiftool` CLI (`sudo pacman -S perl-image-exiftool` or
+`apt install libimage-exiftool-perl`).
 
 
 # Architecture
@@ -57,6 +88,5 @@ configured via the `content/extra/CNAME` file and the registrar's DNS records.
 
 
 # TODO
-- exif stripper/checker
 - Add explicit modified date to each article, mtimes are not preserved in git.
 
