@@ -13,7 +13,6 @@ arancia
 archlinux
 autolyse
 Balsamico
-Blogroll
 clkt
 codehilite
 devserver
@@ -36,7 +35,6 @@ Pollo
 publishconf
 SITENAME
 SITEURL
-slicknav
 SQLVM
 unsubrepo
 venv

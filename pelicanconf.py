@@ -49,12 +49,6 @@ MENUITEMS = [
 DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = True
 
-# Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
-
 PLUGINS = [
     'drafts',
 ]
@@ -93,8 +87,6 @@ HEAD_EXTRA = HEAD_EXTRA_COMMON + HEAD_EXTRA_DEBUG
 
 this_year = datetime.today().strftime("%Y")
 COPYRIGHT = f"zak kohler {this_year} &mdash; Happy Hacking"
-
-ENABLE_SLICKNAV = False
 
 UTTERANCES_REPO = 'y2kbugger/y2kbugger.github.io'
 UTTERANCES_THEME = 'github-light'
