@@ -1,21 +1,18 @@
-The Art of (Virtual) Rubber Compounding
-#######################################
-
-:date: 2018-09-12
-:tags: Tire-Society
-:author: zak kohler
-:summary: Tire Society, Akron, OH
-:cover: `https://lh3.googleusercontent.com/zfciYIV-Jb8SrG3rkqVaagMX7JbQW25udAJwTbq3zSqNf-y-5xMJdw8QlH76WVIBB_nY0tEKAy68nRczf4AYMrK86ay_Kfa4BDfFuXPTOR7khUnxq60hnLDFiwYZuJxOMRpAb6_IFOU=w530-h678-no`
-:status: published
+---
+title: The Art of (Virtual) Rubber Compounding
+date: 2018-09-12
+tags: Tire-Society
+author: zak kohler
+summary: Tire Society, Akron, OH
+status: published
+cover: /img/2018-09-12__tire-society__first-talk.jpg
+---
 
 @ **Tire Society**, *Akron, OH*
 
-.. image:: https://lh3.googleusercontent.com/zfciYIV-Jb8SrG3rkqVaagMX7JbQW25udAJwTbq3zSqNf-y-5xMJdw8QlH76WVIBB_nY0tEKAy68nRczf4AYMrK86ay_Kfa4BDfFuXPTOR7khUnxq60hnLDFiwYZuJxOMRpAb6_IFOU=w530-h678-no
-   :width: 40%
-   :alt: First time in front of such a large audience.
+![First time in front of such a large audience.](../img/2018-09-12__tire-society__first-talk.jpg){: width=40% }
 
-Abstract
-========
+## Abstract
 The art of rubber compounding has historically been mastered by a small group of experts with extreme breadth and depth of experience. The rising trend of fluidity between companies is making loyal lifetime "sage compounders" a dying breed and organizations must find new ways to capture and archive experience despite having turnover. Minimizing the time before a new hire becomes productive also becomes critical.
 
 Complex interactions between raw materials and processing make "rules of thumb" insufficient for discovering new technology. These guidelines, even when properly captured, are often overfit to specific scenarios and can be skewed by human cognitive biases—a disadvantage that is especially detrimental when exploring new technology. Machine Learning, on the other hand, is a method of encoding "experience" based on many observations. Industries that have been revolutionized by data science include algorithmic trading, healthcare, and retail. Just as data has taken the art out of sales and stocks, so too could it allow for more accurate formulation development and reduced cycle time.
