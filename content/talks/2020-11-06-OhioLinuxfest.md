@@ -12,7 +12,7 @@ cover: /img/2020-11-06__ohio-linuxfest__cover.png
 @ **Ohio Linuxfest**, *Virtual*
 
 [Slides](https://docs.google.com/presentation/d/1BnCyFaq_yDQMpGsGNcsVLQeVmer9JnVh4CuCS1wOK_c/edit?usp=sharing)
-[Main Blog Article]({filename}/programming/baremetal-riscv-renode-1.rst)
+[Main Blog Article]({filename}/programming/baremetal-riscv-renode-1.md)
 
 ```bash
 git clone https://github.com/y2kbugger/baremetal-riscv-renode.git
