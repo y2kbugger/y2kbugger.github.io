@@ -349,7 +349,7 @@ I am inspired by Miro Samek. He does a great introduction to many embedded progr
 Check out his course here: <https://www.state-machine.com/quickstart/>
 
 ## Next post
-In [Part 2]({filename}/programming/baremetal-riscv-renode-2.rst) I review a list of alternate dev environments and how I converged on what I've described here. There are many easier and more *complete/integrated* solutions, but we have a stated goal of gaining understanding and this is a forcing function for more control over details.
+In [Part 2]({filename}/programming/baremetal-riscv-renode-2.md) I review a list of alternate dev environments and how I converged on what I've described here. There are many easier and more *complete/integrated* solutions, but we have a stated goal of gaining understanding and this is a forcing function for more control over details.
 
 ## Footnotes
 [^renode-elf-start]: The computer has to start executing somewhere on reset, the exact memory location is called the reset vector and on RISC-V it is implementation dependent and Renode coordinates the reset vector in its simulator with the memory address of the [e_entry header](https://refspecs.linuxfoundation.org/elf/gabi4+/ch4.eheader.html).
