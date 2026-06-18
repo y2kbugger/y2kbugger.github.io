@@ -59,13 +59,5 @@ configured via the `content/extra/CNAME` file and the registrar's DNS records.
 # TODO
 - Add some style for bare admonitions (maybe dry out with the ingredients special case?
 - exif stripper/checker
-- convert all to MD
-    - Older articles are still `.rst` (reStructuredText) and need conversion to
-    Markdown. Write all new articles in Markdown.
-    - Some of those `.rst` articles still reference images hosted on Google Photos
-    instead of local files in `content/img/`. These need to be downloaded,
-    renamed to the local convention, and committed.
-    - Once finished expunge the talk about rst and google photos in all articles and howto and readme. This should decrease length of docs.
-- make all files local
 - strip out js? what is slicknav for?
 
