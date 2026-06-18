@@ -98,22 +98,31 @@ cover: /img/2024-11-24__pollo-arancia-gremolata__cover2.jpg
 
 ### Recipe ingredients
 
-Wrap the ingredient list in a `section` admonition containing an `## Ingredients`
-heading. The heading is hidden by CSS (the admonition's own title shows instead)
-but its auto-generated `#ingredients` anchor lets you link to it. Use a
-**bulleted list** — never a table — and group ingredients with sub-headings,
+Wrap the ingredient list in an `ingredients` admonition. The block's own title
+bar shows "Ingredients", so no inner `## Ingredients` heading is needed. Use a
+**bulleted list** — never a table — and group ingredients with `##` sub-headings,
 italicizing prep notes:
 
-!!! section "Ingredients"
-    ## Ingredients
-
-    ### Gremolata
-
+!!! ingredients "Ingredients"
+    ## Gremolata
     - zest of 2 oranges
     - 1 bunch parsley, _minced_
     - 5 cloves garlic, _minced_
     - olive oil
     - salt
+    ## Pan Sauce
+    - 1 cup stock
+    - olive oil
+    - garlic, _minced_
+    - Fig Jam
+
+or without sub-headings
+
+!!! ingredients "Ingredients"
+    - 2 oreo
+    - 2 gallons buffalo milk
+    - olive oil
+    - garlic, _minced_
 
 This has specific and custom CSS rules.
 
@@ -127,8 +136,15 @@ This has specific and custom CSS rules.
 Admonitions (notes, warnings, etc.) render live like this:
 
 !!! note
-    Body text indented under the admonition. Indent everything that belongs
+    Body text indented under the admonition. For notes it is BLUE. Indent everything that belongs
     inside it by four spaces.
+
+!!! warning
+    Warning text indented under the admonition is RED.
+
+!!! Any "others are just grey"
+    This is grey.
+    This is also grey.
 
 ### Code blocks
 

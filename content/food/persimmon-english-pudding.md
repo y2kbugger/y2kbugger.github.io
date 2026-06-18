@@ -20,10 +20,8 @@ My recipe is based on:
 
 > <https://www.marthastewart.com/340210/steamed-persimmon-pudding>
 
-!!! section "Ingredients"
-    ## Ingredients
-
-    ### Wet
+!!! ingredients "Ingredients"
+    ## Wet
     - 1/2 c. unsalted butter
     - 2.25 c. sugar[^sugar]
     - 6 very soft persimmons
@@ -32,7 +30,7 @@ My recipe is based on:
     - 2 teaspoons pure vanilla extract
     - 1 lemon
 
-    ### Dry
+    ## Dry
     - 3 c. all-purpose flour
     - 3 teaspoons ground cinnamon
     - 1 whole freshly ground nutmeg
@@ -42,14 +40,14 @@ My recipe is based on:
     - 1/2 teaspoon coarse salt
     - 1 1/2 teaspoons baking soda
 
-    ### Simmered
+    ## Simmered
     - 1/2 c. brandy
     - 1/3 c. sultanas (golden raisins)
     - 1 c. pecans, coarsely chopped
     - 1/3 c. finely chopped candied ginger
     - 4oz chopped candied citron
 
-    ### Topping
+    ## Topping
     - 2 c. heavy cream
     - 1/4 c. brandy
     - 2 T Powdered Sugar

@@ -57,8 +57,6 @@ configured via the `content/extra/CNAME` file and the registrar's DNS records.
 
 
 # TODO
-- Add some style for bare admonitions (maybe dry out with the ingredients special case?
-- Fix mobile layout, (enable wrap for categories links)
 - exif stripper/checker
 - Add explicit modified date to each article, mtimes are not preserved in git.
 

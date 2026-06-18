@@ -46,8 +46,7 @@ check on every edit, not just the first.
 In your end-of-turn summary, report:
 
 - **Non-trivial conflicts** between the article and `content/howto.md` — e.g. a
-  recipe that does not use the `!!! section "Ingredients"` block with the
-  `## Ingredients {: #ingredients }` anchor, a published article still on a
+  recipe that does not use the `!!! ingredients "Ingredients"` block, a published article still on a
   Google-hosted image, an `# H1` title instead of a `title:` front-matter field,
   a wrong slug/category, or a missing required metadata field. Skip purely
   cosmetic nits, and fix trivial or even moderately straight forward violations.

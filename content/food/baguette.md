@@ -11,9 +11,7 @@ cover: /img/2026-01-04__baguette__cover.jpg
 
 Makes **3 small baguettes**.
 
-!!! section "Ingredients"
-    ## Ingredients
-
+!!! ingredients "Ingredients"
     - 500 g bread flour
     - 325 g water
     - 10 g salt

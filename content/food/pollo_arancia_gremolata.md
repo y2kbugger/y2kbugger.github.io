@@ -9,10 +9,8 @@ cover: /img/2024-11-24__pollo-arancia-gremolata__cover2.jpg
 ---
 ![Pollo all'arancia plated and finished with gremolata.](../img/2024-11-24__pollo-arancia-gremolata__cover2.jpg)
 
-!!! section "Ingredients"
-    ## Ingredients
-
-    ### Gremolata
+!!! ingredients "Ingredients"
+    ## Gremolata
 
     - zest of 2 oranges
     - juice of ½ orange
@@ -22,7 +20,7 @@ cover: /img/2024-11-24__pollo-arancia-gremolata__cover2.jpg
     - olive oil
     - salt
 
-    ### Pan Sauce
+    ## Pan Sauce
     - 8 cherry tomatoes, _quartered, orange-colored_
     - 1 shallot, _finely diced_
     - juice of remaining 1.5 oranges
@@ -32,7 +30,7 @@ cover: /img/2024-11-24__pollo-arancia-gremolata__cover2.jpg
     - 3 Tbsp Grand Marnier, _optional_
     - 2 Tbsp butter
 
-    ### Chicken
+    ## Chicken
     - 2 chicken breasts, _flattened_
     - salt, _1% by weight of the chicken, for dry brining_
     - flour, _for dredging_

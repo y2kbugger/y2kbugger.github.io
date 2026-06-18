@@ -25,11 +25,6 @@ em {
   font-style: italic;
 }
 
-ul.ingredients li em {
-  color: #888;
-  font-size: .85em;
-}
-
 strong {
   font-weight: 600;
 }
@@ -438,70 +433,88 @@ footer.page-footer {
   color: #666;
 }
 
-.admonition.section {
+.admonition {
+  margin: 0 0 1em;
   padding: 0 1.5em 1.35em;
-  border: 1px solid #e6dbc6;
-  border-radius: 8px;
-  background: linear-gradient(180deg, #fffdf8 0%, #fbf5e8 100%);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 1px 2px rgba(93, 72, 33, 0.06);
+  border: 1px solid #d6d6da;
+  background: #f7f7f8;
 
   & p {
     margin-top: 0;
-    padding: 0;
   }
 
   & .admonition-title {
-    margin: 0 -1.5em;
-    padding: 0.6em 1.5em 0.55em;
-    border-bottom: 1px solid #e2d3ba;
-    border-radius: 8px 8px 0 0;
-    background: linear-gradient(180deg, #f5ead3 0%, #efe1c3 100%);
-    color: #74592d;
+    margin: 0 -1.5em 1.1em;
+    padding: 0.55em 1.5em 0.5em;
+    border-bottom: 1px solid #d6d6da;
+    background: #ececee;
+    color: #444;
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
   }
 
-  &>h2:first-of-type {
-    display: none;
-  }
-
-  & h3 {
-    margin-top: 1.25em;
-  }
-
-  & ul,
-  & ol {
-    padding-left: 1.4em;
-  }
-
-  & em {
-    margin-inline-start: .4em;
-    color: #887b67;
-    font-size: 0.88em;
-  }
-
   &> :last-child {
     margin-bottom: 0;
   }
-}
 
-/* hack to workaround https://github.com/sphinx-doc/sphinx/issues/1567 */
-table.footnote {
-  margin: 0px;
-  font-size: 0.77em;
-  line-height: 1.0em;
-}
+  &.note {
+    border-color: #c6c9da;
+    background: #f5f6fb;
 
-.footnote td.label {
-  width: 33px;
-}
+    & .admonition-title {
+      border-bottom-color: #c6c9da;
+      background: #e6e8f3;
+      color: #4a4d6b;
+    }
+  }
 
-.footnote td {
-  padding: 4px;
-}
+  &.warning {
+    border-color: #e0c4c4;
+    background: #fbf4f4;
 
-/* end hack */
+    & .admonition-title {
+      border-bottom-color: #e0c4c4;
+      background: #f3dede;
+      color: #8a3b3b;
+    }
+  }
+
+  &.ingredients {
+    border-color: #e6dbc6;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #fffdf8 0%, #fbf5e8 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 1px 2px rgba(93, 72, 33, 0.06);
+
+    & .admonition-title {
+      margin-bottom: 0;
+      border-bottom-color: #e2d3ba;
+      border-radius: 8px 8px 0 0;
+      background: linear-gradient(180deg, #f5ead3 0%, #efe1c3 100%);
+      color: #74592d;
+    }
+
+    & .admonition-title+* {
+      margin-top: 1.1em;
+    }
+
+    & h2 {
+      margin-top: 1.25em;
+      font-size: 1.15em;
+    }
+
+    & ul,
+    & ol {
+      padding-left: 1.4em;
+    }
+
+    & em {
+      margin-inline-start: .4em;
+      color: #887b67;
+      font-size: 0.88em;
+    }
+  }
+}
 
 #footnotes.section {
   margin: 18px 0px;
@@ -638,6 +651,10 @@ img.feed-icon {
 
   header.page-header div {
     border: 0;
+  }
+
+  nav ul#menu {
+    white-space: normal;
   }
 
 }

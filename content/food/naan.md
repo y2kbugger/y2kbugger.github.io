@@ -10,28 +10,27 @@ cover: /img/2026-01-02__naan__cover.jpg
 
 ![Cast Iron and grill setup](/img/2026-01-02__naan__cover.jpg)
 
-## Ingredients
+!!! ingredients "Ingredients"
+    ## Wet
+    - 1 cup warm water
+    - 1/3c warm milk
+    - 3 Tbl yogurt
+    - 1 Tbl sucrose, _yeast food_
+    - 2 tsp instant yeast
+    - 2 Tbl olive oil
+    - 4 Tbl bread flour
 
-### Wet
-- 1 cup warm water
-- 1/3c warm milk
-- 3 Tbl yogurt
-- 1 Tbl sucrose (yeast food)
-- 2 tsp instant yeast
-- 2 Tbl olive oil
-- 4 Tbl bread flour
+    ## Dry
+    - 150g bread flour
+    - 3 tsp salt
+    - 220g fine ground whole wheat flour, _eg. Gold Atta or similar_
 
-### Dry
-- 150g bread flour
-- 3 tsp salt
-- 220g fine ground whole wheat flour, eg. Gold Atta or similar
+    ## Delayed ingredients
+    - 6 cloves garlic, _coarsely minced_
 
-### Delayed ingredients
-- 6 cloves garlic, coarsely minced
-
-### Garlic Butter
-- 1/2 cup clarified butter or ghee, melted
-- 4 cloves garlic, finely minced
+    ## Garlic Butter
+    - 1/2 cup clarified butter or ghee, _melted_
+    - 4 cloves garlic, _finely minced_
 
 ---
 

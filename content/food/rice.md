@@ -9,9 +9,7 @@ status: draft
 
 TODO: transcribe from the physical recipe card.
 
-!!! section "Ingredients"
-    ## Ingredients
-
+!!! ingredients "Ingredients"
     - TODO
 
 ## Preparation
