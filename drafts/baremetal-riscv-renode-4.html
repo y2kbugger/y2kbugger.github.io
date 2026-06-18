@@ -183,12 +183,12 @@ https://www.youtube.com/watch?v=D0VuYe77Wu0&list=PLb-MsRpo_wlLW0EWRpAqnbbDsf4kxS
 <p>To get the offsets and registers the easiest way was to look at the Renode emulation directly. You can see that</p>
 <div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="n">Registers</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kt">long</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="n">RxTx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="n">x0</span><span class="p">,</span>
-<span class="w">    </span><span class="n">TxFull</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="n">x04</span><span class="p">,</span>
-<span class="w">    </span><span class="n">RxEmpty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="n">x08</span><span class="p">,</span>
-<span class="w">    </span><span class="n">EventStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="n">x0c</span><span class="p">,</span>
-<span class="w">    </span><span class="n">EventPending</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="n">x10</span><span class="p">,</span>
-<span class="w">    </span><span class="n">EventEnable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="n">x14</span><span class="p">,</span>
+<span class="w">    </span><span class="n">RxTx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0</span><span class="p">,</span>
+<span class="w">    </span><span class="n">TxFull</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x04</span><span class="p">,</span>
+<span class="w">    </span><span class="n">RxEmpty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x08</span><span class="p">,</span>
+<span class="w">    </span><span class="n">EventStatus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0c</span><span class="p">,</span>
+<span class="w">    </span><span class="n">EventPending</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x10</span><span class="p">,</span>
+<span class="w">    </span><span class="n">EventEnable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x14</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
 <p>The actual configuration of the UART hardware is a very simple addition:</p>

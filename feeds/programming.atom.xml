@@ -13,7 +13,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;/blockquote&gt;
-&lt;h2&gt;Methodology&lt;/h2&gt;
+&lt;h2 id="methodology"&gt;Methodology&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;The pi spigot algorithm is written in ASM&lt;/li&gt;
 &lt;li&gt;ASM is assembled to machine code&lt;/li&gt;
@@ -22,7 +22,7 @@
 &lt;li&gt;The cpu is clocked via a recursive cte until &lt;code&gt;HALT&lt;/code&gt;ed&lt;/li&gt;
 &lt;li&gt;Then we can just trace out the db connection to distill to pure sql script.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2&gt;LC-3 Emulator in SQL&lt;/h2&gt;
+&lt;h2 id="lc-3-emulator-in-sql"&gt;LC-3 Emulator in SQL&lt;/h2&gt;
 &lt;p&gt;State is stored in tables. Surprisingly few tables were required, and only &lt;code&gt;register&lt;/code&gt; is specific to the LC-3 instruction set.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;-- inserts here trigger the cpu to step.&lt;/span&gt;
 &lt;span class="k"&gt;CREATE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;TABLE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;clkt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
@@ -64,7 +64,7 @@
 &lt;span class="k"&gt;CREATE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;TABLE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;msgout&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;TEXT&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;channel&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;TEXT&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h2&gt;Clocking and instruction loading&lt;/h2&gt;
+&lt;h2 id="clocking-and-instruction-loading"&gt;Clocking and instruction loading&lt;/h2&gt;
 &lt;p&gt;The CPU is clocked by inserting into the &lt;code&gt;clkt&lt;/code&gt; table. This fires a trigger. Originally clk was part of the signal table, but separating it out let us trigger on &lt;code&gt;INSERT&lt;/code&gt;s rather than &lt;code&gt;UPDATE&lt;/code&gt;s, but update required one statement for EVERY clock cycle.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;-- inserts here trigger the cpu to step.&lt;/span&gt;
 &lt;span class="k"&gt;CREATE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;TABLE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;clkt&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
@@ -111,9 +111,9 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;While there is logic to short circuit cycles when &lt;code&gt;HALT&lt;/code&gt;ed, it still runs every clkt &lt;code&gt;INSERT&lt;/code&gt;, so pick a number just beyond what you expect the program to need.&lt;/p&gt;
-&lt;h2&gt;Instruction decoding and execution&lt;/h2&gt;
+&lt;h2 id="instruction-decoding-and-execution"&gt;Instruction decoding and execution&lt;/h2&gt;
 &lt;p&gt;All that remains is to decode and execute the instruction that was just loaded into the &lt;code&gt;signal.instr&lt;/code&gt; field. To fully implement the LC-3 instruction set, with a handful of &lt;code&gt;TRAP&lt;/code&gt;s for I/O, It took about 420 lines of  well spaced triggers.&lt;/p&gt;
-&lt;h3&gt;System calls&lt;/h3&gt;
+&lt;h3 id="system-calls"&gt;System calls&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;TRAP&lt;/code&gt;s aka software interrupts allow interacting with the world.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;HALT&lt;/code&gt; stops the machine&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;-- ## TRAP x25 (HALT) ##&lt;/span&gt;
@@ -152,7 +152,7 @@
 &lt;span class="k"&gt;END&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h3&gt;Standard instructions&lt;/h3&gt;
+&lt;h3 id="standard-instructions"&gt;Standard instructions&lt;/h3&gt;
 &lt;p&gt;There are instructions for arithmetic, logic, memory access, and control flow.&lt;/p&gt;
 &lt;p&gt;Here is an example of the &lt;code&gt;ADD&lt;/code&gt; instruction.&lt;/p&gt;
 &lt;table&gt;
@@ -202,7 +202,7 @@
 &lt;span class="k"&gt;END&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h2&gt;Loading programs&lt;/h2&gt;
+&lt;h2 id="loading-programs"&gt;Loading programs&lt;/h2&gt;
 &lt;p&gt;Load machine code into memory and reset the CPU registers via &lt;code&gt;INSERT&lt;/code&gt;s and &lt;code&gt;UPDATE&lt;/code&gt;s.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;-- ... hundreds before ...&lt;/span&gt;
 &lt;span class="k"&gt;INSERT&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;INTO&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;memory&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;address&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;VALUES&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;12337&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;57929&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
@@ -224,7 +224,7 @@
 &lt;span class="c1"&gt;-- now ready to start clocking&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h2&gt;LC-3&lt;/h2&gt;
+&lt;h2 id="lc-3"&gt;LC-3&lt;/h2&gt;
 &lt;p&gt;The LC-3 is a simple 16-bit educational CPU architecture often used in computer architecture courses. It has a small instruction set and is designed to be easy to understand.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;16-bit address space (64KB)&lt;/li&gt;
@@ -233,17 +233,17 @@
 &lt;li&gt;8 general-purpose registers (R0-R7)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;One reason I chose it because it was the simplest ISA claiming to have a C compiler.&lt;/p&gt;
-&lt;h3&gt;LC-3 Annoyances&lt;/h3&gt;
+&lt;h3 id="lc-3-annoyances"&gt;LC-3 Annoyances&lt;/h3&gt;
 &lt;p&gt;Toolchains for LC-3 are never battle-tested. Existing implementations of the assemblers, emulators, and the C compilers are buggy. The source code that goes along with the textbooks is often incomplete because they expect you to implement parts of it as exercises.&lt;/p&gt;
 &lt;p&gt;There was also a lack of verification tests and software to run.&lt;/p&gt;
 &lt;p&gt;If I had to do it again, I would pick 6502, and I could choose from a plethora of verification ROMs to test against. And there are tons of retro games to port.&lt;/p&gt;
-&lt;h2&gt;Testing Strategy&lt;/h2&gt;
+&lt;h2 id="testing-strategy"&gt;Testing Strategy&lt;/h2&gt;
 &lt;p&gt;I built a test harness in Python that can compare a reference Python implementation against the SQL implementation.
 This actually worked out really well after gathering some programs for integration tests.&lt;/p&gt;
 &lt;p&gt;The integration tests compared full traces of register state. One day maybe I'll also add memory mutation tracing as well.&lt;/p&gt;
 &lt;p&gt;The test harness did the heavy lifting of loading programs into memory, stepping the CPU, as well as debugging features such as reading output, providing input, peeking and poking memory and registers, and using asm symbols as breakpoints for testing intermediate states.&lt;/p&gt;
 &lt;p&gt;See the &lt;a href="https://github.com/y2kbugger/y2k-lc3-tools"&gt;lc3_test_harness repo&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;Interactive Notebooks&lt;/h2&gt;
+&lt;h2 id="interactive-notebooks"&gt;Interactive Notebooks&lt;/h2&gt;
 &lt;p&gt;Various interactive notebook tools:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Assembling LC-3 assembly to machine code&lt;/li&gt;
@@ -253,10 +253,16 @@ This actually worked out really well after gathering some programs for integrati
 &lt;li&gt;E.g. peek at memory, registers, output buffer, etc.&lt;/li&gt;
 &lt;li&gt;Modifying triggers which implementing instructions on the fly.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Raw SQL notebook magic &lt;code&gt;%%sql&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;img alt="SQL magic screenshot" src="/img/2025-12-26__lc3_sql__sql_magic_screenshot.png"&gt;&lt;/p&gt;
-&lt;h3&gt;SQLVM widget&lt;/h3&gt;
-&lt;p&gt;&lt;img alt="LC-3 SQL VM interactive widget screenshot" src="/img/2025-12-26__lc3_sql__pispigot_ipynb.apng"&gt;&lt;/p&gt;</content><category term="programming"/><category term="assembly"/><category term="algorithms"/><category term="CPUs"/><category term="emulation"/><category term="sql"/></entry><entry><title>Baremetal RISC-V Renode - Part 3: Interrupts, C, and UART IO</title><link href="http://blog.y2kbugger.com/baremetal-riscv-renode-3.html" rel="alternate"/><published>2021-12-13T00:00:00-05:00</published><updated>2021-12-13T00:00:00-05:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2021-12-13:/baremetal-riscv-renode-3.html</id><summary type="html">&lt;p class="first last"&gt;Explore the line between hardware and software while creating a minimal, vendor-free environment to write and play with toy operating systems.&lt;/p&gt;
+&lt;h3 id="raw-sql-notebook-magic-sql"&gt;Raw SQL notebook magic &lt;code&gt;%%sql&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;
+&lt;figure&gt;&lt;img src="/img/2025-12-26__lc3_sql__sql_magic_screenshot.png"&gt;&lt;figcaption&gt;SQL magic screenshot&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3 id="sqlvm-widget"&gt;SQLVM widget&lt;/h3&gt;
+&lt;p&gt;
+&lt;figure&gt;&lt;img src="/img/2025-12-26__lc3_sql__pispigot_ipynb.apng"&gt;&lt;figcaption&gt;LC-3 SQL VM interactive widget screenshot&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;</content><category term="programming"/><category term="assembly"/><category term="algorithms"/><category term="CPUs"/><category term="emulation"/><category term="sql"/></entry><entry><title>Baremetal RISC-V Renode - Part 3: Interrupts, C, and UART IO</title><link href="http://blog.y2kbugger.com/baremetal-riscv-renode-3.html" rel="alternate"/><published>2021-12-13T00:00:00-05:00</published><updated>2021-12-13T00:00:00-05:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2021-12-13:/baremetal-riscv-renode-3.html</id><summary type="html">&lt;p class="first last"&gt;Explore the line between hardware and software while creating a minimal, vendor-free environment to write and play with toy operating systems.&lt;/p&gt;
 </summary><content type="html">&lt;!-- Google Photos Album: https://photos.app.goo.gl/LUXeip6Xz85QRTn78
 https://www.youtube.com/watch?v=D0VuYe77Wu0&amp;list=PLb-MsRpo_wlLW0EWRpAqnbbDsf4kxSI1x --&gt;
 &lt;div class="contents topic" id="contents"&gt;
@@ -301,12 +307,12 @@ https://www.youtube.com/watch?v=D0VuYe77Wu0&amp;list=PLb-MsRpo_wlLW0EWRpAqnbbDsf
 &lt;p&gt;To get the offsets and registers the easiest way was to look at the Renode emulation directly. You can see that&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;private&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;enum&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Registers&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;long&lt;/span&gt;
 &lt;span class="p"&gt;{&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;RxTx&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="n"&gt;x0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;TxFull&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="n"&gt;x04&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;RxEmpty&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="n"&gt;x08&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;EventStatus&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="n"&gt;x0c&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;EventPending&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="n"&gt;x10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;EventEnable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="n"&gt;x14&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;RxTx&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mh"&gt;0x0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;TxFull&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mh"&gt;0x04&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;RxEmpty&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mh"&gt;0x08&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;EventStatus&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mh"&gt;0x0c&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;EventPending&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mh"&gt;0x10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;EventEnable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mh"&gt;0x14&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The actual configuration of the UART hardware is a very simple addition:&lt;/p&gt;
