@@ -1,12 +1,12 @@
 ---
-title: Baremetal RISC-V Renode - Part 3: Interrupts, C, and UART IO
-date: 2021-12-13
-modified: 2021-12-13
+title: Baremetal RISC-V Renode - Part 4: KOS Programs and Processes
+date: 2020-12-04
+modified: 2020-12-04
 tags: baremetal, RISC-V, Renode, assembly, CPUs
 author: zak kohler
 summary: Explore the line between hardware and software while creating a minimal, vendor-free environment to write and play with toy operating systems.
-status: published
-cover: /img/2021-12-13__baremetal-riscv-renode-3__cover.png
+status: draft
+cover: /img/2020-12-04__baremetal-riscv-renode-4__cover.png
 ---
 
 [TOC]
@@ -14,17 +14,88 @@ cover: /img/2021-12-13__baremetal-riscv-renode-3__cover.png
 ## Baremetal RISC-V Renode series
 I'm exploring the line between hardware and software by creating a series of demos within a minimal, free and open source environment. These demos span from blinking an LED to implementing a toy operating system. The goal is to minimize parts of the system that we take for granted and gain a better understanding of computers and operating systems.
 
-Start at [Part 1]({filename}/programming/baremetal-riscv-renode-1.md), we setup a bare minimum LED blinking example to demonstrate how to compile your development environment and debug the software in real-time using GDB.
+In [Part 1]({filename}/programming/baremetal-riscv-renode-1.md), we setup a bare minimum LED blinking example to demonstrate how to compile your development environment and debug the software in real-time using GDB.
 
 ## Background
-In this article we will be interfacing with a virtual UART. This will allow us to input and output a serial stream of character bytes.
+In this part we'll start working towards operating system features, specifically being able to share a CPU with multiple processes simultaneously. I call this toy operating system **KohlerOS** or **KOS**, pronounced chaos, for short.
 
-This example includes a few new concepts.
+At a minimum, there are a few things required to demonstrate multitasking. First you need a way to define a program. In linux, this would be an [ELF binary](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format), on windows it would be [PE format](https://en.wikipedia.org/wiki/Portable_Executable). The job of both of these are to deliver native machine code with enough metadata to launch and link with other binaries such as libraries. Next you need a way to actually start and manage a program running within particular region of memory. This we call a [process](https://en.wikipedia.org/wiki/Process_(computing)).
 
-- Interrupts
-- C, including initialization
+## Source code
+The code for **KOS** uses the same environment as previous example. Find the code in the `kos` subdirectory.
 
-## Adding a UART to Renode
+This was written based on the state of the code as of commit `c227fbc`.
+
+## Programs
+Programs are simply C functions registered with a name.
+
+```c
+struct Program
+{
+    void (*function)();
+    unsigned char name;
+};
+```
+
+To create a KOS program, first write the program as a function or set of functions. All KOS programs must terminate via call to `end_this_process`.
+
+```c
+void helloworld()
+{
+    puts("Hello World\n");
+    end_this_process();
+}
+```
+
+Then register the entrypoint with a name. The entrypoint of a normal binary is normally defined in the binary file, e.g. in the ELF.
+
+```c
+register_program('h', helloworld);
+```
+
+The upside to this approach is simplicity, all code is statically linked into the same image. The downside is that you can't add programs at runtime. In all desktop operating systems this is a main requirement. For many embedded systems a single immutable image is sufficient or even desired.
+
+## Processes
+A process tracks an instance of a running process. In addition to a pointer to the actual bytecode, it stores the stack memory, and the status of the process.
+
+Because the processes are not given isolated memory space, multiple processes of the same program are pointing at the same single copy of the `Program` in memory.
+
+```c
+struct Process
+{
+    size_t *sp;
+    struct Program *program;
+    enum ProcessStatus status;
+    size_t stack[PROC_STACK_SIZE];
+};
+```
+
+Currently a process supports enough statuses to be able to have an interesting multitasking demo.
+
+```c
+enum ProcessStatus
+{
+    Uninitialized,
+    Ready,
+    Running,
+    Dead,
+    Stopping,
+    Stopped,
+};
+```
+
+For simplicity's sake, we make some decisions that make the concepts clearer in this toy OS, but wouldn't make sense in a production OS. Firstly, there is no dynamic memory allocation provided by **KOS**. This means that we have to statically allocate all the stack space for as many processes as you want to be able to run at once. Currently there is space for 10 simultaneous processes each with 200 words worth of stack space.
+
+```c
+#define MAX_PROCESS_COUNT 10
+struct Process PROCESSES[MAX_PROCESS_COUNT];
+```
+
+```c
+#define PROC_STACK_SIZE 200
+```
+
+## Program
 We are using the UART from the Litex project. Litex is a High Level HDL project that makes it easy to design a system on a chip and target both simulations and FPGA.
 
 Because we are dealing with virtual hardware there isn't a datasheet. Instead we have 3 different code repositories that are useful for understanding the virtual hardware.
@@ -191,7 +262,7 @@ $ make uart-poll
 
 then you can send characters via the UART connection.
 
-![Demo of the Fancy Character Echo](../img/2021-12-13__baremetal-riscv-renode-3__uart-demo.gif)
+![Demo of the Fancy Character Echo](../img/2020-12-04__baremetal-riscv-renode-4__uart-demo.gif)
 
 ## Next post
-In [Part 4]({filename}/programming/baremetal-riscv-renode-4.md) we'll start to build the basics of a minimal preemptive multitasking toy OS called KOS as a way to learn more about baremetal programming. The first part we'll cover is how programs and processes are defined.
+<!-- In Part 5 I will cover how KOS runs more than one Process at once, this is called the context switch. -->
