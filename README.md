@@ -21,8 +21,8 @@ Or with make:
 make livereload
 ```
 
-The server runs on port `8109` and watches `content/**/*.md`,
-`content/**/*.rst`, and the theme templates, CSS, and JS.
+The server runs on port `8109` and watches `content/**/*.md` and the theme
+templates, CSS, and JS.
 
 ## Publishing
 

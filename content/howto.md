@@ -10,10 +10,7 @@ status: draft
 
 A note to myself on how to write articles.
 
-**New articles are Markdown.** The old workflow used reStructuredText with
-images hosted on Google Photos. Some of those `.rst` articles and remote
-images still linger and are being migrated; see the Architecture and
-Migration notes in the [README](../README.md).
+**Articles are Markdown** with images hosted locally under `content/img/`.
 
 ## Quick start
 

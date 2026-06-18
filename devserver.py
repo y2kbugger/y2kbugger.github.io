@@ -22,7 +22,6 @@ if __name__ == '__main__':
     server = Server()
     server.watch(SETTINGS, build)
     server.watch(f'{CONTENT_PATH}/**/*.md', build)
-    server.watch(f'{CONTENT_PATH}/**/*.rst', build)
     server.watch(f'{THEME_PATH}/templates/*.html', build)
     server.watch(f'{THEME_PATH}/static/**/*.css', build)
     server.watch(f'{THEME_PATH}/static/**/*.js', build)
