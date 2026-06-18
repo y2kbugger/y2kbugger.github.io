@@ -1,6 +1,7 @@
 ---
 title: A Compact 8-bit Bus Display
 date: 2017-12-19 20:58:08
+modified: 2017-12-19 20:58:08
 tags: retrocomputing, display, resistor-network, z80
 author: zak kohler
 summary: Prototyping front panel display components for a Z80 or TTL minicomputer.

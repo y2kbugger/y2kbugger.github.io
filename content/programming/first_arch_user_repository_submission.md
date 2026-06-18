@@ -1,6 +1,7 @@
 ---
 title: I am now a maintainer on the Arch User Repository
 date: 2020-04-14 00:06:28
+modified: 2020-04-14 00:06:28
 tags: Linux, packaging, OpenSource, ArchLinux
 author: zak kohler
 summary: Just made my first submission to the arch user repository (AUR)

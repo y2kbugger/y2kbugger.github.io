@@ -13,6 +13,9 @@ arancia
 archlinux
 autolyse
 Balsamico
+bánh
+choi
+cilantro
 clkt
 codehilite
 devserver
@@ -25,6 +28,8 @@ gremolata
 harissa
 highlighttable
 htooze
+jalapeño
+Kewpie
 IDAT
 IEND
 IHDR
@@ -34,11 +39,15 @@ isinstance
 libimage
 linenodiv
 livereload
+Maggi
 Marnier
+mì
 msgout
 mtimes
 OUTPUTDIR
 pacman
+pao
+pâté
 pelicanconf
 PELICANOPTS
 PISPIGOT
@@ -52,6 +61,7 @@ SITEURL
 SQLVM
 tagsfromfile
 unsubrepo
+vegemite
 venv
 videoembed
 y2kbugger

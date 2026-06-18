@@ -1,6 +1,7 @@
 ---
 title: Steel Tanker Desk Restoration
 date: 2018-10-08 23:09:30
+modified: 2026-05-11
 tags: finishing, metalwork, restoration
 author: zak kohler
 summary: A low-text photo log of restoring a steel tanker desk and matching file cabinet, from teardown to final assembly.

@@ -19,6 +19,9 @@ exif-check:
 exif-strip:
 	$(PY) exifguard.py strip
 
+article-history:
+	$(PY) article_history.py $(ARGS)
+
 hooks:
 	git config core.hooksPath .githooks
 	@echo "git hooks installed (core.hooksPath=.githooks)"
@@ -31,4 +34,4 @@ github: publish
 	git push origin $(GITHUB_PAGES_BRANCH)
 	git push origin write
 
-.PHONY: livereload exif-check exif-strip hooks publish github
+.PHONY: livereload exif-check exif-strip article-history hooks publish github

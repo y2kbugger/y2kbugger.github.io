@@ -1,6 +1,7 @@
 ---
 title: The Art of (Virtual) Rubber Compounding
 date: 2018-09-12
+modified: 2019-12-11
 tags: Tire-Society
 author: zak kohler
 summary: Tire Society, Akron, OH

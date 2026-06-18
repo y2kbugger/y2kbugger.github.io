@@ -1,6 +1,7 @@
 ---
 title: Overnight Baguettes, Stand Mixer
 date: 2026-01-04
+modified: 2026-01-04
 tags: bread, baking
 author: zak kohler
 summary: Overnight stand-mixer baguettes with a cold bulk ferment for three small loaves.

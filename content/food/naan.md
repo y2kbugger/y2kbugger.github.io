@@ -1,6 +1,7 @@
 ---
 title: Firekissed Garlic Naan
 date: 2018-01-26 18:11
+modified: 2026-01-03
 tags: bread
 author: zak kohler
 summary: Imitating tandoori naan on a stove using open flame.

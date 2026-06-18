@@ -63,6 +63,28 @@ looks wrong — surface it for review instead.
 Every new article must be created with `status: draft` in its front matter, even
 before the content exists. Only flip to `status: published` when explicitly asked.
 
+## Keep `date` and `modified` honest
+
+Both `date` and `modified` are mandatory front-matter fields (see
+[content/howto.md](content/howto.md)). Enforce these automatically — do them as
+part of the relevant edit, without being asked:
+
+- **Publishing (`draft` → `published`):** when you flip `status` to `published`,
+  set `date` to the current date (the article is being published *now*; the
+  original `date` of a never-published draft is just a placeholder). Set
+  `modified` equal to the new `date` at the same time. Sometimes a historical
+  `date` is intended and should be preserved, so just ask about it.
+- **Content changes to a published article:** whenever you make a *substantial
+  content* change (new sections, revised steps, corrected facts, added images,
+  reworked conclusions — the same bar `content/howto.md` uses), bump `modified`
+  to the current date. Do **not** touch `modified` for cosmetic or mechanical
+  edits (copy editing, typos, reformatting, restyling, re-slugging, format
+  migration, moving images) — leave it equal to whatever it was.
+
+When `modified` equals `date` the rendered page hides the "last modified" line,
+so always keep `modified` present (matching `date` when there has been no
+post-publish content update) rather than adding and removing the key.
+
 ## Triage spelling problems on every edit
 
 The cSpell extension reports misspellings as **Information**-level problems (see

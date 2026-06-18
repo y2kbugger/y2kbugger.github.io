@@ -59,6 +59,21 @@ Two layers enforce this automatically:
 - **Publish** — `make publish`/`make github` run `exif-check` first and abort
   if anything is dirty.
 
+## Article history
+
+`article_history.py` itemizes an article's full git history, following file
+renames *and* the reStructuredText → Markdown migration (articles are keyed by
+slug, i.e. the file basename). For each commit it shows the date, churn
+(`+added/-deleted`), subject, and body, plus the article's current
+`date`/`modified` front matter. Use it to find the last *substantial content*
+update when auditing or setting a `modified` date.
+
+```bash
+make article-history                       # every article
+make article-history ARGS="naan lc3_sql"   # specific slugs or paths
+make article-history ARGS=--json           # machine-readable output
+```
+
 ## Initial Setup
 
 Create your virtual environment using `uv sync`.
@@ -88,5 +103,4 @@ configured via the `content/extra/CNAME` file and the registrar's DNS records.
 
 
 # TODO
-- Add explicit modified date to each article, mtimes are not preserved in git.
 

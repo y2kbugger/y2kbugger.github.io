@@ -40,7 +40,18 @@ of *this* file's source is a live example — refer to it instead of duplicating
 one here. The fields:
 
 - `title` — displayed title, `Title Case`.
-- `date` / `modified` — `YYYY-MM-DD` or `YYYY-MM-DD HH:MM:SS`.
+- `date` / `modified` — `YYYY-MM-DD` or `YYYY-MM-DD HH:MM:SS`. Both are
+  **mandatory**. `date` is the original publish date and never changes. Set
+  `modified` equal to `date` when the article is first written, then bump it
+  only when the *content* meaningfully changes — new sections, revised steps,
+  corrected facts, added images, reworked conclusions. Do **not** bump it for
+  cosmetic or mechanical work that leaves the meaning intact: copy editing,
+  fixing typos, reformatting, restyling, re-slugging, translating the source
+  format (e.g. the reStructuredText → Markdown migration), or moving an image to
+  a local path. When in doubt, ask "would a returning reader find something new
+  to read?" — if not, leave `modified` alone. The "last modified" line is hidden
+  on the rendered page whenever `modified` still equals `date`, so keeping the
+  field present-but-equal costs nothing and saves churning the key in and out.
 - `tags` — comma-separated.
 - `author` — usually `zak kohler`.
 - `summary` — one-line description for listings and meta tags.

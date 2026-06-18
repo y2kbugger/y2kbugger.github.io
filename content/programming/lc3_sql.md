@@ -1,6 +1,7 @@
 ---
 title: LC-3 CPU emulator in pure SQL
 date: 2025-12-26 10:06:02
+modified: 2025-12-26 10:06:02
 tags: assembly, algorithms, CPUs, emulation, sql
 author: zak kohler
 summary: An LC-3 CPU emulator in pure SQL, using tables for state and triggers for transitions.
