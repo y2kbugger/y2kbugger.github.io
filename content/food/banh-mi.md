@@ -102,7 +102,7 @@ before filling.
     ## Veg
     - cucumber
     - jalapeño
-    - pickle _(lacto pao choi, rinsed, then sugar + white vinegar)_
+    - pickle _(lacto pao cai, rinsed, then sugar + white vinegar)_
     - cilantro
 
 ### Assemble

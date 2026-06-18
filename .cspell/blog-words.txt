@@ -14,7 +14,7 @@ archlinux
 autolyse
 Balsamico
 bánh
-choi
+cai
 cilantro
 clkt
 codehilite
