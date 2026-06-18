@@ -1,0 +1,77 @@
+---
+title: MMIX - Working on TAOCP in RISC
+date: 2018-12-27 00:00:00
+modified: 2020-05-29 15:18:21
+tags: assembly, algorithms, MMIX, TAOCP, books
+author: zak kohler
+summary: How to read The Art of Computer Programming and do the exercises in modern RISC rather than a 1960s style architecture.
+status: published
+cover: /img/2018-12-27__reading-taocp-mmix__cover.jpg
+---
+
+## Introduction
+This article I will cover why I want to read TAOCP as well as my approach. Because the books are in various states of publication, one must use additional resources besides the book to enjoy the updated RISC material.
+
+## The Art of Computer Programming
+The Art of Computer Programming is a legendary multi-volume computer science textbook. It was originally conceived in 1962 as a 12 chapter book documenting a wide range of algorithms. The rapid pace of change in computer science made these chapters a moving target; while Volume 1 was released in 1968, Volume 4 is still in progress as of 2020[^taocpwiki].
+
+![The Art of Computer Programming](../img/2018-12-27__reading-taocp-mmix__taocp-cover.jpg){: width=33% }
+
+The book is notable for being comprehensive and precise as well as for the extreme care given to the exercises and solutions. Because it's known for being a huge undertaking, some people quip that the book is often recommended without actually having been read. I suspect this is because the algorithms are explained using assembly language rather than structured programming which some people deem as impenetrably  obscure.
+
+### Why I want to read it
+I believe it when Knuth says that you learn something extra about algorithms at the interface of hardware and software. In C for example you may not know what is happening in hardware when you write an if statement, but in assembly this is in-your-face.
+
+He puts it like this:
+
+> One of the principal goals of my books is to show how high-level constructions are actually implemented in machines, not simply to show how they are applied. [^knuthmmix]
+
+This aligns with my goal of exploring computers to the lowest levels including operating systems as well as CPUs. The more I can understand the software-hardware interface, the happier I will be. Learning algorithms via TAOCP is the software side of my strategy. On the hardware side I'm exploring TTL logic, CPU design, and simple cases of systems integration using vintage microprocessors such as z80, 6502 and 1802. This has also led me to explore prototyping via FPGAs and one day I hope to design a CPU core and bootstrap up to a self-hosting multitasking development environment.
+
+## MIX
+In order to facilitate the teaching of algorithms and how they interact with hardware, Knuth developed a CPU architecture and corresponding assembly language.
+
+> MIX is a hypothetical computer used in Donald Knuth's monograph, The Art of
+> Computer Programming (TAOCP). MIX's model number is 1009, which was derived
+> by combining the model numbers and names of several contemporaneous,
+> commercial machines deemed significant by the author. Also, "MIX" read as a
+> Roman numeral is 1009.
+>
+> -- Wikipedia [^mixwiki]
+
+Knuth states that "MIX is very much like nearly every computer of the 1960s and 1970s except that it is, perhaps, nicer."
+
+## MMIX
+![MMIX](../img/2018-12-27__reading-taocp-mmix__mmix.jpg)
+
+Computers have changed significantly since the 60s, as Knuth explains:
+
+> Thirty years have passed since the MIX computer was designed, and computer architecture has been converging during those years towards a rather different style of machine [^knuthmmix].
+
+![Under Construction](../img/2018-12-27__reading-taocp-mmix__under-construction.jpg)
+
+In Volume 1 3rd Edition, he states his plans to replace MIX:
+
+> However, it must be admitted that MIX is now quite obsolete. Therefore MIX will be replaced in subsequent editions of this book by a new machine called MMIX, the 2009. MMIX will be a so-called reduced instruction set computer (RISC). [...] It will be even nicer than MIX and will be similar to machines that have become dominant during the 1990s.
+
+## Subsequent editions, fascicles
+So we've chosen to explore MMIX, the forward looking ISA of TAOCP, now what? The dilemma we face is that the next edition has not been released yet. The most recent edition, V1 3e, has all of the questions and answers still written with MIX.
+
+![The three required books for MMIX](../img/2018-12-27__reading-taocp-mmix__three-books.jpg)
+
+So what choice do we have then? Well Donald has kindly released what is known as V1F1 or *The Art of Computer Programming, Volume 1, Fascicle 1 -- A RISC Computer for the New Millennium*. A fascicle is a "a separately published installment of a book or other printed work." Basically it acts as a patch for V1 3e. Replacing the chapter explaining MIX with the MMIX equivalent. It is available on [Amazon](https://www.amazon.com/Art-Computer-Programming-Fascicle-Millennium/dp/0201853922/). Fun note, these are printed on demand when you place your order.
+
+![Printed the day after I ordered on Amazon.](../img/2018-12-27__reading-taocp-mmix__on-demand-printing.jpg){: width=66% }
+
+That covers the basics of the language, but all of the solutions also needed reworking. Knuth put out a request for people to collaborate on the solutions, a project he called MMIXMasters[^mmixmasters]. The end result of this is known as the MMIX supplement. It's available on the web, <http://mmix.cs.hm.edu/supplement/index.html> as well as in printed form on Amazon: [MMIX Supplement](https://www.amazon.com/MMIX-Supplement-Computer-Programming-Volumes/dp/0133992314).
+
+## Future work
+I'm excited to keep working through these exercises. To assist the process of testing various algorithms, I've started a side-project which I have compiled Knuth's original MMIX toolchain to WASM and wrapped it in a simple IDE for MMIX in the browser.
+
+## Hardware and RISC-V
+I plan to continue working on the hardware side in tandem as well. I dream of the day I could write some of these algorithms for an FPGA RISC-V CPU or even more exciting, a toy ISA of my own.
+
+[^taocpwiki]: <https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming>
+[^mixwiki]: <https://en.wikipedia.org/wiki/MIX>
+[^knuthmmix]: <https://www-cs-faculty.stanford.edu/~knuth/mmix.html>
+[^mmixmasters]: <http://mmix.cs.hm.edu/mmixmasters/index.html>
