@@ -58,10 +58,44 @@ In your end-of-turn summary, report:
 Do not auto-"fix" the How To or force an article to comply when the rule itself
 looks wrong — surface it for review instead.
 
+## Fixing pasted images
+
+When I paste a screenshot into an article it lands in the same folder as the
+`.md` with a throwaway name like `image.png` / `image-1.png` and a placeholder
+`![alt text](image.png)` reference. Fix every one of these as part of the edit,
+without being asked:
+
+1. **Look at the image first.** Open the file (e.g. in the integrated browser)
+   and actually view it — never caption blind. The caption must describe what
+   the photo really shows.
+2. **Rename + move** it into `content/img/` using the convention from
+   [content/howto.md](content/howto.md):
+   `YYYY-MM-DD__slug__description.ext`. Use the article's `date` and `slug`, and
+   a short `description` of the shot (e.g. `cold-bulk`, `cooling`). Match the
+   image to the section it sits under.
+3. **Rewrite the reference** with the new `../img/...` path and a real,
+   **short one-line caption** (see the captions rule above) — never leave
+   `![alt text]`.
+4. **Privacy/EXIF:** these are real photos. Flag anything sensitive visible in
+   the frame (faces, addresses, prescription labels, screens) for review, and
+   remember the pre-commit hook strips EXIF/GPS — run `make exif-strip` if it
+   trips.
+
 ## New articles start as drafts
 
 Every new article must be created with `status: draft` in its front matter, even
 before the content exists. Only flip to `status: published` when explicitly asked.
+
+When creating or templating a new article, always set both `date` and `modified`
+to **today's date** — never copy a date from another article or leave a
+placeholder.
+
+## Keep image captions short
+
+Image alt text renders as a visible `<figcaption>` (see
+[content/howto.md](content/howto.md)), so write a real caption — but keep it to
+**one short plain line**. Say what the photo shows; don't restate the
+surrounding step or pile on adjectives.
 
 ## Keep `date` and `modified` honest
 

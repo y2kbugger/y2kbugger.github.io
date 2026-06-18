@@ -83,6 +83,22 @@ link to the [naan recipe]({filename}/food/naan.md) and one to the
 External inline link: [Jungle Jim's](https://junglejims.com/). Bare URLs also
 render: <http://google.com>.
 
+### Comments
+
+To leave a note in the source, use a standard HTML comment:
+
+```text
+<!-- a note to self about this section -->
+```
+
+This blog is open source, so there's nothing to hide — HTML comments are
+readable in the repo and pass through into the published page source, which is
+fine. They're stripped from the *visible* page. Keep each comment on its own
+line with a blank line above and below.
+
+For a note meant for *readers*, don't use a comment at all — use a `note`
+admonition (see [Inline styles](#inline-styles)).
+
 ### Images
 
 **All new images are stored locally** in `content/img/` and committed to the
@@ -100,6 +116,9 @@ alt text into a visible `<figcaption>`, so **write the alt text as a real
 caption**, not a terse description:
 
 ![Plated pollo all'arancia, finished with gremolata and pan sauce.](../img/2024-11-24__pollo-arancia-gremolata__plated.png)
+
+Keep captions **short — one plain line**. Say what the photo shows; don't
+restate the surrounding step or pile on adjectives.
 
 Use a site-absolute path for the `cover` metadata:
 

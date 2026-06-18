@@ -36,6 +36,7 @@ IHDR
 INPUTDIR
 IPTC
 isinstance
+lacto
 libimage
 linenodiv
 livereload
@@ -56,6 +57,7 @@ PLTE
 pngs
 Pollo
 publishconf
+retuned
 SITENAME
 SITEURL
 SQLVM
