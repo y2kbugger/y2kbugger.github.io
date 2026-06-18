@@ -60,4 +60,5 @@ configured via the `content/extra/CNAME` file and the registrar's DNS records.
 - Add some style for bare admonitions (maybe dry out with the ingredients special case?
 - exif stripper/checker
 - strip out js? what is slicknav for?
+- Add explicit modified date to each article, mtimes are not preserved in git.
 

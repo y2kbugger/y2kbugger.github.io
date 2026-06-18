@@ -8,7 +8,7 @@ from livereload import Server
 PORT = 8109
 CONTENT_PATH = 'content'
 OUTPUT_PATH = 'output'
-THEME_PATH = 'themes/william-pelican'
+THEME_PATH = 'y2kbugger'
 SETTINGS = 'pelicanconf.py'
 
 # Find pelican in the same venv as this script

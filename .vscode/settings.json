@@ -3,6 +3,7 @@
   "python.useEnvironmentsExtension": true,
   "cSpell.autocorrect": true,
   "cSpell.diagnosticLevel": "Error",
+  "cSpell.allowCompoundWords": false,
   "cSpell.customDictionaries": {
     "blog-words": {
       "name": "blog-words",

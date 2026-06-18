@@ -8,7 +8,7 @@ SITENAME = 'blog.y2kbugger.com'
 SITEURL = ''
 
 PATH = 'content'
-THEME = 'themes/y2kbugger/'
+THEME = 'y2kbugger/'
 
 MARKDOWN = {
     'extension_configs': {
@@ -91,8 +91,8 @@ HEAD_EXTRA_DEBUG = """
 
 HEAD_EXTRA = HEAD_EXTRA_COMMON + HEAD_EXTRA_DEBUG
 
-thisyear = datetime.today().strftime("%Y")
-COPYRIGHT = f"zak kohler {thisyear} &mdash; Happy Hacking"
+this_year = datetime.today().strftime("%Y")
+COPYRIGHT = f"zak kohler {this_year} &mdash; Happy Hacking"
 
 ENABLE_SLICKNAV = False
 
