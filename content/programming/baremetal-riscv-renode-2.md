@@ -106,4 +106,4 @@ Litex buildenv is much more than just a way to compile code and get it running o
 - <https://micro-ros.github.io/docs/concepts/rtos/comparison/>
 
 ## Next post
-In [Part 3]({filename}/programming/baremetal-riscv-renode-3.rst) I demonstrate basic IO via a hardware Serial UART. This introduces hardware interrupts and how to initialize, compile and link baremetal C along with the RISC-V assembly.
+In [Part 3]({filename}/programming/baremetal-riscv-renode-3.md) I demonstrate basic IO via a hardware Serial UART. This introduces hardware interrupts and how to initialize, compile and link baremetal C along with the RISC-V assembly.
