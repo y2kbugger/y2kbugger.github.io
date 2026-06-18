@@ -57,7 +57,6 @@ configured via the `content/extra/CNAME` file and the registrar's DNS records.
 
 
 # TODO
-- Fix section #frag linking in markdown broken (see howto.md)
 - Add some style for bare admonitions (maybe dry out with the ingredients special case?
 - exif stripper/checker
 - convert all to MD

@@ -2,6 +2,14 @@
 
 Instructions for AI agents working in this blog repository.
 
+## Remove a TODO when you _start_ it, not when you finish
+
+The `# TODO` list in `README.md` tracks work that has not been picked up yet.
+When you begin working on a TODO item, delete it from the list in the same
+change — don't wait until the work is finished. Work in progress lives in the
+git diff (e.g. `git diff write`), so the README only needs to list what hasn't
+been started. A TODO that's still present means nobody has touched it.
+
 ## Make it RIGHT, not just WORKING
 
 Fix root causes, not symptoms. When something is broken, find and repair the

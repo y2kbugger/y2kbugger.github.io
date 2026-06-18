@@ -101,12 +101,14 @@ cover: /img/2024-11-24__pollo-arancia-gremolata__cover2.jpg
 
 ### Recipe ingredients
 
-Wrap the ingredient list in a `section` admonition with an `#ingredients`
-anchor so it can be linked and styled. Use a **bulleted list** — never a table —
-and group ingredients with sub-headings, italicizing prep notes:
+Wrap the ingredient list in a `section` admonition containing an `## Ingredients`
+heading. The heading is hidden by CSS (the admonition's own title shows instead)
+but its auto-generated `#ingredients` anchor lets you link to it. Use a
+**bulleted list** — never a table — and group ingredients with sub-headings,
+italicizing prep notes:
 
 !!! section "Ingredients"
-    ## Ingredients {: #ingredients }
+    ## Ingredients
 
     ### Gremolata
 

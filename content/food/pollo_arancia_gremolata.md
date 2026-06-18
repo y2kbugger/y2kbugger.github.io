@@ -10,7 +10,7 @@ cover: /img/2024-11-24__pollo-arancia-gremolata__cover2.jpg
 ![Pollo all'arancia plated and finished with gremolata.](../img/2024-11-24__pollo-arancia-gremolata__cover2.jpg)
 
 !!! section "Ingredients"
-    ## Ingredients {: #ingredients }
+    ## Ingredients
 
     ### Gremolata
 
