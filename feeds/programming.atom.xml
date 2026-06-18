@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>blog.y2kbugger.com - programming</title><link href="http://blog.y2kbugger.com/" rel="alternate"/><link href="http://blog.y2kbugger.com/feeds/programming.atom.xml" rel="self"/><id>http://blog.y2kbugger.com/</id><updated>2026-01-05T08:02:17.617809-05:00</updated><entry><title>LC-3 CPU emulator in pure SQL</title><link href="http://blog.y2kbugger.com/lc3_sql.html" rel="alternate"/><published>2025-12-26T10:06:02-05:00</published><updated>2026-01-05T08:02:17.617809-05:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2025-12-26:/lc3_sql.html</id><summary type="html">&lt;p&gt;An LC-3 CPU emulator in pure SQL, using tables for state and triggers for transitions.&lt;/p&gt;</summary><content type="html">&lt;p&gt;SQL may be a perverse platform to implement a CPU emulator on, but works well for a demo because all it requires is the SQLite cli binary to run.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>blog.y2kbugger.com - programming</title><link href="http://blog.y2kbugger.com/" rel="alternate"/><link href="http://blog.y2kbugger.com/feeds/programming.atom.xml" rel="self"/><id>http://blog.y2kbugger.com/</id><updated>2026-06-17T23:15:57.281313-04:00</updated><entry><title>LC-3 CPU emulator in pure SQL</title><link href="http://blog.y2kbugger.com/lc3_sql.html" rel="alternate"/><published>2025-12-26T10:06:02-05:00</published><updated>2026-01-05T08:02:17.617809-05:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2025-12-26:/lc3_sql.html</id><summary type="html">&lt;p&gt;An LC-3 CPU emulator in pure SQL, using tables for state and triggers for transitions.&lt;/p&gt;</summary><content type="html">&lt;p&gt;SQL may be a perverse platform to implement a CPU emulator on, but works well for a demo because all it requires is the SQLite cli binary to run.&lt;/p&gt;
 &lt;p&gt;A demo program that calculates pi is used to exercise the emulator.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://gist.github.com/y2kbugger/213912550ab7599e27b56a017bc94ad5"&gt;run it yourself&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -262,50 +262,41 @@ This actually worked out really well after gathering some programs for integrati
 &lt;p&gt;
 &lt;figure&gt;&lt;img src="/img/2025-12-26__lc3_sql__pispigot_ipynb.apng"&gt;&lt;figcaption&gt;LC-3 SQL VM interactive widget screenshot&lt;/figcaption&gt;
 &lt;/figure&gt;
-&lt;/p&gt;</content><category term="programming"/><category term="assembly"/><category term="algorithms"/><category term="CPUs"/><category term="emulation"/><category term="sql"/></entry><entry><title>Baremetal RISC-V Renode - Part 3: Interrupts, C, and UART IO</title><link href="http://blog.y2kbugger.com/baremetal-riscv-renode-3.html" rel="alternate"/><published>2021-12-13T00:00:00-05:00</published><updated>2021-12-13T00:00:00-05:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2021-12-13:/baremetal-riscv-renode-3.html</id><summary type="html">&lt;p class="first last"&gt;Explore the line between hardware and software while creating a minimal, vendor-free environment to write and play with toy operating systems.&lt;/p&gt;
-</summary><content type="html">&lt;!-- Google Photos Album: https://photos.app.goo.gl/LUXeip6Xz85QRTn78
-https://www.youtube.com/watch?v=D0VuYe77Wu0&amp;list=PLb-MsRpo_wlLW0EWRpAqnbbDsf4kxSI1x --&gt;
-&lt;div class="contents topic" id="contents"&gt;
-&lt;p class="topic-title"&gt;&lt;a class="reference internal" href="#top"&gt;Contents&lt;/a&gt;&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#baremetal-risc-v-renode-series" id="toc-entry-1"&gt;Baremetal RISC-V Renode Series&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#background" id="toc-entry-2"&gt;Background&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#adding-a-uart-to-renode" id="toc-entry-3"&gt;Adding a UART to Renode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#a-quick-note-about-using-c" id="toc-entry-4"&gt;A quick note about using C&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#interrupt-handling" id="toc-entry-5"&gt;Interrupt Handling&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#risc-v-interrupts" id="toc-entry-6"&gt;RISC-V interrupts&lt;/a&gt;&lt;/li&gt;
+&lt;/p&gt;</content><category term="programming"/><category term="assembly"/><category term="algorithms"/><category term="CPUs"/><category term="emulation"/><category term="sql"/></entry><entry><title>Baremetal RISC-V Renode - Part 3: Interrupts, C, and UART IO</title><link href="http://blog.y2kbugger.com/baremetal-riscv-renode-3.html" rel="alternate"/><published>2021-12-13T00:00:00-05:00</published><updated>2021-12-13T00:00:00-05:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2021-12-13:/baremetal-riscv-renode-3.html</id><summary type="html">&lt;p&gt;Explore the line between hardware and software while creating a minimal, vendor-free environment to write and play with toy operating systems.&lt;/p&gt;</summary><content type="html">&lt;div class="toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#baremetal-risc-v-renode-series"&gt;Baremetal RISC-V Renode series&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#background"&gt;Background&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#adding-a-uart-to-renode"&gt;Adding a UART to Renode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#a-quick-note-about-using-c"&gt;A quick note about using C&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#interrupt-handling"&gt;Interrupt handling&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#risc-v-interrupts"&gt;RISC-V interrupts&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#driver-code" id="toc-entry-7"&gt;Driver Code&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#run-the-example" id="toc-entry-8"&gt;Run the example&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#next-post" id="toc-entry-9"&gt;Next post&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#driver-code"&gt;Driver code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#run-the-example"&gt;Run the example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#next-post"&gt;Next post&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;div class="section" id="baremetal-risc-v-renode-series"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-1"&gt;Baremetal RISC-V Renode Series&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="baremetal-risc-v-renode-series"&gt;Baremetal RISC-V Renode series&lt;/h2&gt;
 &lt;p&gt;I'm exploring the line between hardware and software by creating a series of demos within a minimal, free and open source environment. These demos span from blinking an LED to implementing a toy operating system. The goal is to minimize parts of the system that we take for granted and gain a better understanding of computers and operating systems.&lt;/p&gt;
-&lt;p&gt;Start at &lt;a class="reference external" href="http://blog.y2kbugger.com/baremetal-riscv-renode-1.html"&gt;Part 1&lt;/a&gt;, we setup a bare minimum LED blinking example to demonstrate how to compile your development environment and debug the software in real-time using GDB.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="background"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-2"&gt;Background&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Start at &lt;a href="http://blog.y2kbugger.com/baremetal-riscv-renode-1.html"&gt;Part 1&lt;/a&gt;, we setup a bare minimum LED blinking example to demonstrate how to compile your development environment and debug the software in real-time using GDB.&lt;/p&gt;
+&lt;h2 id="background"&gt;Background&lt;/h2&gt;
 &lt;p&gt;In this article we will be interfacing with a virtual UART. This will allow us to input and output a serial stream of character bytes.&lt;/p&gt;
 &lt;p&gt;This example includes a few new concepts.&lt;/p&gt;
-&lt;ul class="simple"&gt;
+&lt;ul&gt;
 &lt;li&gt;Interrupts&lt;/li&gt;
 &lt;li&gt;C, including initialization&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="adding-a-uart-to-renode"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-3"&gt;Adding a UART to Renode&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;We are using the UART from the Litex project. Litex is a High Level HDL project that makes it easy to design a system on a ship and target both simulations and FPGA.&lt;/p&gt;
+&lt;h2 id="adding-a-uart-to-renode"&gt;Adding a UART to Renode&lt;/h2&gt;
+&lt;p&gt;We are using the UART from the Litex project. Litex is a High Level HDL project that makes it easy to design a system on a chip and target both simulations and FPGA.&lt;/p&gt;
 &lt;p&gt;Because we are dealing with virtual hardware there isn't a datasheet. Instead we have 3 different code repositories that are useful for understanding the virtual hardware.&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;The actual Litex  &lt;a class="reference external" href="https://github.com/enjoy-digital/litex/blob/master/litex/soc/cores/uart.py"&gt;hardware description&lt;/a&gt; for the UART&lt;/li&gt;
-&lt;li&gt;A &lt;a class="reference external" href="https://github.com/enjoy-digital/litex/blob/master/litex/soc/software/libbase/uart.c"&gt;UART driver&lt;/a&gt; also provided by the Litex project&lt;/li&gt;
-&lt;li&gt;The Renode project provides a software &lt;a class="reference external" href="https://github.com/renode/renode-infrastructure/blob/master/src/Emulator/Peripherals/Peripherals/UART/LiteX_UART.cs"&gt;emulation&lt;/a&gt; of the Litex UART. This implements the hardware functionality without have to do a full verilog or gate-level simulation.&lt;/li&gt;
+&lt;ul&gt;
+&lt;li&gt;The actual Litex &lt;a href="https://github.com/enjoy-digital/litex/blob/master/litex/soc/cores/uart.py"&gt;hardware description&lt;/a&gt; for the UART&lt;/li&gt;
+&lt;li&gt;A &lt;a href="https://github.com/enjoy-digital/litex/blob/master/litex/soc/software/libbase/uart.c"&gt;UART driver&lt;/a&gt; also provided by the Litex project&lt;/li&gt;
+&lt;li&gt;The Renode project provides a software &lt;a href="https://github.com/renode/renode-infrastructure/blob/master/src/Emulator/Peripherals/Peripherals/UART/LiteX_UART.cs"&gt;emulation&lt;/a&gt; of the Litex UART. This implements the hardware functionality without having to do a full verilog or gate-level simulation.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;To get the offsets and registers the easiest way was to look at the Renode emulation directly. You can see that&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;private&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;enum&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Registers&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;long&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;private&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;enum&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Registers&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;long&lt;/span&gt;
 &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;RxTx&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mh"&gt;0x0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;TxFull&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mh"&gt;0x04&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -314,43 +305,38 @@ https://www.youtube.com/watch?v=D0VuYe77Wu0&amp;list=PLb-MsRpo_wlLW0EWRpAqnbbDsf
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;EventPending&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mh"&gt;0x10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;EventEnable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mh"&gt;0x14&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;The actual configuration of the UART hardware is a very simple addition:&lt;/p&gt;
 &lt;p&gt;vexriscv.repl&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;...
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;...
 
 uart: UART.LiteX_UART @ sysbus 0x60001800
     -&amp;gt; cpu@2
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;All we needed to decide was where in memory to map the hardware, and what interrupt number to wire it to.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="a-quick-note-about-using-c"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-4"&gt;A quick note about using C&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="a-quick-note-about-using-c"&gt;A quick note about using C&lt;/h2&gt;
 &lt;p&gt;This example is going to use C functions in addition to assembly.&lt;/p&gt;
 &lt;p&gt;Since we are baremetal we need to set up the stack pointer ourselves.&lt;/p&gt;
 &lt;p&gt;baremetal.s&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# setup a stack pointer&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# setup a stack pointer&lt;/span&gt;
 &lt;span class="nf"&gt;la&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;sp&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;memtop&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="interrupt-handling"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-5"&gt;Interrupt Handling&lt;/a&gt;&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id="interrupt-handling"&gt;Interrupt handling&lt;/h2&gt;
 &lt;p&gt;Interrupts are an asynchronous way to externally trigger the CPU to jump.&lt;/p&gt;
 &lt;p&gt;Typically they jump to a particular memory location, or a location + an offset based on the reason for the interrupt.&lt;/p&gt;
-&lt;div class="section" id="risc-v-interrupts"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#toc-entry-6"&gt;RISC-V interrupts&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="risc-v-interrupts"&gt;RISC-V interrupts&lt;/h3&gt;
 &lt;p&gt;RISC-V interrupts come in two flavors, the original Core Local Interrupter (CLINT), and the Core Local Interrupt Controller (CLIC).
 The difference between the two, and much more, is described in the sifive interrupt cookbook.&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://sifive.cdn.prismic.io/sifive/0d163928-2128-42be-a75a-464df65e04e0_sifive-interrupt-cookbook.pdf"&gt;https://sifive.cdn.prismic.io/sifive/0d163928-2128-42be-a75a-464df65e04e0_sifive-interrupt-cookbook.pdf&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="driver-code"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-7"&gt;Driver Code&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://sifive.cdn.prismic.io/sifive/0d163928-2128-42be-a75a-464df65e04e0_sifive-interrupt-cookbook.pdf"&gt;https://sifive.cdn.prismic.io/sifive/0d163928-2128-42be-a75a-464df65e04e0_sifive-interrupt-cookbook.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="driver-code"&gt;Driver code&lt;/h2&gt;
 &lt;p&gt;All that is left is to write the code to actually interact with the hardware.&lt;/p&gt;
 &lt;p&gt;Note that we are going for understandability, not performance, so we are creating an unbuffered solution here.&lt;/p&gt;
 &lt;p&gt;Define a hardware register map to memory.&lt;/p&gt;
 &lt;p&gt;baremetal.c&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;typedef&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;typedef&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;struct&lt;/span&gt;
 &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kt"&gt;uint32_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;RxTx&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kt"&gt;uint32_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;TxFull&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -363,15 +349,17 @@ The difference between the two, and much more, is described in the sifive interr
 &lt;span class="k"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;uint32_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;TxEvent&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mb"&gt;0b01&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="k"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;uint32_t&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;RxEvent&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mb"&gt;0b10&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="k"&gt;volatile&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;UART&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="k"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;uart&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;UART&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="mh"&gt;0x60001800&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;We need to set a flag in the UART to enable interrupt events.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;init_uart&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;init_uart&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;uart&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;EventEnable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;RxEvent&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;This is called in during startup, right before the final &lt;tt class="docutils literal"&gt;wfi&lt;/tt&gt; spin-loop.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="na"&gt;...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This is called during startup, right before the final &lt;code&gt;wfi&lt;/code&gt; spin-loop.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="na"&gt;...&lt;/span&gt;
 
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c1"&gt;# set mie.MEIE=1 (enable M mode external interrupts)&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nf"&gt;li&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="no"&gt;t0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="no"&gt;b0000100000000000&lt;/span&gt;
@@ -383,21 +371,23 @@ The difference between the two, and much more, is described in the sifive interr
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nf"&gt;wfi&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nf"&gt;j&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;wait_for_interrupt&lt;/span&gt;
 &lt;span class="na"&gt;...&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;Then we just need to specify what to do when an interrupt comes in.&lt;/p&gt;
 &lt;p&gt;In the real world you would need to check the reason code and figure out:&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
+&lt;ol&gt;
 &lt;li&gt;What type of interrupt are we handling&lt;/li&gt;
 &lt;li&gt;What is the reason for the interrupt?&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;We can safely ignore this for our demo because the only source of interrupts will be the UART receiving a character.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;interrupt_handler&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;interrupt_handler&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;fancy_char&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="kt"&gt;char&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="n"&gt;uart&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;RxTx&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;For fun, we echo the transmitted character surrounded by an ASCII art border.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;fancy_char&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;char&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;fancy_char&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;char&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kt"&gt;char&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;###&lt;/span&gt;&lt;span class="se"&gt;\n\r&lt;/span&gt;&lt;span class="s"&gt;#X#&lt;/span&gt;&lt;span class="se"&gt;\n\r&lt;/span&gt;&lt;span class="s"&gt;###&lt;/span&gt;&lt;span class="se"&gt;\n\r\n\r&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -414,340 +404,287 @@ The difference between the two, and much more, is described in the sifive interr
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;while&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;str&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;!=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="sc"&gt;&amp;#39;\0&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;putc&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;str&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="run-the-example"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-8"&gt;Run the example&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Ensure you have the setup from &lt;a class="reference external" href="http://blog.y2kbugger.com/baremetal-riscv-renode-1.html"&gt;Part 1&lt;/a&gt; completed.&lt;/p&gt;
-&lt;p&gt;Switch to the folder &lt;tt class="docutils literal"&gt;3_uart&lt;/tt&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id="run-the-example"&gt;Run the example&lt;/h2&gt;
+&lt;p&gt;Ensure you have the setup from &lt;a href="http://blog.y2kbugger.com/baremetal-riscv-renode-1.html"&gt;Part 1&lt;/a&gt; completed.&lt;/p&gt;
+&lt;p&gt;Switch to the folder &lt;code&gt;3_uart&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;In one terminal run:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$&lt;span class="w"&gt; &lt;/span&gt;make&lt;span class="w"&gt; &lt;/span&gt;start
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;make&lt;span class="w"&gt; &lt;/span&gt;start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;then in another terminal:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$&lt;span class="w"&gt; &lt;/span&gt;make&lt;span class="w"&gt; &lt;/span&gt;uart-poll
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;make&lt;span class="w"&gt; &lt;/span&gt;uart-poll
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;then you can send characters via the UART connection.&lt;/p&gt;
-&lt;div class="figure align-left"&gt;
-&lt;img alt="uart fancy echo demo" src="https://lh3.googleusercontent.com/pw/AM-JKLWBRQ2x4E66nGtG01cZwj8pHpktyqHNbFu-jPL4BldkuMT51PuDdQMCjAxspc5UlsWdlN-rky0GYTgTTVdnJo5k-_27zZ_ECc-95RBs0KeLv61zU0FYAZbv1HNzeQOYpGNNuvd85t99DtqatXXfeFysjw=w960-h423-no" /&gt;
-&lt;p class="caption"&gt;Demo of the Fancy Character Echo&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="next-post"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-9"&gt;Next post&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;In &lt;a class="reference external" href="http://blog.y2kbugger.com/drafts/baremetal-riscv-renode-4.html"&gt;Part 4&lt;/a&gt; we'll start to build the basics of a minimal preemptive multitasking toy OS called KOS as a way to learn more about baremetal programming. The first part we'll cover is how programs and processes are defined.&lt;/p&gt;
-&lt;/div&gt;
-</content><category term="programming"/><category term="baremetal"/><category term="RISC-V"/><category term="Renode"/><category term="assembly"/><category term="CPUs"/></entry><entry><title>Baremetal RISC-V Renode - Part 2: Tool considerations</title><link href="http://blog.y2kbugger.com/baremetal-riscv-renode-2.html" rel="alternate"/><published>2021-01-03T23:55:43-05:00</published><updated>2021-01-22T23:55:43-05:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2021-01-03:/baremetal-riscv-renode-2.html</id><summary type="html">&lt;p class="first last"&gt;A quick review of different simulators and toolchains that I have tried or heard about.&lt;/p&gt;
-</summary><content type="html">&lt;!-- Google Photos Album: https://photos.app.goo.gl/LUXeip6Xz85QRTn78
-https://www.youtube.com/watch?v=D0VuYe77Wu0&amp;list=PLb-MsRpo_wlLW0EWRpAqnbbDsf4kxSI1x --&gt;
-&lt;div class="contents topic" id="contents"&gt;
-&lt;p class="topic-title"&gt;&lt;a class="reference internal" href="#top"&gt;Contents&lt;/a&gt;&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#baremetal-risc-v-renode-series" id="toc-entry-1"&gt;Baremetal RISC-V Renode Series&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#background" id="toc-entry-2"&gt;Background&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#compiler-toolchains" id="toc-entry-3"&gt;Compiler toolchains&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#gcc" id="toc-entry-4"&gt;GCC&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#llvm-clang" id="toc-entry-5"&gt;LLVM/Clang&lt;/a&gt;&lt;/li&gt;
+&lt;p&gt;
+&lt;figure&gt;&lt;img src="../img/2021-12-13__baremetal-riscv-renode-3__uart-demo.gif"&gt;&lt;figcaption&gt;Demo of the Fancy Character Echo&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id="next-post"&gt;Next post&lt;/h2&gt;
+&lt;p&gt;In &lt;a href="http://blog.y2kbugger.com/drafts/baremetal-riscv-renode-4.html"&gt;Part 4&lt;/a&gt; we'll start to build the basics of a minimal preemptive multitasking toy OS called KOS as a way to learn more about baremetal programming. The first part we'll cover is how programs and processes are defined.&lt;/p&gt;</content><category term="programming"/><category term="baremetal"/><category term="RISC-V"/><category term="Renode"/><category term="assembly"/><category term="CPUs"/></entry><entry><title>Baremetal RISC-V Renode - Part 2: Tool considerations</title><link href="http://blog.y2kbugger.com/baremetal-riscv-renode-2.html" rel="alternate"/><published>2021-01-03T23:55:43-05:00</published><updated>2021-01-22T23:55:43-05:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2021-01-03:/baremetal-riscv-renode-2.html</id><summary type="html">&lt;p&gt;A quick review of different simulators and toolchains that I have tried or heard about.&lt;/p&gt;</summary><content type="html">&lt;div class="toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#baremetal-risc-v-renode-series"&gt;Baremetal RISC-V Renode series&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#background"&gt;Background&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#compiler-toolchains"&gt;Compiler toolchains&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#gcc"&gt;GCC&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#llvmclang"&gt;LLVM/Clang&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#simulators-emulators" id="toc-entry-6"&gt;Simulators/Emulators&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#renode" id="toc-entry-7"&gt;Renode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#qemu" id="toc-entry-8"&gt;Qemu&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#spike" id="toc-entry-9"&gt;Spike&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#educational" id="toc-entry-10"&gt;Educational&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#simulatorsemulators"&gt;Simulators/Emulators&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#renode"&gt;Renode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#qemu"&gt;Qemu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#spike"&gt;Spike&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#educational"&gt;Educational&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#integrated-development-environments" id="toc-entry-11"&gt;Integrated Development environments&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#eclipse-cdt" id="toc-entry-12"&gt;Eclipse CDT&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#platformio" id="toc-entry-13"&gt;Platformio&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#vs-code" id="toc-entry-14"&gt;VS Code&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#litex-buildenv" id="toc-entry-15"&gt;litex buildenv&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#other" id="toc-entry-16"&gt;Other&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#integrated-development-environments"&gt;Integrated development environments&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#eclipse-cdt"&gt;Eclipse CDT&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#platformio"&gt;Platformio&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#vs-code"&gt;VS Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#litex-buildenv"&gt;litex buildenv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#other"&gt;Other&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#operating-systems-sdk" id="toc-entry-17"&gt;Operating systems/SDK&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#next-post" id="toc-entry-18"&gt;Next post&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#operating-systemssdk"&gt;Operating systems/SDK&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#next-post"&gt;Next post&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;div class="section" id="baremetal-risc-v-renode-series"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-1"&gt;Baremetal RISC-V Renode Series&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="baremetal-risc-v-renode-series"&gt;Baremetal RISC-V Renode series&lt;/h2&gt;
 &lt;p&gt;I'm exploring the line between hardware and software by creating a series of demos within a minimal, free and open source environment. These demos span from blinking an LED to implementing a toy operating system. The goal is to minimize parts of the system that we take for granted and gain a better understanding of computers and operating systems.&lt;/p&gt;
-&lt;p&gt;Start at &lt;a class="reference external" href="http://blog.y2kbugger.com/baremetal-riscv-renode-1.html"&gt;Part 1&lt;/a&gt;, we setup a bare minimum LED blinking example to demonstrate how to compile your development environment and debug the software in real-time using GDB.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="background"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-2"&gt;Background&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Start at &lt;a href="http://blog.y2kbugger.com/baremetal-riscv-renode-1.html"&gt;Part 1&lt;/a&gt;, we setup a bare minimum LED blinking example to demonstrate how to compile your development environment and debug the software in real-time using GDB.&lt;/p&gt;
+&lt;h2 id="background"&gt;Background&lt;/h2&gt;
 &lt;p&gt;This post catalogs the tools I tried as well as the tools I skipped over when developing the dev environment from Part 1. Comment below if I missed something or if something new has come out.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="compiler-toolchains"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-3"&gt;Compiler toolchains&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="compiler-toolchains"&gt;Compiler toolchains&lt;/h2&gt;
 &lt;p&gt;As stated in part one, because one goal is to run RISC-V binaries, we need a compiler that can run on an x86 PC, but compile to RISC-V bytecode.&lt;/p&gt;
-&lt;div class="section" id="gcc"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#toc-entry-4"&gt;GCC&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;In &lt;a class="reference external" href="http://blog.y2kbugger.com/baremetal-riscv-renode-1.html"&gt;Part 1&lt;/a&gt; we set up a RISC-V cross compiling GCC. To me, riscv-gnu-toolchain seemed to be the official C compiler for RISCV. Many other SDKs/IDEs are based on the gcc as well.&lt;/p&gt;
+&lt;h3 id="gcc"&gt;GCC&lt;/h3&gt;
+&lt;p&gt;In &lt;a href="http://blog.y2kbugger.com/baremetal-riscv-renode-1.html"&gt;Part 1&lt;/a&gt; we set up a RISC-V cross compiling GCC. To me, riscv-gnu-toolchain seemed to be the official C compiler for RISCV. Many other SDKs/IDEs are based on the gcc as well.&lt;/p&gt;
 &lt;p&gt;I use riscv-gnu-toolchain instead of upstream gcc because it includes binutils and C library build configurations.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="llvm-clang"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#toc-entry-5"&gt;LLVM/Clang&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;As of September 2019, LLVM 9 has promoted the &lt;em&gt;experimental&lt;/em&gt; RISC-V backend to &lt;em&gt;official&lt;/em&gt;. The support has been prototyped as &lt;cite&gt;lowRISC&lt;/cite&gt; starting in 2016, which was then merged upstream as &lt;em&gt;experimental&lt;/em&gt; before being promoted to &lt;em&gt;official&lt;/em&gt;. This history indicates that there has probably been considerable testing, comment if you know of any production applications.&lt;/p&gt;
+&lt;h3 id="llvmclang"&gt;LLVM/Clang&lt;/h3&gt;
+&lt;p&gt;As of September 2019, LLVM 9 has promoted the &lt;em&gt;experimental&lt;/em&gt; RISC-V backend to &lt;em&gt;official&lt;/em&gt;. The support has been prototyped as &lt;code&gt;lowRISC&lt;/code&gt; starting in 2016, which was then merged upstream as &lt;em&gt;experimental&lt;/em&gt; before being promoted to &lt;em&gt;official&lt;/em&gt;. This history indicates that there has probably been considerable testing, comment if you know of any production applications.&lt;/p&gt;
 &lt;p&gt;LLVM has some features/warnings that GCC might be missing. It may also integrate with code analysis tools and autocompletion in a more streamlined way.&lt;/p&gt;
-&lt;p&gt;One other thing I find interesting is that the main author of LLVM, Chris Lattner, has been &lt;a class="reference external" href="https://www.sifive.com/blog/with-sifive-we-can-change-the-world"&gt;hired by the RISC-V company SiFive&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="simulators-emulators"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-6"&gt;Simulators/Emulators&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;One other thing I find interesting is that the main author of LLVM, Chris Lattner, has been &lt;a href="https://www.sifive.com/blog/with-sifive-we-can-change-the-world"&gt;hired by the RISC-V company SiFive&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="simulatorsemulators"&gt;Simulators/Emulators&lt;/h2&gt;
 &lt;p&gt;In order to run non-native code, we need a simulator. This can be as simple as just translating the from one ISA to another, but it can also include peripherals and OS functionality, such as standard input output.&lt;/p&gt;
-&lt;div class="section" id="renode"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#toc-entry-7"&gt;Renode&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;I learned of Renode from the FPGA community. From what I can tell, they are able  high level hardware description language and compile it to either an FPGA bitstream or a Renode platform. This allows simulating an entire system, hardware and software together, without ever needing physical hardware and therefore, easier and more complete automatic testing.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="qemu"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#toc-entry-8"&gt;Qemu&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Qemu a very popular emulation and virtualization tool. It is very useful for running non-native binaries within linux. Others use it for running guest operating systems. When I spent some time with it, I couldn't control the low-level details of the platform as much as Renode. A lot of complexity in the system seemed to revolve around PC peripherals, GUI, and virtualization that doesn't matter for trying to learn about baremetal programming. I also couldn't figure out a way to get rid of PC BIOS.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="spike"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#toc-entry-9"&gt;Spike&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Spike is a RISC-V specific emulator: &lt;a class="reference external" href="https://github.com/riscv/riscv-isa-sim"&gt;https://github.com/riscv/riscv-isa-sim&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;I haven't tried this one myself. I looks like configurability is focused on customizing the CPU, e.g. custom opcodes, rather than IO or other embedded hardware.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="educational"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#toc-entry-10"&gt;Educational&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="renode"&gt;Renode&lt;/h3&gt;
+&lt;p&gt;I learned of Renode from the FPGA community. From what I can tell, they are able to take a high level hardware description language and compile it to either an FPGA bitstream or a Renode platform. This allows simulating an entire system, hardware and software together, without ever needing physical hardware and therefore, easier and more complete automatic testing.&lt;/p&gt;
+&lt;h3 id="qemu"&gt;Qemu&lt;/h3&gt;
+&lt;p&gt;Qemu is a very popular emulation and virtualization tool. It is very useful for running non-native binaries within linux. Others use it for running guest operating systems. When I spent some time with it, I couldn't control the low-level details of the platform as much as Renode. A lot of complexity in the system seemed to revolve around PC peripherals, GUI, and virtualization that doesn't matter for trying to learn about baremetal programming. I also couldn't figure out a way to get rid of PC BIOS.&lt;/p&gt;
+&lt;h3 id="spike"&gt;Spike&lt;/h3&gt;
+&lt;p&gt;Spike is a RISC-V specific emulator: &lt;a href="https://github.com/riscv/riscv-isa-sim"&gt;https://github.com/riscv/riscv-isa-sim&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I haven't tried this one myself. It looks like configurability is focused on customizing the CPU, e.g. custom opcodes, rather than IO or other embedded hardware.&lt;/p&gt;
+&lt;h3 id="educational"&gt;Educational&lt;/h3&gt;
 &lt;p&gt;Below are a few graphical simulators that try to explain the execution as it is happening. These are targeted at understanding opcodes and other RISC-V specifics rather than actually programming for a hardware platform with peripherals.&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://tice.sea.eseo.fr/riscv/"&gt;http://tice.sea.eseo.fr/riscv/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://ascslab.org/research/briscv/simulator/simulator.html"&gt;https://ascslab.org/research/briscv/simulator/simulator.html&lt;/a&gt;&lt;/li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://tice.sea.eseo.fr/riscv/"&gt;http://tice.sea.eseo.fr/riscv/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ascslab.org/research/briscv/simulator/simulator.html"&gt;https://ascslab.org/research/briscv/simulator/simulator.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="integrated-development-environments"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-11"&gt;Integrated Development environments&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;There are many good IDE solutions if your goal get work done on an embedded application, I discuss a few in detail below.&lt;/p&gt;
+&lt;h2 id="integrated-development-environments"&gt;Integrated development environments&lt;/h2&gt;
+&lt;p&gt;There are many good IDE solutions if your goal is to get work done on an embedded application, I discuss a few in detail below.&lt;/p&gt;
 &lt;p&gt;These IDEs provide standard development tools such as compiler and debugger, but also support deploying to a board for testing and debugging on a board via JTAG or other hardware debugger.&lt;/p&gt;
-&lt;p&gt;Some even support deploying to a simulator rather than real-work target. To me this is very valuable as it enables testing automation without requiring specific hardware.&lt;/p&gt;
-&lt;div class="section" id="eclipse-cdt"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#toc-entry-12"&gt;Eclipse CDT&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;After figuring out the Java runtime and getting the versions of Eclipse and the CDT extension all working, I kinda ran out steam as every configuration was overly &amp;quot;eclipse centric&amp;quot;. I wanted to spend my time learning about embedded not learning about eclipse.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="platformio"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#toc-entry-13"&gt;Platformio&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Some even support deploying to a simulator rather than real-world target. To me this is very valuable as it enables testing automation without requiring specific hardware.&lt;/p&gt;
+&lt;h3 id="eclipse-cdt"&gt;Eclipse CDT&lt;/h3&gt;
+&lt;p&gt;After figuring out the Java runtime and getting the versions of Eclipse and the CDT extension all working, I kinda ran out of steam as every configuration was overly "eclipse centric". I wanted to spend my time learning about embedded not learning about eclipse.&lt;/p&gt;
+&lt;h3 id="platformio"&gt;Platformio&lt;/h3&gt;
 &lt;p&gt;Platformio is a universal embedded development extension for Microsoft's VS Code.&lt;/p&gt;
 &lt;p&gt;Platformio describes itself as:&lt;/p&gt;
 &lt;blockquote&gt;
-Open source, cross-platform IDE and Unified Debugger. Static Code Analyzer and Remote Unit Testing. Multi-platform and Multi-architecture Build System.&lt;/blockquote&gt;
-&lt;p&gt;I found that it was super convenient for &amp;quot;just getting starting&amp;quot; and getting stuff done. It is heavy but the extension bootstraps itself and the defaults are very sane. However, like eclipse, I didn't want to spend my time learning &amp;quot;how does Platformio work&amp;quot; every time I want to peek behind the curtain or tweak something low-level.&lt;/p&gt;
+&lt;p&gt;Open source, cross-platform IDE and Unified Debugger. Static Code Analyzer and Remote Unit Testing. Multi-platform and Multi-architecture Build System.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I found that it was super convenient for "just getting started" and getting stuff done. It is heavy but the extension bootstraps itself and the defaults are very sane. However, like eclipse, I didn't want to spend my time learning "how does Platformio work" every time I want to peek behind the curtain or tweak something low-level.&lt;/p&gt;
 &lt;p&gt;Additionally, it only supported a handful of real boards when integrating with Renode, and it wasn't straightforward on how to customize the Renode platform and keep the integration working.&lt;/p&gt;
 &lt;p&gt;Lastly, since it is a VS Code extension, we don't have a way to reproducibly build the platform and therefore any blog I write could go outdated as Platformio evolves.&lt;/p&gt;
-&lt;div class="figure"&gt;
-&lt;img alt="Platformio screenshot" src="https://lh3.googleusercontent.com/pw/ACtC-3eEUNqaGzfNKQxydmtODWEllXemhHGT0fzswHlEIpK1-o6kQRy-xxHL1m7rXy64cLI5j_JHbVO4oqtAif-M9_Hn8XCUCGBlf6dCj-eDa-T7O2RWrMZZ86d-NbUUlHxEnBg3XXIWZUalZfbfj-oYOsRHIQ=w960-h494-no" /&gt;
-&lt;p class="caption"&gt;Using Platformio to interact with registers, memory, source code and disassembly.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="vs-code"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#toc-entry-14"&gt;VS Code&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;
+&lt;figure&gt;&lt;img src="../img/2021-01-03__baremetal-riscv-renode-2__platformio.png"&gt;&lt;figcaption&gt;Using Platformio to interact with registers, memory, source code and disassembly.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3 id="vs-code"&gt;VS Code&lt;/h3&gt;
 &lt;p&gt;I also tried to configure a handful different VS Code extensions to support our manually compiled GCC cross compiling toolchains. None ever ended up with better GDB support than the native GDB TUI. The three most promising were:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools"&gt;C/C++ for Visual Studio Code&lt;/a&gt; - Microsoft's official C extension. Configurable but not configurable enough.&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=webfreak.debug"&gt;Native Debugger&lt;/a&gt; - This one seems like it could work, but I don't think I ever got it launching/debugging how I wanted it. It's open source so I think it could be done, even if it required more than just configuration.&lt;/li&gt;
-&lt;li&gt;&lt;cite&gt;Cortex-Debug&lt;/cite&gt; &amp;lt;&lt;a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug"&gt;https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug&lt;/a&gt;&amp;gt;`_ Another open source extension. Although it is ARM specific, you provide your own gnu toolchain, so it may be viable.&lt;/li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools"&gt;C/C++ for Visual Studio Code&lt;/a&gt; - Microsoft's official C extension. Configurable but not configurable enough.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://marketplace.visualstudio.com/items?itemName=webfreak.debug"&gt;Native Debugger&lt;/a&gt; - This one seems like it could work, but I don't think I ever got it launching/debugging how I wanted it. It's open source so I think it could be done, even if it required more than just configuration.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug"&gt;Cortex-Debug&lt;/a&gt; - Another open source extension. Although it is ARM specific, you provide your own gnu toolchain, so it may be viable.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="litex-buildenv"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#toc-entry-15"&gt;litex buildenv&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://github.com/timvideos/litex-buildenv"&gt;https://github.com/timvideos/litex-buildenv&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="litex-buildenv"&gt;litex buildenv&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://github.com/timvideos/litex-buildenv"&gt;https://github.com/timvideos/litex-buildenv&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Litex buildenv is much more than just a way to compile code and get it running on real or simulated hardware. It actually facilitates specifying hardware in high level hardware description languages and compiling that down to create a soft CPU core on an FPGA. As part of the environment, it can be configured to deploy software to either a renode simulator, or to actual hardware.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="other"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#toc-entry-16"&gt;Other&lt;/a&gt;&lt;/h3&gt;
-&lt;ul class="simple"&gt;
+&lt;h3 id="other"&gt;Other&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;IAR&lt;/li&gt;
 &lt;li&gt;Segger&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://www.sam-solutions.com/blog/top-ten-embedded-software-development-tools/"&gt;https://www.sam-solutions.com/blog/top-ten-embedded-software-development-tools/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.sam-solutions.com/blog/top-ten-embedded-software-development-tools/"&gt;https://www.sam-solutions.com/blog/top-ten-embedded-software-development-tools/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="operating-systems-sdk"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-17"&gt;Operating systems/SDK&lt;/a&gt;&lt;/h2&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;freedom e sdk - &lt;a class="reference external" href="https://github.com/sifive/freedom-e-sdk"&gt;https://github.com/sifive/freedom-e-sdk&lt;/a&gt; This SDK is totally worth reading through and trying. You will learn a lot.&lt;/li&gt;
-&lt;li&gt;Zephyr &lt;a class="reference external" href="https://www.zephyrproject.org/zephyr-an-operating-system-for-iot/"&gt;https://www.zephyrproject.org/zephyr-an-operating-system-for-iot/&lt;/a&gt;&lt;/li&gt;
+&lt;h2 id="operating-systemssdk"&gt;Operating systems/SDK&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;freedom e sdk - &lt;a href="https://github.com/sifive/freedom-e-sdk"&gt;https://github.com/sifive/freedom-e-sdk&lt;/a&gt; This SDK is totally worth reading through and trying. You will learn a lot.&lt;/li&gt;
+&lt;li&gt;Zephyr &lt;a href="https://www.zephyrproject.org/zephyr-an-operating-system-for-iot/"&gt;https://www.zephyrproject.org/zephyr-an-operating-system-for-iot/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Linux&lt;/li&gt;
 &lt;li&gt;FreeRTOS&lt;/li&gt;
 &lt;li&gt;MBed OS&lt;/li&gt;
 &lt;li&gt;NuttX&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://micro-ros.github.io/docs/concepts/rtos/comparison/"&gt;https://micro-ros.github.io/docs/concepts/rtos/comparison/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://micro-ros.github.io/docs/concepts/rtos/comparison/"&gt;https://micro-ros.github.io/docs/concepts/rtos/comparison/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="next-post"&gt;Next post&lt;/h2&gt;
+&lt;p&gt;In &lt;a href="http://blog.y2kbugger.com/baremetal-riscv-renode-3.html"&gt;Part 3&lt;/a&gt; I demonstrate basic IO via a hardware Serial UART. This introduces hardware interrupts and how to initialize, compile and link baremetal C along with the RISC-V assembly.&lt;/p&gt;</content><category term="programming"/><category term="baremetal"/><category term="RISC-V"/><category term="Renode"/><category term="assembly"/><category term="CPUs"/></entry><entry><title>Baremetal RISC-V Renode - Part 1: Blinky</title><link href="http://blog.y2kbugger.com/baremetal-riscv-renode-1.html" rel="alternate"/><published>2020-12-22T00:11:42-05:00</published><updated>2020-12-22T00:11:42-05:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2020-12-22:/baremetal-riscv-renode-1.html</id><summary type="html">&lt;p&gt;Explore the line between hardware and software while creating a minimal, vendor-free environment to write and play with toy operating systems.&lt;/p&gt;</summary><content type="html">&lt;div class="toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#background"&gt;Background&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#what-is-baremetal"&gt;What is baremetal?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#what-is-risc-v"&gt;What is RISC-V?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#what-is-renode"&gt;What is Renode?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#source-code"&gt;Source code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#toolchain-compilation"&gt;Toolchain compilation&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#building"&gt;Building&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#build-requirement-hints"&gt;Build requirement hints&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#gcc"&gt;gcc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#renode"&gt;Renode&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#activating-the-toolchains"&gt;Activating the toolchains&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#blinking-a-virtual-led"&gt;Blinking a virtual LED&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#just-get-it-running"&gt;Just get it running&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#hardware-configuration"&gt;Hardware configuration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#blinky-source-code"&gt;Blinky source code&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#building-an-elf-binary-using-gcc"&gt;Building an elf binary using gcc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#interactively-debugging-renode"&gt;Interactively debugging Renode&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#attaching-the-gnu-debugger"&gt;Attaching the GNU Debugger&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#useful-gdb-scenarios"&gt;Useful GDB scenarios&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#step-a-single-instruction"&gt;Step a single instruction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#continue-normal-execution"&gt;Continue normal execution&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#break-normal-execution"&gt;Break normal execution&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#set-a-breakpoint"&gt;Set a breakpoint&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#read-registers"&gt;Read registers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#setting-a-register"&gt;Setting a register&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#changing-the-bitmask-for-blinky"&gt;Changing the bitmask for blinky&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#miro-samek-and-the-modern-embedded-course-series"&gt;Miro Samek and the modern embedded course series&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#next-post"&gt;Next post&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#footnotes"&gt;Footnotes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;div class="section" id="next-post"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-18"&gt;Next post&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;In &lt;a class="reference external" href="http://blog.y2kbugger.com/baremetal-riscv-renode-2.html"&gt;Part 3&lt;/a&gt; I demonstrate basic IO via a hardware Serial UART. This introduces hardware interrupts and how to initialize, compile and link baremetal C along with the RISC-V assembly.&lt;/p&gt;
-&lt;/div&gt;
-</content><category term="programming"/><category term="baremetal"/><category term="RISC-V"/><category term="Renode"/><category term="assembly"/><category term="CPUs"/></entry><entry><title>Baremetal RISC-V Renode - Part 1: Blinky</title><link href="http://blog.y2kbugger.com/baremetal-riscv-renode-1.html" rel="alternate"/><published>2020-12-22T00:11:42-05:00</published><updated>2020-12-22T00:11:42-05:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2020-12-22:/baremetal-riscv-renode-1.html</id><summary type="html">&lt;p class="first last"&gt;Explore the line between hardware and software while creating a minimal, vendor-free environment to write and play with toy operating systems.&lt;/p&gt;
-</summary><content type="html">&lt;!-- Google Photos Album: https://photos.app.goo.gl/LUXeip6Xz85QRTn78
-https://www.youtube.com/watch?v=D0VuYe77Wu0&amp;list=PLb-MsRpo_wlLW0EWRpAqnbbDsf4kxSI1x --&gt;
-&lt;div class="contents topic" id="contents"&gt;
-&lt;p class="topic-title"&gt;&lt;a class="reference internal" href="#top"&gt;Contents&lt;/a&gt;&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#background" id="toc-entry-1"&gt;Background&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#what-is-baremetal" id="toc-entry-2"&gt;What is baremetal?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#what-is-risc-v" id="toc-entry-3"&gt;What is RISC-V?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#what-is-renode" id="toc-entry-4"&gt;What is Renode?&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#source-code" id="toc-entry-5"&gt;Source code&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#toolchain-compilation" id="toc-entry-6"&gt;Toolchain compilation&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#building" id="toc-entry-7"&gt;Building&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#build-requirement-hints" id="toc-entry-8"&gt;Build requirement hints&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#activating-the-toolchains" id="toc-entry-9"&gt;Activating the toolchains&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#blinking-a-virtual-led" id="toc-entry-10"&gt;Blinking a virtual LED&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#just-get-it-running" id="toc-entry-11"&gt;Just get it running&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#hardware-configuration" id="toc-entry-12"&gt;Hardware configuration&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#blinky-source-code" id="toc-entry-13"&gt;Blinky source code&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#building-an-elf-binary-using-gcc" id="toc-entry-14"&gt;Building an elf binary using gcc&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#interactively-debugging-renode" id="toc-entry-15"&gt;Interactively Debugging Renode&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#attaching-the-gnu-debugger" id="toc-entry-16"&gt;Attaching the GNU Debugger&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#useful-gdb-scenarios" id="toc-entry-17"&gt;Useful GDB scenarios&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#changing-the-bitmask-for-blinky" id="toc-entry-18"&gt;Changing the bitmask for blinky&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#miro-samek-and-the-modern-embedded-course-series" id="toc-entry-19"&gt;Miro Samek and the modern embedded course series&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#next-post" id="toc-entry-20"&gt;Next post&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#footnotes" id="toc-entry-21"&gt;Footnotes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="section" id="background"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-1"&gt;Background&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="background"&gt;Background&lt;/h2&gt;
 &lt;p&gt;I'm exploring the line between hardware and software by creating a series of demos within a minimal, free and open source environment. These demos span from blinking an LED to implementing a toy operating system. The goal is to minimize parts of the system that we take for granted and gain a better understanding of computers and operating systems.&lt;/p&gt;
-&lt;div class="section" id="what-is-baremetal"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#toc-entry-2"&gt;What is baremetal?&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;In the non-embedded world, when you compile and link a C program into an executable you are doing so with the intention of running it &lt;em&gt;within&lt;/em&gt; a specific operating system. When you compile baremetal or &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;-freestanding&lt;/span&gt;&lt;/tt&gt; you are telling the compiler that you intend to run this without relying on an operating system. This could be used, for example, to write an operating system. Alternatively it can be used to access the hardware of a system directly on an embedded system. Doing so sacrifices higher level luxuries such as memory management, standard IO, thread/process control, etc. Because of this, sometimes it makes sense to run on a type of minimal OS optimized for embedded, e.g. a real time operating system or RTOS.&lt;/p&gt;
-&lt;p&gt;When you use a commercial development platform, you will likely be provided with a cross compiling toolchain and possibly an RTOS. For an example see &lt;a class="reference external" href="https://github.com/sifive/freedom-e-sdk"&gt;freedom-e-sdk&lt;/a&gt;. Alternatively, there are also attempts to make small, but hardware agonistic RTOS see &lt;a class="reference external" href="https://www.zephyrproject.org/"&gt;zephyr&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="what-is-risc-v"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#toc-entry-3"&gt;What is RISC-V?&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="what-is-baremetal"&gt;What is baremetal?&lt;/h3&gt;
+&lt;p&gt;In the non-embedded world, when you compile and link a C program into an executable you are doing so with the intention of running it &lt;em&gt;within&lt;/em&gt; a specific operating system. When you compile baremetal or &lt;code&gt;-freestanding&lt;/code&gt; you are telling the compiler that you intend to run this without relying on an operating system. This could be used, for example, to write an operating system. Alternatively it can be used to access the hardware of a system directly on an embedded system. Doing so sacrifices higher level luxuries such as memory management, standard IO, thread/process control, etc. Because of this, sometimes it makes sense to run on a type of minimal OS optimized for embedded, e.g. a real time operating system or RTOS.&lt;/p&gt;
+&lt;p&gt;When you use a commercial development platform, you will likely be provided with a cross compiling toolchain and possibly an RTOS. For an example see &lt;a href="https://github.com/sifive/freedom-e-sdk"&gt;freedom-e-sdk&lt;/a&gt;. Alternatively, there are also attempts to make small, but hardware agnostic RTOS see &lt;a href="https://www.zephyrproject.org/"&gt;zephyr&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id="what-is-risc-v"&gt;What is RISC-V?&lt;/h3&gt;
 &lt;p&gt;RISC-V is an open alternative to ARM or x86.&lt;/p&gt;
 &lt;p&gt;Wikipedia&lt;/p&gt;
 &lt;blockquote&gt;
-RISC-V (pronounced &amp;quot;risk-five&amp;quot;) is an open standard instruction set architecture (ISA) based on established reduced instruction set computer (RISC) principles. Unlike most other ISA designs, the RISC-V ISA is provided under open source licenses that do not require fees to use.&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;div class="section" id="what-is-renode"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#toc-entry-4"&gt;What is Renode?&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;RISC-V (pronounced "risk-five") is an open standard instruction set architecture (ISA) based on established reduced instruction set computer (RISC) principles. Unlike most other ISA designs, the RISC-V ISA is provided under open source licenses that do not require fees to use.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="what-is-renode"&gt;What is Renode?&lt;/h3&gt;
 &lt;p&gt;Renode is a simulator designed for embedded firmware. What sets it apart is the goal of not only emulating CPUs and SOCs, but also entire boards with peripherals such as ethernet and even multi-node networks of devices.&lt;/p&gt;
 &lt;p&gt;Alternatives such as QEMU aren't as optimized for the embedded space.&lt;/p&gt;
 &lt;p&gt;An emulator that you might use for playing video game ROMs is specialized for a single platform. For example, in an emulator cpu, graphics chips, audio, memory-map, etc are fixed and optimized. Renode on the other hand configures each platform with a config file.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="source-code"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-5"&gt;Source code&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="source-code"&gt;Source code&lt;/h2&gt;
 &lt;p&gt;To get started you will need to clone the repository. This includes all of the examples as well as the source for Renode simulator and GCC RISC-V toolchain.&lt;/p&gt;
-&lt;p&gt;Renode and GCC are linked via &lt;tt class="docutils literal"&gt;git submodule&lt;/tt&gt; so if you use &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;--recursive&lt;/span&gt;&lt;/tt&gt; you can clone everything in one shot.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone --recursive https://github.com/y2kbugger/baremetal-riscv-renode.git
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="toolchain-compilation"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-6"&gt;Toolchain compilation&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Renode and GCC are linked via &lt;code&gt;git submodule&lt;/code&gt; so if you use &lt;code&gt;--recursive&lt;/code&gt; you can clone everything in one shot.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;--recursive&lt;span class="w"&gt; &lt;/span&gt;https://github.com/y2kbugger/baremetal-riscv-renode.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id="toolchain-compilation"&gt;Toolchain compilation&lt;/h2&gt;
 &lt;p&gt;Technically you could try to find these pre-compiled from your distro or elsewhere, but I suggest compiling from source to ensure we have matching versions and build options.&lt;/p&gt;
 &lt;p&gt;There are some compilation prerequisites and gotchas. If my hints don't help, just refer to the official project documentation for each.&lt;/p&gt;
-&lt;div class="section" id="building"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#toc-entry-7"&gt;Building&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;To ease the burden on my own memory, I have added a &lt;tt class="docutils literal"&gt;Makefile&lt;/tt&gt; to capture the various build options for the toolchains. If you have all of the build requirements already installed, building both can be as simple as:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;baremetal-riscv-renode
+&lt;h3 id="building"&gt;Building&lt;/h3&gt;
+&lt;p&gt;To ease the burden on my own memory, I have added a &lt;code&gt;Makefile&lt;/code&gt; to capture the various build options for the toolchains. If you have all of the build requirements already installed, building both can be as simple as:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;baremetal-riscv-renode
 $&lt;span class="w"&gt; &lt;/span&gt;make&lt;span class="w"&gt; &lt;/span&gt;toolchains
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Running &lt;tt class="docutils literal"&gt;make toolchains&lt;/tt&gt; should usually be enough to let you know what you are missing. I have included some hints below, check the comments as well as different distros may have different packages.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="build-requirement-hints"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#toc-entry-8"&gt;Build requirement hints&lt;/a&gt;&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Running &lt;code&gt;make toolchains&lt;/code&gt; should usually be enough to let you know what you are missing. I have included some hints below, check the comments as well as different distros may have different packages.&lt;/p&gt;
+&lt;h3 id="build-requirement-hints"&gt;Build requirement hints&lt;/h3&gt;
 &lt;p&gt;Below are my hints for which packages to install, this can be different depending on the distribution. I've also included links to the official guides for getting unstuck.&lt;/p&gt;
-&lt;div class="section" id="gcc"&gt;
-&lt;h4&gt;gcc&lt;/h4&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://github.com/riscv/riscv-gnu-toolchain"&gt;https://github.com/riscv/riscv-gnu-toolchain&lt;/a&gt;&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;
-gawk texinfo bison flex libncurses5-dev libncursesw5-dev
-&lt;/pre&gt;
-&lt;p&gt;The package &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;libncurses5-dev*&lt;/span&gt;&lt;/tt&gt; provides headers for &lt;tt class="docutils literal"&gt;ncurses&lt;/tt&gt;, and  &lt;tt class="docutils literal"&gt;texinfo&lt;/tt&gt; provides &lt;tt class="docutils literal"&gt;makeinfo&lt;/tt&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="renode"&gt;
-&lt;h4&gt;Renode&lt;/h4&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://renode.readthedocs.io/en/latest/advanced/building_from_sources.html"&gt;https://renode.readthedocs.io/en/latest/advanced/building_from_sources.html&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="gcc"&gt;gcc&lt;/h4&gt;
+&lt;p&gt;&lt;a href="https://github.com/riscv/riscv-gnu-toolchain"&gt;https://github.com/riscv/riscv-gnu-toolchain&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gawk texinfo bison flex libncurses5-dev libncursesw5-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The package &lt;code&gt;libncurses5-dev*&lt;/code&gt; provides headers for &lt;code&gt;ncurses&lt;/code&gt;, and  &lt;code&gt;texinfo&lt;/code&gt; provides &lt;code&gt;makeinfo&lt;/code&gt;.&lt;/p&gt;
+&lt;h4 id="renode"&gt;Renode&lt;/h4&gt;
+&lt;p&gt;&lt;a href="https://renode.readthedocs.io/en/latest/advanced/building_from_sources.html"&gt;https://renode.readthedocs.io/en/latest/advanced/building_from_sources.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Mono provides the runtime and C# compiler required for Renode. Installing it can be tricky on some distros and having a mono that is incomplete or outdated can lead to hard to understand errors. Make sure your whole system is up-to-date if you run into issues compiling Renode.&lt;/p&gt;
-&lt;dl class="docutils"&gt;
+&lt;dl&gt;
 &lt;dt&gt;Arch&lt;/dt&gt;
-&lt;dd&gt;Everything worked fine using the &lt;tt class="docutils literal"&gt;mono&lt;/tt&gt; package from extra.&lt;/dd&gt;
+&lt;dd&gt;Everything worked fine using the &lt;code&gt;mono&lt;/code&gt; package from extra.&lt;/dd&gt;
 &lt;dt&gt;Ubuntu&lt;/dt&gt;
-&lt;dd&gt;&lt;strong&gt;Do not&lt;/strong&gt; use the mono from standard repos. Follow the instructions for &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;mono-complete&lt;/span&gt;&lt;/tt&gt; here &lt;a class="reference external" href="https://www.mono-project.com/download/stable/"&gt;https://www.mono-project.com/download/stable/&lt;/a&gt;.&lt;/dd&gt;
+&lt;dd&gt;&lt;strong&gt;Do not&lt;/strong&gt; use the mono from standard repos. Follow the instructions for &lt;code&gt;mono-complete&lt;/code&gt; here &lt;a href="https://www.mono-project.com/download/stable/"&gt;https://www.mono-project.com/download/stable/&lt;/a&gt;.&lt;/dd&gt;
 &lt;/dl&gt;
-&lt;pre class="code literal-block"&gt;
-automake autoconf libtool g++ coreutils policykit-1 libgtk2.0-dev screen uml-utilities gtk-sharp2 python3
-&lt;/pre&gt;
-&lt;p&gt;The package &lt;tt class="docutils literal"&gt;coreutils&lt;/tt&gt; provides &lt;tt class="docutils literal"&gt;realpath&lt;/tt&gt; on Debian.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="activating-the-toolchains"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-9"&gt;Activating the toolchains&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Beyond here, we assume both renode and riscv-gcc are on your &lt;tt class="docutils literal"&gt;PATH&lt;/tt&gt;. To accomplish this, you can source this activation script.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;source&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;activate-toolchains.sh
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="blinking-a-virtual-led"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-10"&gt;Blinking a virtual LED&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;To verify and get familiar with the tools we'll start off with the &amp;quot;Hello, World&amp;quot; of hardware projects: blinking an LED.&lt;/p&gt;
-&lt;p&gt;Blinking a virtual &amp;quot;LED&amp;quot; involves a few steps:&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;automake autoconf libtool g++ coreutils policykit-1 libgtk2.0-dev screen uml-utilities gtk-sharp2 python3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The package &lt;code&gt;coreutils&lt;/code&gt; provides &lt;code&gt;realpath&lt;/code&gt; on Debian.&lt;/p&gt;
+&lt;h2 id="activating-the-toolchains"&gt;Activating the toolchains&lt;/h2&gt;
+&lt;p&gt;Beyond here, we assume both renode and riscv-gcc are on your &lt;code&gt;PATH&lt;/code&gt;. To accomplish this, you can source this activation script.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;source&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;activate-toolchains.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id="blinking-a-virtual-led"&gt;Blinking a virtual LED&lt;/h2&gt;
+&lt;p&gt;To verify and get familiar with the tools we'll start off with the "Hello, World" of hardware projects: blinking an LED.&lt;/p&gt;
+&lt;p&gt;Blinking a virtual "LED" involves a few steps:&lt;/p&gt;
+&lt;ol&gt;
 &lt;li&gt;Build &lt;strong&gt;image&lt;/strong&gt; from source code&lt;/li&gt;
 &lt;li&gt;Launch the hardware &lt;strong&gt;simulator&lt;/strong&gt; configured by the platform (repl) file&lt;/li&gt;
 &lt;li&gt;Load the image into &lt;strong&gt;RAM&lt;/strong&gt; of the simulator&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="section" id="just-get-it-running"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#toc-entry-11"&gt;Just get it running&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="just-get-it-running"&gt;Just get it running&lt;/h3&gt;
 &lt;p&gt;First open up the project folder:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ cd 1_blinky
-&lt;/pre&gt;
-&lt;p&gt;Then following command will handle all steps 1-3, we'll break this down later:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-$ make launch
-&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ cd 1_blinky
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then the following command will handle all steps 1-3, we'll break this down later:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ make launch
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;If everything went correctly, you should see something like this:&lt;/p&gt;
-&lt;img alt="blinky demo running" src="https://lh3.googleusercontent.com/pw/ACtC-3dKs20yaz1biM2MWXyi7HAcI0pb-BHYDYD1XM92Al11dQPQ26OJY8YULAlHPHtduGETCN5Y5D6aXtkiFi3-9tB3RNtj4A687SGo765evyqri2TjKMCyQeNSLNfZ-SV52yXlIEar9iQj2aEzPKAmBGrQOA=w628-h449-no" /&gt;
-&lt;p&gt;You should have also noticed the monitor window open up. This is used to control the running renode machine; the &lt;tt class="docutils literal"&gt;?&lt;/tt&gt; command will list the rest. The tab completion is also very helpful.&lt;/p&gt;
-&lt;img alt="renode monitor" src="https://lh3.googleusercontent.com/pw/ACtC-3f6eXxClG8aqr6wk2twPPD-lXLA7C4vskcZkecZVwPlqSYNCrxrdtvzBSEgK0YLixLm3OuJzJeM63alK8B1ATSZUp594xdfz2u8-vQeMlTSLMRl_ihZHDEQtH4scresowV29jguNfTZpzdqeX1sTttQng=w442-h197-no" /&gt;
-&lt;p&gt;Quit using &lt;tt class="docutils literal"&gt;q&lt;/tt&gt; or &lt;tt class="docutils literal"&gt;quit&lt;/tt&gt;:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-(vexriscv-machine) quit
-&lt;/pre&gt;
-&lt;p&gt;Alternatively you can kill renode using &lt;tt class="docutils literal"&gt;CTRL&lt;/tt&gt; + &lt;tt class="docutils literal"&gt;C&lt;/tt&gt; in the terminal that you launched it from.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="hardware-configuration"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#toc-entry-12"&gt;Hardware configuration&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;The hardware to will be simulated is defined using a renode specific platform description format &lt;a class="footnote-reference" href="#renode-describing-platforms" id="footnote-reference-1"&gt;[3]&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;figure&gt;&lt;img src="../img/2020-12-22__baremetal-riscv-renode-1__blinky-demo.png"&gt;&lt;figcaption&gt;blinky demo running&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;You should have also noticed the monitor window open up. This is used to control the running renode machine; the &lt;code&gt;?&lt;/code&gt; command will list the rest. The tab completion is also very helpful.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure&gt;&lt;img src="../img/2020-12-22__baremetal-riscv-renode-1__renode-monitor.png"&gt;&lt;figcaption&gt;renode monitor&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Quit using &lt;code&gt;q&lt;/code&gt; or &lt;code&gt;quit&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;(vexriscv-machine) quit
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Alternatively you can kill renode using &lt;code&gt;CTRL&lt;/code&gt; + &lt;code&gt;C&lt;/code&gt; in the terminal that you launched it from.&lt;/p&gt;
+&lt;h3 id="hardware-configuration"&gt;Hardware configuration&lt;/h3&gt;
+&lt;p&gt;The hardware to be simulated is defined using a renode specific platform description format&lt;sup id="fnref:renode-describing-platforms"&gt;&lt;a class="footnote-ref" href="#fn:renode-describing-platforms"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;vexriscv.repl:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-mem: Memory.MappedMemory &amp;#64; sysbus 0x0
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mem: Memory.MappedMemory @ sysbus 0x0
     size: 0x00040000
 
-cpu: CPU.VexRiscv &amp;#64; sysbus
+cpu: CPU.VexRiscv @ sysbus
 
-gpio_out: GPIOPort.LiteX_GPIO &amp;#64; sysbus 0x60000800
+gpio_out: GPIOPort.LiteX_GPIO @ sysbus 0x60000800
     type: Type.Out
-    0 -&amp;gt; led0&amp;#64;0
-    1 -&amp;gt; led1&amp;#64;0
+    0 -&amp;gt; led0@0
+    1 -&amp;gt; led1@0
 
-led0 : Miscellaneous.LED &amp;#64; gpio_out 0
-led1 : Miscellaneous.LED &amp;#64; gpio_out 1
-&lt;/pre&gt;
-&lt;p&gt;I like this because we can make a very minimal hardware configuration, free from any vendor specific complexity. Besides the cpu and memory, we have a general purpose input output (GPIO) register mapped to memory location &lt;tt class="docutils literal"&gt;0x60000800&lt;/tt&gt;. The &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;-&amp;gt;&lt;/span&gt;&lt;/tt&gt; makes a connection from the GPIO pins to the LEDs. I don't exactly know why we need both &lt;tt class="docutils literal"&gt;0 &lt;span class="pre"&gt;-&amp;gt;&lt;/span&gt; led0&amp;#64;0&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;&amp;#64; gpio_out 0&lt;/tt&gt; as it seems redundant; if anyone knows, please let me know. You'll also commonly see  &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;-&amp;gt;&lt;/span&gt;&lt;/tt&gt; used for connecting interrupts.&lt;/p&gt;
-&lt;p&gt;To toggle the LED we will need to write a driver that knows how to control the GPIO by writing to it's register.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="blinky-source-code"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#toc-entry-13"&gt;Blinky source code&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;This initial program is written exclusively in RISC-V assembly &lt;a class="footnote-reference" href="#riscv-prgrammers-guide" id="footnote-reference-2"&gt;[4]&lt;/a&gt; this is simple enough that every instruction that gets executed can be traced to this source file.&lt;/p&gt;
+led0 : Miscellaneous.LED @ gpio_out 0
+led1 : Miscellaneous.LED @ gpio_out 1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;I like this because we can make a very minimal hardware configuration, free from any vendor specific complexity. Besides the cpu and memory, we have a general purpose input output (GPIO) register mapped to memory location &lt;code&gt;0x60000800&lt;/code&gt;. The &lt;code&gt;-&amp;gt;&lt;/code&gt; makes a connection from the GPIO pins to the LEDs. I don't exactly know why we need both &lt;code&gt;0 -&amp;gt; led0@0&lt;/code&gt; and &lt;code&gt;@ gpio_out 0&lt;/code&gt; as it seems redundant; if anyone knows, please let me know. You'll also commonly see  &lt;code&gt;-&amp;gt;&lt;/code&gt; used for connecting interrupts.&lt;/p&gt;
+&lt;p&gt;To toggle the LED we will need to write a driver that knows how to control the GPIO by writing to its register.&lt;/p&gt;
+&lt;h3 id="blinky-source-code"&gt;Blinky source code&lt;/h3&gt;
+&lt;p&gt;This initial program is written exclusively in RISC-V assembly&lt;sup id="fnref:riscv-prgrammers-guide"&gt;&lt;a class="footnote-ref" href="#fn:riscv-prgrammers-guide"&gt;4&lt;/a&gt;&lt;/sup&gt; this is simple enough that every instruction that gets executed can be traced to this source file.&lt;/p&gt;
 &lt;p&gt;The code to drive this GPIO device is dead simple, you just need to write data to the memory location that maps to the GPIO pins.&lt;/p&gt;
-&lt;p&gt;Note that the platform specifies the mapping of &lt;tt class="docutils literal"&gt;0x60000800&lt;/tt&gt; to the GPIO register.&lt;/p&gt;
+&lt;p&gt;Note that the platform specifies the mapping of &lt;code&gt;0x60000800&lt;/code&gt; to the GPIO register.&lt;/p&gt;
 &lt;p&gt;baremetal.s:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="na"&gt;.equ&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;LED&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0x60000800&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="na"&gt;.equ&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;LED&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0x60000800&lt;/span&gt;
 &lt;span class="na"&gt;.equ&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;DELAY_COUNT&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;9000000&lt;/span&gt;
 &lt;span class="na"&gt;.equ&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;LED_STATE_INITIAL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="no"&gt;b00&lt;/span&gt;
 &lt;span class="na"&gt;.equ&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;LED_STATE_TOGGLE_MASK&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="no"&gt;b01&lt;/span&gt;
@@ -769,393 +706,323 @@ led1 : Miscellaneous.LED &amp;#64; gpio_out 1
 &lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nf"&gt;xor&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;a4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;a4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;a6&lt;/span&gt;&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="c1"&gt;# toggle led state word&lt;/span&gt;
 &lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nf"&gt;sw&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;a4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0x0&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="no"&gt;a5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="c1"&gt;# write new state&lt;/span&gt;
 &lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nf"&gt;jump&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;loop&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;t0&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="building-an-elf-binary-using-gcc"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-14"&gt;Building an elf binary using gcc&lt;/a&gt;&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id="building-an-elf-binary-using-gcc"&gt;Building an elf binary using gcc&lt;/h2&gt;
 &lt;p&gt;GCC will build an ELF binary based on our assembly source code. This binary is the ROM image and Renode is the emulator.&lt;/p&gt;
-&lt;p&gt;By default, gcc outputs a format called ELF. This format is understood and loaded by the OS, &lt;a class="reference external" href="https://lwn.net/Articles/631631/"&gt;i.e. linux,&lt;/a&gt;. Renode also has the ability to understand ELF files and will load the sections into memory and put the program counter at the right spot to start executing &lt;a class="footnote-reference" href="#renode-elf-start" id="footnote-reference-3"&gt;[1]&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;riscv32-unknown-elf-gcc&lt;span class="w"&gt; &lt;/span&gt;baremetal.s&lt;span class="w"&gt; &lt;/span&gt;baremetal.c&lt;span class="w"&gt; &lt;/span&gt;-ggdb&lt;span class="w"&gt; &lt;/span&gt;-O0&lt;span class="w"&gt; &lt;/span&gt;-o&lt;span class="w"&gt; &lt;/span&gt;image&lt;span class="w"&gt; &lt;/span&gt;-ffreestanding&lt;span class="w"&gt; &lt;/span&gt;-nostdlib
-&lt;/pre&gt;&lt;/div&gt;
-&lt;dl class="docutils"&gt;
+&lt;p&gt;By default, gcc outputs a format called ELF. This format is understood and loaded by the OS, &lt;a href="https://lwn.net/Articles/631631/"&gt;i.e. linux,&lt;/a&gt;. Renode also has the ability to understand ELF files and will load the sections into memory and put the program counter at the right spot to start executing&lt;sup id="fnref:renode-elf-start"&gt;&lt;a class="footnote-ref" href="#fn:renode-elf-start"&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;riscv32-unknown-elf-gcc&lt;span class="w"&gt; &lt;/span&gt;baremetal.s&lt;span class="w"&gt; &lt;/span&gt;baremetal.c&lt;span class="w"&gt; &lt;/span&gt;-ggdb&lt;span class="w"&gt; &lt;/span&gt;-O0&lt;span class="w"&gt; &lt;/span&gt;-o&lt;span class="w"&gt; &lt;/span&gt;image&lt;span class="w"&gt; &lt;/span&gt;-ffreestanding&lt;span class="w"&gt; &lt;/span&gt;-nostdlib
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;dl&gt;
 &lt;dt&gt;riscv32-unknown-elf-gcc&lt;/dt&gt;
 &lt;dd&gt;gnu compiler. This compiles, assembles, and links input source code. This is the special cross compiling variant that we built earlier which runs on your host architecture (e.g. x86), but outputs binaries for riscv32.&lt;/dd&gt;
 &lt;dt&gt;baremetal.s&lt;/dt&gt;
 &lt;dd&gt;Assemble source file.&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;-ggdb&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;Turn on debugging symbols so that gdb can reference memory locations by name.&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;-O&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;Sets the optimization level, 0 for off&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;-o image&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;Name of the output ELF binary&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;-ffreestanding&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;don't use or require main. Don't assume we have an operating system.&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;-nostdlib&lt;/code&gt;&lt;/dt&gt;
+&lt;dd&gt;don't rely on c standard libraries being available.&lt;/dd&gt;
 &lt;/dl&gt;
-&lt;table class="docutils option-list" frame="void" rules="none"&gt;
-&lt;col class="option" /&gt;
-&lt;col class="description" /&gt;
-&lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="option-group"&gt;
-&lt;kbd&gt;&lt;span class="option"&gt;-g&lt;var&gt;gdb&lt;/var&gt;&lt;/span&gt;&lt;/kbd&gt;&lt;/td&gt;
-&lt;td&gt;Turn on debugging symbols so that gdb can reference memory locations by name.&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td class="option-group"&gt;
-&lt;kbd&gt;&lt;span class="option"&gt;-O&lt;/span&gt;&lt;/kbd&gt;&lt;/td&gt;
-&lt;td&gt;Sets the optimization level, 0 for off&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td class="option-group"&gt;
-&lt;kbd&gt;&lt;span class="option"&gt;-o &lt;var&gt;image&lt;/var&gt;&lt;/span&gt;&lt;/kbd&gt;&lt;/td&gt;
-&lt;td&gt;Name of the output ELF binary&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td class="option-group"&gt;
-&lt;kbd&gt;&lt;span class="option"&gt;-f&lt;var&gt;freestanding&lt;/var&gt;&lt;/span&gt;&lt;/kbd&gt;&lt;/td&gt;
-&lt;td&gt;don't use or require main. Don't assume we have an operating system.&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td class="option-group"&gt;
-&lt;kbd&gt;&lt;span class="option"&gt;-n&lt;var&gt;ostdlib&lt;/var&gt;&lt;/span&gt;&lt;/kbd&gt;&lt;/td&gt;
-&lt;td&gt;don't rely on c standard libraries being available.&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class="section" id="interactively-debugging-renode"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-15"&gt;Interactively Debugging Renode&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="interactively-debugging-renode"&gt;Interactively debugging Renode&lt;/h2&gt;
 &lt;p&gt;Pause and step though code that is running on the simulator.&lt;/p&gt;
-&lt;div class="section" id="attaching-the-gnu-debugger"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#toc-entry-16"&gt;Attaching the GNU Debugger&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;After launching, you may attach GDB using &lt;cite&gt;make debug&lt;/cite&gt;. This connects to the GDB server already running within Renode. It uses a GDB script to store default configuration, such as breaking execution and starting the text user interface or TUI, which shows source code alongside the disassembly.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$&lt;span class="w"&gt; &lt;/span&gt;make&lt;span class="w"&gt; &lt;/span&gt;launch
+&lt;h3 id="attaching-the-gnu-debugger"&gt;Attaching the GNU Debugger&lt;/h3&gt;
+&lt;p&gt;After launching, you may attach GDB using &lt;code&gt;make debug&lt;/code&gt;. This connects to the GDB server already running within Renode. It uses a GDB script to store default configuration, such as breaking execution and starting the text user interface or TUI, which shows source code alongside the disassembly.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;make&lt;span class="w"&gt; &lt;/span&gt;launch
 $&lt;span class="w"&gt; &lt;/span&gt;make&lt;span class="w"&gt; &lt;/span&gt;debug
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;If you are familiar with GDB you know the power of setting breakpoint, inspecting stacks, and much much more.&lt;/p&gt;
-&lt;div class="figure align-left"&gt;
-&lt;img alt="gdb tui" src="https://lh3.googleusercontent.com/pw/ACtC-3chg3Hd7-XPkvOum0SQv3f9EZ30vjZ3BB70OMbEqWVWO9GkvjOh-sBBWg-cU_oD2xo7jj4TTvQReAX-2F4HSt6OPOur1bb06A-fQZUti-STZ0clEEkYPsCrHAhMq2rVkKLU2psnCGzE_pfs5rIWrda0xg=w454-h669-no" /&gt;
-&lt;p class="caption"&gt;GDB Text User Interface (TUI)&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="useful-gdb-scenarios"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#toc-entry-17"&gt;Useful GDB scenarios&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;There are a couple simple commands that I find to be useful when exploring baremetal programming.&lt;/p&gt;
-&lt;div class="section" id="step-a-single-instruction"&gt;
-&lt;h4&gt;Step a single instruction&lt;/h4&gt;
-&lt;p&gt;Type &lt;tt class="docutils literal"&gt;S&lt;/tt&gt; &lt;tt class="docutils literal"&gt;I&lt;/tt&gt; &lt;tt class="docutils literal"&gt;Enter&lt;/tt&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(gdb) si
-(gdb) █
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;To repeat the last command, just repeatedly hit &lt;tt class="docutils literal"&gt;Enter&lt;/tt&gt;. This makes it easy to single step through the program.&lt;/p&gt;
-&lt;p&gt;You will notice that you get stuck in the delay loop, you would have to hit &lt;tt class="docutils literal"&gt;Enter&lt;/tt&gt; 9,000,000 times to make it though that delay. This is not a good way to add delays since it uses 100% of the CPU. If we were building an operating system, we could utilize a hardware timer and allow programs to request sleeps through an API. During the sleep the OS could go about running other processes, and then wake up the sleeping process at the appropriate time.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="continue-normal-execution"&gt;
-&lt;h4&gt;Continue normal execution&lt;/h4&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(gdb) c
-Continuing.
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="break-normal-execution"&gt;
-&lt;h4&gt;Break normal execution&lt;/h4&gt;
-&lt;p&gt;Send a keyboard interrupt, e.g. &lt;tt class="docutils literal"&gt;CTRL&lt;/tt&gt; + &lt;tt class="docutils literal"&gt;C&lt;/tt&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(gdb) c
-Continuing.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-Program received signal SIGTRAP, Trace/breakpoint trap.
-delay_loop () at baremetal.s:13
+&lt;p&gt;If you are familiar with GDB you know the power of setting breakpoint, inspecting stacks, and much much more.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure width="454px"&gt;&lt;img src="../img/2020-12-22__baremetal-riscv-renode-1__gdb-tui.png"&gt;&lt;figcaption&gt;GDB Text User Interface (TUI)&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3 id="useful-gdb-scenarios"&gt;Useful GDB scenarios&lt;/h3&gt;
+&lt;p&gt;There are a couple simple commands that I find to be useful when exploring baremetal programming.&lt;/p&gt;
+&lt;h4 id="step-a-single-instruction"&gt;Step a single instruction&lt;/h4&gt;
+&lt;p&gt;Type &lt;code&gt;S&lt;/code&gt; &lt;code&gt;I&lt;/code&gt; &lt;code&gt;Enter&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;(gdb) si
 (gdb) █
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="set-a-breakpoint"&gt;
-&lt;h4&gt;Set a breakpoint&lt;/h4&gt;
-&lt;p&gt;You can set a breakpoint at a line or symbol. Tab completion should work here to display available symbols. So &lt;tt class="docutils literal"&gt;B&lt;/tt&gt; &lt;tt class="docutils literal"&gt;Space&lt;/tt&gt; &lt;tt class="docutils literal"&gt;T&lt;/tt&gt; &lt;tt class="docutils literal"&gt;Tab&lt;/tt&gt; &lt;tt class="docutils literal"&gt;Enter&lt;/tt&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(gdb) b toggle_led
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;To repeat the last command, just repeatedly hit &lt;code&gt;Enter&lt;/code&gt;. This makes it easy to single step through the program.&lt;/p&gt;
+&lt;p&gt;You will notice that you get stuck in the delay loop, you would have to hit &lt;code&gt;Enter&lt;/code&gt; 9,000,000 times to make it though that delay. This is not a good way to add delays since it uses 100% of the CPU. If we were building an operating system, we could utilize a hardware timer and allow programs to request sleeps through an API. During the sleep the OS could go about running other processes, and then wake up the sleeping process at the appropriate time.&lt;/p&gt;
+&lt;h4 id="continue-normal-execution"&gt;Continue normal execution&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;(gdb) c
+Continuing.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id="break-normal-execution"&gt;Break normal execution&lt;/h4&gt;
+&lt;p&gt;Send a keyboard interrupt, e.g. &lt;code&gt;CTRL&lt;/code&gt; + &lt;code&gt;C&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;gdb&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;
+&lt;span class="n"&gt;Continuing&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+
+&lt;span class="n"&gt;Program&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;received&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;signal&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;SIGTRAP&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Trace&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;breakpoint&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;trap&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;delay_loop&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;baremetal&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;13&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;gdb&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;█&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id="set-a-breakpoint"&gt;Set a breakpoint&lt;/h4&gt;
+&lt;p&gt;You can set a breakpoint at a line or symbol. Tab completion should work here to display available symbols. So &lt;code&gt;B&lt;/code&gt; &lt;code&gt;Space&lt;/code&gt; &lt;code&gt;T&lt;/code&gt; &lt;code&gt;Tab&lt;/code&gt; &lt;code&gt;Enter&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;(gdb) b toggle_led
 Breakpoint 1 at 0x10074: file baremetal.s, line 16.
 (gdb) c
 Continuing.
 
 Breakpoint 1, toggle_led () at baremetal.s:16
 (gdb) █
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="read-registers"&gt;
-&lt;h4&gt;Read Registers&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id="read-registers"&gt;Read registers&lt;/h4&gt;
 &lt;p&gt;You can dump all registers,&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(gdb) info registers
-    ra             0x0      0x0
-    fp             0x0      0x0
-    s1             0x0      0
-    a0             0x24648f 2385039
-    ...
-    t4             0x0      0
-    t5             0x0      0
-    t6             0x0      0
-    pc             0x1006c  0x1006c &amp;lt;delay_loop&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;gdb&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;info&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;registers&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;ra&lt;/span&gt;&lt;span class="w"&gt;             &lt;/span&gt;&lt;span class="mh"&gt;0&lt;/span&gt;&lt;span class="n"&gt;x0&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="mh"&gt;0&lt;/span&gt;&lt;span class="n"&gt;x0&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;fp&lt;/span&gt;&lt;span class="w"&gt;             &lt;/span&gt;&lt;span class="mh"&gt;0&lt;/span&gt;&lt;span class="n"&gt;x0&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="mh"&gt;0&lt;/span&gt;&lt;span class="n"&gt;x0&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;s1&lt;/span&gt;&lt;span class="w"&gt;             &lt;/span&gt;&lt;span class="mh"&gt;0&lt;/span&gt;&lt;span class="n"&gt;x0&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="mh"&gt;0&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;a0&lt;/span&gt;&lt;span class="w"&gt;             &lt;/span&gt;&lt;span class="mh"&gt;0&lt;/span&gt;&lt;span class="n"&gt;x24648f&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mh"&gt;2385039&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;...&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;t4&lt;/span&gt;&lt;span class="w"&gt;             &lt;/span&gt;&lt;span class="mh"&gt;0&lt;/span&gt;&lt;span class="n"&gt;x0&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="mh"&gt;0&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;t5&lt;/span&gt;&lt;span class="w"&gt;             &lt;/span&gt;&lt;span class="mh"&gt;0&lt;/span&gt;&lt;span class="n"&gt;x0&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="mh"&gt;0&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;t6&lt;/span&gt;&lt;span class="w"&gt;             &lt;/span&gt;&lt;span class="mh"&gt;0&lt;/span&gt;&lt;span class="n"&gt;x0&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="mh"&gt;0&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;pc&lt;/span&gt;&lt;span class="w"&gt;             &lt;/span&gt;&lt;span class="mh"&gt;0&lt;/span&gt;&lt;span class="n"&gt;x1006c&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="mh"&gt;0&lt;/span&gt;&lt;span class="n"&gt;x1006c&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;delay_loop&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;or you can print a specific one:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(gdb) p $pc
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;(gdb) p $pc
 $5 = (void (*)()) 0x10074 &amp;lt;toggle_led&amp;gt;
 (gdb) p $a4
 $6 = 2
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="setting-a-register"&gt;
-&lt;h4&gt;Setting a register&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id="setting-a-register"&gt;Setting a register&lt;/h4&gt;
 &lt;p&gt;You can mutate a register value and continue on:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(gdb) set $pc=delay_loop
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;(gdb) set $pc=delay_loop
 (gdb) c
 Continuing.
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="changing-the-bitmask-for-blinky"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-18"&gt;Changing the bitmask for blinky&lt;/a&gt;&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id="changing-the-bitmask-for-blinky"&gt;Changing the bitmask for blinky&lt;/h2&gt;
 &lt;p&gt;Let's do something fun and prove we can modify a program's state after breaking.&lt;/p&gt;
-&lt;p&gt;If we just run the blinky example, note that we are blinking &lt;tt class="docutils literal"&gt;led0&lt;/tt&gt;:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;15:09:23.7671 [NOISY] gpio_out.led0: LED state changed to True
+&lt;p&gt;If we just run the blinky example, note that we are blinking &lt;code&gt;led0&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;15:09:23.7671 [NOISY] gpio_out.led0: LED state changed to True
 15:09:24.0805 [NOISY] gpio_out.led0: LED state changed to False
 15:09:24.3872 [NOISY] gpio_out.led0: LED state changed to True
 15:09:24.7525 [NOISY] gpio_out.led0: LED state changed to False
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;Change the bitmask:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;(gdb) set $a6=0b10
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;(gdb) set $a6=0b10
 (gdb) c
 Continuing.
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now we are blinking &lt;tt class="docutils literal"&gt;led1&lt;/tt&gt; instead of &lt;tt class="docutils literal"&gt;led0&lt;/tt&gt;:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;15:09:42.5007 [NOISY] gpio_out.led1: LED state changed to True
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we are blinking &lt;code&gt;led1&lt;/code&gt; instead of &lt;code&gt;led0&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;15:09:42.5007 [NOISY] gpio_out.led1: LED state changed to True
 15:09:42.7653 [NOISY] gpio_out.led1: LED state changed to False
 15:09:43.0602 [NOISY] gpio_out.led1: LED state changed to True
 15:09:43.3263 [NOISY] gpio_out.led1: LED state changed to False
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="miro-samek-and-the-modern-embedded-course-series"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-19"&gt;Miro Samek and the modern embedded course series&lt;/a&gt;&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id="miro-samek-and-the-modern-embedded-course-series"&gt;Miro Samek and the modern embedded course series&lt;/h2&gt;
 &lt;p&gt;I am inspired by Miro Samek. He does a great introduction to many embedded programming concepts and I want to share that in a way that we don't need to have a real board.&lt;/p&gt;
-&lt;p&gt;Check out his course here: &lt;a class="reference external" href="https://www.state-machine.com/quickstart/"&gt;https://www.state-machine.com/quickstart/&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="next-post"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-20"&gt;Next post&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;In &lt;a class="reference external" href="http://blog.y2kbugger.com/baremetal-riscv-renode-2.html"&gt;Part 2&lt;/a&gt; I review a list alternate dev environment and how I converged on what I've described here. There are many easier and more &lt;em&gt;complete/integrated&lt;/em&gt; solutions, but we have a stated goal of gaining understanding and this is a forcing function for more control over details.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="footnotes"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-21"&gt;Footnotes&lt;/a&gt;&lt;/h2&gt;
-&lt;table class="docutils footnote" frame="void" id="renode-elf-start" rules="none"&gt;
-&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
-&lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#footnote-reference-3"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;p class="first"&gt;The computer has to start executing somewhere on reset, the exact memory location is called the reset vector and on RISC-V it is implementation dependent and Renode coordinates the reset vector in its simulator with the memory address of the &lt;a class="reference external" href="https://refspecs.linuxfoundation.org/elf/gabi4+/ch4.eheader.html"&gt;e_entry header&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://github.com/renode/renode-infrastructure/blob/8ad326eefe85acc127fdb01d70dbbc9a6a99dca8/src/Emulator/Peripherals/Peripherals/CPU/TranslationCPU.cs#L107"&gt;Renode changes the reset vector based on the ELF binary&lt;/a&gt;&lt;/p&gt;
-&lt;div class="last"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;LogLevel&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Info&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Setting PC value to 0x{0:X}.&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;elf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;GetEntryPoint&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
-&lt;span class="n"&gt;SetPCFromEntryPoint&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;elf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;GetEntryPoint&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table class="docutils footnote" frame="void" id="renode-machine" rules="none"&gt;
-&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
-&lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;[2]&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://renode.readthedocs.io/en/latest/basic/machines.html"&gt;https://renode.readthedocs.io/en/latest/basic/machines.html&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table class="docutils footnote" frame="void" id="renode-describing-platforms" rules="none"&gt;
-&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
-&lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#footnote-reference-1"&gt;[3]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://renode.readthedocs.io/en/latest/basic/describing_platforms.html"&gt;https://renode.readthedocs.io/en/latest/basic/describing_platforms.html&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table class="docutils footnote" frame="void" id="riscv-prgrammers-guide" rules="none"&gt;
-&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
-&lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#footnote-reference-2"&gt;[4]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://github.com/riscv/riscv-asm-manual/blob/master/riscv-asm.md"&gt;https://github.com/riscv/riscv-asm-manual/blob/master/riscv-asm.md&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-</content><category term="programming"/><category term="baremetal"/><category term="RISC-V"/><category term="Renode"/><category term="assembly"/><category term="CPUs"/></entry><entry><title>I am now a maintainer on the Arch User Repository</title><link href="http://blog.y2kbugger.com/first_arch_user_repository_submission.html" rel="alternate"/><published>2020-04-14T00:06:28-04:00</published><updated>2026-01-05T08:02:17.617809-05:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2020-04-14:/first_arch_user_repository_submission.html</id><summary type="html">&lt;p class="first last"&gt;Just made my first submission to the arch user repository (AUR)&lt;/p&gt;
-</summary><content type="html">&lt;!-- Google Photos Album: https://photos.app.goo.gl/dfXck6rcLDcZHtv17 --&gt;
-&lt;div class="section" id="long-time-user-first-time-maintainer"&gt;
-&lt;h2&gt;Long time user, first time maintainer&lt;/h2&gt;
-&lt;p&gt;I've been a Linux user for a decade now, Ubuntu at first, but I switched to &lt;a class="reference external" href="https://archlinux.org"&gt;ArchLinux&lt;/a&gt; after a year or two. I quickly found the &lt;a class="reference external" href="https://aur.archlinux.org/"&gt;Arch User Repository&lt;/a&gt; or AUR to be a treasure trove of free (libre) software; I am still in awe today. On ms windows, finding software meant downloading binaries from sketchy freeware sites. The prospects were better on Ubuntu since many software projects engaged with the community and produces regular releases. One drawback however were the stale repos, some packages on ubuntu were still pointing at releases that were years old.The Ubuntu &lt;a class="reference external" href="https://launchpad.net/ubuntu/+ppas"&gt;Personal Package Archives&lt;/a&gt; PPAs was supposed to solve this, but I never had  good luck with them. The packages always seemed random whether or not they were compatible and maintained.&lt;/p&gt;
-&lt;img alt="ArchLinux Logo" src="https://lh3.googleusercontent.com/mapAQeHjDZmDn4Jq-FXyEhuFDEB6IHuEBzk8egTflCpiwLU9g0-W_YevSXbZEE-tQopVtEIJLO_rkjgf2TjA_olTqV7gGPiiDPKliO23xXNlOENJnDhobYLeLh7w942lCrhiASjMVHA=w683-h228-no" /&gt;
-&lt;p&gt;Enter ArchLinux, everything is on the bleeding edge. The vast majority of typical software needs is packaged and up-to-date. For more custom software, there is the AUR. It started as just people sharing recipes for building packages...and well, that's still the case and it's a &lt;em&gt;really&lt;/em&gt; good thing too, it's beauty is in the simplicity. Packaging makes sure that the software you install goes in cleanly and can be removed without leftover files. You can think of ArchLinux as basically a package manger &lt;a class="footnote-reference" href="#pacman" id="footnote-reference-1"&gt;[1]&lt;/a&gt; and a wonderful community. The AUR acts as a funnel for new packages to become official in the community repository, which are built packages rather than just recipes.&lt;/p&gt;
-&lt;table class="docutils footnote" frame="void" id="pacman" rules="none"&gt;
-&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
-&lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#footnote-reference-1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;See pacman: &lt;a class="reference external" href="https://wiki.archlinux.org/index.php/pacman"&gt;https://wiki.archlinux.org/index.php/pacman&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class="section" id="my-contribution"&gt;
-&lt;h2&gt;My contribution&lt;/h2&gt;
-&lt;p&gt;For my first contribution I wanted something simple, just to learn the process. At work I have been spending a lot of time with the conda package manager, and a few months ago I submitted my first conda-forge recipe. For a long time I have wanted to put something on AUR and now that packing is fresh on my mind I figure it's a good time to get this one under my belt. I chose a shell script that I have used for years; it is a fork of a now deleted AUR package. Since it's a shell script it still needs to be installed to the system but it doesn't have the complication of needing to be compiled.&lt;/p&gt;
-&lt;img alt="My AUR package page" src="https://lh3.googleusercontent.com/Cc_WYvWQQrft1j2Qgb6mjuLL5t1zpBXlPVjViDqeBuPgJLK0Spus6pszYoEhzmO5gTY-NH2uJ44rq1CyeDapBKiJhOkhAKwJc77_sZpWv9JL9qgza5Yawd9ilg58bau2i1nR8vu6xEk=w503-h216-no" /&gt;
-&lt;p&gt;The package is called &lt;cite&gt;dmenu-recent-aliases&lt;/cite&gt;, and it is a lightweight application launcher. It provides fuzzy searching for all the executables on your &lt;cite&gt;PATH&lt;/cite&gt; and also includes your custom bash functions and aliases. I have added a few extra features as well, for the full docs see &lt;a class="reference external" href="https://gitlab.com/y2kbugger-projects/scripts/dmenu-recent-aliases"&gt;https://gitlab.com/y2kbugger-projects/scripts/dmenu-recent-aliases&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Check out his course here: &lt;a href="https://www.state-machine.com/quickstart/"&gt;https://www.state-machine.com/quickstart/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="next-post"&gt;Next post&lt;/h2&gt;
+&lt;p&gt;In &lt;a href="http://blog.y2kbugger.com/baremetal-riscv-renode-2.html"&gt;Part 2&lt;/a&gt; I review a list of alternate dev environments and how I converged on what I've described here. There are many easier and more &lt;em&gt;complete/integrated&lt;/em&gt; solutions, but we have a stated goal of gaining understanding and this is a forcing function for more control over details.&lt;/p&gt;
+&lt;h2 id="footnotes"&gt;Footnotes&lt;/h2&gt;
+&lt;div class="footnote"&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id="fn:renode-elf-start"&gt;
+&lt;p&gt;The computer has to start executing somewhere on reset, the exact memory location is called the reset vector and on RISC-V it is implementation dependent and Renode coordinates the reset vector in its simulator with the memory address of the &lt;a href="https://refspecs.linuxfoundation.org/elf/gabi4+/ch4.eheader.html"&gt;e_entry header&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/renode/renode-infrastructure/blob/8ad326eefe85acc127fdb01d70dbbc9a6a99dca8/src/Emulator/Peripherals/Peripherals/CPU/TranslationCPU.cs#L107"&gt;Renode changes the reset vector based on the ELF binary&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;Log&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;LogLevel&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;Info&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Setting PC value to 0x{0:X}.&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;elf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;GetEntryPoint&lt;/span&gt;&lt;span class="o"&gt;());&lt;/span&gt;
+&lt;span class="nt"&gt;SetPCFromEntryPoint&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;elf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;GetEntryPoint&lt;/span&gt;&lt;span class="o"&gt;());&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a class="footnote-backref" href="#fnref:renode-elf-start" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:renode-machine"&gt;
+&lt;p&gt;&lt;a href="https://renode.readthedocs.io/en/latest/basic/machines.html"&gt;https://renode.readthedocs.io/en/latest/basic/machines.html&lt;/a&gt;&amp;#160;&lt;a class="footnote-backref" href="#fnref:renode-machine" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:renode-describing-platforms"&gt;
+&lt;p&gt;&lt;a href="https://renode.readthedocs.io/en/latest/basic/describing_platforms.html"&gt;https://renode.readthedocs.io/en/latest/basic/describing_platforms.html&lt;/a&gt;&amp;#160;&lt;a class="footnote-backref" href="#fnref:renode-describing-platforms" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:riscv-prgrammers-guide"&gt;
+&lt;p&gt;&lt;a href="https://github.com/riscv/riscv-asm-manual/blob/master/riscv-asm.md"&gt;https://github.com/riscv/riscv-asm-manual/blob/master/riscv-asm.md&lt;/a&gt;&amp;#160;&lt;a class="footnote-backref" href="#fnref:riscv-prgrammers-guide" title="Jump back to footnote 4 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="programming"/><category term="baremetal"/><category term="RISC-V"/><category term="Renode"/><category term="assembly"/><category term="CPUs"/></entry><entry><title>I am now a maintainer on the Arch User Repository</title><link href="http://blog.y2kbugger.com/first_arch_user_repository_submission.html" rel="alternate"/><published>2020-04-14T00:06:28-04:00</published><updated>2026-06-17T23:15:57.281313-04:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2020-04-14:/first_arch_user_repository_submission.html</id><summary type="html">&lt;p&gt;Just made my first submission to the arch user repository (AUR)&lt;/p&gt;</summary><content type="html">&lt;h2 id="long-time-user-first-time-maintainer"&gt;Long time user, first time maintainer&lt;/h2&gt;
+&lt;p&gt;I've been a Linux user for a decade now, Ubuntu at first, but I switched to &lt;a href="https://archlinux.org"&gt;ArchLinux&lt;/a&gt; after a year or two. I quickly found the &lt;a href="https://aur.archlinux.org/"&gt;Arch User Repository&lt;/a&gt; or AUR to be a treasure trove of free (libre) software; I am still in awe today. On ms windows, finding software meant downloading binaries from sketchy freeware sites. The prospects were better on Ubuntu since many software projects engaged with the community and produced regular releases. One drawback however were the stale repos, some packages on ubuntu were still pointing at releases that were years old. The Ubuntu &lt;a href="https://launchpad.net/ubuntu/+ppas"&gt;Personal Package Archives&lt;/a&gt; PPAs was supposed to solve this, but I never had  good luck with them. The packages always seemed random whether or not they were compatible and maintained.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure&gt;&lt;img src="../img/2020-04-14__first-arch-user-repository-submission__archlinux-logo.png"&gt;&lt;figcaption&gt;ArchLinux Logo&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Enter ArchLinux, everything is on the bleeding edge. The vast majority of typical software needs is packaged and up-to-date. For more custom software, there is the AUR. It started as just people sharing recipes for building packages...and well, that's still the case and it's a &lt;em&gt;really&lt;/em&gt; good thing too, its beauty is in the simplicity. Packaging makes sure that the software you install goes in cleanly and can be removed without leftover files. You can think of ArchLinux as basically a package manager&lt;sup id="fnref:pacman"&gt;&lt;a class="footnote-ref" href="#fn:pacman"&gt;1&lt;/a&gt;&lt;/sup&gt; and a wonderful community. The AUR acts as a funnel for new packages to become official in the community repository, which are built packages rather than just recipes.&lt;/p&gt;
+&lt;h2 id="my-contribution"&gt;My contribution&lt;/h2&gt;
+&lt;p&gt;For my first contribution I wanted something simple, just to learn the process. At work I have been spending a lot of time with the conda package manager, and a few months ago I submitted my first conda-forge recipe. For a long time I have wanted to put something on AUR and now that packing is fresh on my mind I figured it's a good time to get this one under my belt. I chose a shell script that I have used for years; it is a fork of a now deleted AUR package. Since it's a shell script it still needs to be installed to the system but it doesn't have the complication of needing to be compiled.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure&gt;&lt;img src="../img/2020-04-14__first-arch-user-repository-submission__aur-package-page.png"&gt;&lt;figcaption&gt;My AUR package page&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;The package is called &lt;code&gt;dmenu-recent-aliases&lt;/code&gt;, and it is a lightweight application launcher. It provides fuzzy searching for all the executables on your &lt;code&gt;PATH&lt;/code&gt; and also includes your custom bash functions and aliases. I have added a few extra features as well, for the full docs see &lt;a href="https://gitlab.com/y2kbugger-projects/scripts/dmenu-recent-aliases"&gt;https://gitlab.com/y2kbugger-projects/scripts/dmenu-recent-aliases&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;A second reason for choosing this one is that there is some demand for the script and the original is no longer being maintained.&lt;/p&gt;
-&lt;div class="figure"&gt;
-&lt;img alt="Broken link on aur" src="https://lh3.googleusercontent.com/oh9j6EPpcdpLD-1pWDsRzv18wSoKxlbB_bMcunePT2W8DGunnHpAswL7riiCzTgzkyiQ_I0h_00VP-mDrfH3ZeHMmnCwn9PtHVUu219CopWoYB7GI-NQell_BQ3yM096_IMTp5bAXlk=w438-h78-no" /&gt;
-&lt;p class="caption"&gt;The archwiki still has a link to the old package, but it no longer exists.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="become-a-maintainer-yourself"&gt;
-&lt;h2&gt;Become a maintainer yourself&lt;/h2&gt;
+&lt;p&gt;
+&lt;figure&gt;&lt;img src="../img/2020-04-14__first-arch-user-repository-submission__broken-link.png"&gt;&lt;figcaption&gt;The archwiki still has a link to the old package, but it no longer exists.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id="become-a-maintainer-yourself"&gt;Become a maintainer yourself&lt;/h2&gt;
 &lt;p&gt;Before you start to make a package, you should be familiar how to manually install other's packages from the AUR. Avoid AUR helpers for a while, trust me.&lt;/p&gt;
 &lt;p&gt;Here is the quickstart guide:&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages"&gt;https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages"&gt;https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;As far as the packaging process goes, it's not too difficult but I can't begin to cover it all here. Instead, I recommend reading at least all of these:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Creating_packages"&gt;https://wiki.archlinux.org/index.php/Creating_packages&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Arch_package_guidelines"&gt;https://wiki.archlinux.org/index.php/Arch_package_guidelines&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://wiki.archlinux.org/index.php/AUR_submission_guidelines"&gt;https://wiki.archlinux.org/index.php/AUR_submission_guidelines&lt;/a&gt;&lt;/li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://wiki.archlinux.org/index.php/Creating_packages"&gt;https://wiki.archlinux.org/index.php/Creating_packages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wiki.archlinux.org/index.php/Arch_package_guidelines"&gt;https://wiki.archlinux.org/index.php/Arch_package_guidelines&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wiki.archlinux.org/index.php/AUR_submission_guidelines"&gt;https://wiki.archlinux.org/index.php/AUR_submission_guidelines&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;It may also be helpful to check out my minimal &lt;cite&gt;PKGBUILD&lt;/cite&gt; here.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://aur.archlinux.org/dmenu-recent-aliases-git.git
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;After you cobble together what you think is a good &lt;cite&gt;PKGBUILD&lt;/cite&gt; you can ask for a review on the &lt;cite&gt;#archlinux-aur&lt;/cite&gt; IRC. Try &lt;a class="reference external" href="https://www.irccloud.com/"&gt;IRCCloud&lt;/a&gt; if you aren't familiar with IRC.&lt;/p&gt;
+&lt;p&gt;It may also be helpful to check out my minimal &lt;code&gt;PKGBUILD&lt;/code&gt; here.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;https://aur.archlinux.org/dmenu-recent-aliases-git.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;After you cobble together what you think is a good &lt;code&gt;PKGBUILD&lt;/code&gt; you can ask for a review on the &lt;code&gt;#archlinux-aur&lt;/code&gt; IRC. Try &lt;a href="https://www.irccloud.com/"&gt;IRCCloud&lt;/a&gt; if you aren't familiar with IRC.&lt;/p&gt;
 &lt;p&gt;Finally, submitting is as easy as a git push, but be sure all of your i's are dotted and t's are crossed.&lt;/p&gt;
-&lt;p&gt;Now you are &amp;lt;strike&amp;gt;all done&amp;lt;/strike&amp;gt; just beginning. As a maintainer it's your job to keep the package up-to-date and incorporate suggestions from the community.&lt;/p&gt;
-&lt;/div&gt;
-</content><category term="programming"/><category term="Linux"/><category term="packaging"/><category term="OpenSource"/><category term="ArchLinux"/></entry><entry><title>The C Programming Language</title><link href="http://blog.y2kbugger.com/the-c-programming-language.html" rel="alternate"/><published>2019-12-31T00:00:00-05:00</published><updated>2020-07-19T22:54:03-04:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2019-12-31:/the-c-programming-language.html</id><summary type="html">&lt;p class="first last"&gt;Learning C from the book co-written by the one of the original language designers.&lt;/p&gt;
-</summary><content type="html">&lt;!-- Google Photos Album: https://photos.app.goo.gl/dfXck6rcLDcZHtv17 --&gt;
-&lt;div class="section" id="get-close-to-the-hardware-so-you-can-c"&gt;
-&lt;h2&gt;Get close to the hardware so you can C&lt;/h2&gt;
+&lt;p&gt;Now you are &lt;strike&gt;all done&lt;/strike&gt; just beginning. As a maintainer it's your job to keep the package up-to-date and incorporate suggestions from the community.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id="fn:pacman"&gt;
+&lt;p&gt;See pacman: &lt;a href="https://wiki.archlinux.org/index.php/pacman"&gt;https://wiki.archlinux.org/index.php/pacman&lt;/a&gt;&amp;#160;&lt;a class="footnote-backref" href="#fnref:pacman" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="programming"/><category term="Linux"/><category term="packaging"/><category term="OpenSource"/><category term="ArchLinux"/></entry><entry><title>The C Programming Language</title><link href="http://blog.y2kbugger.com/the-c-programming-language.html" rel="alternate"/><published>2019-12-31T00:00:00-05:00</published><updated>2020-07-19T22:54:03-04:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2019-12-31:/the-c-programming-language.html</id><summary type="html">&lt;p&gt;Learning C from the book co-written by the one of the original language designers.&lt;/p&gt;</summary><content type="html">&lt;h2 id="get-close-to-the-hardware-so-you-can-c"&gt;Get close to the hardware so you can C&lt;/h2&gt;
 &lt;p&gt;Since I have been learning about hardware and operating systems I wanted to learn a language which is conducive for having full control of computer hardware. C is not just good for this, the level of control C gives you was tuned for writing portable operating systems. The tooling, community, and educational resources reflect this legacy.&lt;/p&gt;
-&lt;p&gt;I chose to read the Kernighan and Ritchie book because I had heard that it was not just a good book for C, but good for programming in general. There is also a historical value to learning from a primary source. I can confirm this. Working through the exercises are key to understanding why C exists.&lt;/p&gt;
+&lt;p&gt;I chose to read the Kernighan and Ritchie book because I had heard that it was not just a good book for C, but good for programming in general. There is also a historical value to learning from a primary source. I can confirm this. Working through the exercises is key to understanding why C exists.&lt;/p&gt;
 &lt;p&gt;Here are my attempts at the exercises:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone git@github.com:y2kbugger/kr.git
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="section" id="the-k-r-approach"&gt;
-&lt;h3&gt;The K&amp;amp;R approach&lt;/h3&gt;
-&lt;p&gt;Early on they teach about structuring modules so that code and interfaces could be reused. When I previously learning C++ the reason for header files seemed to be hand waved. I appreciated the way these concepts were treated in K&amp;amp;R.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;git@github.com:y2kbugger/kr.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id="the-kr-approach"&gt;The K&amp;amp;R approach&lt;/h3&gt;
+&lt;p&gt;Early on they teach about structuring modules so that code and interfaces could be reused. When I was previously learning C++ the reason for header files seemed to be hand waved. I appreciated the way these concepts were treated in K&amp;amp;R.&lt;/p&gt;
 &lt;p&gt;Later in the book though we work through reimplement functions from the standard lib. This was insightful, especially the ones which dealt with memory management such as malloc, calloc, and free as well as the Unix system interface.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="conclusion"&gt;
-&lt;h3&gt;Conclusion&lt;/h3&gt;
-&lt;p&gt;I would definitely recommend the book to anyone interested in learning about computers. If all you care about is writing programs/computation, other languages could twist you brain in other directions (Haskell, etc), but learning C through K&amp;amp;R is a good start to learning about how computers actually work.&lt;/p&gt;
-&lt;div class="section" id="but-shouldn-t-i-learn-something-modern-like-c"&gt;
-&lt;h4&gt;But shouldn't I learn something modern like C++?&lt;/h4&gt;
-&lt;p&gt;As a side note, don't be swayed to learn C++ merely because C is a subset. The argument goes like this: if you learn C++ you'll also learn C for free. This isn't true. If you want something a bit higher level for systems programming, I've heard good things about Rust.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</content><category term="programming"/><category term="C"/><category term="books"/></entry><entry><title>MMIX WASM</title><link href="http://blog.y2kbugger.com/mmix-wasm.html" rel="alternate"/><published>2019-09-28T02:14:30-04:00</published><updated>2020-09-01T02:32:27-04:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2019-09-28:/mmix-wasm.html</id><summary type="html">&lt;p class="first last"&gt;Compiling the MMIX Assembler and Simulator to Web Assembly&lt;/p&gt;
-</summary><content type="html">&lt;!-- Google Photos Album: https://photos.app.goo.gl/dfXck6rcLDcZHtv17 --&gt;
-&lt;div class="contents topic" id="contents"&gt;
-&lt;p class="topic-title"&gt;&lt;a class="reference internal" href="#top"&gt;Contents&lt;/a&gt;&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#fast-feedback-for-the-art-of-computer-programming-exercises" id="toc-entry-1"&gt;Fast feedback for The Art of Computer Programming Exercises&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#dependencies" id="toc-entry-2"&gt;Dependencies&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#mmixlib" id="toc-entry-3"&gt;MMIXlib&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#emscripten" id="toc-entry-4"&gt;Emscripten&lt;/a&gt;&lt;/li&gt;
+&lt;h3 id="conclusion"&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;I would definitely recommend the book to anyone interested in learning about computers. If all you care about is writing programs/computation, other languages could twist your brain in other directions (Haskell, etc), but learning C through K&amp;amp;R is a good start to learning about how computers actually work.&lt;/p&gt;
+&lt;h4 id="but-shouldnt-i-learn-something-modern-like-c"&gt;But shouldn't I learn something modern like C++?&lt;/h4&gt;
+&lt;p&gt;As a side note, don't be swayed to learn C++ merely because C is a subset. The argument goes like this: if you learn C++ you'll also learn C for free. This isn't true. If you want something a bit higher level for systems programming, I've heard good things about Rust.&lt;/p&gt;</content><category term="programming"/><category term="C"/><category term="books"/></entry><entry><title>MMIX WASM</title><link href="http://blog.y2kbugger.com/mmix-wasm.html" rel="alternate"/><published>2019-09-28T02:14:30-04:00</published><updated>2020-09-01T02:32:27-04:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2019-09-28:/mmix-wasm.html</id><summary type="html">&lt;p&gt;Compiling the MMIX Assembler and Simulator to Web Assembly&lt;/p&gt;</summary><content type="html">&lt;div class="toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#fast-feedback-for-the-art-of-computer-programming-exercises"&gt;Fast feedback for The Art of Computer Programming exercises&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#dependencies"&gt;Dependencies&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#mmixlib"&gt;MMIXlib&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#emscripten"&gt;Emscripten&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#approach" id="toc-entry-5"&gt;Approach&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference internal" href="#demo" id="toc-entry-6"&gt;Demo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#approach"&gt;Approach&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#demo"&gt;Demo&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;div class="section" id="fast-feedback-for-the-art-of-computer-programming-exercises"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-1"&gt;Fast feedback for The Art of Computer Programming Exercises&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;As I started working through the &lt;a class="reference external" href="https://blog.y2kbugger.com/reading-taocp-mmix.html"&gt;exercises in TAOCP&lt;/a&gt;, I wanted a quicker way to work on the problems in the MMIX assembly language. I was also in the process of learning C so I was interested in trying to understand the code behind MMIXware, the simulators for the MMIX computer.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="dependencies"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-2"&gt;Dependencies&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="section" id="mmixlib"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#toc-entry-3"&gt;MMIXlib&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;MMIXware is made up of multiple programs, including an assembler and a simulator. Details can be found at the homepage here: &lt;a class="reference external" href="http://mmix.cs.hm.edu"&gt;http://mmix.cs.hm.edu&lt;/a&gt;. When browsing the SVN trunk I noticed a project called MMIXlib. This is a refactoring effort by Martin Ruckert to partition the original MMIX tools into something he could integrate into an IDE. I decided to use this as the base for how I would plug into the MMIX assembler and simulator.&lt;/p&gt;
-&lt;p&gt;One thing that is surprising if you haven't seen it before is MMIXware being written in CWEB, This is a literate programming system developed by Donald Knuth. The CWEB files compile to C, but I needed to install all of texlive to do so. There is a rule that you are not to change the original source code but only apply CWEB style &amp;quot;change files&amp;quot;. This allows the entire refactoring to actually be a layer of explained changes applied to the original MMIXware.&lt;/p&gt;
+&lt;h2 id="fast-feedback-for-the-art-of-computer-programming-exercises"&gt;Fast feedback for The Art of Computer Programming exercises&lt;/h2&gt;
+&lt;p&gt;As I started working through the &lt;a href="https://blog.y2kbugger.com/reading-taocp-mmix.html"&gt;exercises in TAOCP&lt;/a&gt;, I wanted a quicker way to work on the problems in the MMIX assembly language. I was also in the process of learning C so I was interested in trying to understand the code behind MMIXware, the simulators for the MMIX computer.&lt;/p&gt;
+&lt;h2 id="dependencies"&gt;Dependencies&lt;/h2&gt;
+&lt;h3 id="mmixlib"&gt;MMIXlib&lt;/h3&gt;
+&lt;p&gt;MMIXware is made up of multiple programs, including an assembler and a simulator. Details can be found at the homepage here: &lt;a href="http://mmix.cs.hm.edu"&gt;http://mmix.cs.hm.edu&lt;/a&gt;. When browsing the SVN trunk I noticed a project called MMIXlib. This is a refactoring effort by Martin Ruckert to partition the original MMIX tools into something he could integrate into an IDE. I decided to use this as the base for how I would plug into the MMIX assembler and simulator.&lt;/p&gt;
+&lt;p&gt;One thing that is surprising if you haven't seen it before is MMIXware being written in CWEB. This is a literate programming system developed by Donald Knuth. The CWEB files compile to C, but I needed to install all of texlive to do so. There is a rule that you are not to change the original source code but only apply CWEB style "change files". This allows the entire refactoring to actually be a layer of explained changes applied to the original MMIXware.&lt;/p&gt;
 &lt;p&gt;When I was working through the compilation process, I found a couple of errors in MMIXlib, and also I suggested a small enhancement to the Makefile. As is tradition with Donald Knuth's projects, there was a reward for finding errors in MMIXware. Even though I think my contribution was small I'm proud to have gotten a MMIX shirt for the contribution.&lt;/p&gt;
-&lt;img alt="mmix shirt" src="https://lh3.googleusercontent.com/pw/ACtC-3cFCw5pcP4PjQ42htLHTNWtHNCmNJq4lxvQjEMtxlMtKjBK_P6DHh2c05aIIGVsdb5RBNnMFY7dOzUsMa8EECwxEvNJY8tTF4hpSk00R7sk52YwUXK55kyJkIC9epT5yxHK_k8DqhKY6qrrMXL1YOaC3Q=w742-h989-no" /&gt;
-&lt;/div&gt;
-&lt;div class="section" id="emscripten"&gt;
-&lt;h3&gt;&lt;a class="toc-backref" href="#toc-entry-4"&gt;Emscripten&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;I decided to compile to MMIXware to web assembly for two reasons:&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
+&lt;p&gt;
+&lt;figure&gt;&lt;img src="../img/2019-09-28__mmix-wasm__shirt.jpg"&gt;&lt;figcaption&gt;mmix shirt&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3 id="emscripten"&gt;Emscripten&lt;/h3&gt;
+&lt;p&gt;I decided to compile MMIXware to web assembly for two reasons:&lt;/p&gt;
+&lt;ol&gt;
 &lt;li&gt;I wanted to see what it took to compile some legacy C program to WASM&lt;/li&gt;
 &lt;li&gt;The web is flexible for UIs, I could make it as polished as I wanted&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="approach"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-5"&gt;Approach&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="approach"&gt;Approach&lt;/h2&gt;
 &lt;p&gt;MMIXlib allows you to hook into various parts of the simulator and emscripten allows exposing C functions directly to JavaScript. This allows the main loop to run in js, with all of the hard work being done on the WASM side. Emscripten also has the ability to fake out a file system and expose that to JavaScript as well. This allowed me to be extra lazy and not even have to modify the IO of MMIXware.&lt;/p&gt;
 &lt;p&gt;The hardest part was deciphering compile errors/warnings that manifested from compiling old C code with a modern compiler while also tracing through CWEB source and change files.&lt;/p&gt;
 &lt;p&gt;The part that I can take the most credit for is adding the register watcher. This involved work on both the js side and the C code. I hope to add the ability for watching multiple registers. Other inner workings I would like to expose are special registers and memory ranges.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="demo"&gt;
-&lt;h2&gt;&lt;a class="toc-backref" href="#toc-entry-6"&gt;Demo&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="demo"&gt;Demo&lt;/h2&gt;
 &lt;p&gt;As you modify the input, the simulator will reassemble and restart. Choose a general register to watch, 0-255. You can also change the frequency we run the simulator at.&lt;/p&gt;
-&lt;p&gt;More programming examples can be found in the MMIX repository &lt;a class="reference external" href="https://gitlab.lrz.de/mmix/mmixware"&gt;https://gitlab.lrz.de/mmix/mmixware&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone git@github.com:y2kbugger/mmix-wasm.git
-&lt;/pre&gt;&lt;/div&gt;
-&lt;iframe frameborder="0" width="100%" height="1400px"  src="https://d1aby3vgncc46a.cloudfront.net/mmix-wasm.html"&gt;&lt;/iframe&gt;&lt;/div&gt;
-</content><category term="programming"/><category term="assembly"/><category term="algorithms"/><category term="MMIX"/><category term="TAOCP"/><category term="books"/></entry><entry><title>MMIX - Working on TAOCP in RISC</title><link href="http://blog.y2kbugger.com/reading-taocp-mmix.html" rel="alternate"/><published>2018-12-27T00:00:00-05:00</published><updated>2020-05-29T15:18:21-04:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2018-12-27:/reading-taocp-mmix.html</id><summary type="html">&lt;p class="first last"&gt;How to read The Art of Computer Programming and do the exercises in modern RISC rather than a 1960s style architecture.&lt;/p&gt;
-</summary><content type="html">&lt;!-- Google Photos Album: https://photos.app.goo.gl/dfXck6rcLDcZHtv17 --&gt;
-&lt;div class="section" id="introduction"&gt;
-&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;More programming examples can be found in the MMIX repository &lt;a href="https://gitlab.lrz.de/mmix/mmixware"&gt;https://gitlab.lrz.de/mmix/mmixware&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;git@github.com:y2kbugger/mmix-wasm.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;iframe frameborder="0" width="100%" height="1400px"  src="https://d1aby3vgncc46a.cloudfront.net/mmix-wasm.html"&gt;&lt;/iframe&gt;</content><category term="programming"/><category term="assembly"/><category term="algorithms"/><category term="MMIX"/><category term="TAOCP"/><category term="books"/></entry><entry><title>MMIX - Working on TAOCP in RISC</title><link href="http://blog.y2kbugger.com/reading-taocp-mmix.html" rel="alternate"/><published>2018-12-27T00:00:00-05:00</published><updated>2020-05-29T15:18:21-04:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2018-12-27:/reading-taocp-mmix.html</id><summary type="html">&lt;p&gt;How to read The Art of Computer Programming and do the exercises in modern RISC rather than a 1960s style architecture.&lt;/p&gt;</summary><content type="html">&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;This article I will cover why I want to read TAOCP as well as my approach. Because the books are in various states of publication, one must use additional resources besides the book to enjoy the updated RISC material.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="the-art-of-computer-programming"&gt;
-&lt;h2&gt;The Art Of Computer Programming&lt;/h2&gt;
-&lt;p&gt;The Art of Computer Programming is a legendary multi-volume computer science textbook. It was originally conceived in 1962 as a 12 chapter book documenting a wide range of algorithms. The rapid pace of change in computer science made these chapters a moving target; while Volume 1 was released in 1968, Volume 4 is still in progress as of 2020 &lt;a class="footnote-reference" href="#taocpwiki" id="footnote-reference-1"&gt;[1]&lt;/a&gt;.&lt;/p&gt;
-&lt;img alt="The Art of Computer Programming" class="align-center" src="https://lh3.googleusercontent.com/pw/ACtC-3fz2RxP2aYWm20KIl9hU_BkQcyTNxSmewF-0TM7KLe2BbVwUsml4DmX7kgHf4E8vARaOSQFJ-d1zou3FMoD4hjaX8q3jSFcKZwty559C8BiomechHmEW7gwmIBd8kJvi0u4Zqx0I6UDlA65QuBUX_CEdQ=w500-h431-no" style="width: 33%;" /&gt;
+&lt;h2 id="the-art-of-computer-programming"&gt;The Art of Computer Programming&lt;/h2&gt;
+&lt;p&gt;The Art of Computer Programming is a legendary multi-volume computer science textbook. It was originally conceived in 1962 as a 12 chapter book documenting a wide range of algorithms. The rapid pace of change in computer science made these chapters a moving target; while Volume 1 was released in 1968, Volume 4 is still in progress as of 2020&lt;sup id="fnref:taocpwiki"&gt;&lt;a class="footnote-ref" href="#fn:taocpwiki"&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure width="33%"&gt;&lt;img src="../img/2018-12-27__reading-taocp-mmix__taocp-cover.jpg"&gt;&lt;figcaption&gt;The Art of Computer Programming&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;The book is notable for being comprehensive and precise as well as for the extreme care given to the exercises and solutions. Because it's known for being a huge undertaking, some people quip that the book is often recommended without actually having been read. I suspect this is because the algorithms are explained using assembly language rather than structured programming which some people deem as impenetrably  obscure.&lt;/p&gt;
-&lt;div class="section" id="why-i-want-to-read-it"&gt;
-&lt;h3&gt;Why I want to read it&lt;/h3&gt;
+&lt;h3 id="why-i-want-to-read-it"&gt;Why I want to read it&lt;/h3&gt;
 &lt;p&gt;I believe it when Knuth says that you learn something extra about algorithms at the interface of hardware and software. In C for example you may not know what is happening in hardware when you write an if statement, but in assembly this is in-your-face.&lt;/p&gt;
 &lt;p&gt;He puts it like this:&lt;/p&gt;
 &lt;blockquote&gt;
-One of the principal goals of my books is to show how high-level constructions are actually implemented in machines, not simply to show how they are applied. &lt;a class="footnote-reference" href="#knuthmmix" id="footnote-reference-2"&gt;[3]&lt;/a&gt;&lt;/blockquote&gt;
+&lt;p&gt;One of the principal goals of my books is to show how high-level constructions are actually implemented in machines, not simply to show how they are applied. &lt;sup id="fnref:knuthmmix"&gt;&lt;a class="footnote-ref" href="#fn:knuthmmix"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;This aligns with my goal of exploring computers to the lowest levels including operating systems as well as CPUs. The more I can understand the software-hardware interface, the happier I will be. Learning algorithms via TAOCP is the software side of my strategy. On the hardware side I'm exploring TTL logic, CPU design, and simple cases of systems integration using vintage microprocessors such as z80, 6502 and 1802. This has also led me to explore prototyping via FPGAs and one day I hope to design a CPU core and bootstrap up to a self-hosting multitasking development environment.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="section" id="mix"&gt;
-&lt;h2&gt;MIX&lt;/h2&gt;
+&lt;h2 id="mix"&gt;MIX&lt;/h2&gt;
 &lt;p&gt;In order to facilitate the teaching of algorithms and how they interact with hardware, Knuth developed a CPU architecture and corresponding assembly language.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;MIX is a hypothetical computer used in Donald Knuth's monograph, The Art of
 Computer Programming (TAOCP). MIX's model number is 1009, which was derived
 by combining the model numbers and names of several contemporaneous,
-commercial machines deemed significant by the author. Also, &amp;quot;MIX&amp;quot; read as a
+commercial machines deemed significant by the author. Also, "MIX" read as a
 Roman numeral is 1009.&lt;/p&gt;
-&lt;p class="attribution"&gt;&amp;mdash;Wikipedia &lt;a class="footnote-reference" href="#mixwiki" id="footnote-reference-3"&gt;[2]&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;-- Wikipedia &lt;sup id="fnref:mixwiki"&gt;&lt;a class="footnote-ref" href="#fn:mixwiki"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Knuth states that &amp;quot;MIX is very much like nearly every computer of the 1960s and 1970s except that it is, perhaps, nicer.&amp;quot;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="mmix"&gt;
-&lt;h2&gt;MMIX&lt;/h2&gt;
-&lt;img alt="MMIX" src="https://lh3.googleusercontent.com/pw/ACtC-3cmwaXo3THz54nq3bz9bWJ9N3hK5zfHL9o4JAsdri5mZ7AgP4LPpilaSkxatNxccRDbxKgZ65jDB08Akq1UMV1nGGqktUrq8uXJFhs9ODgtUQ1wT6SAapWlK5zTWLP-tliFKDBuARvEVYmHnRilf89CsQ=w572-h85-no" /&gt;
-&lt;p&gt;Computer have changed significantly since the 60s, as Knuth explains:&lt;/p&gt;
+&lt;p&gt;Knuth states that "MIX is very much like nearly every computer of the 1960s and 1970s except that it is, perhaps, nicer."&lt;/p&gt;
+&lt;h2 id="mmix"&gt;MMIX&lt;/h2&gt;
+&lt;p&gt;
+&lt;figure&gt;&lt;img src="../img/2018-12-27__reading-taocp-mmix__mmix.jpg"&gt;&lt;figcaption&gt;MMIX&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Computers have changed significantly since the 60s, as Knuth explains:&lt;/p&gt;
 &lt;blockquote&gt;
-Thirty years have passed since the MIX computer was designed, and computer architecture has been converging during those years towards a rather different style of machine &lt;a class="footnote-reference" href="#knuthmmix" id="footnote-reference-4"&gt;[3]&lt;/a&gt;.&lt;/blockquote&gt;
-&lt;img alt="Under Construction" src="https://lh3.googleusercontent.com/pw/ACtC-3fRUt39VqJiEOQ9LhFcwVrsuth55pRA44lyfN51vxoNG0v0DshXSPqc5SdCtLdAnCWPOfLaP-KS5iDdApF0YKfAM8SBZmgyI61tLobpe8lVmxjGyNFkdrOpxaOD4cpvrJddWkV7lvJAUvmMONAoJF6dtg=w683-h131-no" /&gt;
+&lt;p&gt;Thirty years have passed since the MIX computer was designed, and computer architecture has been converging during those years towards a rather different style of machine &lt;sup id="fnref2:knuthmmix"&gt;&lt;a class="footnote-ref" href="#fn:knuthmmix"&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;
+&lt;figure&gt;&lt;img src="../img/2018-12-27__reading-taocp-mmix__under-construction.jpg"&gt;&lt;figcaption&gt;Under Construction&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
 &lt;p&gt;In Volume 1 3rd Edition, he states his plans to replace MIX:&lt;/p&gt;
 &lt;blockquote&gt;
-However, it must be admitted that MIX is now quite obsolete. Therefore MIX will be replaced in subsequent editions of this book by a new machine called MMIX, the 2009. MMIX will be a so-called reduced instruction set computer (RISC). [...] It will be even nicer than MIX and will be similar to machines that have become dominant during the 1990s.&lt;/blockquote&gt;
-&lt;/div&gt;
-&lt;div class="section" id="subsequent-editions-fascicles"&gt;
-&lt;h2&gt;Subsequent editions, fascicles&lt;/h2&gt;
+&lt;p&gt;However, it must be admitted that MIX is now quite obsolete. Therefore MIX will be replaced in subsequent editions of this book by a new machine called MMIX, the 2009. MMIX will be a so-called reduced instruction set computer (RISC). [...] It will be even nicer than MIX and will be similar to machines that have become dominant during the 1990s.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="subsequent-editions-fascicles"&gt;Subsequent editions, fascicles&lt;/h2&gt;
 &lt;p&gt;So we've chosen to explore MMIX, the forward looking ISA of TAOCP, now what? The dilemma we face is that the next edition has not been released yet. The most recent edition, V1 3e, has all of the questions and answers still written with MIX.&lt;/p&gt;
-&lt;img alt="The three required books for MMIX" class="align-center" src="https://lh3.googleusercontent.com/pw/ACtC-3cuRVuJCUSUugDBBPjEjvV-g4h9rh4NuHipmWhjvJbgS3zKZGBYrkea6kFi6MYL6-gC-mmhqHvCIB6FMcG6fHf_wzLQ3FSggliRMHXReoaJXcB4XEkEYYUFVJ-tzUwnb0Htv9v26hcMSSMf6vrfC46HXQ=w683-h459-no" /&gt;
-&lt;p&gt;So what choice do we have then? Well Donald has kindly release what is known as V1F1 or &lt;em&gt;The Art of Computer Programming, Volume 1, Fasicle 1 -- A RISC Computer for the New Millennium&lt;/em&gt;. A fascicle is a &amp;quot;a separately published installment of a book or other printed work.&amp;quot; Basically it acts as a patch for V1 3e. Replacing the chapter explaining MIX with the MMIX equivalent. It is available on &lt;a class="reference external" href="https://https://www.amazon.com/Art-Computer-Programming-Fascicle-Millennium/dp/0201853922/"&gt;Amazon&lt;/a&gt;. Fun note, these are printed on demand when you place your order.&lt;/p&gt;
-&lt;div class="figure align-right"&gt;
-&lt;img alt="On demand printing" src="https://lh3.googleusercontent.com/pw/ACtC-3dsG1EowkXAZFHTN5U6GoiV7aHLiLZj4qS4T-LL4_G7bSkTLQFbru0xIrfOSHiVYxg3UDcSqjI3_DC0HQvAiMNwwaaUBNkcFkEqL0Zx5m11fvY5ctohhCmg8e60Y_SAX8k1jyvou9g_R2JqBcRycjhmbg=w509-h678-no" style="width: 66%;" /&gt;
-&lt;p class="caption"&gt;Printed the day after I ordered on Amazon.&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;That covers the basics of the language, but all of the solutions also needed reworked. Knuth put out a request for people to collaborate on the solutions, a project he called MMIXMasters &lt;a class="footnote-reference" href="#mmixmasters" id="footnote-reference-5"&gt;[4]&lt;/a&gt;. The end result of this is known as the MMIX supplement. It's available on the web, &lt;a class="reference external" href="http://mmix.cs.hm.edu/supplement/index.html"&gt;http://mmix.cs.hm.edu/supplement/index.html&lt;/a&gt; as well as in printed form on Amazon: &lt;a class="reference external" href="https://www.amazon.com/MMIX-Supplement-Computer-Programming-Volumes/dp/0133992314"&gt;MMIX Supplement&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="future-work"&gt;
-&lt;h2&gt;Future Work&lt;/h2&gt;
+&lt;p&gt;
+&lt;figure&gt;&lt;img src="../img/2018-12-27__reading-taocp-mmix__three-books.jpg"&gt;&lt;figcaption&gt;The three required books for MMIX&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;So what choice do we have then? Well Donald has kindly released what is known as V1F1 or &lt;em&gt;The Art of Computer Programming, Volume 1, Fascicle 1 -- A RISC Computer for the New Millennium&lt;/em&gt;. A fascicle is a "a separately published installment of a book or other printed work." Basically it acts as a patch for V1 3e. Replacing the chapter explaining MIX with the MMIX equivalent. It is available on &lt;a href="https://www.amazon.com/Art-Computer-Programming-Fascicle-Millennium/dp/0201853922/"&gt;Amazon&lt;/a&gt;. Fun note, these are printed on demand when you place your order.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure width="66%"&gt;&lt;img src="../img/2018-12-27__reading-taocp-mmix__on-demand-printing.jpg"&gt;&lt;figcaption&gt;Printed the day after I ordered on Amazon.&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;That covers the basics of the language, but all of the solutions also needed reworking. Knuth put out a request for people to collaborate on the solutions, a project he called MMIXMasters&lt;sup id="fnref:mmixmasters"&gt;&lt;a class="footnote-ref" href="#fn:mmixmasters"&gt;4&lt;/a&gt;&lt;/sup&gt;. The end result of this is known as the MMIX supplement. It's available on the web, &lt;a href="http://mmix.cs.hm.edu/supplement/index.html"&gt;http://mmix.cs.hm.edu/supplement/index.html&lt;/a&gt; as well as in printed form on Amazon: &lt;a href="https://www.amazon.com/MMIX-Supplement-Computer-Programming-Volumes/dp/0133992314"&gt;MMIX Supplement&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="future-work"&gt;Future work&lt;/h2&gt;
 &lt;p&gt;I'm excited to keep working through these exercises. To assist the process of testing various algorithms, I've started a side-project which I have compiled Knuth's original MMIX toolchain to WASM and wrapped it in a simple IDE for MMIX in the browser.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="hardware-and-risc-v"&gt;
-&lt;h2&gt;Hardware and RISC-V&lt;/h2&gt;
+&lt;h2 id="hardware-and-risc-v"&gt;Hardware and RISC-V&lt;/h2&gt;
 &lt;p&gt;I plan to continue working on the hardware side in tandem as well. I dream of the day I could write some of these algorithms for an FPGA RISC-V CPU or even more exciting, a toy ISA of my own.&lt;/p&gt;
-&lt;table class="docutils footnote" frame="void" id="taocpwiki" rules="none"&gt;
-&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
-&lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#footnote-reference-1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming"&gt;https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table class="docutils footnote" frame="void" id="mixwiki" rules="none"&gt;
-&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
-&lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#footnote-reference-3"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="https://en.wikipedia.org/wiki/MIX"&gt;https://en.wikipedia.org/wiki/MIX&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table class="docutils footnote" frame="void" id="knuthmmix" rules="none"&gt;
-&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
-&lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;[3]&lt;/td&gt;&lt;td&gt;&lt;em&gt;(&lt;a class="fn-backref" href="#footnote-reference-2"&gt;1&lt;/a&gt;, &lt;a class="fn-backref" href="#footnote-reference-4"&gt;2&lt;/a&gt;)&lt;/em&gt; &lt;a class="reference external" href="https://www-cs-faculty.stanford.edu/~knuth/mmix.html"&gt;https://www-cs-faculty.stanford.edu/~knuth/mmix.html&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;table class="docutils footnote" frame="void" id="mmixmasters" rules="none"&gt;
-&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
-&lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#footnote-reference-5"&gt;[4]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="reference external" href="http://mmix.cs.hm.edu/mmixmasters/index.html"&gt;http://mmix.cs.hm.edu/mmixmasters/index.html&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-</content><category term="programming"/><category term="assembly"/><category term="algorithms"/><category term="MMIX"/><category term="TAOCP"/><category term="books"/></entry></feed>
+&lt;div class="footnote"&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id="fn:taocpwiki"&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming"&gt;https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming&lt;/a&gt;&amp;#160;&lt;a class="footnote-backref" href="#fnref:taocpwiki" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:mixwiki"&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/MIX"&gt;https://en.wikipedia.org/wiki/MIX&lt;/a&gt;&amp;#160;&lt;a class="footnote-backref" href="#fnref:mixwiki" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:knuthmmix"&gt;
+&lt;p&gt;&lt;a href="https://www-cs-faculty.stanford.edu/~knuth/mmix.html"&gt;https://www-cs-faculty.stanford.edu/~knuth/mmix.html&lt;/a&gt;&amp;#160;&lt;a class="footnote-backref" href="#fnref:knuthmmix" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;a class="footnote-backref" href="#fnref2:knuthmmix" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:mmixmasters"&gt;
+&lt;p&gt;&lt;a href="http://mmix.cs.hm.edu/mmixmasters/index.html"&gt;http://mmix.cs.hm.edu/mmixmasters/index.html&lt;/a&gt;&amp;#160;&lt;a class="footnote-backref" href="#fnref:mmixmasters" title="Jump back to footnote 4 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="programming"/><category term="assembly"/><category term="algorithms"/><category term="MMIX"/><category term="TAOCP"/><category term="books"/></entry></feed>

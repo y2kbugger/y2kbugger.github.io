@@ -82,29 +82,20 @@
 
     <main class="content">
     <div class="article-content">
-        <!-- Google Photos Album: https://photos.app.goo.gl/dfXck6rcLDcZHtv17 -->
-<div class="section" id="get-close-to-the-hardware-so-you-can-c">
-<h2>Get close to the hardware so you can C</h2>
+        <h2 id="get-close-to-the-hardware-so-you-can-c">Get close to the hardware so you can C</h2>
 <p>Since I have been learning about hardware and operating systems I wanted to learn a language which is conducive for having full control of computer hardware. C is not just good for this, the level of control C gives you was tuned for writing portable operating systems. The tooling, community, and educational resources reflect this legacy.</p>
-<p>I chose to read the Kernighan and Ritchie book because I had heard that it was not just a good book for C, but good for programming in general. There is also a historical value to learning from a primary source. I can confirm this. Working through the exercises are key to understanding why C exists.</p>
+<p>I chose to read the Kernighan and Ritchie book because I had heard that it was not just a good book for C, but good for programming in general. There is also a historical value to learning from a primary source. I can confirm this. Working through the exercises is key to understanding why C exists.</p>
 <p>Here are my attempts at the exercises:</p>
-<div class="highlight"><pre><span></span>git clone git@github.com:y2kbugger/kr.git
-</pre></div>
-<div class="section" id="the-k-r-approach">
-<h3>The K&amp;R approach</h3>
-<p>Early on they teach about structuring modules so that code and interfaces could be reused. When I previously learning C++ the reason for header files seemed to be hand waved. I appreciated the way these concepts were treated in K&amp;R.</p>
-<p>Later in the book though we work through reimplement functions from the standard lib. This was insightful, especially the ones which dealt with memory management such as malloc, calloc, and free as well as the Unix system interface.</p>
-</div>
-<div class="section" id="conclusion">
-<h3>Conclusion</h3>
-<p>I would definitely recommend the book to anyone interested in learning about computers. If all you care about is writing programs/computation, other languages could twist you brain in other directions (Haskell, etc), but learning C through K&amp;R is a good start to learning about how computers actually work.</p>
-<div class="section" id="but-shouldn-t-i-learn-something-modern-like-c">
-<h4>But shouldn't I learn something modern like C++?</h4>
-<p>As a side note, don't be swayed to learn C++ merely because C is a subset. The argument goes like this: if you learn C++ you'll also learn C for free. This isn't true. If you want something a bit higher level for systems programming, I've heard good things about Rust.</p>
-</div>
-</div>
-</div>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:y2kbugger/kr.git
+</code></pre></div>
 
+<h3 id="the-kr-approach">The K&amp;R approach</h3>
+<p>Early on they teach about structuring modules so that code and interfaces could be reused. When I was previously learning C++ the reason for header files seemed to be hand waved. I appreciated the way these concepts were treated in K&amp;R.</p>
+<p>Later in the book though we work through reimplement functions from the standard lib. This was insightful, especially the ones which dealt with memory management such as malloc, calloc, and free as well as the Unix system interface.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>I would definitely recommend the book to anyone interested in learning about computers. If all you care about is writing programs/computation, other languages could twist your brain in other directions (Haskell, etc), but learning C through K&amp;R is a good start to learning about how computers actually work.</p>
+<h4 id="but-shouldnt-i-learn-something-modern-like-c">But shouldn't I learn something modern like C++?</h4>
+<p>As a side note, don't be swayed to learn C++ merely because C is a subset. The argument goes like this: if you learn C++ you'll also learn C for free. This isn't true. If you want something a bit higher level for systems programming, I've heard good things about Rust.</p>
     </div>
 
     <script src="https://utteranc.es/client.js"

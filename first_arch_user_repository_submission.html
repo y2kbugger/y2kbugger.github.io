@@ -72,7 +72,7 @@
     <div class="article-meta">
                 <span class="author">By zak kohler</span>
         <span class="publication-date" title="2020-04-14T00:06:28-04:00"> on 2020.04.14 @ 00:06</span>
-        <span class="modification-date" title="2026-01-05T08:02:17.617809-05:00"> last modified on 2026.01.05 @ 08:02</span>
+        <span class="modification-date" title="2026-06-17T23:15:57.281313-04:00"> last modified on 2026.06.17 @ 23:15</span>
 
 
             <div class="tags">
@@ -84,49 +84,50 @@
 
     <main class="content">
     <div class="article-content">
-        <!-- Google Photos Album: https://photos.app.goo.gl/dfXck6rcLDcZHtv17 -->
-<div class="section" id="long-time-user-first-time-maintainer">
-<h2>Long time user, first time maintainer</h2>
-<p>I've been a Linux user for a decade now, Ubuntu at first, but I switched to <a class="reference external" href="https://archlinux.org">ArchLinux</a> after a year or two. I quickly found the <a class="reference external" href="https://aur.archlinux.org/">Arch User Repository</a> or AUR to be a treasure trove of free (libre) software; I am still in awe today. On ms windows, finding software meant downloading binaries from sketchy freeware sites. The prospects were better on Ubuntu since many software projects engaged with the community and produces regular releases. One drawback however were the stale repos, some packages on ubuntu were still pointing at releases that were years old.The Ubuntu <a class="reference external" href="https://launchpad.net/ubuntu/+ppas">Personal Package Archives</a> PPAs was supposed to solve this, but I never had  good luck with them. The packages always seemed random whether or not they were compatible and maintained.</p>
-<img alt="ArchLinux Logo" src="https://lh3.googleusercontent.com/mapAQeHjDZmDn4Jq-FXyEhuFDEB6IHuEBzk8egTflCpiwLU9g0-W_YevSXbZEE-tQopVtEIJLO_rkjgf2TjA_olTqV7gGPiiDPKliO23xXNlOENJnDhobYLeLh7w942lCrhiASjMVHA=w683-h228-no" />
-<p>Enter ArchLinux, everything is on the bleeding edge. The vast majority of typical software needs is packaged and up-to-date. For more custom software, there is the AUR. It started as just people sharing recipes for building packages...and well, that's still the case and it's a <em>really</em> good thing too, it's beauty is in the simplicity. Packaging makes sure that the software you install goes in cleanly and can be removed without leftover files. You can think of ArchLinux as basically a package manger <a class="footnote-reference" href="#pacman" id="footnote-reference-1">[1]</a> and a wonderful community. The AUR acts as a funnel for new packages to become official in the community repository, which are built packages rather than just recipes.</p>
-<table class="docutils footnote" frame="void" id="pacman" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#footnote-reference-1">[1]</a></td><td>See pacman: <a class="reference external" href="https://wiki.archlinux.org/index.php/pacman">https://wiki.archlinux.org/index.php/pacman</a></td></tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="my-contribution">
-<h2>My contribution</h2>
-<p>For my first contribution I wanted something simple, just to learn the process. At work I have been spending a lot of time with the conda package manager, and a few months ago I submitted my first conda-forge recipe. For a long time I have wanted to put something on AUR and now that packing is fresh on my mind I figure it's a good time to get this one under my belt. I chose a shell script that I have used for years; it is a fork of a now deleted AUR package. Since it's a shell script it still needs to be installed to the system but it doesn't have the complication of needing to be compiled.</p>
-<img alt="My AUR package page" src="https://lh3.googleusercontent.com/Cc_WYvWQQrft1j2Qgb6mjuLL5t1zpBXlPVjViDqeBuPgJLK0Spus6pszYoEhzmO5gTY-NH2uJ44rq1CyeDapBKiJhOkhAKwJc77_sZpWv9JL9qgza5Yawd9ilg58bau2i1nR8vu6xEk=w503-h216-no" />
-<p>The package is called <cite>dmenu-recent-aliases</cite>, and it is a lightweight application launcher. It provides fuzzy searching for all the executables on your <cite>PATH</cite> and also includes your custom bash functions and aliases. I have added a few extra features as well, for the full docs see <a class="reference external" href="https://gitlab.com/y2kbugger-projects/scripts/dmenu-recent-aliases">https://gitlab.com/y2kbugger-projects/scripts/dmenu-recent-aliases</a>.</p>
+        <h2 id="long-time-user-first-time-maintainer">Long time user, first time maintainer</h2>
+<p>I've been a Linux user for a decade now, Ubuntu at first, but I switched to <a href="https://archlinux.org">ArchLinux</a> after a year or two. I quickly found the <a href="https://aur.archlinux.org/">Arch User Repository</a> or AUR to be a treasure trove of free (libre) software; I am still in awe today. On ms windows, finding software meant downloading binaries from sketchy freeware sites. The prospects were better on Ubuntu since many software projects engaged with the community and produced regular releases. One drawback however were the stale repos, some packages on ubuntu were still pointing at releases that were years old. The Ubuntu <a href="https://launchpad.net/ubuntu/+ppas">Personal Package Archives</a> PPAs was supposed to solve this, but I never had  good luck with them. The packages always seemed random whether or not they were compatible and maintained.</p>
+<p>
+<figure><img src="../img/2020-04-14__first-arch-user-repository-submission__archlinux-logo.png"><figcaption>ArchLinux Logo</figcaption>
+</figure>
+</p>
+<p>Enter ArchLinux, everything is on the bleeding edge. The vast majority of typical software needs is packaged and up-to-date. For more custom software, there is the AUR. It started as just people sharing recipes for building packages...and well, that's still the case and it's a <em>really</em> good thing too, its beauty is in the simplicity. Packaging makes sure that the software you install goes in cleanly and can be removed without leftover files. You can think of ArchLinux as basically a package manager<sup id="fnref:pacman"><a class="footnote-ref" href="#fn:pacman">1</a></sup> and a wonderful community. The AUR acts as a funnel for new packages to become official in the community repository, which are built packages rather than just recipes.</p>
+<h2 id="my-contribution">My contribution</h2>
+<p>For my first contribution I wanted something simple, just to learn the process. At work I have been spending a lot of time with the conda package manager, and a few months ago I submitted my first conda-forge recipe. For a long time I have wanted to put something on AUR and now that packing is fresh on my mind I figured it's a good time to get this one under my belt. I chose a shell script that I have used for years; it is a fork of a now deleted AUR package. Since it's a shell script it still needs to be installed to the system but it doesn't have the complication of needing to be compiled.</p>
+<p>
+<figure><img src="../img/2020-04-14__first-arch-user-repository-submission__aur-package-page.png"><figcaption>My AUR package page</figcaption>
+</figure>
+</p>
+<p>The package is called <code>dmenu-recent-aliases</code>, and it is a lightweight application launcher. It provides fuzzy searching for all the executables on your <code>PATH</code> and also includes your custom bash functions and aliases. I have added a few extra features as well, for the full docs see <a href="https://gitlab.com/y2kbugger-projects/scripts/dmenu-recent-aliases">https://gitlab.com/y2kbugger-projects/scripts/dmenu-recent-aliases</a>.</p>
 <p>A second reason for choosing this one is that there is some demand for the script and the original is no longer being maintained.</p>
-<div class="figure">
-<img alt="Broken link on aur" src="https://lh3.googleusercontent.com/oh9j6EPpcdpLD-1pWDsRzv18wSoKxlbB_bMcunePT2W8DGunnHpAswL7riiCzTgzkyiQ_I0h_00VP-mDrfH3ZeHMmnCwn9PtHVUu219CopWoYB7GI-NQell_BQ3yM096_IMTp5bAXlk=w438-h78-no" />
-<p class="caption">The archwiki still has a link to the old package, but it no longer exists.</p>
-</div>
-</div>
-<div class="section" id="become-a-maintainer-yourself">
-<h2>Become a maintainer yourself</h2>
+<p>
+<figure><img src="../img/2020-04-14__first-arch-user-repository-submission__broken-link.png"><figcaption>The archwiki still has a link to the old package, but it no longer exists.</figcaption>
+</figure>
+</p>
+<h2 id="become-a-maintainer-yourself">Become a maintainer yourself</h2>
 <p>Before you start to make a package, you should be familiar how to manually install other's packages from the AUR. Avoid AUR helpers for a while, trust me.</p>
 <p>Here is the quickstart guide:</p>
-<p><a class="reference external" href="https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages">https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages</a></p>
+<p><a href="https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages">https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages</a></p>
 <p>As far as the packaging process goes, it's not too difficult but I can't begin to cover it all here. Instead, I recommend reading at least all of these:</p>
-<ul class="simple">
-<li><a class="reference external" href="https://wiki.archlinux.org/index.php/Creating_packages">https://wiki.archlinux.org/index.php/Creating_packages</a></li>
-<li><a class="reference external" href="https://wiki.archlinux.org/index.php/Arch_package_guidelines">https://wiki.archlinux.org/index.php/Arch_package_guidelines</a></li>
-<li><a class="reference external" href="https://wiki.archlinux.org/index.php/AUR_submission_guidelines">https://wiki.archlinux.org/index.php/AUR_submission_guidelines</a></li>
+<ul>
+<li><a href="https://wiki.archlinux.org/index.php/Creating_packages">https://wiki.archlinux.org/index.php/Creating_packages</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/Arch_package_guidelines">https://wiki.archlinux.org/index.php/Arch_package_guidelines</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/AUR_submission_guidelines">https://wiki.archlinux.org/index.php/AUR_submission_guidelines</a></li>
 </ul>
-<p>It may also be helpful to check out my minimal <cite>PKGBUILD</cite> here.</p>
-<div class="highlight"><pre><span></span>git clone https://aur.archlinux.org/dmenu-recent-aliases-git.git
-</pre></div>
-<p>After you cobble together what you think is a good <cite>PKGBUILD</cite> you can ask for a review on the <cite>#archlinux-aur</cite> IRC. Try <a class="reference external" href="https://www.irccloud.com/">IRCCloud</a> if you aren't familiar with IRC.</p>
-<p>Finally, submitting is as easy as a git push, but be sure all of your i's are dotted and t's are crossed.</p>
-<p>Now you are &lt;strike&gt;all done&lt;/strike&gt; just beginning. As a maintainer it's your job to keep the package up-to-date and incorporate suggestions from the community.</p>
-</div>
+<p>It may also be helpful to check out my minimal <code>PKGBUILD</code> here.</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/dmenu-recent-aliases-git.git
+</code></pre></div>
 
+<p>After you cobble together what you think is a good <code>PKGBUILD</code> you can ask for a review on the <code>#archlinux-aur</code> IRC. Try <a href="https://www.irccloud.com/">IRCCloud</a> if you aren't familiar with IRC.</p>
+<p>Finally, submitting is as easy as a git push, but be sure all of your i's are dotted and t's are crossed.</p>
+<p>Now you are <strike>all done</strike> just beginning. As a maintainer it's your job to keep the package up-to-date and incorporate suggestions from the community.</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:pacman">
+<p>See pacman: <a href="https://wiki.archlinux.org/index.php/pacman">https://wiki.archlinux.org/index.php/pacman</a>&#160;<a class="footnote-backref" href="#fnref:pacman" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
     </div>
 
     <script src="https://utteranc.es/client.js"

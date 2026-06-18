@@ -84,77 +84,69 @@
 
     <main class="content">
     <div class="article-content">
-        <!-- Google Photos Album: https://photos.app.goo.gl/LUXeip6Xz85QRTn78
-https://www.youtube.com/watch?v=D0VuYe77Wu0&list=PLb-MsRpo_wlLW0EWRpAqnbbDsf4kxSI1x -->
-<div class="contents topic" id="contents">
-<p class="topic-title"><a class="reference internal" href="#top">Contents</a></p>
-<ul class="simple">
-<li><a class="reference internal" href="#baremetal-risc-v-renode-series" id="toc-entry-1">Baremetal RISC-V Renode Series</a></li>
-<li><a class="reference internal" href="#background" id="toc-entry-2">Background</a></li>
-<li><a class="reference internal" href="#source-code" id="toc-entry-3">Source Code</a></li>
-<li><a class="reference internal" href="#programs" id="toc-entry-4">Programs</a></li>
-<li><a class="reference internal" href="#processes" id="toc-entry-5">Processes</a></li>
-<li><a class="reference internal" href="#program" id="toc-entry-6">Program</a></li>
-<li><a class="reference internal" href="#a-quick-note-about-using-c" id="toc-entry-7">A quick note about using C</a></li>
-<li><a class="reference internal" href="#interrupt-handling" id="toc-entry-8">Interrupt Handling</a><ul>
-<li><a class="reference internal" href="#risc-v-interrupts" id="toc-entry-9">RISC-V interrupts</a></li>
+        <div class="toc">
+<ul>
+<li><a href="#baremetal-risc-v-renode-series">Baremetal RISC-V Renode series</a></li>
+<li><a href="#background">Background</a></li>
+<li><a href="#source-code">Source code</a></li>
+<li><a href="#programs">Programs</a></li>
+<li><a href="#processes">Processes</a></li>
+<li><a href="#program">Program</a></li>
+<li><a href="#a-quick-note-about-using-c">A quick note about using C</a></li>
+<li><a href="#interrupt-handling">Interrupt handling</a><ul>
+<li><a href="#risc-v-interrupts">RISC-V interrupts</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#driver-code" id="toc-entry-10">Driver Code</a></li>
-<li><a class="reference internal" href="#run-the-example" id="toc-entry-11">Run the example</a></li>
-<li><a class="reference internal" href="#next-post" id="toc-entry-12">Next post</a></li>
+<li><a href="#driver-code">Driver code</a></li>
+<li><a href="#run-the-example">Run the example</a></li>
+<li><a href="#next-post">Next post</a></li>
 </ul>
 </div>
-<div class="section" id="baremetal-risc-v-renode-series">
-<h2><a class="toc-backref" href="#toc-entry-1">Baremetal RISC-V Renode Series</a></h2>
+<h2 id="baremetal-risc-v-renode-series">Baremetal RISC-V Renode series</h2>
 <p>I'm exploring the line between hardware and software by creating a series of demos within a minimal, free and open source environment. These demos span from blinking an LED to implementing a toy operating system. The goal is to minimize parts of the system that we take for granted and gain a better understanding of computers and operating systems.</p>
-<p>In <a class="reference external" href="http://blog.y2kbugger.com/baremetal-riscv-renode-1.html">Part 1</a>, we setup a bare minimum LED blinking example to demonstrate how to compile your development environment and debug the software in real-time using GDB.</p>
-</div>
-<div class="section" id="background">
-<h2><a class="toc-backref" href="#toc-entry-2">Background</a></h2>
+<p>In <a href="http://blog.y2kbugger.com/baremetal-riscv-renode-1.html">Part 1</a>, we setup a bare minimum LED blinking example to demonstrate how to compile your development environment and debug the software in real-time using GDB.</p>
+<h2 id="background">Background</h2>
 <p>In this part we'll start working towards operating system features, specifically being able to share a CPU with multiple processes simultaneously. I call this toy operating system <strong>KohlerOS</strong> or <strong>KOS</strong>, pronounced chaos, for short.</p>
-<p>At a minimum, the there are a few things required to demonstrate multitasking. First you need a way to define a program. In linux, this would be an <a class="reference external" href="https://en.wikipedia.org/wiki/Executable_and_Linkable_Format">ELF binary</a>, on windows it would <a class="reference external" href="https://en.wikipedia.org/wiki/Portable_Executable">PE format</a>. The job of both of these are to deliver native machine code with enough metadata to launch and link with other binaries such as libraries. Next you need a way to actually start and manage a program running within particular region of memory. This we call a <a class="reference external" href="https://en.wikipedia.org/wiki/Process_(computing)">process</a>..</p>
-</div>
-<div class="section" id="source-code">
-<h2><a class="toc-backref" href="#toc-entry-3">Source Code</a></h2>
-<p>The code for <strong>KOS</strong> uses the same environment as previous example. Find the code in the <tt class="docutils literal">kos</tt> subdirectory.</p>
-<p>This was written based on the state of the code as of commit <tt class="docutils literal">c227fbc</tt>.</p>
-</div>
-<div class="section" id="programs">
-<h2><a class="toc-backref" href="#toc-entry-4">Programs</a></h2>
+<p>At a minimum, there are a few things required to demonstrate multitasking. First you need a way to define a program. In linux, this would be an <a href="https://en.wikipedia.org/wiki/Executable_and_Linkable_Format">ELF binary</a>, on windows it would be <a href="https://en.wikipedia.org/wiki/Portable_Executable">PE format</a>. The job of both of these are to deliver native machine code with enough metadata to launch and link with other binaries such as libraries. Next you need a way to actually start and manage a program running within particular region of memory. This we call a <a href="https://en.wikipedia.org/wiki/Process_(computing)">process</a>.</p>
+<h2 id="source-code">Source code</h2>
+<p>The code for <strong>KOS</strong> uses the same environment as previous example. Find the code in the <code>kos</code> subdirectory.</p>
+<p>This was written based on the state of the code as of commit <code>c227fbc</code>.</p>
+<h2 id="programs">Programs</h2>
 <p>Programs are simply C functions registered with a name.</p>
-<div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">Program</span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">Program</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">function</span><span class="p">)();</span>
 <span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
 <span class="p">};</span>
-</pre></div>
-<p>To create a KOH program, first write the program as a function or set of functions. All KOS programs must terminate via call to <tt class="docutils literal">end_this_process</tt>.</p>
-<div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">helloworld</span><span class="p">()</span>
+</code></pre></div>
+
+<p>To create a KOS program, first write the program as a function or set of functions. All KOS programs must terminate via call to <code>end_this_process</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">helloworld</span><span class="p">()</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="n">puts</span><span class="p">(</span><span class="s">&quot;Hello World</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
 <span class="w">    </span><span class="n">end_this_process</span><span class="p">();</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
+
 <p>Then register the entrypoint with a name. The entrypoint of a normal binary is normally defined in the binary file, e.g. in the ELF.</p>
-<div class="highlight"><pre><span></span><span class="n">register_program</span><span class="p">(</span><span class="sc">&#39;h&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">helloworld</span><span class="p">);</span>
-</pre></div>
-<p>The upside to this approach is simplicity, all code is statically linked into the same image. The downside is that you can't add programs at runtime. In all desktop operating systems this is a main requirement. For many embedded systems a single immutable image is sufficient or even desired..</p>
-</div>
-<div class="section" id="processes">
-<h2><a class="toc-backref" href="#toc-entry-5">Processes</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">register_program</span><span class="p">(</span><span class="sc">&#39;h&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">helloworld</span><span class="p">);</span>
+</code></pre></div>
+
+<p>The upside to this approach is simplicity, all code is statically linked into the same image. The downside is that you can't add programs at runtime. In all desktop operating systems this is a main requirement. For many embedded systems a single immutable image is sufficient or even desired.</p>
+<h2 id="processes">Processes</h2>
 <p>A process tracks an instance of a running process. In addition to a pointer to the actual bytecode, it stores the stack memory, and the status of the process.</p>
-<p>Because the processes are not given isolated memory space, multiple processes of the same program are pointing at the same single copy of the <tt class="docutils literal">Program</tt> in memory.</p>
-<div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">Process</span>
+<p>Because the processes are not given isolated memory space, multiple processes of the same program are pointing at the same single copy of the <code>Program</code> in memory.</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">Process</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="o">*</span><span class="n">sp</span><span class="p">;</span>
 <span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">Program</span><span class="w"> </span><span class="o">*</span><span class="n">program</span><span class="p">;</span>
 <span class="w">    </span><span class="k">enum</span><span class="w"> </span><span class="n">ProcessStatus</span><span class="w"> </span><span class="n">status</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">stack</span><span class="p">[</span><span class="n">PROC_STACK_SIZE</span><span class="p">];</span>
 <span class="p">};</span>
-</pre></div>
+</code></pre></div>
+
 <p>Currently a process supports enough statuses to be able to have an interesting multitasking demo.</p>
-<div class="highlight"><pre><span></span><span class="k">enum</span><span class="w"> </span><span class="n">ProcessStatus</span>
+<div class="highlight"><pre><span></span><code><span class="k">enum</span><span class="w"> </span><span class="n">ProcessStatus</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="n">Uninitialized</span><span class="p">,</span>
 <span class="w">    </span><span class="n">Ready</span><span class="p">,</span>
@@ -163,25 +155,26 @@ https://www.youtube.com/watch?v=D0VuYe77Wu0&list=PLb-MsRpo_wlLW0EWRpAqnbbDsf4kxS
 <span class="w">    </span><span class="n">Stopping</span><span class="p">,</span>
 <span class="w">    </span><span class="n">Stopped</span><span class="p">,</span>
 <span class="p">};</span>
-</pre></div>
+</code></pre></div>
+
 <p>For simplicity's sake, we make some decisions that make the concepts clearer in this toy OS, but wouldn't make sense in a production OS. Firstly, there is no dynamic memory allocation provided by <strong>KOS</strong>. This means that we have to statically allocate all the stack space for as many processes as you want to be able to run at once. Currently there is space for 10 simultaneous processes each with 200 words worth of stack space.</p>
-<div class="highlight"><pre><span></span><span class="cp">#define MAX_PROCESS_COUNT 10</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#define MAX_PROCESS_COUNT 10</span>
 <span class="k">struct</span><span class="w"> </span><span class="nc">Process</span><span class="w"> </span><span class="n">PROCESSES</span><span class="p">[</span><span class="n">MAX_PROCESS_COUNT</span><span class="p">];</span>
-</pre></div>
-<div class="highlight"><pre><span></span><span class="cp">#define PROC_STACK_SIZE 200</span>
-</pre></div>
-</div>
-<div class="section" id="program">
-<h2><a class="toc-backref" href="#toc-entry-6">Program</a></h2>
-<p>We are using the UART from the Litex project. Litex is a High Level HDL project that makes it easy to design a system on a ship and target both simulations and FPGA.</p>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="cp">#define PROC_STACK_SIZE 200</span>
+</code></pre></div>
+
+<h2 id="program">Program</h2>
+<p>We are using the UART from the Litex project. Litex is a High Level HDL project that makes it easy to design a system on a chip and target both simulations and FPGA.</p>
 <p>Because we are dealing with virtual hardware there isn't a datasheet. Instead we have 3 different code repositories that are useful for understanding the virtual hardware.</p>
-<ul class="simple">
-<li>The actual Litex  <a class="reference external" href="https://github.com/enjoy-digital/litex/blob/master/litex/soc/cores/uart.py">hardware description</a> for the UART</li>
-<li>A <a class="reference external" href="https://github.com/enjoy-digital/litex/blob/master/litex/soc/software/libbase/uart.c">UART driver</a> also provided by the Litex project</li>
-<li>The Renode project provides a software <a class="reference external" href="https://github.com/renode/renode-infrastructure/blob/master/src/Emulator/Peripherals/Peripherals/UART/LiteX_UART.cs">emulation</a> of the Litex UART. This implements the hardware functionality without have to do a full verilog or gate-level simulation.</li>
+<ul>
+<li>The actual Litex <a href="https://github.com/enjoy-digital/litex/blob/master/litex/soc/cores/uart.py">hardware description</a> for the UART</li>
+<li>A <a href="https://github.com/enjoy-digital/litex/blob/master/litex/soc/software/libbase/uart.c">UART driver</a> also provided by the Litex project</li>
+<li>The Renode project provides a software <a href="https://github.com/renode/renode-infrastructure/blob/master/src/Emulator/Peripherals/Peripherals/UART/LiteX_UART.cs">emulation</a> of the Litex UART. This implements the hardware functionality without having to do a full verilog or gate-level simulation.</li>
 </ul>
 <p>To get the offsets and registers the easiest way was to look at the Renode emulation directly. You can see that</p>
-<div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="n">Registers</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kt">long</span>
+<div class="highlight"><pre><span></span><code><span class="k">private</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="n">Registers</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kt">long</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="n">RxTx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0</span><span class="p">,</span>
 <span class="w">    </span><span class="n">TxFull</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x04</span><span class="p">,</span>
@@ -190,43 +183,38 @@ https://www.youtube.com/watch?v=D0VuYe77Wu0&list=PLb-MsRpo_wlLW0EWRpAqnbbDsf4kxS
 <span class="w">    </span><span class="n">EventPending</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x10</span><span class="p">,</span>
 <span class="w">    </span><span class="n">EventEnable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x14</span><span class="p">,</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
+
 <p>The actual configuration of the UART hardware is a very simple addition:</p>
 <p>vexriscv.repl</p>
-<div class="highlight"><pre><span></span>...
+<div class="highlight"><pre><span></span><code>...
 
 uart: UART.LiteX_UART @ sysbus 0x60001800
     -&gt; cpu@2
-</pre></div>
+</code></pre></div>
+
 <p>All we needed to decide was where in memory to map the hardware, and what interrupt number to wire it to.</p>
-</div>
-<div class="section" id="a-quick-note-about-using-c">
-<h2><a class="toc-backref" href="#toc-entry-7">A quick note about using C</a></h2>
+<h2 id="a-quick-note-about-using-c">A quick note about using C</h2>
 <p>This example is going to use C functions in addition to assembly.</p>
 <p>Since we are baremetal we need to set up the stack pointer ourselves.</p>
 <p>baremetal.s</p>
-<div class="highlight"><pre><span></span><span class="c1"># setup a stack pointer</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># setup a stack pointer</span>
 <span class="nf">la</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="no">memtop</span>
-</pre></div>
-</div>
-<div class="section" id="interrupt-handling">
-<h2><a class="toc-backref" href="#toc-entry-8">Interrupt Handling</a></h2>
+</code></pre></div>
+
+<h2 id="interrupt-handling">Interrupt handling</h2>
 <p>Interrupts are an asynchronous way to externally trigger the CPU to jump.</p>
 <p>Typically they jump to a particular memory location, or a location + an offset based on the reason for the interrupt.</p>
-<div class="section" id="risc-v-interrupts">
-<h3><a class="toc-backref" href="#toc-entry-9">RISC-V interrupts</a></h3>
+<h3 id="risc-v-interrupts">RISC-V interrupts</h3>
 <p>RISC-V interrupts come in two flavors, the original Core Local Interrupter (CLINT), and the Core Local Interrupt Controller (CLIC).
 The difference between the two, and much more, is described in the sifive interrupt cookbook.</p>
-<p><a class="reference external" href="https://sifive.cdn.prismic.io/sifive/0d163928-2128-42be-a75a-464df65e04e0_sifive-interrupt-cookbook.pdf">https://sifive.cdn.prismic.io/sifive/0d163928-2128-42be-a75a-464df65e04e0_sifive-interrupt-cookbook.pdf</a></p>
-</div>
-</div>
-<div class="section" id="driver-code">
-<h2><a class="toc-backref" href="#toc-entry-10">Driver Code</a></h2>
+<p><a href="https://sifive.cdn.prismic.io/sifive/0d163928-2128-42be-a75a-464df65e04e0_sifive-interrupt-cookbook.pdf">https://sifive.cdn.prismic.io/sifive/0d163928-2128-42be-a75a-464df65e04e0_sifive-interrupt-cookbook.pdf</a></p>
+<h2 id="driver-code">Driver code</h2>
 <p>All that is left is to write the code to actually interact with the hardware.</p>
 <p>Note that we are going for understandability, not performance, so we are creating an unbuffered solution here.</p>
 <p>Define a hardware register map to memory.</p>
 <p>baremetal.c</p>
-<div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">RxTx</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">TxFull</span><span class="p">;</span>
@@ -239,15 +227,17 @@ The difference between the two, and much more, is described in the sifive interr
 <span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">TxEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mb">0b01</span><span class="p">;</span>
 <span class="k">const</span><span class="w"> </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">RxEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mb">0b10</span><span class="p">;</span>
 <span class="k">volatile</span><span class="w"> </span><span class="n">UART</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">uart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">UART</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="mh">0x60001800</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
+
 <p>We need to set a flag in the UART to enable interrupt events.</p>
-<div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">init_uart</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">init_uart</span><span class="p">()</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="n">uart</span><span class="o">-&gt;</span><span class="n">EventEnable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RxEvent</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div>
-<p>This is called in during startup, right before the final <tt class="docutils literal">wfi</tt> spin-loop.</p>
-<div class="highlight"><pre><span></span><span class="na">...</span>
+</code></pre></div>
+
+<p>This is called during startup, right before the final <code>wfi</code> spin-loop.</p>
+<div class="highlight"><pre><span></span><code><span class="na">...</span>
 
 <span class="w">    </span><span class="c1"># set mie.MEIE=1 (enable M mode external interrupts)</span>
 <span class="w">    </span><span class="nf">li</span><span class="w">      </span><span class="no">t0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="no">b0000100000000000</span>
@@ -259,21 +249,23 @@ The difference between the two, and much more, is described in the sifive interr
 <span class="w">    </span><span class="nf">wfi</span>
 <span class="w">    </span><span class="nf">j</span><span class="w"> </span><span class="no">wait_for_interrupt</span>
 <span class="na">...</span>
-</pre></div>
+</code></pre></div>
+
 <p>Then we just need to specify what to do when an interrupt comes in.</p>
 <p>In the real world you would need to check the reason code and figure out:</p>
-<ol class="arabic simple">
+<ol>
 <li>What type of interrupt are we handling</li>
 <li>What is the reason for the interrupt?</li>
 </ol>
 <p>We can safely ignore this for our demo because the only source of interrupts will be the UART receiving a character.</p>
-<div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">interrupt_handler</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">interrupt_handler</span><span class="p">()</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="n">fancy_char</span><span class="p">((</span><span class="kt">char</span><span class="p">)</span><span class="n">uart</span><span class="o">-&gt;</span><span class="n">RxTx</span><span class="p">);</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
+
 <p>For fun, we echo the transmitted character surrounded by an ASCII art border.</p>
-<div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">fancy_char</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">fancy_char</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">s</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">###</span><span class="se">\n\r</span><span class="s">#X#</span><span class="se">\n\r</span><span class="s">###</span><span class="se">\n\r\n\r</span><span class="s">&quot;</span><span class="p">;</span>
 <span class="w">    </span><span class="n">s</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
@@ -290,29 +282,26 @@ The difference between the two, and much more, is described in the sifive interr
 <span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">str</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">&#39;\0&#39;</span><span class="p">)</span>
 <span class="w">        </span><span class="n">putc</span><span class="p">(</span><span class="o">*</span><span class="n">str</span><span class="o">++</span><span class="p">);</span>
 <span class="p">}</span>
-</pre></div>
-</div>
-<div class="section" id="run-the-example">
-<h2><a class="toc-backref" href="#toc-entry-11">Run the example</a></h2>
-<p>Ensure you have the setup from <a class="reference external" href="http://blog.y2kbugger.com/baremetal-riscv-renode-1.html">Part 1</a> completed.</p>
-<p>Switch to the folder <tt class="docutils literal">3_uart</tt></p>
-<p>In one terminal run:</p>
-<div class="highlight"><pre><span></span>$<span class="w"> </span>make<span class="w"> </span>start
-</pre></div>
-<p>then in another terminal:</p>
-<div class="highlight"><pre><span></span>$<span class="w"> </span>make<span class="w"> </span>uart-poll
-</pre></div>
-<p>then you can send characters via the UART connection.</p>
-<div class="figure align-left">
-<img alt="usrt fancy echo demo" src="https://lh3.googleusercontent.com/pw/AM-JKLWBRQ2x4E66nGtG01cZwj8pHpktyqHNbFu-jPL4BldkuMT51PuDdQMCjAxspc5UlsWdlN-rky0GYTgTTVdnJo5k-_27zZ_ECc-95RBs0KeLv61zU0FYAZbv1HNzeQOYpGNNuvd85t99DtqatXXfeFysjw=w960-h423-no" />
-<p class="caption">Demo of the Fancy Character Echo</p>
-</div>
-</div>
-<div class="section" id="next-post">
-<h2><a class="toc-backref" href="#toc-entry-12">Next post</a></h2>
-<!-- In `Part 5 <{filename}/programming/baremetal-riscv-renode-5.rst>`_ I will cover how KOS runs more than one ``Process`` at once, this is called the context switch. -->
-</div>
+</code></pre></div>
 
+<h2 id="run-the-example">Run the example</h2>
+<p>Ensure you have the setup from <a href="http://blog.y2kbugger.com/baremetal-riscv-renode-1.html">Part 1</a> completed.</p>
+<p>Switch to the folder <code>3_uart</code></p>
+<p>In one terminal run:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>make<span class="w"> </span>start
+</code></pre></div>
+
+<p>then in another terminal:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>make<span class="w"> </span>uart-poll
+</code></pre></div>
+
+<p>then you can send characters via the UART connection.</p>
+<p>
+<figure><img src="../img/2020-12-04__baremetal-riscv-renode-4__uart-demo.gif"><figcaption>Demo of the Fancy Character Echo</figcaption>
+</figure>
+</p>
+<h2 id="next-post">Next post</h2>
+<!-- In Part 5 I will cover how KOS runs more than one Process at once, this is called the context switch. -->
     </div>
 
     <script src="https://utteranc.es/client.js"

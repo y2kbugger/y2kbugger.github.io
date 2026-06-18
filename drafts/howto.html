@@ -83,10 +83,7 @@
     <main class="content">
     <div class="article-content">
         <p>A note to myself on how to write articles.</p>
-<p><strong>New articles are Markdown.</strong> The old workflow used reStructuredText with
-images hosted on Google Photos. Some of those <code>.rst</code> articles and remote
-images still linger and are being migrated; see the Architecture and
-Migration notes in the <a href="../README.md">README</a>.</p>
+<p><strong>Articles are Markdown</strong> with images hosted locally under <code>content/img/</code>.</p>
 <h2 id="quick-start">Quick start</h2>
 <p>Running the dev server, publishing, initial setup, and the repo's branch layout
 all live in the <a href="../README.md">README</a>. The notes below are about the
@@ -157,22 +154,41 @@ caption</strong>, not a terse description:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">cover</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/img/2024-11-24__pollo-arancia-gremolata__cover2.jpg</span>
 </code></pre></div>
 
+<p>Image metadata (EXIF/GPS/device info) is stripped automatically — a pre-commit
+hook blocks any commit that stages a photo carrying GPS, serial, or device
+metadata. If it trips, run <code>make exif-strip</code>, re-stage, and commit again. See
+the <a href="../README.md">README</a> for details.</p>
 <h3 id="recipe-ingredients">Recipe ingredients</h3>
-<p>Wrap the ingredient list in a <code>section</code> admonition containing an <code>## Ingredients</code>
-heading. The heading is hidden by CSS (the admonition's own title shows instead)
-but its auto-generated <code>#ingredients</code> anchor lets you link to it. Use a
-<strong>bulleted list</strong> — never a table — and group ingredients with sub-headings,
+<p>Wrap the ingredient list in an <code>ingredients</code> admonition. The block's own title
+bar shows "Ingredients", so no inner <code>## Ingredients</code> heading is needed. Use a
+<strong>bulleted list</strong> — never a table — and group ingredients with <code>##</code> sub-headings,
 italicizing prep notes:</p>
-<div class="admonition section">
+<div class="admonition ingredients">
 <p class="admonition-title">Ingredients</p>
-<h2 id="ingredients">Ingredients</h2>
-<h3 id="gremolata">Gremolata</h3>
+<h2 id="gremolata">Gremolata</h2>
 <ul>
 <li>zest of 2 oranges</li>
 <li>1 bunch parsley, <em>minced</em></li>
 <li>5 cloves garlic, <em>minced</em></li>
 <li>olive oil</li>
 <li>salt</li>
+</ul>
+<h2 id="pan-sauce">Pan Sauce</h2>
+<ul>
+<li>1 cup stock</li>
+<li>olive oil</li>
+<li>garlic, <em>minced</em></li>
+<li>Fig Jam</li>
+</ul>
+</div>
+<p>or without sub-headings</p>
+<div class="admonition ingredients">
+<p class="admonition-title">Ingredients</p>
+<ul>
+<li>2 oreo</li>
+<li>2 gallons buffalo milk</li>
+<li>olive oil</li>
+<li>garlic, <em>minced</em></li>
 </ul>
 </div>
 <p>This has specific and custom CSS rules.</p>
@@ -185,8 +201,17 @@ italicizing prep notes:</p>
 <p>Admonitions (notes, warnings, etc.) render live like this:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Body text indented under the admonition. Indent everything that belongs
+<p>Body text indented under the admonition. For notes it is BLUE. Indent everything that belongs
 inside it by four spaces.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Warning text indented under the admonition is RED.</p>
+</div>
+<div class="admonition any">
+<p class="admonition-title">others are just grey</p>
+<p>This is grey.
+This is also grey.</p>
 </div>
 <h3 id="code-blocks">Code blocks</h3>
 <p>Fenced blocks with a language hint:</p>
