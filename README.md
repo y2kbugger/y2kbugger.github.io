@@ -103,4 +103,18 @@ configured via the `content/extra/CNAME` file and the registrar's DNS records.
 
 
 # TODO
+- harmonize and document field/word separators in article and image filenames
+
+## Articles
+### Food
+- yogurt
+- cold-brew coffee
+- pao-cai (chinese lacto-fermented pickles)
+- chili sauce from dry peppers
+- Palačinke
+- rhubarb pie
+- potica (Slovenian nut roll)
+
+### Programming
+- sqlir
 

@@ -14,12 +14,12 @@ cover: /img/2026-06-18__baguette__cooling.png
 Makes **3 small baguettes**.
 
 !!! ingredients "Ingredients"
-    - 500 g AP flour[^apflour]
+    - 500 g AP flour[^ap-flour]
     - 325 g water
     - 10 g salt
     - 1 g instant yeast
 
-[^apflour]: [King Arthur's Martin](https://www.kingarthurbaking.com/blog/2021/03/17/all-about-classic-baguettes) argues you should stick to AP flour for classic baguettes rather than bread flour.
+[^ap-flour]: [King Arthur's Martin](https://www.kingarthurbaking.com/blog/2021/03/17/all-about-classic-baguettes) argues you should stick to AP flour for classic baguettes rather than bread flour.
 
 ## Mix
 Start around noon to allow time for the room-temperature bulk and cold bulk fermentation steps.

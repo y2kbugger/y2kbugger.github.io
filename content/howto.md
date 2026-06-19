@@ -183,7 +183,7 @@ Admonitions (notes, warnings, etc.) render live like this:
 
 ### Footnotes
 
-Place the reference inline with `[^label]` and the definition anywhere in the body (typically the end):
+Place the reference inline with `[^label-name]` and the definition anywhere in the body, keep it close to usage:
 
 This sentence has a footnote[^fn-demo] attached to it.
 
