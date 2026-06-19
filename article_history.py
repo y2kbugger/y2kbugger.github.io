@@ -4,8 +4,11 @@
 The blog migrated articles from reStructuredText to Markdown, so a single
 article (identified by its *slug* — the file basename without extension, since
 ``SLUGIFY_SOURCE = 'basename'``) may live at ``content/cat/slug.rst`` in old
-history and ``content/cat/slug.md`` today. ``git log --follow`` stitches those
-renames (including the extension change) back into one continuous history.
+history and ``content/cat/slug.md`` today. Articles were also re-slugged from
+underscores to hyphens (``lc3_sql`` → ``lc3-sql``) to harmonize filenames.
+``git log --follow`` stitches all of those renames (the extension change and
+the separator change) back into one continuous history, and slug arguments are
+matched ``_``/``-`` insensitively so either spelling resolves to the article.
 
 This tool emits, per article, every commit that touched it with the date,
 subject, body, and diff statistics. That itemized history is exactly what an
@@ -61,6 +64,17 @@ def discover_articles() -> list[Path]:
     )
 
 
+def normalize_slug(slug: str) -> str:
+    """Canonicalize a slug for matching, ignoring ``_`` vs ``-``.
+
+    Articles were re-slugged from underscores to hyphens (e.g.
+    ``lc3_sql`` → ``lc3-sql``); ``git log --follow`` stitches the rename into
+    one history, but a user may still refer to an article by either spelling.
+    Treating ``_`` and ``-`` as equivalent lets both resolve to the same file.
+    """
+    return slug.replace("_", "-")
+
+
 def resolve_targets(args: list[str]) -> list[Path]:
     """Turn CLI arguments (paths or slugs) into existing article paths."""
     if not args:
@@ -68,15 +82,15 @@ def resolve_targets(args: list[str]) -> list[Path]:
     articles = discover_articles()
     by_slug: dict[str, list[Path]] = {}
     for path in articles:
-        by_slug.setdefault(path.stem, []).append(path)
+        by_slug.setdefault(normalize_slug(path.stem), []).append(path)
 
     resolved: list[Path] = []
     for arg in args:
         candidate = Path(arg)
         if candidate.is_file():
             resolved.append(candidate)
-        elif arg in by_slug:
-            resolved.extend(by_slug[arg])
+        elif normalize_slug(arg) in by_slug:
+            resolved.extend(by_slug[normalize_slug(arg)])
         else:
             print(f"warning: no article matches {arg!r}", file=sys.stderr)
     return resolved

@@ -61,6 +61,9 @@ one here. The fields:
 The URL comes from the file basename (`SLUGIFY_SOURCE = 'basename'`); rename the
 file to change the slug. The containing folder sets the category.
 
+**Article filenames use hyphens as word separators** (`my-article-title.md`).
+Never use underscores in an article filename.
+
 ## Content
 
 Common patterns are below. For everything else:
@@ -107,6 +110,11 @@ repo. Name them with the convention:
 ```text
 YYYY-MM-DD__slug__description.ext
 ```
+
+- **Fields** are separated by `__` (double underscore).
+- **Words within a field** are separated by `-` (single hyphen) — both in the
+  slug field and the description field. Never an underscore.
+- The slug field matches the article's slug (its filename without `.md`).
 
 For example: `2024-11-24__pollo-arancia-gremolata__plated.png`.
 

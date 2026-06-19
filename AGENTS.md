@@ -2,6 +2,22 @@
 
 Instructions for AI agents working in this blog repository.
 
+## Filename and separator conventions
+
+**Article filenames** use hyphens as word separators (`my-article-title.md`).
+Never use underscores in an article filename — there should be no exceptions.
+DO not change an article filename after it has been committed. It would break live URLs.
+Those nice short filename slugs are useful human readable, concise unique identifiers for articles.
+
+**Image filenames** follow `YYYY-MM-DD__slug__description.ext`:
+
+- **Fields** are separated by `__` (double underscore).
+- **Words within a field** use `-` (single hyphen) — in both the slug and the
+  description. Never an underscore.
+- The slug field matches the article's slug exactly.
+
+When fixing or naming files or images, apply these rules without being asked.
+
 ## Remove a TODO when you _start_ it, not when you finish
 
 The `# TODO` list in `README.md` tracks work that has not been picked up yet.

@@ -70,7 +70,7 @@ update when auditing or setting a `modified` date.
 
 ```bash
 make article-history                       # every article
-make article-history ARGS="naan lc3_sql"   # specific slugs or paths
+make article-history ARGS="naan lc3-sql"   # specific slugs or paths
 make article-history ARGS=--json           # machine-readable output
 ```
 
@@ -103,7 +103,6 @@ configured via the `content/extra/CNAME` file and the registrar's DNS records.
 
 
 # TODO
-- harmonize and document field/word separators in article and image filenames
 
 ## Articles
 ### Food

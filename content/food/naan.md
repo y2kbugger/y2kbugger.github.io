@@ -56,7 +56,7 @@ Wait until dough has doubled.
 
 - Cook on cast iron until you see bubbles forming on the surface, approximately 30-45 seconds.
 
-![Cast Iron and grill setup](/img/2026-01-02__naan__iron_grill.png)
+![Cast Iron and grill setup](/img/2026-01-02__naan__iron-grill.png)
 
 - flip the entire naan over directly over the flame suspending with a little grate. You can use pretty intense heat and move the naan around  to get char more evenly. Should take ~15-30 seconds on this side.
 
