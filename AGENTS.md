@@ -60,20 +60,24 @@ looks wrong — surface it for review instead.
 
 ## Fixing pasted images
 
-When I paste a screenshot into an article it lands in the same folder as the
-`.md` with a throwaway name like `image.png` / `image-1.png` and a placeholder
-`![alt text](image.png)` reference. Fix every one of these as part of the edit,
-without being asked:
+When I paste a screenshot into an article, the `markdown.copyFiles.destination`
+setting (in [.vscode/settings.json](.vscode/settings.json)) drops it straight
+into `content/img/` already named with the article basename and a throwaway
+suffix — e.g. `baguette__image.png` / `baguette__image-1.png` — and writes a
+`![alt text](../img/baguette__image.png)` reference. So it's already in the
+right folder with the right relative path; it just needs a real date-stamped
+name and a caption. Fix every one of these as part of the edit, without being
+asked:
 
 1. **Look at the image first.** Open the file (e.g. in the integrated browser)
    and actually view it — never caption blind. The caption must describe what
    the photo really shows.
-2. **Rename + move** it into `content/img/` using the convention from
-   [content/howto.md](content/howto.md):
-   `YYYY-MM-DD__slug__description.ext`. Use the article's `date` and `slug`, and
+2. **Rename** it in place under `content/img/` to the full convention from
+   [content/howto.md](content/howto.md): `YYYY-MM-DD__slug__description.ext`.
+   Add the article's `date` prefix and replace the throwaway `image` suffix with
    a short `description` of the shot (e.g. `cold-bulk`, `cooling`). Match the
    image to the section it sits under.
-3. **Rewrite the reference** with the new `../img/...` path and a real,
+3. **Rewrite the reference** to the renamed `../img/...` path with a real,
    **short one-line caption** (see the captions rule above) — never leave
    `![alt text]`.
 4. **Privacy/EXIF:** these are real photos. Flag anything sensitive visible in
@@ -96,6 +100,15 @@ Image alt text renders as a visible `<figcaption>` (see
 [content/howto.md](content/howto.md)), so write a real caption — but keep it to
 **one short plain line**. Say what the photo shows; don't restate the
 surrounding step or pile on adjectives.
+
+## Check for dangling/orphaned images on every article edit
+
+After editing an article, check that no images in `content/img/` belonging to
+that article are unreferenced. A dangling image is any file whose slug prefix
+matches the article's slug but that does not appear in the article's Markdown
+source. To check: grep `content/img/` for files matching the article slug, then
+confirm each one appears in the article. Delete or flag any that are not
+referenced — don't leave orphaned images silently accumulating.
 
 ## Keep `date` and `modified` honest
 
@@ -120,6 +133,8 @@ so always keep `modified` present (matching `date` when there has been no
 post-publish content update) rather than adding and removing the key.
 
 ## Triage spelling problems on every edit
+
+First, open each changed file in the editor, this allows CSpell to detect spelling problems in context.
 
 The cSpell extension reports misspellings as **Information**-level problems (see
 `.vscode/settings.json`, `cSpell.diagnosticLevel`). After editing any content,

@@ -1,6 +1,10 @@
 {
   "python.experiments.enabled": false,
   "python.useEnvironmentsExtension": true,
+  "[markdown, prompt]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true
+  },
   "cSpell.autocorrect": true,
   "cSpell.diagnosticLevel": "Error",
   "cSpell.allowCompoundWords": false,
@@ -13,5 +17,8 @@
       "scope": "workspace"
     }
   },
-  "cSpell.autoFormatConfigFile": false
+  "cSpell.autoFormatConfigFile": false,
+  "markdown.copyFiles.destination": {
+    "content/**/*.md": "${documentWorkspaceFolder}/content/img/${documentBaseName}__${fileName}"
+  }
 }

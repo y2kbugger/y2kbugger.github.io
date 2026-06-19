@@ -181,6 +181,14 @@ Admonitions (notes, warnings, etc.) render live like this:
     This is grey.
     This is also grey.
 
+### Footnotes
+
+Place the reference inline with `[^label]` and the definition anywhere in the body (typically the end):
+
+This sentence has a footnote[^fn-demo] attached to it.
+
+[^fn-demo]: The footnote body renders at the bottom of the article and auto-links back to the reference.
+
 ### Code blocks
 
 Fenced blocks with a language hint:
