@@ -130,6 +130,8 @@ one here. The fields:</p>
 </ul>
 <p>The URL comes from the file basename (<code>SLUGIFY_SOURCE = 'basename'</code>); rename the
 file to change the slug. The containing folder sets the category.</p>
+<p><strong>Article filenames use hyphens as word separators</strong> (<code>my-article-title.md</code>).
+Never use underscores in an article filename.</p>
 <h2 id="content">Content</h2>
 <p>Common patterns are below. For everything else:</p>
 <ul>
@@ -163,6 +165,12 @@ repo. Name them with the convention:</p>
 <div class="highlight"><pre><span></span><code>YYYY-MM-DD__slug__description.ext
 </code></pre></div>
 
+<ul>
+<li><strong>Fields</strong> are separated by <code>__</code> (double underscore).</li>
+<li><strong>Words within a field</strong> are separated by <code>-</code> (single hyphen) — both in the
+  slug field and the description field. Never an underscore.</li>
+<li>The slug field matches the article's slug (its filename without <code>.md</code>).</li>
+</ul>
 <p>For example: <code>2024-11-24__pollo-arancia-gremolata__plated.png</code>.</p>
 <p>Reference an inline image with a path relative to the article. The
 <code>markdown-captions</code> extension wraps every image in a <code>&lt;figure&gt;</code> and turns the
@@ -237,6 +245,9 @@ inside it by four spaces.</p>
 <p>This is grey.
 This is also grey.</p>
 </div>
+<h3 id="footnotes">Footnotes</h3>
+<p>Place the reference inline with <code>[^label-name]</code> and the definition anywhere in the body, keep it close to usage:</p>
+<p>This sentence has a footnote<sup id="fnref:fn-demo"><a class="footnote-ref" href="#fn:fn-demo">1</a></sup> attached to it.</p>
 <h3 id="code-blocks">Code blocks</h3>
 <p>Fenced blocks with a language hint:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">htooze</span><span class="w"> </span><span class="kn">import</span> <span class="n">world</span>
@@ -249,6 +260,15 @@ This is also grey.</p>
 <h3 id="git-clone-to-a-tag">Git clone to a tag</h3>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>--branch<span class="w"> </span><span class="m">2019</span>-07-28-PyOhio<span class="w"> </span>https://github.com/y2kbugger/sapy.git
 </code></pre></div>
+
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:fn-demo">
+<p>The footnote body renders at the bottom of the article and auto-links back to the reference.&#160;<a class="footnote-backref" href="#fnref:fn-demo" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
     </div>
 
     <script src="https://utteranc.es/client.js"
