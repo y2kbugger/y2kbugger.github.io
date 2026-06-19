@@ -1,7 +1,7 @@
 ---
 title: Bánh Mì, Bread + Sandwich
 date: 2026-06-18
-modified: 2026-06-18
+modified: 2026-06-19
 tags: bread, baking, sandwich
 author: zak kohler
 summary: Same-day stand-mixer bánh mì rolls with a thin crisp crust, built into a full sandwich.
@@ -9,17 +9,10 @@ status: published
 cover: /img/2026-06-18__banh-mi__assembled.png
 ---
 
-A bánh mì fork of the [baguette recipe]({filename}/food/baguette.md). The bread
-is the whole game: **AP flour, same-day, small rolls, fully proofed, baked hot
-and short** for a thin crisp crust over a light collapsible crumb. Then the
-sandwich.
+A bánh mì specific fork of the [baguette recipe]({filename}/food/baguette.md) targeting less chew and a thin crisp crust over a light collapsible crumb: **AP flour, same-day bake (less gluten development), shorter rolls, more fully proofed, and baked shorter**
 
 !!! note
-    This bread is a revision of the [baguette]({filename}/food/baguette.md),
-    retuned for bánh mì to be **less chewy** — AP flour instead of bread flour,
-    smaller fully-proofed rolls, and a hotter, shorter bake for a thinner crust
-    over a lighter, more collapsible crumb. I haven't baked this exact formula
-    yet, so treat the numbers as a starting point.
+    This is currently an untested revision, the sandwich below was actually built with the og baguette.
 
 ## Bread
 
@@ -33,18 +26,11 @@ Makes **6 small rolls**.
 
 ### Mix
 
-Stand mixer, dough hook:
-
-- **Speed 1:** 2 min
-- **Rest:** 15 min
-- Add salt
-- **Speed 2:** 5–7 min
-
-Smooth, elastic, tacky.
+Stand mixer, dough hook: mix all ingredients until smooth, elastic, tacky.
 
 ### Bulk
 
-Cover and rise **60–90 min**. Stop when puffy, around doubled.
+Cover and rise **60–120min**, or until puffy and around doubled.
 
 ### Divide and preshape
 
@@ -66,11 +52,9 @@ feel fragile.
 
 ### Bake
 
-Preheat stone/steel:
+Preheat stone/steel to **500°F**
 
-- **475–500°F / 245–260°C**
-
-Steam at loading. Score once lengthwise or a few shallow diagonals.
+Score once lengthwise, then steam after loading.
 
 - **Bake:** 12–16 min total
 - **Vent steam:** after 6–8 min
@@ -107,8 +91,6 @@ before filling.
 
 ### Assemble
 
-![Mise en place for the sandwich, all components prepped.](../img/2026-06-18__banh-mi__mise-en-place.png)
-
 ![A split roll with the protein and prepped veg, ready to build.](../img/2026-06-18__banh-mi__roll-and-protein.png)
 
 1. Split roll, pull out a little crumb, toast briefly.
@@ -116,5 +98,6 @@ before filling.
 3. Layer protein: warmed old fashioned loaf, then cold chopped ham.
 4. Small drips of seasoning sauce over the meat (a Maggi sub — keep it light).
 5. Stack in veg: cucumber, jalapeño, pickle, cilantro over the top.
+6. Lime on top veg, careful not to wet bread.
 
 ![The finished open-faced bánh mì.](../img/2026-06-18__banh-mi__assembled.png)
