@@ -103,16 +103,20 @@ configured via the `content/extra/CNAME` file and the registrar's DNS records.
 
 
 # TODO
+- add tag for food "fundamentals"
 
 ## Articles
 ### Food
 - yogurt
 - cold-brew coffee
 - pao-cai (chinese lacto-fermented pickles)
-- chili sauce from dry peppers
+- red chile base from dry peppers
+- chile colorado pork braise
+- enchiladas
 - Palačinke
 - rhubarb pie
 - potica (Slovenian nut roll)
+- dosa (1c. red-lentil, 1c. basmati rice, 1/4 c sticky rice)
 
 ### Programming
 - sqlir

@@ -62,6 +62,7 @@ potica
 publishconf
 pyproject
 retuned
+Roja
 SITENAME
 SITEURL
 sqlir
