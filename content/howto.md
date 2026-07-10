@@ -1,7 +1,7 @@
 ---
 title: blog.y2kbugger.com How To
 date: 2017-12-15 23:12:30
-modified: 2026-06-17
+modified: 2026-07-10
 tags: testing, meta
 author: zak kohler
 summary: A note to myself on how to write these blog articles and use the features a standardized way.
@@ -128,10 +128,11 @@ caption**, not a terse description:
 Keep captions **short — one plain line**. Say what the photo shows; don't
 restate the surrounding step or pile on adjectives.
 
-Use a site-absolute path for the `cover` metadata:
+Use a path relative to the article for the `cover` metadata, same as an inline
+image — this is what VS Code writes when you paste a screenshot:
 
 ```yaml
-cover: /img/2024-11-24__pollo-arancia-gremolata__cover2.jpg
+cover: ../img/2024-11-24__pollo-arancia-gremolata__cover2.jpg
 ```
 
 Image metadata (EXIF/GPS/device info) is stripped automatically — a pre-commit
@@ -162,13 +163,24 @@ italicizing prep notes:
 or without sub-headings
 
 !!! ingredients "Ingredients"
-    - 2 oreo
+    - 2 oreos, crushed
+    - 3 c crumbled chocolate chip cookies
     - 2 gallons buffalo milk
     - olive oil
-    - garlic, _minced_
+    - 1 tsp garlic, _minced_
+    - 1 onion, _diced_
+    - ~2 tsp chopped parsley
 
 This has specific and custom CSS rules.
 
+Abbreviate volume measurements: `T` for tablespoon, `tsp` for teaspoon, and `c`
+for cup (e.g. `1 T oil`, `1/2 tsp salt`, `1.5c stock`).
+
+use `~` when a measurement is approximate, or to taste e.g., `~2 tsp chopped parsley`.
+
+Mind how to state measurements and processing, e.g. 2 cups chopped nuts or 2 cups nuts, _chopped_ these are different. sometimes unprocessed. ingredients are unitless integer quantities.
+
+If an ingredient is used in multiple, either list it under each relevant sub-header or if not doing sub-headers, use the processing term, `_divided_` to indicate it is to be split across steps.
 
 ### Inline styles
 

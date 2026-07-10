@@ -9,16 +9,21 @@
 # suppresses the Information-level spelling problem.
 Aceto
 all'Arancia
+ancho
+anchos
 arancia
 archlinux
 autolyse
 Balsamico
 bánh
 cai
+chilaca
 cilantro
 clkt
 codehilite
 couche
+deseed
+deseeded
 devserver
 exif
 exifguard
@@ -26,6 +31,7 @@ exiftool
 Firekissed
 Francaise
 gremolata
+guajillo
 harissa
 highlighttable
 htooze
@@ -50,7 +56,10 @@ OUTPUTDIR
 pacman
 Palačinke
 pao
+pasilla
 pâté
+poblano
+purée
 pelicanconf
 PELICANOPTS
 PISPIGOT
@@ -65,9 +74,12 @@ retuned
 Roja
 SITENAME
 SITEURL
+souper
 sqlir
 SQLVM
 tagsfromfile
+victorio
+vitamix
 unsubrepo
 vegemite
 venv
