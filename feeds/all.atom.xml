@@ -1,5 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>blog.y2kbugger.com</title><link href="http://blog.y2kbugger.com/" rel="alternate"/><link href="http://blog.y2kbugger.com/feeds/all.atom.xml" rel="self"/><id>http://blog.y2kbugger.com/</id><updated>2026-06-19T00:00:00-04:00</updated><entry><title>Overnight Baguettes</title><link href="http://blog.y2kbugger.com/baguette.html" rel="alternate"/><published>2026-06-18T00:00:00-04:00</published><updated>2026-06-19T00:00:00-04:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2026-06-18:/baguette.html</id><summary type="html">&lt;p&gt;Overnight stand-mixer baguettes with a cold bulk ferment for three small loaves.&lt;/p&gt;</summary><content type="html">&lt;p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>blog.y2kbugger.com</title><link href="http://blog.y2kbugger.com/" rel="alternate"/><link href="http://blog.y2kbugger.com/feeds/all.atom.xml" rel="self"/><id>http://blog.y2kbugger.com/</id><updated>2026-07-10T00:00:00-04:00</updated><entry><title>Cherry Roja Chicken</title><link href="http://blog.y2kbugger.com/cherry-roja.html" rel="alternate"/><published>2026-07-08T00:00:00-04:00</published><updated>2026-07-10T00:00:00-04:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2026-07-08:/cherry-roja.html</id><summary type="html">&lt;p&gt;A deep, brick-red cherry and chile sauce built on red chile base — spooned over stewed meat or used as a simmer sauce for tacos and enchiladas.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A dark, fruity red sauce that leans on my &lt;a href="http://blog.y2kbugger.com/red-chile-base.html"&gt;red chile base&lt;/a&gt;.
+Tomatoes and cherries cook down to a paste, the chile base melts in, and citrus
+and spice brighten it at the end. Spoon it over stewed meat or simmer chicken
+right in it for tacos, enchiladas, and the like.&lt;/p&gt;
+&lt;div class="admonition ingredients"&gt;
+&lt;p class="admonition-title"&gt;Ingredients&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1 T oil or butter&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="initial-paste"&gt;Initial paste&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;1 onion, &lt;em&gt;diced&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;3 cloves garlic, &lt;em&gt;minced&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;1.5c diced tomatoes&lt;/li&gt;
+&lt;li&gt;1c frozen sour cherries&lt;/li&gt;
+&lt;li&gt;1 T chicken stock concentrate&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="late-addition"&gt;late addition&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;1c red chile base&lt;/li&gt;
+&lt;li&gt;1 lime, &lt;em&gt;zested and juiced&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;~1 tsp paprika, cayenne, or hotter chile powder&lt;/li&gt;
+&lt;li&gt;~1 tsp garlic powder&lt;/li&gt;
+&lt;li&gt;~1/2 tsp coriander&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id="preparation"&gt;Preparation&lt;/h2&gt;
+&lt;p&gt;Sweat the onions and garlic in oil or butter until soft. Add the diced tomatoes,
+cherries, and a chicken stock concentrate.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure&gt;&lt;img src="../img/2026-07-08__cherry-roja__tomatoes-cherries.png"&gt;&lt;figcaption&gt;Diced tomatoes and cherries going into the sweated aromatics.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Reduce slowly, letting it deepen to a paste — take your time, don't scorch it, and let the
+flavor concentrate.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure&gt;&lt;img src="../img/2026-07-08__cherry-roja__reduced-paste.png"&gt;&lt;figcaption&gt;On it's way, reducing it down to a paste.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Stir in the red chile base and the rest of the late addition ingredients.&lt;/p&gt;
+&lt;p&gt;Give it a quick final simmer to marry everything and take the edge of the raw chile and spices.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure&gt;&lt;img src="../img/2026-07-08__cherry-roja__adding-chile-base.png"&gt;&lt;figcaption&gt;Red chile base bricks going into the reduced sauce.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id="serving"&gt;Serving&lt;/h2&gt;
+&lt;p&gt;Serve over chicken, or use it as a simmer sauce for chicken tacos/enchiladas, or
+do a longer braise with thighs or even pork shoulder.&lt;/p&gt;</content><category term="food"/><category term="chicken"/><category term="mexican"/></entry><entry><title>Overnight Baguettes</title><link href="http://blog.y2kbugger.com/baguette.html" rel="alternate"/><published>2026-06-18T00:00:00-04:00</published><updated>2026-06-19T00:00:00-04:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2026-06-18:/baguette.html</id><summary type="html">&lt;p&gt;Overnight stand-mixer baguettes with a cold bulk ferment for three small loaves.&lt;/p&gt;</summary><content type="html">&lt;p&gt;
 &lt;figure&gt;&lt;img src="../img/2026-06-18__baguette__cooling.png"&gt;&lt;figcaption&gt;The three finished baguettes cooling on a rack.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;/p&gt;
@@ -195,7 +242,134 @@ before filling.&lt;/p&gt;
 &lt;p&gt;
 &lt;figure&gt;&lt;img src="../img/2026-06-18__banh-mi__assembled.png"&gt;&lt;figcaption&gt;The finished open-faced bánh mì.&lt;/figcaption&gt;
 &lt;/figure&gt;
-&lt;/p&gt;</content><category term="food"/><category term="bread"/><category term="baking"/><category term="sandwich"/></entry><entry><title>Pollo all'Arancia con Gremolata</title><link href="http://blog.y2kbugger.com/pollo-arancia-gremolata.html" rel="alternate"/><published>2026-01-04T00:00:00-05:00</published><updated>2026-05-12T00:00:00-04:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2026-01-04:/pollo-arancia-gremolata.html</id><summary type="html">&lt;p&gt;Francaise chicken with orange gremolata and a tangy pan sauce.&lt;/p&gt;</summary><content type="html">&lt;p&gt;
+&lt;/p&gt;</content><category term="food"/><category term="bread"/><category term="baking"/><category term="sandwich"/></entry><entry><title>Red Chile Base</title><link href="http://blog.y2kbugger.com/red-chile-base.html" rel="alternate"/><published>2026-05-30T00:00:00-04:00</published><updated>2026-07-10T00:00:00-04:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2026-05-30:/red-chile-base.html</id><summary type="html">&lt;p&gt;A big batch of pure, strained dried-chile purée, frozen into bricks to drop straight into tacos, chile colorado, and enchiladas all season.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This red sauce base: a smooth, strained purée of rehydrated dried
+chiles with nothing extra but lime, and a little salt. Make a giant
+batch, freeze it into bricks, and drop them frozen into whatever wants a deep
+red-chile backbone — tacos, chile colorado, enchiladas, or my
+&lt;a href="http://blog.y2kbugger.com/cherry-roja.html"&gt;cherry roja chicken&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="picking-chiles"&gt;Picking chiles&lt;/h2&gt;
+&lt;p&gt;Grab &lt;strong&gt;two big bags of dried chiles&lt;/strong&gt; and mix and match — I buy a couple kinds,
+blend them, and work through the batch over the next few months. Treat every
+batch as an experiment and keep notes on what you liked. A quick guide to the
+common varieties:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Ancho&lt;/strong&gt; (dried poblano) — deep mahogany, almost black-red. Sweet and
+  raisiny with notes of dried plum and cocoa. Barely any heat; the backbone of
+  most blends.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;New Mexico&lt;/strong&gt; — earthy brick red. Roasted, slightly acidic, classic
+  "red chile" flavor. Medium heat.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;California&lt;/strong&gt; (dried Anaheim) — the mild cousin of New Mexico. Clean, sweet,
+  bright red, and low heat. Good for stretching a blend without adding fire.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Guajillo&lt;/strong&gt; — bright, translucent red. Tangy and berry-like with a green,
+  tea-ish edge. Mild-to-medium heat and lots of clean brightness.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pasilla&lt;/strong&gt; (dried chilaca) — dark, blackish brown. Raisiny and herbaceous
+  with cocoa notes. Mild-to-medium heat and a lot of depth.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="admonition ingredients"&gt;
+&lt;p class="admonition-title"&gt;Ingredients&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2 big (12oz) bags dried red chiles, &lt;em&gt;mixed and matched&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;water&lt;/li&gt;
+&lt;li&gt;1–2 limes, &lt;em&gt;juiced&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;1 tsp salt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id="preparation"&gt;Preparation&lt;/h2&gt;
+&lt;h3 id="deseed"&gt;Deseed&lt;/h3&gt;
+&lt;p&gt;Tear or cut the stems off and shake out the seeds. Work over a big surface and
+go bag by bag.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure&gt;&lt;img src="../img/2026-05-30__red-chile-base__deseeding-station.png"&gt;&lt;figcaption&gt;Dried chiles, a bowl for the deseeded flesh, and a growing pile of seeds.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;As you go, &lt;strong&gt;inspect each pepper&lt;/strong&gt; — look for mold and discard any that are
+fuzzy, or thinned out/rotten. Many hands make light work.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure&gt;&lt;img src="../img/2026-05-30__red-chile-base__deseeding.png"&gt;&lt;figcaption&gt;Working through a bag of dried anchos, pulling stems and seeds.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;The seeds and stems get tossed.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure&gt;&lt;img src="../img/2026-05-30__red-chile-base__seeds-to-toss.png"&gt;&lt;figcaption&gt;The pile of seeds and stems set aside to discard.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3 id="wash-and-rehydrate"&gt;Wash and rehydrate&lt;/h3&gt;
+&lt;p&gt;Soak the deseeded chiles in a &lt;strong&gt;giant excess of cold water&lt;/strong&gt;, agitating well.
+The extra water lets dirt and sand fall to the bottom while the chiles rehydrate.&lt;/p&gt;
+&lt;div class="admonition note"&gt;
+&lt;p class="admonition-title"&gt;Note&lt;/p&gt;
+&lt;p&gt;Use &lt;strong&gt;cold&lt;/strong&gt; water, not hot. Most of the flavor stays locked in the pepper,
+so you can pour off the dirty water without missing it — and that water gets
+genuinely filthy.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;
+&lt;figure&gt;&lt;img src="../img/2026-05-30__red-chile-base__cold-soak.png"&gt;&lt;figcaption&gt;The chiles soaking in a big pot; grit and stray seeds float in the water.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;You'll be surprised how much sand settles out.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure&gt;&lt;img src="../img/2026-05-30__red-chile-base__sand-sediment.png"&gt;&lt;figcaption&gt;Sand and grit left behind on the bottom of the drained pot.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3 id="blend-and-strain"&gt;Blend and strain&lt;/h3&gt;
+&lt;p&gt;Blend the rehydrated chiles with &lt;strong&gt;just enough water&lt;/strong&gt; to get everything moving
+into a purée — an immersion blender or a Vitamix-style both work.&lt;/p&gt;
+&lt;p&gt;Run the purée through a sauce strainer, I have a &lt;em&gt;Victorio #200&lt;/em&gt;. This leaves the skins and any stray seeds
+behind. Set up your catch bowls as needed and crank it all through.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure&gt;&lt;img src="../img/2026-05-30__red-chile-base__straining.png"&gt;&lt;figcaption&gt;Cranking the blended purée through the hand-crank sauce strainer.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Smooth chile base comes out the side while the dry skins extrude out the end.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure&gt;&lt;img src="../img/2026-05-30__red-chile-base__strainer-detail.png"&gt;&lt;figcaption&gt;Smooth red chile base on one side, spent skins extruding from the strainer.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3 id="season"&gt;Season&lt;/h3&gt;
+&lt;p&gt;Stir in the juice of &lt;strong&gt;1–2 limes and 1 tsp salt&lt;/strong&gt;, mixing until the salt
+dissolves.&lt;/p&gt;
+&lt;h2 id="freezing"&gt;Freezing&lt;/h2&gt;
+&lt;p&gt;Freeze the base in Souper Cubes, silicone muffin trays, or anything that gives
+you portioned bricks. Bag and label them once solid.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure&gt;&lt;img src="../img/2026-05-30__red-chile-base__frozen-labeled.png"&gt;&lt;figcaption&gt;A labeled freezer bag of frozen chile base bricks.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id="using-it"&gt;Using it&lt;/h2&gt;
+&lt;p&gt;The bricks go straight into the pan &lt;strong&gt;frozen&lt;/strong&gt; — no need to thaw — whenever
+you're making tacos, chile colorado, enchiladas, and the like.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure&gt;&lt;img src="../img/2026-05-30__red-chile-base__frozen-into-pan.png"&gt;&lt;figcaption&gt;Frozen chile base bricks going into a simmering pan.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;A couple of quick ways to use it:&lt;/p&gt;
+&lt;div class="admonition ingredients"&gt;
+&lt;p class="admonition-title"&gt;Salsa Roja&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1 c red chile base&lt;/li&gt;
+&lt;li&gt;1 onion, &lt;em&gt;finely diced&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;2 tomato, &lt;em&gt;diced&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;2 cloves garlic, &lt;em&gt;minced&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;1 lime&lt;/li&gt;
+&lt;li&gt;salt, &lt;em&gt;to taste&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;p&gt;Sweat the onion, tomato, and garlic, stir in the chile base, and simmer a few minutes to
+loosen and warm through. Finish with lime and salt.&lt;/p&gt;
+&lt;div class="admonition ingredients"&gt;
+&lt;p class="admonition-title"&gt;Enchilada Sauce&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1 c red chile base&lt;/li&gt;
+&lt;li&gt;2 c chicken stock&lt;/li&gt;
+&lt;li&gt;1 T oil&lt;/li&gt;
+&lt;li&gt;1 tsp cumin&lt;/li&gt;
+&lt;li&gt;1 tsp dried oregano&lt;/li&gt;
+&lt;li&gt;1 tsp garlic powder&lt;/li&gt;
+&lt;li&gt;salt, &lt;em&gt;to taste&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;p&gt;Bloom the cumin and oregano in the oil, add the chile base and stock, and simmer
+until it coats a spoon. Season with garlic powder and salt.&lt;/p&gt;</content><category term="food"/><category term="mexican"/><category term="fundamentals"/></entry><entry><title>Pollo all'Arancia con Gremolata</title><link href="http://blog.y2kbugger.com/pollo-arancia-gremolata.html" rel="alternate"/><published>2026-01-04T00:00:00-05:00</published><updated>2026-05-12T00:00:00-04:00</updated><author><name>zak kohler</name></author><id>tag:blog.y2kbugger.com,2026-01-04:/pollo-arancia-gremolata.html</id><summary type="html">&lt;p&gt;Francaise chicken with orange gremolata and a tangy pan sauce.&lt;/p&gt;</summary><content type="html">&lt;p&gt;
 &lt;figure&gt;&lt;img src="../img/2024-11-24__pollo-arancia-gremolata__cover2.jpg"&gt;&lt;figcaption&gt;Pollo all'arancia plated and finished with gremolata.&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;/p&gt;

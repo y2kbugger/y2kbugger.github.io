@@ -70,7 +70,7 @@
     <div class="article-meta">
                 <span class="author">By zak kohler</span>
         <span class="publication-date" title="2017-12-15T23:12:30-05:00"> on 2017.12.15 @ 23:12</span>
-        <span class="modification-date" title="2026-06-17T00:00:00-04:00"> last modified on 2026.06.17</span>
+        <span class="modification-date" title="2026-07-10T00:00:00-04:00"> last modified on 2026.07.10</span>
 
 
             <div class="tags">
@@ -182,8 +182,9 @@ caption</strong>, not a terse description:</p>
 </p>
 <p>Keep captions <strong>short — one plain line</strong>. Say what the photo shows; don't
 restate the surrounding step or pile on adjectives.</p>
-<p>Use a site-absolute path for the <code>cover</code> metadata:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">cover</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/img/2024-11-24__pollo-arancia-gremolata__cover2.jpg</span>
+<p>Use a path relative to the article for the <code>cover</code> metadata, same as an inline
+image — this is what VS Code writes when you paste a screenshot:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">cover</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">../img/2024-11-24__pollo-arancia-gremolata__cover2.jpg</span>
 </code></pre></div>
 
 <p>Image metadata (EXIF/GPS/device info) is stripped automatically — a pre-commit
@@ -217,13 +218,21 @@ italicizing prep notes:</p>
 <div class="admonition ingredients">
 <p class="admonition-title">Ingredients</p>
 <ul>
-<li>2 oreo</li>
+<li>2 oreos, crushed</li>
+<li>3 c crumbled chocolate chip cookies</li>
 <li>2 gallons buffalo milk</li>
 <li>olive oil</li>
-<li>garlic, <em>minced</em></li>
+<li>1 tsp garlic, <em>minced</em></li>
+<li>1 onion, <em>diced</em></li>
+<li>~2 tsp chopped parsley</li>
 </ul>
 </div>
 <p>This has specific and custom CSS rules.</p>
+<p>Abbreviate volume measurements: <code>T</code> for tablespoon, <code>tsp</code> for teaspoon, and <code>c</code>
+for cup (e.g. <code>1 T oil</code>, <code>1/2 tsp salt</code>, <code>1.5c stock</code>).</p>
+<p>use <code>~</code> when a measurement is approximate, or to taste e.g., <code>~2 tsp chopped parsley</code>.</p>
+<p>Mind how to state measurements and processing, e.g. 2 cups chopped nuts or 2 cups nuts, <em>chopped</em> these are different. sometimes unprocessed. ingredients are unitless integer quantities.</p>
+<p>If an ingredient is used in multiple, either list it under each relevant sub-header or if not doing sub-headers, use the processing term, <code>_divided_</code> to indicate it is to be split across steps.</p>
 <h3 id="inline-styles">Inline styles</h3>
 <ul>
 <li><code>*italics*</code> → <em>italics</em></li>
